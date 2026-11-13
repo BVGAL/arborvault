@@ -110,6 +110,7 @@ def verify(root, dataset):
     _, dev_trees, dev = load_split(dataset, "dev")
     expected_ids = {q["id"] for q in dev}
     questions = {q["id"]: q for q in dev}
+    evidence_stages = {}
     for name, report in result["methods"].items():
         if (
             len(report["queries"]) != len(dev)
@@ -134,6 +135,33 @@ def verify(root, dataset):
         aggregate = summarize(report["queries"])
         if any(report[k] != v for k, v in aggregate.items()):
             raise ValueError("Aggregate mismatch")
+        if name.endswith("/64"):
+            stage_rows = []
+            for row in report["queries"]:
+                if not row["answerable"]:
+                    continue
+                gold_sets = questions[row["id"]]["gold_sets"]
+
+                def availability(ids, gold_sets=gold_sets):
+                    return max(len(set(ids) & set(g)) / len(g) for g in gold_sets)
+
+                values = {
+                    "scored_gold_availability": availability(row["scored_ids"]),
+                    "retained_gold_availability": availability(row["reached_ids"]),
+                    "top5_gold_recall_without_word_limit": availability(row["reached_ids"][:5]),
+                    "context_gold_recall": row["recall"],
+                }
+                ordered = list(values.values())
+                if any(a + 1e-12 < b for a, b in zip(ordered[:-1], ordered[1:], strict=True)):
+                    raise ValueError("Non-monotone evidence filtering stages")
+                stage_rows.append({"id": row["id"], **values})
+            evidence_stages[name] = {
+                "means": {
+                    k: statistics.mean(r[k] for r in stage_rows) for k in stage_rows[0] if k != "id"
+                },
+                "queries": stage_rows,
+                "note": "Annotation availability at each stage, ignoring downstream ranking/word constraints; not guaranteed achievable recall",
+            }
     for model in ("qwen-base", "qwen-tuned", "cross-encoder-base", "cross-encoder-tuned"):
         cache = read(root / "scores" / (model + "-dev.json"))
         cal_cache = read(root / "scores" / (model + "-calibration.json"))
@@ -157,6 +185,7 @@ def verify(root, dataset):
         "development_queries": len(dev),
         "checkpoint_rules_verified": True,
         "checkpoint_curves": curves,
+        "evidence_stages": evidence_stages,
         "calibration_rules_verified": True,
         "dataset_sha256": plan["dataset_manifest_sha256"],
         "code_revision": plan["code_revision"],

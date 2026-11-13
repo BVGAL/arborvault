@@ -105,6 +105,14 @@ the original tree result. No new model inference or training is needed for repla
 
 ## Reproduction and resource limit
 
+A separate reference control, specified before the E5 stage, also embeds the
+standard section-path-plus-passage text used by the historical vector baseline,
+instead of JSON candidate views. Keep both representations visible; do not select
+between them based on the development scores. `scripts/benchmark_e5_text.py`
+uses the same pinned E5, prefixes, k/context budget, BM25 and RRF settings. It does
+not train a model or change the neural scorers/checkpoint choices. This guards
+against mistaking an embedding input-format disadvantage for a scoring improvement.
+
 ```sh
 pip install -c constraints.txt '.[dev]'
 pip install -r requirements.training.txt

@@ -1,0 +1,64 @@
+{
+  "id": "qasper-routing-v2",
+  "version": 2,
+  "license": "CC-BY-4.0",
+  "upstream": "allenai/qasper v0.3",
+  "scope": "Known-document evidence retrieval",
+  "prompt_sha256": "3d5f66ca7661fd90e6d35dab361e59a7d4206908693091935ab10e25644fccdb",
+  "files": {
+    "train-documents.jsonl": "e97ba77062e2349527c11292cc433b885f647aa8445ce4b37222ba15d217966e",
+    "train-questions.jsonl": "d11ffcd894867f54f9c27de1f90deb04813fb1e001751dbb0c3d39d4d0cd3b23",
+    "dev-documents.jsonl": "5224e13181816cb206c6918fb8b390d7be82371d9946c5dd0ee9d9c7831181f6",
+    "dev-questions.jsonl": "af6d80869b9a70f4b1fe1609df7421da7d708607c50c360e8335b29165031ec9",
+    "test-documents.jsonl": "e910067a4998a09153f34ea91e3c3e28f85eefc49d091492d6bd8c4573b71338",
+    "test-questions.jsonl": "e36fbc38531558ccd5c354e3432cb1762a4af97750003aef1479baa6bc366a50"
+  },
+  "splits": {
+    "train": {
+      "documents": 426,
+      "questions": 600,
+      "answerable": 500,
+      "unknown": 100,
+      "eligible_pool": 2018,
+      "exclusions": {
+        "Non-textual or unmapped evidence": 467,
+        "Missing or disagreeing answerability": 7,
+        "Paper exceeds pilot structural bounds": 24,
+        "More than four evidence paragraphs in an annotation": 77
+      }
+    },
+    "dev": {
+      "documents": 102,
+      "questions": 120,
+      "answerable": 100,
+      "unknown": 20,
+      "eligible_pool": 632,
+      "exclusions": {
+        "Non-textual or unmapped evidence": 218,
+        "Missing or disagreeing answerability": 75,
+        "Exact normalized question overlaps previous split": 45,
+        "More than four evidence paragraphs in an annotation": 35
+      }
+    },
+    "test": {
+      "documents": 96,
+      "questions": 120,
+      "answerable": 100,
+      "unknown": 20,
+      "eligible_pool": 803,
+      "exclusions": {
+        "Non-textual or unmapped evidence": 322,
+        "Missing or disagreeing answerability": 164,
+        "More than four evidence paragraphs in an annotation": 77,
+        "Exact normalized question overlaps previous split": 83,
+        "Paper exceeds pilot structural bounds": 2
+      }
+    }
+  },
+  "source_sha256": {
+    "qasper-train-v0.3.json": "9458bfe76074a8fa8d1685af02bcc73537aa6d338ad20591dfaff1946bc88bf4",
+    "qasper-dev-v0.3.json": "2ae7ee62a65b1c4225791c70de80c2aad4e8998cf1fd4f09a53103db4f21af93",
+    "qasper-test-v0.3.json": "6e29ad410e6e39aa1936017fb965b30a20eb2e7751997f55b97c9d281aa884e5"
+  },
+  "selection": "SHA256 order, fixed 500/100 answerable and 100/20 unknown quotas for train/evaluation; no model scores"
+}

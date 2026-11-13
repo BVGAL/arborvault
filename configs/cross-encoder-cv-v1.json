@@ -1,0 +1,22 @@
+{
+  "experiment": "cross-encoder-cv-v1",
+  "scorer_config": "configs/candidate-scoring-v1.json",
+  "seed": 42,
+  "outer_folds": 5,
+  "inner_document_proportions": [0.6, 0.1, 0.15, 0.15],
+  "epochs": 1,
+  "learning_rate": 0.00002,
+  "checkpoint_interval": 25,
+  "gradient_accumulation_queries": 4,
+  "micro_batch_size": 4,
+  "candidate_budget": 64,
+  "max_length": 512,
+  "gate_l2": 0.01,
+  "calibration_recall_loss_guard": 0.02,
+  "calibration_false_abstention_guard": 0.02,
+  "max_seconds": 7200,
+  "prior_estimated_usd": 4.50519,
+  "cumulative_budget_usd": 10,
+  "maximum_gpu_rate_usd_per_hour": 1.2,
+  "allocation_stop_seconds": 10800
+}

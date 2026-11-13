@@ -40,7 +40,7 @@ def verify_manifest(root):
     return manifest
 
 
-def verify(root, dataset):
+def verify(root, dataset, reference=None):
     manifest = verify_manifest(root)
     plan, result, complete = (
         read(root / name) for name in ("plan.json", "results.json", "complete.json")
@@ -49,6 +49,18 @@ def verify(root, dataset):
         raise ValueError("Experiment incomplete or test protocol changed")
     if plan["dataset_manifest_sha256"] != file_hash(dataset / "manifest.json"):
         raise ValueError("Dataset mismatch")
+    if reference is not None:
+        extra = read(reference)
+        if (
+            extra["dataset_sha256"] != plan["dataset_manifest_sha256"]
+            or extra["revision"] != plan["config"]["embedding_revision"]
+            or extra["k"] != 5
+            or extra["word_budget"] != 512
+        ):
+            raise ValueError("Standard-text reference protocol mismatch")
+        if set(extra["methods"]) != {"dense_e5_text", "bm25_text", "hybrid_rrf_text"}:
+            raise ValueError("Missing standard-text reference method")
+        result["methods"].update(extra["methods"])
     _, trees, train = load_split(dataset, "train")
     fit, cal = partition(train)
     probe = probe_queries(cal)
@@ -177,6 +189,16 @@ def verify(root, dataset):
                 )
                 if recomputed != result["methods"][f"{model}/{mode}/{label}"]:
                     raise ValueError("Replay mismatch")
+    if reference is not None:
+        from summarize_routing_v2 import clustered_delta
+
+        for model in ("qwen-base", "qwen-tuned", "cross-encoder-base", "cross-encoder-tuned"):
+            for mode in ("flat", "tree"):
+                name = model + "/" + mode + "/64"
+                result["paired_document_bootstrap"][name + "/minus-e5-text"] = clustered_delta(
+                    result["methods"]["dense_e5_text"]["queries"],
+                    result["methods"][name]["queries"],
+                )
     return {
         "verified_files": len(manifest),
         "verified_neural_policies": 32,
@@ -184,6 +206,7 @@ def verify(root, dataset):
         "calibration_queries": len(cal),
         "development_queries": len(dev),
         "checkpoint_rules_verified": True,
+        "standard_text_reference_verified": reference is not None,
         "checkpoint_curves": curves,
         "evidence_stages": evidence_stages,
         "calibration_rules_verified": True,
@@ -203,8 +226,9 @@ def main():
     parser.add_argument("run", type=Path)
     parser.add_argument("--dataset", type=Path, default=Path("datasets/qasper-routing-v2"))
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--reference", type=Path)
     args = parser.parse_args()
-    result = verify(args.run, args.dataset)
+    result = verify(args.run, args.dataset, args.reference)
     args.output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(
         json.dumps(

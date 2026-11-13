@@ -16,6 +16,7 @@ def main():
     parser.add_argument("--dataset", type=Path, default=Path("datasets/qasper-routing-v2"))
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--code-revision", required=True)
+    parser.add_argument("--reference", type=Path)
     args = parser.parse_args()
 
     def read(name):
@@ -27,6 +28,14 @@ def main():
     _, cal = partition(train)
     _, trees, dev = load_split(args.dataset, "dev")
     primary = read("results.json")["methods"]
+    reference_report = (
+        json.loads(args.reference.read_text(encoding="utf-8")) if args.reference else None
+    )
+    if (
+        reference_report
+        and reference_report["dataset_sha256"] != read("plan.json")["dataset_manifest_sha256"]
+    ):
+        raise ValueError("Reference dataset mismatch")
     reports, policies, differences = {}, {}, {}
     for model in ("qwen-base", "qwen-tuned", "cross-encoder-base", "cross-encoder-tuned"):
         cache = read("scores/" + model + "-dev.json")
@@ -40,6 +49,10 @@ def main():
                 for reference in ("tree", "flat"):
                     differences[model + "/minus-" + reference] = clustered_delta(
                         primary[model + "/" + reference + "/64"]["queries"], report["queries"]
+                    )
+                if reference_report:
+                    differences[model + "/minus-e5-text"] = clustered_delta(
+                        reference_report["methods"]["dense_e5_text"]["queries"], report["queries"]
                     )
     result = {
         "code_revision": args.code_revision,

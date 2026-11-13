@@ -1,0 +1,23 @@
+{
+  "training_routes_sha256": "7e48a950cd091fe14a9af8ec6f4261e0fc6ab7b92281da4115c0ae9067c6eb27",
+  "target_cardinality": {
+    "0": 227,
+    "1": 966,
+    "2": 161,
+    "3": 30,
+    "4": 16
+  },
+  "positive_by_depth": {
+    "0": 500,
+    "1": 500,
+    "2": 141,
+    "3": 32
+  },
+  "kinds": {
+    "oracle_route": 1273,
+    "wrong_subtree": 127
+  },
+  "single_target_share_of_positive": 0.8235294117647058,
+  "dev_oracle_one_paragraph_recall_ceiling": 0.9325,
+  "dev_questions_requiring_multiple_paragraphs": 12
+}

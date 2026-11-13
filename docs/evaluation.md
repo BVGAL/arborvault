@@ -1,5 +1,30 @@
 # Evaluation protocol
 
+## Routing v2: separate QASPER pilot
+
+The [v2 report](routing-v2-results.md) records the new dataset, two training seeds, four
+checkpoints, development-only selection, a decoding ablation and its disclosed memory retry.
+The test has 100 answerable and 20 unanswerable questions on 96 disjoint papers. Each method
+retrieves the same paragraph units within a known document, k=5 and 512 words of context.
+
+| Method | Test Recall@5 | Empty answerable | Unknown abstentions |
+| --- | ---: | ---: | ---: |
+| Base navigation | 0.7058 | 0/100 | 1/20 |
+| Fine-tuned navigation, step 175 | 0.4025 | 29/100 | 14/20 |
+| Base, up to four hypotheses | 0.7375 | 0/100 | 0/20 |
+| Fine-tuned, up to four hypotheses, step 88 | 0.6983 | 2/100 | 7/20 |
+| Base plus lexical | 0.7558 | 0/100 | 0/20 |
+| Base hypotheses plus lexical | 0.8025 | 0/100 | 0/20 |
+| Fine-tuned hypotheses plus lexical | 0.7633 | 0/100 | 0/20 |
+| MiniLM vector retrieval | 0.7442 | 0/100 | 0/20 |
+
+Neither adapted policy passes its development promotion gate. Retain the base; a small
+numerical difference from MiniLM is not established superiority. Greedy and beam policies
+selected different checkpoints, so cross-policy adapted test gains cannot be attributed to
+decoding alone. The fixed-step development comparison diagnoses search breadth separately.
+Full raw query reports, uncertainty, latency and hashes are linked from the v2 report.
+The historical datasets and measurements below are retained and have different scopes.
+
 ## Qwen3-4B QLoRA on Runpod
 
 Measured on 2026-11-13 using a single RTX 4090. Base and adapted inference share the same

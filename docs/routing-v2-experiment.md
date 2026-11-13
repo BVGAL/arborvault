@@ -32,6 +32,13 @@ All failed queries remain in the denominator. This is retrieval evaluation, not 
 
 Recipe: [`qwen3-routing-v2.json`](../configs/qwen3-routing-v2.json).
 
+This is supervised candidate selection using a frozen quantized base and trainable low-rank
+updates, following [LoRA](https://arxiv.org/abs/2106.09685) and the quantized-base approach of
+[QLoRA](https://arxiv.org/abs/2305.14314). The run updates 2,949,120 adapter parameters in the
+attention query/value projections. Targets are annotated routing IDs plus EOS; the loss is
+computed only on those completion tokens. Training does not optimize an answer generator or
+a retrieval reward directly. The optimizer is ordinary AdamW, not a paged optimizer.
+
 - Original Qwen/Qwen3-4B revision `1cfa9a7208912126459214e8b04321603b3df60c`.
 - NF4 double quantization/BF16, q/v LoRA rank 8, alpha 16, dropout 0.05.
 - One epoch per seed, seeds 42 and 43, AdamW 5e-5, accumulation 8, no weight decay.
@@ -118,3 +125,7 @@ cached-style decoding and distinct per-beam masks. It changes memory scheduling,
 activation precision, context length, candidate features, beam count or selection rules.
 Both base and adapter use the same corrected execution. The retry starts development from
 the beginning in a new output directory; the original three-hour cloud stop remains active.
+The retry launcher also sets `PYTORCH_ALLOC_CONF=expandable_segments:True` to limit allocation
+fragmentation. This affects memory allocation, not tensor precision or routing parameters.
+Run the attention scheduler only in the dedicated inference process; its explicit opt-in
+replaces that process's SDPA implementation and is not intended for shared training services.

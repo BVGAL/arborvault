@@ -1,5 +1,9 @@
 # Qwen3 routing fine-tuning experiment
 
+This page preserves the **v1** recipe and results. For the separate human-annotated QASPER
+pilot, see the [routing-v2 protocol](routing-v2-experiment.md) and
+[measured v2 results](routing-v2-results.md). The datasets and retrieval scopes differ.
+
 This is a small candidate-routing QLoRA experiment, not a STAIR reproduction or
 general-purpose knowledge fine-tuning. The initial recipe is fixed in
 [`qwen3-routing-v1.json`](../configs/qwen3-routing-v1.json). The first run was completed

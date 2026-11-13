@@ -1,0 +1,22 @@
+{
+  "seed-42-step-175": {
+    "tensor_count": 144,
+    "all_finite": true,
+    "nonzero_lora_b": 72
+  },
+  "seed-42-step-88": {
+    "tensor_count": 144,
+    "all_finite": true,
+    "nonzero_lora_b": 72
+  },
+  "seed-43-step-175": {
+    "tensor_count": 144,
+    "all_finite": true,
+    "nonzero_lora_b": 72
+  },
+  "seed-43-step-88": {
+    "tensor_count": 144,
+    "all_finite": true,
+    "nonzero_lora_b": 72
+  }
+}

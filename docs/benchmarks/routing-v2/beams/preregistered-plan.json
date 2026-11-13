@@ -1,0 +1,26 @@
+{
+  "recipe_sha256": "088b3d23c2adc0ca4fb660deb6c05f8881e0f4325f67545fb086d56192064ca2",
+  "dataset_manifest_sha256": "c5e71cfbf60be0a22fd6bedb754607d5974101034d920adab40a6c404a191288",
+  "code_revision": "d4ba75f84e334c1ab068126176df5168a8bca034",
+  "training_code_revision": "e342dc3431e62bacd3b3a9fdae4b25aa49dd4bf3",
+  "policy": {
+    "version": "routing-v2-beams-1",
+    "num_beams": 4,
+    "length_penalty": 1.0,
+    "early_stopping": true,
+    "union_width": 4,
+    "abstention": "empty highest-scoring hypothesis"
+  },
+  "policy_sha256": "ed57b76c5741fd825e2e0f44e4f88f5b5f27a03d7e5366ea0b5265c19e707580",
+  "packages": {
+    "torch": "2.10.0+cu128",
+    "transformers": "5.22.2",
+    "peft": "0.21.3",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.15.0",
+    "safetensors": "0.8.0"
+  },
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "all_evaluations_shared_base_tensors": true,
+  "attention_execution": "SDPA one beam batch row at a time; unchanged precision and masks"
+}

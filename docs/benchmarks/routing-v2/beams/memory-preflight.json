@@ -1,0 +1,8 @@
+{
+  "long_development_query_preflight": true,
+  "query_id": "b7381927764536bd97b099b6a172708125364954",
+  "reason": null,
+  "calls": 2,
+  "peak_allocated_gib": 12.397352695465088,
+  "maximum_prompt_tokens": 3818
+}

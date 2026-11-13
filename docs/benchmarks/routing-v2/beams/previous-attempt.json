@@ -1,0 +1,11 @@
+{
+  "complete": false,
+  "stage": "base-development",
+  "completed_queries": 92,
+  "error_type": "CUDA out of memory",
+  "gpu_capacity_gib": 23.52,
+  "requested_allocation_gib": 1.74,
+  "no_beam_test_evaluated": true,
+  "correction": "SDPA batch rows executed sequentially, without changing precision, context or routing policy",
+  "source_code_revision": "ae43ecba5916a869ad3f8ce2586a7d73d0f1f322"
+}

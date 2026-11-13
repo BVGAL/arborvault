@@ -1,0 +1,35 @@
+{
+  "chosen_primary_adapter": {
+    "seed": 42,
+    "step": 88,
+    "fraction": 0.5,
+    "adapter": "adapters/seed-42-step-88",
+    "quality": [
+      0.5975,
+      0.5975,
+      0.4791666666666667
+    ],
+    "qualifies": true,
+    "completion_token_nll": 0.8663490306716222,
+    "adapter_sha256": "bbbc4cf22ed18b2baf6e965ccda9b3d70a425466f70c0e6e00883b7acd4fd847"
+  },
+  "confirmation_same_fraction": {
+    "seed": 43,
+    "step": 88,
+    "fraction": 0.5,
+    "adapter": "adapters/seed-43-step-88",
+    "quality": [
+      0.5658333333333333,
+      0.5658333333333333,
+      0.4216666666666667
+    ],
+    "qualifies": false,
+    "completion_token_nll": 0.8972027433836443,
+    "adapter_sha256": "4c44ffa0e1135faa8872c48d67f18b337d43269b35e23d3985423b872aabd4ee"
+  },
+  "promote_over_base": false,
+  "deployment_recommendation": "retain_base",
+  "prefer_beam_base_over_greedy_base": false,
+  "test_not_yet_evaluated": true,
+  "test_sealing": "Greedy test may exist on disk; this runner has not read it"
+}

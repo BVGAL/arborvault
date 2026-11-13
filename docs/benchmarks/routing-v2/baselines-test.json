@@ -1,0 +1,4056 @@
+{
+  "dataset": "qasper-routing-v2",
+  "split": "test",
+  "model_sha256": {
+    "models--Qdrant--all-MiniLM-L6-v2-onnx/snapshots/d13954661f83248295ba75c1ed411eef3b7b936e/model.onnx": "bbd7b466f6d58e646fdc2bd5fd67b2f5e93c0b687011bd4548c420f7bd46f0c5"
+  },
+  "methods": {
+    "dense_minilm": {
+      "recall": 0.7441666666666666,
+      "mrr": 0.5171666666666667,
+      "ndcg": 0.5538453169001609,
+      "evidence_coverage": 0.7141666666666666,
+      "answerable_empty": 0,
+      "unknown_abstentions": 0,
+      "answerable_count": 100,
+      "unknown_count": 20,
+      "selector_errors": 0,
+      "queries": [
+        {
+          "id": "0035b351df63971ec57e36d4bfc6f7594bed41ae",
+          "document": "1802.09233",
+          "answerable": false,
+          "predicted": [
+            "1802.09233:27",
+            "1802.09233:38",
+            "1802.09233:42",
+            "1802.09233:36",
+            "1802.09233:17"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "058b6e3fdbb607fa7dbfc688628b3e13e130c35a",
+          "document": "1912.00239",
+          "answerable": true,
+          "predicted": [
+            "1912.00239:44",
+            "1912.00239:49",
+            "1912.00239:59",
+            "1912.00239:43"
+          ],
+          "recall": 0.5,
+          "mrr": 0.5,
+          "ndcg": 0.38685280723454163,
+          "abstained": false,
+          "evidence_coverage": 0.5
+        },
+        {
+          "id": "065623cc1d5f5b19ec1f84d286522fc2f805c6ce",
+          "document": "1706.04206",
+          "answerable": true,
+          "predicted": [
+            "1706.04206:25",
+            "1706.04206:7",
+            "1706.04206:40",
+            "1706.04206:32",
+            "1706.04206:11"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "0778cbbd093f8b779f7cf26302b2a8e081ccfb40",
+          "document": "1703.10152",
+          "answerable": true,
+          "predicted": [
+            "1703.10152:52",
+            "1703.10152:29",
+            "1703.10152:49",
+            "1703.10152:2",
+            "1703.10152:48"
+          ],
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "079e654c97508c521c07ab4d24cdaaede5602c61",
+          "document": "1605.05156",
+          "answerable": true,
+          "predicted": [
+            "1605.05156:9",
+            "1605.05156:2",
+            "1605.05156:20",
+            "1605.05156:15"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "08561f6ba578ce8f8d284abf90f5b24eb1f804d3",
+          "document": "1901.03253",
+          "answerable": true,
+          "predicted": [
+            "1901.03253:76",
+            "1901.03253:72",
+            "1901.03253:27",
+            "1901.03253:2",
+            "1901.03253:69"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "11679d1feba747c64bbbc62939a20fbb69ada0f3",
+          "document": "1902.06734",
+          "answerable": true,
+          "predicted": [
+            "1902.06734:5",
+            "1902.06734:6",
+            "1902.06734:34",
+            "1902.06734:36",
+            "1902.06734:45"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "11ef46187a5bf15e89d63220fdeaecbeb92d818e",
+          "document": "1610.06510",
+          "answerable": true,
+          "predicted": [
+            "1610.06510:32",
+            "1610.06510:30",
+            "1610.06510:37",
+            "1610.06510:48",
+            "1610.06510:62"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "16a10c1681dc5a399b6d34b4eed7bb1fef816dd0",
+          "document": "1910.02001",
+          "answerable": true,
+          "predicted": [
+            "1910.02001:75",
+            "1910.02001:36",
+            "1910.02001:76",
+            "1910.02001:34",
+            "1910.02001:82"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "16edc21a6abc89ee2280dccf1c867c2ac4552524",
+          "document": "1809.03695",
+          "answerable": true,
+          "predicted": [
+            "1809.03695:20",
+            "1809.03695:6",
+            "1809.03695:8",
+            "1809.03695:12",
+            "1809.03695:11"
+          ],
+          "recall": 0.5,
+          "mrr": 0.2,
+          "ndcg": 0.23719771276929622,
+          "abstained": false,
+          "evidence_coverage": 0.5
+        },
+        {
+          "id": "1702985a3528e876bb19b8e223399729d778b4e4",
+          "document": "2003.12450",
+          "answerable": true,
+          "predicted": [
+            "2003.12450:8",
+            "2003.12450:4",
+            "2003.12450:6",
+            "2003.12450:13",
+            "2003.12450:11"
+          ],
+          "recall": 1.0,
+          "mrr": 0.2,
+          "ndcg": 0.38685280723454163,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "17fd6deb9e10707f9d1b70165dedb045e1889aac",
+          "document": "1908.11053",
+          "answerable": true,
+          "predicted": [
+            "1908.11053:58",
+            "1908.11053:50",
+            "1908.11053:59",
+            "1908.11053:37",
+            "1908.11053:53"
+          ],
+          "recall": 1.0,
+          "mrr": 0.2,
+          "ndcg": 0.38685280723454163,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "183b385fb59ff1e3f658d4555a08b67c005a8734",
+          "document": "1809.03391",
+          "answerable": true,
+          "predicted": [
+            "1809.03391:10",
+            "1809.03391:6",
+            "1809.03391:7",
+            "1809.03391:3",
+            "1809.03391:4"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "1acf06105f6c1930f869347ef88160f55cbf382b",
+          "document": "1909.00871",
+          "answerable": true,
+          "predicted": [
+            "1909.00871:22",
+            "1909.00871:58",
+            "1909.00871:24"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "22225ba18a6efe74b1315cc08405011d5431498e",
+          "document": "1705.00571",
+          "answerable": true,
+          "predicted": [
+            "1705.00571:39",
+            "1705.00571:3",
+            "1705.00571:8",
+            "1705.00571:17",
+            "1705.00571:7"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7122630665145961,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "2301424672cb79297cf7ad95f23b58515e4acce8",
+          "document": "1911.05652",
+          "answerable": true,
+          "predicted": [
+            "1911.05652:4",
+            "1911.05652:2",
+            "1911.05652:33",
+            "1911.05652:38",
+            "1911.05652:10"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "2686e8d51caff9a19684e0c9984bcb5a1937d08d",
+          "document": "1606.02892",
+          "answerable": true,
+          "predicted": [
+            "1606.02892:31",
+            "1606.02892:7",
+            "1606.02892:47",
+            "1606.02892:3",
+            "1606.02892:42"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "2a55076a66795793d79a3edfae1041098404fbc3",
+          "document": "1909.04242",
+          "answerable": false,
+          "predicted": [
+            "1909.04242:4",
+            "1909.04242:2",
+            "1909.04242:44",
+            "1909.04242:42",
+            "1909.04242:21"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "2ecd12069388fd58ad5f8f4ae7ac1bb4f56497b9",
+          "document": "1905.08067",
+          "answerable": true,
+          "predicted": [
+            "1905.08067:13",
+            "1905.08067:18",
+            "1905.08067:33",
+            "1905.08067:17"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "2ee4ecf98ef7d02c9e4d103968098fe35f067bbb",
+          "document": "1908.07491",
+          "answerable": true,
+          "predicted": [
+            "1908.07491:14",
+            "1908.07491:16",
+            "1908.07491:35",
+            "1908.07491:39",
+            "1908.07491:15"
+          ],
+          "recall": 1.0,
+          "mrr": 0.2,
+          "ndcg": 0.38685280723454163,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "32f2aa2df0152050cbcd27dd2f408b2fa5894031",
+          "document": "1711.01567",
+          "answerable": true,
+          "predicted": [
+            "1711.01567:3",
+            "1711.01567:34",
+            "1711.01567:29",
+            "1711.01567:35",
+            "1711.01567:10"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "380e71848d4b0d1e983d504b1249119612f00bcb",
+          "document": "1706.00188",
+          "answerable": true,
+          "predicted": [
+            "1706.00188:13",
+            "1706.00188:4",
+            "1706.00188:5",
+            "1706.00188:17",
+            "1706.00188:16"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "39d20b396f12f0432770c15b80dc0d740202f98d",
+          "document": "1711.11118",
+          "answerable": false,
+          "predicted": [
+            "1711.11118:7",
+            "1711.11118:4",
+            "1711.11118:12",
+            "1711.11118:13"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "3a3c372b6d73995adbdfa26103c85b32d071ff10",
+          "document": "1911.04128",
+          "answerable": false,
+          "predicted": [
+            "1911.04128:21",
+            "1911.04128:24",
+            "1911.04128:2",
+            "1911.04128:33",
+            "1911.04128:17"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "3cc0d773085dc175b85955e95911a2cfaab2cdc4",
+          "document": "1707.06519",
+          "answerable": true,
+          "predicted": [
+            "1707.06519:38",
+            "1707.06519:15",
+            "1707.06519:23",
+            "1707.06519:32"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "3ea82a5ca495ffbd1e30e8655aef1be4ba423efe",
+          "document": "1911.12559",
+          "answerable": true,
+          "predicted": [
+            "1911.12559:15",
+            "1911.12559:12",
+            "1911.12559:31",
+            "1911.12559:5"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "48ff9645a506aa2c17810d2654d1f0f0d9e609ee",
+          "document": "1910.01108",
+          "answerable": true,
+          "predicted": [
+            "1910.01108:21",
+            "1910.01108:24",
+            "1910.01108:23",
+            "1910.01108:25",
+            "1910.01108:4"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "49cd18448101da146c3187a44412628f8c722d7b",
+          "document": "1705.01306",
+          "answerable": true,
+          "predicted": [
+            "1705.01306:9",
+            "1705.01306:57",
+            "1705.01306:65",
+            "1705.01306:21",
+            "1705.01306:23"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "4ddc53afffaf1622d97695347dd1b3190d156dee",
+          "document": "1808.07231",
+          "answerable": true,
+          "predicted": [
+            "1808.07231:21",
+            "1808.07231:27",
+            "1808.07231:43",
+            "1808.07231:50",
+            "1808.07231:38"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "52868394eb2b3b37eb5f47f51c06ad53061f4495",
+          "document": "2002.06854",
+          "answerable": true,
+          "predicted": [
+            "2002.06854:12",
+            "2002.06854:32",
+            "2002.06854:9",
+            "2002.06854:47",
+            "2002.06854:52"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "5422a3f2a083395416d6f99c57d28335eb2e44e1",
+          "document": "1911.09709",
+          "answerable": true,
+          "predicted": [
+            "1911.09709:14",
+            "1911.09709:24",
+            "1911.09709:25",
+            "1911.09709:18",
+            "1911.09709:10"
+          ],
+          "recall": 1.0,
+          "mrr": 0.2,
+          "ndcg": 0.38685280723454163,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "554d798e4ce58fd30820200c474d7e796dc8ba89",
+          "document": "1810.02268",
+          "answerable": true,
+          "predicted": [
+            "1810.02268:19",
+            "1810.02268:20",
+            "1810.02268:7",
+            "1810.02268:21",
+            "1810.02268:67"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "568466c62dd73a025bfd9643417cdb7a611f23a1",
+          "document": "1909.12016",
+          "answerable": true,
+          "predicted": [
+            "1909.12016:28",
+            "1909.12016:26",
+            "1909.12016:5",
+            "1909.12016:69",
+            "1909.12016:54"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "5695908a8c6beb0e3863a1458a1b93aab508fd34",
+          "document": "1910.10670",
+          "answerable": true,
+          "predicted": [
+            "1910.10670:2",
+            "1910.10670:25",
+            "1910.10670:41",
+            "1910.10670:44",
+            "1910.10670:42"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "56d788af4694c1cd1eebee0b83c585836d1f5f99",
+          "document": "1912.08084",
+          "answerable": true,
+          "predicted": [
+            "1912.08084:49",
+            "1912.08084:51",
+            "1912.08084:63",
+            "1912.08084:57",
+            "1912.08084:45"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "573b8b1ad919d3fd0ef7df84e55e5bfd165b3e84",
+          "document": "1909.07873",
+          "answerable": true,
+          "predicted": [
+            "1909.07873:71",
+            "1909.07873:56",
+            "1909.07873:2",
+            "1909.07873:58",
+            "1909.07873:11"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "578add9d3dadf86cd0876d42b03bf0114f83d0e7",
+          "document": "1907.04072",
+          "answerable": true,
+          "predicted": [
+            "1907.04072:15",
+            "1907.04072:2",
+            "1907.04072:17",
+            "1907.04072:38",
+            "1907.04072:23"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "622efbecd9350a0f4487bdff2b8b362ef2541f3c",
+          "document": "1708.05521",
+          "answerable": false,
+          "predicted": [
+            "1708.05521:15",
+            "1708.05521:21",
+            "1708.05521:22",
+            "1708.05521:12",
+            "1708.05521:14"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "627ce8a1db08a732d5a8f7e1f8a72e3de89847e6",
+          "document": "1911.09247",
+          "answerable": true,
+          "predicted": [
+            "1911.09247:27",
+            "1911.09247:51",
+            "1911.09247:19",
+            "1911.09247:11",
+            "1911.09247:49"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "647f6e6b168ec38fcdb737d3b276f78402282f9d",
+          "document": "1910.13793",
+          "answerable": true,
+          "predicted": [
+            "1910.13793:4",
+            "1910.13793:23",
+            "1910.13793:13",
+            "1910.13793:49",
+            "1910.13793:46"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "64c45fdb536ae294cf06716ac20d08b5fdb7944d",
+          "document": "1710.01789",
+          "answerable": true,
+          "predicted": [
+            "1710.01789:46",
+            "1710.01789:47",
+            "1710.01789:52",
+            "1710.01789:12",
+            "1710.01789:35"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "64f7337970e8d1989b2e1f7106d86f73c4a3d0af",
+          "document": "1803.08419",
+          "answerable": true,
+          "predicted": [
+            "1803.08419:17",
+            "1803.08419:45",
+            "1803.08419:11",
+            "1803.08419:19",
+            "1803.08419:15"
+          ],
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "abstained": false,
+          "evidence_coverage": 0.5
+        },
+        {
+          "id": "65c7a2b734dab51c4c81f722527424ff33b023f8",
+          "document": "1610.06510",
+          "answerable": true,
+          "predicted": [
+            "1610.06510:30",
+            "1610.06510:60",
+            "1610.06510:3",
+            "1610.06510:9",
+            "1610.06510:7"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "6606160e210d05b94f7cbd9c5ff91947339f9d02",
+          "document": "1902.08830",
+          "answerable": true,
+          "predicted": [
+            "1902.08830:14",
+            "1902.08830:3",
+            "1902.08830:2",
+            "1902.08830:122"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "67104a5111bf8ea626532581f20b33b851b5abc1",
+          "document": "1908.07721",
+          "answerable": false,
+          "predicted": [
+            "1908.07721:76",
+            "1908.07721:69",
+            "1908.07721:88",
+            "1908.07721:87",
+            "1908.07721:72"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "68f1df3fb0703ff694a055d23e7ec3f6fb449b8d",
+          "document": "1801.03615",
+          "answerable": true,
+          "predicted": [
+            "1801.03615:76",
+            "1801.03615:74",
+            "1801.03615:67",
+            "1801.03615:24",
+            "1801.03615:26"
+          ],
+          "recall": 0.5,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.3065735963827292,
+          "abstained": false,
+          "evidence_coverage": 0.5
+        },
+        {
+          "id": "69a46a227269c3aac9bf9d7c3d698c787642f806",
+          "document": "1911.11025",
+          "answerable": true,
+          "predicted": [
+            "1911.11025:4",
+            "1911.11025:14",
+            "1911.11025:3",
+            "1911.11025:28",
+            "1911.11025:7"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "6a20a3220c4edad758b912e2d3e5b99b0b295d96",
+          "document": "1805.04579",
+          "answerable": true,
+          "predicted": [
+            "1805.04579:20",
+            "1805.04579:41",
+            "1805.04579:10",
+            "1805.04579:88",
+            "1805.04579:57"
+          ],
+          "recall": 0.25,
+          "mrr": 0.25,
+          "ndcg": 0.16812753627111746,
+          "abstained": false,
+          "evidence_coverage": 0.25
+        },
+        {
+          "id": "6b1a6517b343fdb79f246955091ff25e440b9511",
+          "document": "1902.04094",
+          "answerable": true,
+          "predicted": [
+            "1902.04094:12",
+            "1902.04094:16",
+            "1902.04094:19",
+            "1902.04094:13",
+            "1902.04094:15"
+          ],
+          "recall": 0.75,
+          "mrr": 0.5,
+          "ndcg": 0.5654495432396527,
+          "abstained": false,
+          "evidence_coverage": 0.75
+        },
+        {
+          "id": "6c5a64b5150305c584326882d37af5b0e58de2fd",
+          "document": "1804.03839",
+          "answerable": false,
+          "predicted": [
+            "1804.03839:3",
+            "1804.03839:68",
+            "1804.03839:6",
+            "1804.03839:10",
+            "1804.03839:41"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "6d55e377335815b7ad134d1a2977d231ad34a25b",
+          "document": "1701.03578",
+          "answerable": true,
+          "predicted": [
+            "1701.03578:27",
+            "1701.03578:30",
+            "1701.03578:26",
+            "1701.03578:43"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.9197207891481876,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "718c0232b1f15ddb73d40c3afbd6c5c0d0354566",
+          "document": "1806.09652",
+          "answerable": true,
+          "predicted": [
+            "1806.09652:34",
+            "1806.09652:44",
+            "1806.09652:5",
+            "1806.09652:40",
+            "1806.09652:10"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "754d7475b8bf50499ed77328b4b0eeedf9cb2623",
+          "document": "1806.09652",
+          "answerable": true,
+          "predicted": [
+            "1806.09652:39",
+            "1806.09652:24",
+            "1806.09652:40",
+            "1806.09652:33",
+            "1806.09652:15"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "75b3e2d2caec56e5c8fbf6532070b98d70774b95",
+          "document": "1911.12237",
+          "answerable": true,
+          "predicted": [
+            "1911.12237:15",
+            "1911.12237:12",
+            "1911.12237:9",
+            "1911.12237:10",
+            "1911.12237:13"
+          ],
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "abstained": false,
+          "evidence_coverage": 0.5
+        },
+        {
+          "id": "778c6a27182349dc5275282c3e9577bda2555c3d",
+          "document": "1905.08067",
+          "answerable": true,
+          "predicted": [
+            "1905.08067:14",
+            "1905.08067:6",
+            "1905.08067:33",
+            "1905.08067:4",
+            "1905.08067:9"
+          ],
+          "recall": 0.5,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.3065735963827292,
+          "abstained": false,
+          "evidence_coverage": 0.5
+        },
+        {
+          "id": "7ba6330d105f49c7f71dba148bb73245a8ef2966",
+          "document": "1708.07690",
+          "answerable": true,
+          "predicted": [
+            "1708.07690:39",
+            "1708.07690:41",
+            "1708.07690:43",
+            "1708.07690:27",
+            "1708.07690:33"
+          ],
+          "recall": 1.0,
+          "mrr": 0.2,
+          "ndcg": 0.38685280723454163,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "7cf44877dae8873139aede381fb9908dd0c546c4",
+          "document": "1703.04357",
+          "answerable": true,
+          "predicted": [
+            "1703.04357:7",
+            "1703.04357:6",
+            "1703.04357:14",
+            "1703.04357:15",
+            "1703.04357:8"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "80d6b9123a10358f57f259b8996a792cac08cb88",
+          "document": "1809.06083",
+          "answerable": true,
+          "predicted": [
+            "1809.06083:19",
+            "1809.06083:15",
+            "1809.06083:17",
+            "1809.06083:2",
+            "1809.06083:16"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "824629b36a75753b1500d9dcaee0fc3c758297b1",
+          "document": "1905.08067",
+          "answerable": true,
+          "predicted": [
+            "1905.08067:13",
+            "1905.08067:17",
+            "1905.08067:16",
+            "1905.08067:33"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "908ba58d26d15c14600623498d4e86c9b73b14b2",
+          "document": "2004.02105",
+          "answerable": true,
+          "predicted": [
+            "2004.02105:51",
+            "2004.02105:46",
+            "2004.02105:34",
+            "2004.02105:67",
+            "2004.02105:40"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "915e4d0b3cb03789a20380ead961d473cb95bfc3",
+          "document": "1710.11027",
+          "answerable": true,
+          "predicted": [
+            "1710.11027:8",
+            "1710.11027:9",
+            "1710.11027:20",
+            "1710.11027:12"
+          ],
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "946d7c877d363f549f84e9500c852dce70ae5d36",
+          "document": "1911.01940",
+          "answerable": false,
+          "predicted": [
+            "1911.01940:29",
+            "1911.01940:52",
+            "1911.01940:51",
+            "1911.01940:10",
+            "1911.01940:49"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "96459b02efa82993a0b413530ed0b517c6633eea",
+          "document": "1908.10090",
+          "answerable": true,
+          "predicted": [
+            "1908.10090:26",
+            "1908.10090:24",
+            "1908.10090:25",
+            "1908.10090:23",
+            "1908.10090:31"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6509209298071326,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "965e0ce975a0b8612a30cfc31bbfd4b8a57aa138",
+          "document": "1706.02427",
+          "answerable": true,
+          "predicted": [
+            "1706.02427:9",
+            "1706.02427:57",
+            "1706.02427:10",
+            "1706.02427:8",
+            "1706.02427:55"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "9da181ac8f2600eb19364c1b1e3cdeb569811a11",
+          "document": "1908.10001",
+          "answerable": true,
+          "predicted": [
+            "1908.10001:19",
+            "1908.10001:14",
+            "1908.10001:31",
+            "1908.10001:35",
+            "1908.10001:28"
+          ],
+          "recall": 0.6666666666666666,
+          "mrr": 1.0,
+          "ndcg": 0.7653606369886217,
+          "abstained": false,
+          "evidence_coverage": 0.6666666666666666
+        },
+        {
+          "id": "9eec16e560f9ccafd7ba6f1e0db742b330b42ba9",
+          "document": "1710.11334",
+          "answerable": true,
+          "predicted": [
+            "1710.11334:21",
+            "1710.11334:22",
+            "1710.11334:17",
+            "1710.11334:15"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "a2baa8e266318f23f43321c4b2b9cf467718c94a",
+          "document": "1611.00440",
+          "answerable": true,
+          "predicted": [
+            "1611.00440:7",
+            "1611.00440:12",
+            "1611.00440:14",
+            "1611.00440:28",
+            "1611.00440:15"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "a4a9971799c8860b50f219c93f050ebf6a627b3d",
+          "document": "1905.08067",
+          "answerable": true,
+          "predicted": [
+            "1905.08067:30",
+            "1905.08067:13",
+            "1905.08067:33",
+            "1905.08067:22",
+            "1905.08067:11"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "a5df7361ae37b9512fb57cb93efbece9ded8cab1",
+          "document": "1710.11027",
+          "answerable": true,
+          "predicted": [
+            "1710.11027:16",
+            "1710.11027:15",
+            "1710.11027:18"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "a67a2d9acad1787b636ca2681330f4c29a0b0254",
+          "document": "1606.07043",
+          "answerable": true,
+          "predicted": [
+            "1606.07043:18",
+            "1606.07043:3",
+            "1606.07043:31",
+            "1606.07043:11",
+            "1606.07043:8"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "a8e5e10d13b3f21dd11e8eb58e30cc25efc56e93",
+          "document": "1708.09025",
+          "answerable": true,
+          "predicted": [
+            "1708.09025:2",
+            "1708.09025:70",
+            "1708.09025:8",
+            "1708.09025:68"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "a97137318025a6642ed0634f7159255270ba3d4f",
+          "document": "2004.03090",
+          "answerable": false,
+          "predicted": [
+            "2004.03090:18",
+            "2004.03090:8",
+            "2004.03090:7",
+            "2004.03090:2",
+            "2004.03090:30"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "ac87dd34d28c3edd9419fa0145f3d38c87d696aa",
+          "document": "1807.08089",
+          "answerable": true,
+          "predicted": [
+            "1807.08089:43",
+            "1807.08089:39",
+            "1807.08089:16",
+            "1807.08089:2",
+            "1807.08089:31"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "af45ff2c4209f14235482329d0729864fb2bd4b0",
+          "document": "1911.12893",
+          "answerable": true,
+          "predicted": [
+            "1911.12893:62",
+            "1911.12893:9",
+            "1911.12893:47",
+            "1911.12893:54",
+            "1911.12893:56"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "b0edb9023f35a5a02eb8fb968e880e36233e66b3",
+          "document": "1910.12477",
+          "answerable": false,
+          "predicted": [
+            "1910.12477:52",
+            "1910.12477:4",
+            "1910.12477:7",
+            "1910.12477:58",
+            "1910.12477:6"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "b57ad10468e1ba2a7a34396688dbb10a575d89f5",
+          "document": "1706.02427",
+          "answerable": true,
+          "predicted": [
+            "1706.02427:48",
+            "1706.02427:47",
+            "1706.02427:20",
+            "1706.02427:40",
+            "1706.02427:43"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "b783ec5cb9ad595da7db2c0ddf871152ae382c5f",
+          "document": "1805.04833",
+          "answerable": true,
+          "predicted": [
+            "1805.04833:2",
+            "1805.04833:10",
+            "1805.04833:32",
+            "1805.04833:3",
+            "1805.04833:7"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "b79c85fa84712d3028cb5be2af873c634e51140e",
+          "document": "1605.05156",
+          "answerable": true,
+          "predicted": [
+            "1605.05156:6",
+            "1605.05156:13",
+            "1605.05156:18",
+            "1605.05156:10",
+            "1605.05156:5"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "b79ff0a50bf9f361c5e5fed68525283856662076",
+          "document": "1805.09960",
+          "answerable": true,
+          "predicted": [
+            "1805.09960:84",
+            "1805.09960:60",
+            "1805.09960:65",
+            "1805.09960:72",
+            "1805.09960:62"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "ba406e07c33a9161e29c75d292c82a15503beae5",
+          "document": "1907.12984",
+          "answerable": true,
+          "predicted": [
+            "1907.12984:73",
+            "1907.12984:72",
+            "1907.12984:90",
+            "1907.12984:78",
+            "1907.12984:95"
+          ],
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "ba7fea78b0b888a714cb7d89944b69c5038a1ef1",
+          "document": "1806.03369",
+          "answerable": true,
+          "predicted": [
+            "1806.03369:30",
+            "1806.03369:25",
+            "1806.03369:36",
+            "1806.03369:20",
+            "1806.03369:19"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "baec99756b80eec7c0234a08bc2855e6770bcaeb",
+          "document": "1907.04072",
+          "answerable": true,
+          "predicted": [
+            "1907.04072:59",
+            "1907.04072:21",
+            "1907.04072:34",
+            "1907.04072:33",
+            "1907.04072:32"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "bbfe7e131ed776c85f2359b748db1325386c1af5",
+          "document": "1807.03674",
+          "answerable": true,
+          "predicted": [
+            "1807.03674:10",
+            "1807.03674:9",
+            "1807.03674:17",
+            "1807.03674:7",
+            "1807.03674:20"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "bd3562d2b3c162e9d27404d56b77e15f707d8b0f",
+          "document": "1705.00571",
+          "answerable": true,
+          "predicted": [
+            "1705.00571:34",
+            "1705.00571:35",
+            "1705.00571:33"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "be0b438952048fe6bb91c61ba48e529d784bdcea",
+          "document": "2004.03090",
+          "answerable": false,
+          "predicted": [
+            "2004.03090:18",
+            "2004.03090:8",
+            "2004.03090:7",
+            "2004.03090:2",
+            "2004.03090:16"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "bfcbb47f3c54ee1a459183e04e4c5a41ac9ae83b",
+          "document": "1610.07149",
+          "answerable": false,
+          "predicted": [
+            "1610.07149:58",
+            "1610.07149:67",
+            "1610.07149:52",
+            "1610.07149:53",
+            "1610.07149:68"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "c176eb1ccaa0e50fb7512153f0716e60bf74aa53",
+          "document": "1910.01340",
+          "answerable": true,
+          "predicted": [
+            "1910.01340:55",
+            "1910.01340:47",
+            "1910.01340:13",
+            "1910.01340:35",
+            "1910.01340:28"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "c3ce95658eea1e62193570955f105839de3d7e2d",
+          "document": "1911.03324",
+          "answerable": true,
+          "predicted": [
+            "1911.03324:61",
+            "1911.03324:18",
+            "1911.03324:20",
+            "1911.03324:5",
+            "1911.03324:16"
+          ],
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.5012658353418871,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "c6170bb09ba2a416f8fa9b542f0ab05a64dbf2e4",
+          "document": "1910.07973",
+          "answerable": false,
+          "predicted": [
+            "1910.07973:20",
+            "1910.07973:17",
+            "1910.07973:12",
+            "1910.07973:16",
+            "1910.07973:18"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "c68946ae2e548ec8517c7902585c032b3f3876e6",
+          "document": "1901.05389",
+          "answerable": true,
+          "predicted": [
+            "1901.05389:2",
+            "1901.05389:3",
+            "1901.05389:21",
+            "1901.05389:9",
+            "1901.05389:30"
+          ],
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "abstained": false,
+          "evidence_coverage": 0.5
+        },
+        {
+          "id": "c7f43c95db3d0c870407cd0e7becdd802463683b",
+          "document": "1910.09362",
+          "answerable": true,
+          "predicted": [
+            "1910.09362:7",
+            "1910.09362:96",
+            "1910.09362:20",
+            "1910.09362:3",
+            "1910.09362:17"
+          ],
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "abstained": false,
+          "evidence_coverage": 0.5
+        },
+        {
+          "id": "c97306c1be5d59cf27b1054adfa8f1da47d292ce",
+          "document": "1810.02229",
+          "answerable": true,
+          "predicted": [
+            "1810.02229:35",
+            "1810.02229:33",
+            "1810.02229:10",
+            "1810.02229:19",
+            "1810.02229:26"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "c9eae337edea0edb12030a7d4b01c3a3c73c16d3",
+          "document": "1806.04387",
+          "answerable": true,
+          "predicted": [
+            "1806.04387:56",
+            "1806.04387:49",
+            "1806.04387:54",
+            "1806.04387:53",
+            "1806.04387:55"
+          ],
+          "recall": 0.25,
+          "mrr": 1.0,
+          "ndcg": 0.3903800499921017,
+          "abstained": false,
+          "evidence_coverage": 0.25
+        },
+        {
+          "id": "caebea05935cae1f5d88749a2fc748e62976eab7",
+          "document": "1710.11334",
+          "answerable": true,
+          "predicted": [
+            "1710.11334:22",
+            "1710.11334:21",
+            "1710.11334:24",
+            "1710.11334:19"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "cc8f495cac0af12054c746a5b796e989ff0e5d5f",
+          "document": "1710.01789",
+          "answerable": false,
+          "predicted": [
+            "1710.01789:46",
+            "1710.01789:6",
+            "1710.01789:36",
+            "1710.01789:34",
+            "1710.01789:12"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "ced63053eb631c78a4ddd8c85ec0f3323a631a54",
+          "document": "1708.05482",
+          "answerable": true,
+          "predicted": [
+            "1708.05482:49",
+            "1708.05482:5",
+            "1708.05482:8",
+            "1708.05482:50",
+            "1708.05482:10"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "d3d6a4a721b8bc9776f62759b8d9be1a19c6b0d2",
+          "document": "1710.01789",
+          "answerable": false,
+          "predicted": [
+            "1710.01789:50",
+            "1710.01789:36",
+            "1710.01789:34",
+            "1710.01789:44",
+            "1710.01789:37"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "d64fa192a7e9918c6a22d819abad581af0644c7d",
+          "document": "1802.08969",
+          "answerable": true,
+          "predicted": [
+            "1802.08969:47",
+            "1802.08969:114",
+            "1802.08969:117",
+            "1802.08969:71",
+            "1802.08969:48"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "d9a45fea8539aac01dec01f29b7d04b44b9c2ca6",
+          "document": "1909.01720",
+          "answerable": true,
+          "predicted": [
+            "1909.01720:78",
+            "1909.01720:72",
+            "1909.01720:76",
+            "1909.01720:60",
+            "1909.01720:5"
+          ],
+          "recall": 1.0,
+          "mrr": 0.2,
+          "ndcg": 0.38685280723454163,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "d9e7633004ed1bc1ee45be58409bcc1fa6db59b2",
+          "document": "1908.11049",
+          "answerable": true,
+          "predicted": [
+            "1908.11049:13",
+            "1908.11049:35",
+            "1908.11049:16",
+            "1908.11049:21",
+            "1908.11049:52"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "dd807195d10c492da2b0da8b2c56b8f7b75db20e",
+          "document": "1607.00167",
+          "answerable": false,
+          "predicted": [
+            "1607.00167:11",
+            "1607.00167:10",
+            "1607.00167:2",
+            "1607.00167:8",
+            "1607.00167:15"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "dd81f58c782169886235c48b8f9a08e0954dd3ae",
+          "document": "2003.12660",
+          "answerable": true,
+          "predicted": [
+            "2003.12660:25",
+            "2003.12660:6",
+            "2003.12660:22",
+            "2003.12660:9",
+            "2003.12660:11"
+          ],
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "de689a17b0b9fb6bbb80e9b85fb44b36b56de2fd",
+          "document": "2003.07459",
+          "answerable": true,
+          "predicted": [
+            "2003.07459:42",
+            "2003.07459:15",
+            "2003.07459:16",
+            "2003.07459:39",
+            "2003.07459:3"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "e6204daf4efeb752fdbd5c26e179efcb8ddd2807",
+          "document": "1601.03313",
+          "answerable": true,
+          "predicted": [
+            "1601.03313:55",
+            "1601.03313:59",
+            "1601.03313:58",
+            "1601.03313:46",
+            "1601.03313:20"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "e6f5444b7c08d79d4349e35d5298a63bb30e7004",
+          "document": "1708.07252",
+          "answerable": true,
+          "predicted": [
+            "1708.07252:63",
+            "1708.07252:2",
+            "1708.07252:14",
+            "1708.07252:73"
+          ],
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "e797634fa77e490783b349034f9e095ee570b7a9",
+          "document": "1804.05253",
+          "answerable": true,
+          "predicted": [
+            "1804.05253:5",
+            "1804.05253:36",
+            "1804.05253:3",
+            "1804.05253:8",
+            "1804.05253:4"
+          ],
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.2640681225725909,
+          "abstained": false,
+          "evidence_coverage": 0.5
+        },
+        {
+          "id": "e7ce612f53e9be705cdb8daa775eae51778825ef",
+          "document": "1804.03839",
+          "answerable": false,
+          "predicted": [
+            "1804.03839:68",
+            "1804.03839:3",
+            "1804.03839:9",
+            "1804.03839:28",
+            "1804.03839:10"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "e86b9633dc691976dd00ed57d1675e1460f7167b",
+          "document": "1910.12477",
+          "answerable": false,
+          "predicted": [
+            "1910.12477:9",
+            "1910.12477:33",
+            "1910.12477:41",
+            "1910.12477:37",
+            "1910.12477:58"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "ec2045e0da92989642a5b5f2b1130c8bd765bcc5",
+          "document": "1901.03253",
+          "answerable": true,
+          "predicted": [
+            "1901.03253:40",
+            "1901.03253:76",
+            "1901.03253:50",
+            "1901.03253:43",
+            "1901.03253:24"
+          ],
+          "recall": 1.0,
+          "mrr": 0.2,
+          "ndcg": 0.38685280723454163,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "ecaa10a2d9927fa6ab6a954488f12aa6b42ddc1a",
+          "document": "1909.04242",
+          "answerable": true,
+          "predicted": [
+            "1909.04242:40",
+            "1909.04242:41",
+            "1909.04242:8",
+            "1909.04242:11",
+            "1909.04242:42"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "ed44f7e698d6124cb86791841d02fc6f8b4d862a",
+          "document": "1908.11049",
+          "answerable": true,
+          "predicted": [
+            "1908.11049:4",
+            "1908.11049:7",
+            "1908.11049:3",
+            "1908.11049:2"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "ee2c2fb01d67f4c58855bf23186cbd45cecbfa56",
+          "document": "1606.07947",
+          "answerable": true,
+          "predicted": [
+            "1606.07947:60",
+            "1606.07947:59",
+            "1606.07947:58",
+            "1606.07947:5",
+            "1606.07947:65"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "f15bc40960bd3f81bc791f43ab5c94c52378692d",
+          "document": "1804.00982",
+          "answerable": true,
+          "predicted": [
+            "1804.00982:21",
+            "1804.00982:15",
+            "1804.00982:12",
+            "1804.00982:5",
+            "1804.00982:17"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6934264036172708,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "f1a50f88898556ecdba8e9cac13ae54c11835945",
+          "document": "1909.03553",
+          "answerable": true,
+          "predicted": [
+            "1909.03553:16",
+            "1909.03553:3",
+            "1909.03553:63",
+            "1909.03553:29",
+            "1909.03553:6"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "f1e70b63c45ab0fc35dc63de089c802543e30c8f",
+          "document": "1711.11118",
+          "answerable": false,
+          "predicted": [
+            "1711.11118:7",
+            "1711.11118:4",
+            "1711.11118:3"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "f77d7cddef3e021d70e16b9e16cecfd4b8ee80d3",
+          "document": "1606.07947",
+          "answerable": true,
+          "predicted": [
+            "1606.07947:12",
+            "1606.07947:48",
+            "1606.07947:40",
+            "1606.07947:16",
+            "1606.07947:66"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "f7b91b99279833f9f489635eb8f77c6d13136098",
+          "document": "1912.11980",
+          "answerable": true,
+          "predicted": [
+            "1912.11980:71",
+            "1912.11980:70",
+            "1912.11980:6",
+            "1912.11980:21",
+            "1912.11980:58"
+          ],
+          "recall": 1.0,
+          "mrr": 0.2,
+          "ndcg": 0.38685280723454163,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "f92c344e9b1a986754277fd0f08a47dc3e5f9feb",
+          "document": "1803.08419",
+          "answerable": true,
+          "predicted": [
+            "1803.08419:73",
+            "1803.08419:7",
+            "1803.08419:20",
+            "1803.08419:72",
+            "1803.08419:71"
+          ],
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.5012658353418871,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "fa468c31dd0f9095d7cec010f2262eeed565a7d2",
+          "document": "1911.05652",
+          "answerable": false,
+          "predicted": [
+            "1911.05652:6",
+            "1911.05652:29",
+            "1911.05652:10",
+            "1911.05652:36",
+            "1911.05652:35"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "fa800a21469a70fa6490bfc67cabdcc8bf086fb5",
+          "document": "1902.06734",
+          "answerable": true,
+          "predicted": [
+            "1902.06734:20",
+            "1902.06734:28",
+            "1902.06734:21",
+            "1902.06734:51",
+            "1902.06734:19"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.8503449055347546,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        }
+      ]
+    },
+    "lexical_tfidf": {
+      "recall": 0.5883333333333334,
+      "mrr": 0.3413333333333333,
+      "ndcg": 0.3921084288801146,
+      "evidence_coverage": 0.565,
+      "answerable_empty": 0,
+      "unknown_abstentions": 0,
+      "answerable_count": 100,
+      "unknown_count": 20,
+      "selector_errors": 0,
+      "queries": [
+        {
+          "id": "0035b351df63971ec57e36d4bfc6f7594bed41ae",
+          "document": "1802.09233",
+          "answerable": false,
+          "predicted": [
+            "1802.09233:3",
+            "1802.09233:37",
+            "1802.09233:34",
+            "1802.09233:7",
+            "1802.09233:14"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "058b6e3fdbb607fa7dbfc688628b3e13e130c35a",
+          "document": "1912.00239",
+          "answerable": true,
+          "predicted": [
+            "1912.00239:54",
+            "1912.00239:59",
+            "1912.00239:2",
+            "1912.00239:22"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "065623cc1d5f5b19ec1f84d286522fc2f805c6ce",
+          "document": "1706.04206",
+          "answerable": true,
+          "predicted": [
+            "1706.04206:7",
+            "1706.04206:13",
+            "1706.04206:4",
+            "1706.04206:28",
+            "1706.04206:11"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "0778cbbd093f8b779f7cf26302b2a8e081ccfb40",
+          "document": "1703.10152",
+          "answerable": true,
+          "predicted": [
+            "1703.10152:29",
+            "1703.10152:52",
+            "1703.10152:49",
+            "1703.10152:20",
+            "1703.10152:19"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "079e654c97508c521c07ab4d24cdaaede5602c61",
+          "document": "1605.05156",
+          "answerable": true,
+          "predicted": [
+            "1605.05156:5",
+            "1605.05156:3",
+            "1605.05156:9",
+            "1605.05156:2"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "08561f6ba578ce8f8d284abf90f5b24eb1f804d3",
+          "document": "1901.03253",
+          "answerable": true,
+          "predicted": [
+            "1901.03253:25",
+            "1901.03253:8",
+            "1901.03253:39",
+            "1901.03253:5",
+            "1901.03253:61"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "11679d1feba747c64bbbc62939a20fbb69ada0f3",
+          "document": "1902.06734",
+          "answerable": true,
+          "predicted": [
+            "1902.06734:6",
+            "1902.06734:48",
+            "1902.06734:53",
+            "1902.06734:45",
+            "1902.06734:43"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "11ef46187a5bf15e89d63220fdeaecbeb92d818e",
+          "document": "1610.06510",
+          "answerable": true,
+          "predicted": [
+            "1610.06510:67",
+            "1610.06510:19",
+            "1610.06510:68",
+            "1610.06510:48",
+            "1610.06510:30"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "16a10c1681dc5a399b6d34b4eed7bb1fef816dd0",
+          "document": "1910.02001",
+          "answerable": true,
+          "predicted": [
+            "1910.02001:40",
+            "1910.02001:89",
+            "1910.02001:76",
+            "1910.02001:32",
+            "1910.02001:62"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "16edc21a6abc89ee2280dccf1c867c2ac4552524",
+          "document": "1809.03695",
+          "answerable": true,
+          "predicted": [
+            "1809.03695:8",
+            "1809.03695:9",
+            "1809.03695:5",
+            "1809.03695:15",
+            "1809.03695:11"
+          ],
+          "recall": 0.6666666666666666,
+          "mrr": 0.5,
+          "ndcg": 0.4776237035032179,
+          "abstained": false,
+          "evidence_coverage": 0.6666666666666666
+        },
+        {
+          "id": "1702985a3528e876bb19b8e223399729d778b4e4",
+          "document": "2003.12450",
+          "answerable": true,
+          "predicted": [
+            "2003.12450:4",
+            "2003.12450:8",
+            "2003.12450:2",
+            "2003.12450:6"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "17fd6deb9e10707f9d1b70165dedb045e1889aac",
+          "document": "1908.11053",
+          "answerable": true,
+          "predicted": [
+            "1908.11053:55",
+            "1908.11053:78",
+            "1908.11053:53",
+            "1908.11053:12",
+            "1908.11053:25"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "183b385fb59ff1e3f658d4555a08b67c005a8734",
+          "document": "1809.03391",
+          "answerable": true,
+          "predicted": [
+            "1809.03391:42",
+            "1809.03391:19",
+            "1809.03391:4",
+            "1809.03391:6",
+            "1809.03391:35"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "1acf06105f6c1930f869347ef88160f55cbf382b",
+          "document": "1909.00871",
+          "answerable": true,
+          "predicted": [
+            "1909.00871:27",
+            "1909.00871:58",
+            "1909.00871:24",
+            "1909.00871:25"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "22225ba18a6efe74b1315cc08405011d5431498e",
+          "document": "1705.00571",
+          "answerable": true,
+          "predicted": [
+            "1705.00571:29",
+            "1705.00571:3",
+            "1705.00571:30",
+            "1705.00571:5",
+            "1705.00571:8"
+          ],
+          "recall": 0.6666666666666666,
+          "mrr": 0.5,
+          "ndcg": 0.4776237035032179,
+          "abstained": false,
+          "evidence_coverage": 0.3333333333333333
+        },
+        {
+          "id": "2301424672cb79297cf7ad95f23b58515e4acce8",
+          "document": "1911.05652",
+          "answerable": true,
+          "predicted": [
+            "1911.05652:4",
+            "1911.05652:2",
+            "1911.05652:21",
+            "1911.05652:27",
+            "1911.05652:20"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "2686e8d51caff9a19684e0c9984bcb5a1937d08d",
+          "document": "1606.02892",
+          "answerable": true,
+          "predicted": [
+            "1606.02892:31",
+            "1606.02892:47",
+            "1606.02892:24",
+            "1606.02892:54",
+            "1606.02892:59"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "2a55076a66795793d79a3edfae1041098404fbc3",
+          "document": "1909.04242",
+          "answerable": false,
+          "predicted": [
+            "1909.04242:42",
+            "1909.04242:40",
+            "1909.04242:9",
+            "1909.04242:4",
+            "1909.04242:12"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "2ecd12069388fd58ad5f8f4ae7ac1bb4f56497b9",
+          "document": "1905.08067",
+          "answerable": true,
+          "predicted": [
+            "1905.08067:13",
+            "1905.08067:34",
+            "1905.08067:33",
+            "1905.08067:8"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "2ee4ecf98ef7d02c9e4d103968098fe35f067bbb",
+          "document": "1908.07491",
+          "answerable": true,
+          "predicted": [
+            "1908.07491:28",
+            "1908.07491:14",
+            "1908.07491:37",
+            "1908.07491:17",
+            "1908.07491:30"
+          ],
+          "recall": 0.3333333333333333,
+          "mrr": 0.25,
+          "ndcg": 0.20210734650054757,
+          "abstained": false,
+          "evidence_coverage": 0.3333333333333333
+        },
+        {
+          "id": "32f2aa2df0152050cbcd27dd2f408b2fa5894031",
+          "document": "1711.01567",
+          "answerable": true,
+          "predicted": [
+            "1711.01567:35",
+            "1711.01567:21",
+            "1711.01567:3",
+            "1711.01567:29",
+            "1711.01567:18"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "380e71848d4b0d1e983d504b1249119612f00bcb",
+          "document": "1706.00188",
+          "answerable": true,
+          "predicted": [
+            "1706.00188:5",
+            "1706.00188:3",
+            "1706.00188:19",
+            "1706.00188:4",
+            "1706.00188:17"
+          ],
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "39d20b396f12f0432770c15b80dc0d740202f98d",
+          "document": "1711.11118",
+          "answerable": false,
+          "predicted": [
+            "1711.11118:4",
+            "1711.11118:18",
+            "1711.11118:16"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "3a3c372b6d73995adbdfa26103c85b32d071ff10",
+          "document": "1911.04128",
+          "answerable": false,
+          "predicted": [
+            "1911.04128:18",
+            "1911.04128:25",
+            "1911.04128:24",
+            "1911.04128:33",
+            "1911.04128:10"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "3cc0d773085dc175b85955e95911a2cfaab2cdc4",
+          "document": "1707.06519",
+          "answerable": true,
+          "predicted": [
+            "1707.06519:15",
+            "1707.06519:5",
+            "1707.06519:32",
+            "1707.06519:38"
+          ],
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "3ea82a5ca495ffbd1e30e8655aef1be4ba423efe",
+          "document": "1911.12559",
+          "answerable": true,
+          "predicted": [
+            "1911.12559:15",
+            "1911.12559:3",
+            "1911.12559:6",
+            "1911.12559:16"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "48ff9645a506aa2c17810d2654d1f0f0d9e609ee",
+          "document": "1910.01108",
+          "answerable": true,
+          "predicted": [
+            "1910.01108:21",
+            "1910.01108:4",
+            "1910.01108:19",
+            "1910.01108:5",
+            "1910.01108:2"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "49cd18448101da146c3187a44412628f8c722d7b",
+          "document": "1705.01306",
+          "answerable": true,
+          "predicted": [
+            "1705.01306:3",
+            "1705.01306:2",
+            "1705.01306:9",
+            "1705.01306:56",
+            "1705.01306:61"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "4ddc53afffaf1622d97695347dd1b3190d156dee",
+          "document": "1808.07231",
+          "answerable": true,
+          "predicted": [
+            "1808.07231:20",
+            "1808.07231:26",
+            "1808.07231:7",
+            "1808.07231:36",
+            "1808.07231:4"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "52868394eb2b3b37eb5f47f51c06ad53061f4495",
+          "document": "2002.06854",
+          "answerable": true,
+          "predicted": [
+            "2002.06854:54",
+            "2002.06854:23",
+            "2002.06854:56",
+            "2002.06854:25",
+            "2002.06854:6"
+          ],
+          "recall": 1.0,
+          "mrr": 0.2,
+          "ndcg": 0.38685280723454163,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "5422a3f2a083395416d6f99c57d28335eb2e44e1",
+          "document": "1911.09709",
+          "answerable": true,
+          "predicted": [
+            "1911.09709:20",
+            "1911.09709:15",
+            "1911.09709:6",
+            "1911.09709:64",
+            "1911.09709:44"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "554d798e4ce58fd30820200c474d7e796dc8ba89",
+          "document": "1810.02268",
+          "answerable": true,
+          "predicted": [
+            "1810.02268:17",
+            "1810.02268:2",
+            "1810.02268:40",
+            "1810.02268:47",
+            "1810.02268:61"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "568466c62dd73a025bfd9643417cdb7a611f23a1",
+          "document": "1909.12016",
+          "answerable": true,
+          "predicted": [
+            "1909.12016:13",
+            "1909.12016:5",
+            "1909.12016:16",
+            "1909.12016:4",
+            "1909.12016:32"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "5695908a8c6beb0e3863a1458a1b93aab508fd34",
+          "document": "1910.10670",
+          "answerable": true,
+          "predicted": [
+            "1910.10670:3",
+            "1910.10670:2",
+            "1910.10670:6",
+            "1910.10670:16"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "56d788af4694c1cd1eebee0b83c585836d1f5f99",
+          "document": "1912.08084",
+          "answerable": true,
+          "predicted": [
+            "1912.08084:50",
+            "1912.08084:77",
+            "1912.08084:82",
+            "1912.08084:43",
+            "1912.08084:57"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "573b8b1ad919d3fd0ef7df84e55e5bfd165b3e84",
+          "document": "1909.07873",
+          "answerable": true,
+          "predicted": [
+            "1909.07873:11",
+            "1909.07873:79",
+            "1909.07873:24"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "578add9d3dadf86cd0876d42b03bf0114f83d0e7",
+          "document": "1907.04072",
+          "answerable": true,
+          "predicted": [
+            "1907.04072:17",
+            "1907.04072:55",
+            "1907.04072:19",
+            "1907.04072:4",
+            "1907.04072:57"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "622efbecd9350a0f4487bdff2b8b362ef2541f3c",
+          "document": "1708.05521",
+          "answerable": false,
+          "predicted": [
+            "1708.05521:22",
+            "1708.05521:12",
+            "1708.05521:5",
+            "1708.05521:15",
+            "1708.05521:18"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "627ce8a1db08a732d5a8f7e1f8a72e3de89847e6",
+          "document": "1911.09247",
+          "answerable": true,
+          "predicted": [
+            "1911.09247:87",
+            "1911.09247:27",
+            "1911.09247:49",
+            "1911.09247:30",
+            "1911.09247:62"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "647f6e6b168ec38fcdb737d3b276f78402282f9d",
+          "document": "1910.13793",
+          "answerable": true,
+          "predicted": [
+            "1910.13793:4",
+            "1910.13793:3",
+            "1910.13793:2",
+            "1910.13793:24",
+            "1910.13793:11"
+          ],
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "64c45fdb536ae294cf06716ac20d08b5fdb7944d",
+          "document": "1710.01789",
+          "answerable": true,
+          "predicted": [
+            "1710.01789:32",
+            "1710.01789:30",
+            "1710.01789:47",
+            "1710.01789:9",
+            "1710.01789:24"
+          ],
+          "recall": 0.5,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.3065735963827292,
+          "abstained": false,
+          "evidence_coverage": 0.5
+        },
+        {
+          "id": "64f7337970e8d1989b2e1f7106d86f73c4a3d0af",
+          "document": "1803.08419",
+          "answerable": true,
+          "predicted": [
+            "1803.08419:17",
+            "1803.08419:16",
+            "1803.08419:9",
+            "1803.08419:3"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "65c7a2b734dab51c4c81f722527424ff33b023f8",
+          "document": "1610.06510",
+          "answerable": true,
+          "predicted": [
+            "1610.06510:65",
+            "1610.06510:67",
+            "1610.06510:19",
+            "1610.06510:60",
+            "1610.06510:16"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "6606160e210d05b94f7cbd9c5ff91947339f9d02",
+          "document": "1902.08830",
+          "answerable": true,
+          "predicted": [
+            "1902.08830:96",
+            "1902.08830:31",
+            "1902.08830:12",
+            "1902.08830:76",
+            "1902.08830:61"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "67104a5111bf8ea626532581f20b33b851b5abc1",
+          "document": "1908.07721",
+          "answerable": false,
+          "predicted": [
+            "1908.07721:47",
+            "1908.07721:23",
+            "1908.07721:64",
+            "1908.07721:74",
+            "1908.07721:66"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "68f1df3fb0703ff694a055d23e7ec3f6fb449b8d",
+          "document": "1801.03615",
+          "answerable": true,
+          "predicted": [
+            "1801.03615:35",
+            "1801.03615:12",
+            "1801.03615:17",
+            "1801.03615:15",
+            "1801.03615:29"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "69a46a227269c3aac9bf9d7c3d698c787642f806",
+          "document": "1911.11025",
+          "answerable": true,
+          "predicted": [
+            "1911.11025:85",
+            "1911.11025:8",
+            "1911.11025:57",
+            "1911.11025:10",
+            "1911.11025:23"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "6a20a3220c4edad758b912e2d3e5b99b0b295d96",
+          "document": "1805.04579",
+          "answerable": true,
+          "predicted": [
+            "1805.04579:47",
+            "1805.04579:58",
+            "1805.04579:79",
+            "1805.04579:104",
+            "1805.04579:29"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "6b1a6517b343fdb79f246955091ff25e440b9511",
+          "document": "1902.04094",
+          "answerable": true,
+          "predicted": [
+            "1902.04094:12",
+            "1902.04094:20",
+            "1902.04094:17",
+            "1902.04094:2",
+            "1902.04094:14"
+          ],
+          "recall": 0.5,
+          "mrr": 0.2,
+          "ndcg": 0.23719771276929622,
+          "abstained": false,
+          "evidence_coverage": 0.5
+        },
+        {
+          "id": "6c5a64b5150305c584326882d37af5b0e58de2fd",
+          "document": "1804.03839",
+          "answerable": false,
+          "predicted": [
+            "1804.03839:3",
+            "1804.03839:10",
+            "1804.03839:11",
+            "1804.03839:14",
+            "1804.03839:29"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "6d55e377335815b7ad134d1a2977d231ad34a25b",
+          "document": "1701.03578",
+          "answerable": true,
+          "predicted": [
+            "1701.03578:39",
+            "1701.03578:8",
+            "1701.03578:6",
+            "1701.03578:26"
+          ],
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.2640681225725909,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "718c0232b1f15ddb73d40c3afbd6c5c0d0354566",
+          "document": "1806.09652",
+          "answerable": true,
+          "predicted": [
+            "1806.09652:34",
+            "1806.09652:44",
+            "1806.09652:33",
+            "1806.09652:11",
+            "1806.09652:2"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "754d7475b8bf50499ed77328b4b0eeedf9cb2623",
+          "document": "1806.09652",
+          "answerable": true,
+          "predicted": [
+            "1806.09652:40",
+            "1806.09652:39",
+            "1806.09652:11",
+            "1806.09652:33",
+            "1806.09652:3"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "75b3e2d2caec56e5c8fbf6532070b98d70774b95",
+          "document": "1911.12237",
+          "answerable": true,
+          "predicted": [
+            "1911.12237:9",
+            "1911.12237:15",
+            "1911.12237:7",
+            "1911.12237:6",
+            "1911.12237:11"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6509209298071326,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "778c6a27182349dc5275282c3e9577bda2555c3d",
+          "document": "1905.08067",
+          "answerable": true,
+          "predicted": [
+            "1905.08067:14",
+            "1905.08067:13",
+            "1905.08067:16",
+            "1905.08067:34"
+          ],
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.2640681225725909,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "7ba6330d105f49c7f71dba148bb73245a8ef2966",
+          "document": "1708.07690",
+          "answerable": true,
+          "predicted": [
+            "1708.07690:41",
+            "1708.07690:51",
+            "1708.07690:26",
+            "1708.07690:27",
+            "1708.07690:28"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "7cf44877dae8873139aede381fb9908dd0c546c4",
+          "document": "1703.04357",
+          "answerable": true,
+          "predicted": [
+            "1703.04357:15",
+            "1703.04357:16",
+            "1703.04357:14",
+            "1703.04357:6",
+            "1703.04357:8"
+          ],
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "80d6b9123a10358f57f259b8996a792cac08cb88",
+          "document": "1809.06083",
+          "answerable": true,
+          "predicted": [
+            "1809.06083:19",
+            "1809.06083:9",
+            "1809.06083:12",
+            "1809.06083:15",
+            "1809.06083:18"
+          ],
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "824629b36a75753b1500d9dcaee0fc3c758297b1",
+          "document": "1905.08067",
+          "answerable": true,
+          "predicted": [
+            "1905.08067:13",
+            "1905.08067:33",
+            "1905.08067:5",
+            "1905.08067:34"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "908ba58d26d15c14600623498d4e86c9b73b14b2",
+          "document": "2004.02105",
+          "answerable": true,
+          "predicted": [
+            "2004.02105:36",
+            "2004.02105:60",
+            "2004.02105:2",
+            "2004.02105:44"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "915e4d0b3cb03789a20380ead961d473cb95bfc3",
+          "document": "1710.11027",
+          "answerable": true,
+          "predicted": [
+            "1710.11027:3",
+            "1710.11027:12",
+            "1710.11027:11",
+            "1710.11027:8"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "946d7c877d363f549f84e9500c852dce70ae5d36",
+          "document": "1911.01940",
+          "answerable": false,
+          "predicted": [
+            "1911.01940:17",
+            "1911.01940:29",
+            "1911.01940:20",
+            "1911.01940:59",
+            "1911.01940:35"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "96459b02efa82993a0b413530ed0b517c6633eea",
+          "document": "1908.10090",
+          "answerable": true,
+          "predicted": [
+            "1908.10090:25",
+            "1908.10090:13",
+            "1908.10090:23",
+            "1908.10090:24",
+            "1908.10090:5"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "965e0ce975a0b8612a30cfc31bbfd4b8a57aa138",
+          "document": "1706.02427",
+          "answerable": true,
+          "predicted": [
+            "1706.02427:55",
+            "1706.02427:64",
+            "1706.02427:57",
+            "1706.02427:66",
+            "1706.02427:58"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "9da181ac8f2600eb19364c1b1e3cdeb569811a11",
+          "document": "1908.10001",
+          "answerable": true,
+          "predicted": [
+            "1908.10001:19",
+            "1908.10001:13",
+            "1908.10001:35",
+            "1908.10001:40",
+            "1908.10001:32"
+          ],
+          "recall": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg": 0.46927872602275644,
+          "abstained": false,
+          "evidence_coverage": 0.3333333333333333
+        },
+        {
+          "id": "9eec16e560f9ccafd7ba6f1e0db742b330b42ba9",
+          "document": "1710.11334",
+          "answerable": true,
+          "predicted": [
+            "1710.11334:21",
+            "1710.11334:6",
+            "1710.11334:24"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "a2baa8e266318f23f43321c4b2b9cf467718c94a",
+          "document": "1611.00440",
+          "answerable": true,
+          "predicted": [
+            "1611.00440:6",
+            "1611.00440:38",
+            "1611.00440:21",
+            "1611.00440:12",
+            "1611.00440:15"
+          ],
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "a4a9971799c8860b50f219c93f050ebf6a627b3d",
+          "document": "1905.08067",
+          "answerable": true,
+          "predicted": [
+            "1905.08067:22",
+            "1905.08067:20",
+            "1905.08067:31",
+            "1905.08067:23"
+          ],
+          "recall": 0.3333333333333333,
+          "mrr": 0.5,
+          "ndcg": 0.2960819109658652,
+          "abstained": false,
+          "evidence_coverage": 0.3333333333333333
+        },
+        {
+          "id": "a5df7361ae37b9512fb57cb93efbece9ded8cab1",
+          "document": "1710.11027",
+          "answerable": true,
+          "predicted": [
+            "1710.11027:20",
+            "1710.11027:8",
+            "1710.11027:15",
+            "1710.11027:13"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "a67a2d9acad1787b636ca2681330f4c29a0b0254",
+          "document": "1606.07043",
+          "answerable": true,
+          "predicted": [
+            "1606.07043:16",
+            "1606.07043:18",
+            "1606.07043:8",
+            "1606.07043:32",
+            "1606.07043:14"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "a8e5e10d13b3f21dd11e8eb58e30cc25efc56e93",
+          "document": "1708.09025",
+          "answerable": true,
+          "predicted": [
+            "1708.09025:15",
+            "1708.09025:65",
+            "1708.09025:2",
+            "1708.09025:71",
+            "1708.09025:6"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "a97137318025a6642ed0634f7159255270ba3d4f",
+          "document": "2004.03090",
+          "answerable": false,
+          "predicted": [
+            "2004.03090:18",
+            "2004.03090:9",
+            "2004.03090:2",
+            "2004.03090:3",
+            "2004.03090:7"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "ac87dd34d28c3edd9419fa0145f3d38c87d696aa",
+          "document": "1807.08089",
+          "answerable": true,
+          "predicted": [
+            "1807.08089:32",
+            "1807.08089:29",
+            "1807.08089:55",
+            "1807.08089:35",
+            "1807.08089:39"
+          ],
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "af45ff2c4209f14235482329d0729864fb2bd4b0",
+          "document": "1911.12893",
+          "answerable": true,
+          "predicted": [
+            "1911.12893:9",
+            "1911.12893:10",
+            "1911.12893:62",
+            "1911.12893:16",
+            "1911.12893:75"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "b0edb9023f35a5a02eb8fb968e880e36233e66b3",
+          "document": "1910.12477",
+          "answerable": false,
+          "predicted": [
+            "1910.12477:7",
+            "1910.12477:20",
+            "1910.12477:21",
+            "1910.12477:46",
+            "1910.12477:49"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "b57ad10468e1ba2a7a34396688dbb10a575d89f5",
+          "document": "1706.02427",
+          "answerable": true,
+          "predicted": [
+            "1706.02427:47",
+            "1706.02427:48",
+            "1706.02427:67",
+            "1706.02427:5",
+            "1706.02427:54"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "b783ec5cb9ad595da7db2c0ddf871152ae382c5f",
+          "document": "1805.04833",
+          "answerable": true,
+          "predicted": [
+            "1805.04833:26",
+            "1805.04833:66",
+            "1805.04833:29",
+            "1805.04833:54",
+            "1805.04833:48"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "b79c85fa84712d3028cb5be2af873c634e51140e",
+          "document": "1605.05156",
+          "answerable": true,
+          "predicted": [
+            "1605.05156:6",
+            "1605.05156:10",
+            "1605.05156:5",
+            "1605.05156:34",
+            "1605.05156:3"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "b79ff0a50bf9f361c5e5fed68525283856662076",
+          "document": "1805.09960",
+          "answerable": true,
+          "predicted": [
+            "1805.09960:20",
+            "1805.09960:17",
+            "1805.09960:19",
+            "1805.09960:65",
+            "1805.09960:72"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "ba406e07c33a9161e29c75d292c82a15503beae5",
+          "document": "1907.12984",
+          "answerable": true,
+          "predicted": [
+            "1907.12984:11",
+            "1907.12984:95",
+            "1907.12984:78",
+            "1907.12984:3",
+            "1907.12984:77"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "ba7fea78b0b888a714cb7d89944b69c5038a1ef1",
+          "document": "1806.03369",
+          "answerable": true,
+          "predicted": [
+            "1806.03369:11",
+            "1806.03369:21",
+            "1806.03369:13",
+            "1806.03369:3"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "baec99756b80eec7c0234a08bc2855e6770bcaeb",
+          "document": "1907.04072",
+          "answerable": true,
+          "predicted": [
+            "1907.04072:57",
+            "1907.04072:40",
+            "1907.04072:52",
+            "1907.04072:21",
+            "1907.04072:4"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "bbfe7e131ed776c85f2359b748db1325386c1af5",
+          "document": "1807.03674",
+          "answerable": true,
+          "predicted": [
+            "1807.03674:10",
+            "1807.03674:9",
+            "1807.03674:3",
+            "1807.03674:7",
+            "1807.03674:17"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "bd3562d2b3c162e9d27404d56b77e15f707d8b0f",
+          "document": "1705.00571",
+          "answerable": true,
+          "predicted": [
+            "1705.00571:29",
+            "1705.00571:34",
+            "1705.00571:30",
+            "1705.00571:35",
+            "1705.00571:18"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6509209298071326,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "be0b438952048fe6bb91c61ba48e529d784bdcea",
+          "document": "2004.03090",
+          "answerable": false,
+          "predicted": [
+            "2004.03090:18",
+            "2004.03090:26",
+            "2004.03090:39",
+            "2004.03090:2",
+            "2004.03090:25"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "bfcbb47f3c54ee1a459183e04e4c5a41ac9ae83b",
+          "document": "1610.07149",
+          "answerable": false,
+          "predicted": [
+            "1610.07149:52",
+            "1610.07149:72",
+            "1610.07149:61",
+            "1610.07149:64",
+            "1610.07149:5"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "c176eb1ccaa0e50fb7512153f0716e60bf74aa53",
+          "document": "1910.01340",
+          "answerable": true,
+          "predicted": [
+            "1910.01340:47",
+            "1910.01340:9",
+            "1910.01340:13",
+            "1910.01340:5",
+            "1910.01340:35"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "c3ce95658eea1e62193570955f105839de3d7e2d",
+          "document": "1911.03324",
+          "answerable": true,
+          "predicted": [
+            "1911.03324:5",
+            "1911.03324:16",
+            "1911.03324:53",
+            "1911.03324:94",
+            "1911.03324:9"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "c6170bb09ba2a416f8fa9b542f0ab05a64dbf2e4",
+          "document": "1910.07973",
+          "answerable": false,
+          "predicted": [
+            "1910.07973:18",
+            "1910.07973:20",
+            "1910.07973:17"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "c68946ae2e548ec8517c7902585c032b3f3876e6",
+          "document": "1901.05389",
+          "answerable": true,
+          "predicted": [
+            "1901.05389:3",
+            "1901.05389:11",
+            "1901.05389:53"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "c7f43c95db3d0c870407cd0e7becdd802463683b",
+          "document": "1910.09362",
+          "answerable": true,
+          "predicted": [
+            "1910.09362:7",
+            "1910.09362:16",
+            "1910.09362:46",
+            "1910.09362:2",
+            "1910.09362:38"
+          ],
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "abstained": false,
+          "evidence_coverage": 0.5
+        },
+        {
+          "id": "c97306c1be5d59cf27b1054adfa8f1da47d292ce",
+          "document": "1810.02229",
+          "answerable": true,
+          "predicted": [
+            "1810.02229:4",
+            "1810.02229:32",
+            "1810.02229:27",
+            "1810.02229:10"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "c9eae337edea0edb12030a7d4b01c3a3c73c16d3",
+          "document": "1806.04387",
+          "answerable": true,
+          "predicted": [
+            "1806.04387:30",
+            "1806.04387:38",
+            "1806.04387:53",
+            "1806.04387:4",
+            "1806.04387:41"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "caebea05935cae1f5d88749a2fc748e62976eab7",
+          "document": "1710.11334",
+          "answerable": true,
+          "predicted": [
+            "1710.11334:6",
+            "1710.11334:24",
+            "1710.11334:3"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "cc8f495cac0af12054c746a5b796e989ff0e5d5f",
+          "document": "1710.01789",
+          "answerable": false,
+          "predicted": [
+            "1710.01789:36",
+            "1710.01789:46",
+            "1710.01789:54",
+            "1710.01789:48",
+            "1710.01789:31"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "ced63053eb631c78a4ddd8c85ec0f3323a631a54",
+          "document": "1708.05482",
+          "answerable": true,
+          "predicted": [
+            "1708.05482:36",
+            "1708.05482:10",
+            "1708.05482:49",
+            "1708.05482:12",
+            "1708.05482:6"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "d3d6a4a721b8bc9776f62759b8d9be1a19c6b0d2",
+          "document": "1710.01789",
+          "answerable": false,
+          "predicted": [
+            "1710.01789:37",
+            "1710.01789:36",
+            "1710.01789:34",
+            "1710.01789:35",
+            "1710.01789:38"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "d64fa192a7e9918c6a22d819abad581af0644c7d",
+          "document": "1802.08969",
+          "answerable": true,
+          "predicted": [
+            "1802.08969:117",
+            "1802.08969:102",
+            "1802.08969:103",
+            "1802.08969:53",
+            "1802.08969:21"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "d9a45fea8539aac01dec01f29b7d04b44b9c2ca6",
+          "document": "1909.01720",
+          "answerable": true,
+          "predicted": [
+            "1909.01720:72",
+            "1909.01720:78",
+            "1909.01720:13",
+            "1909.01720:30",
+            "1909.01720:5"
+          ],
+          "recall": 1.0,
+          "mrr": 0.2,
+          "ndcg": 0.38685280723454163,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "d9e7633004ed1bc1ee45be58409bcc1fa6db59b2",
+          "document": "1908.11049",
+          "answerable": true,
+          "predicted": [
+            "1908.11049:61",
+            "1908.11049:46",
+            "1908.11049:28",
+            "1908.11049:45",
+            "1908.11049:30"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "dd807195d10c492da2b0da8b2c56b8f7b75db20e",
+          "document": "1607.00167",
+          "answerable": false,
+          "predicted": [
+            "1607.00167:10",
+            "1607.00167:13",
+            "1607.00167:8",
+            "1607.00167:11",
+            "1607.00167:16"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "dd81f58c782169886235c48b8f9a08e0954dd3ae",
+          "document": "2003.12660",
+          "answerable": true,
+          "predicted": [
+            "2003.12660:37",
+            "2003.12660:6",
+            "2003.12660:4"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "de689a17b0b9fb6bbb80e9b85fb44b36b56de2fd",
+          "document": "2003.07459",
+          "answerable": true,
+          "predicted": [
+            "2003.07459:42",
+            "2003.07459:39",
+            "2003.07459:32",
+            "2003.07459:2",
+            "2003.07459:6"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "e6204daf4efeb752fdbd5c26e179efcb8ddd2807",
+          "document": "1601.03313",
+          "answerable": true,
+          "predicted": [
+            "1601.03313:55",
+            "1601.03313:61",
+            "1601.03313:58",
+            "1601.03313:59",
+            "1601.03313:45"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "e6f5444b7c08d79d4349e35d5298a63bb30e7004",
+          "document": "1708.07252",
+          "answerable": true,
+          "predicted": [
+            "1708.07252:63",
+            "1708.07252:47",
+            "1708.07252:28",
+            "1708.07252:65",
+            "1708.07252:68"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "e797634fa77e490783b349034f9e095ee570b7a9",
+          "document": "1804.05253",
+          "answerable": true,
+          "predicted": [
+            "1804.05253:36",
+            "1804.05253:8",
+            "1804.05253:7",
+            "1804.05253:30"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6934264036172708,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "e7ce612f53e9be705cdb8daa775eae51778825ef",
+          "document": "1804.03839",
+          "answerable": false,
+          "predicted": [
+            "1804.03839:3",
+            "1804.03839:14",
+            "1804.03839:41",
+            "1804.03839:9",
+            "1804.03839:64"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "e86b9633dc691976dd00ed57d1675e1460f7167b",
+          "document": "1910.12477",
+          "answerable": false,
+          "predicted": [
+            "1910.12477:10",
+            "1910.12477:37",
+            "1910.12477:12",
+            "1910.12477:45",
+            "1910.12477:28"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "ec2045e0da92989642a5b5f2b1130c8bd765bcc5",
+          "document": "1901.03253",
+          "answerable": true,
+          "predicted": [
+            "1901.03253:52",
+            "1901.03253:35",
+            "1901.03253:5",
+            "1901.03253:24",
+            "1901.03253:76"
+          ],
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "ecaa10a2d9927fa6ab6a954488f12aa6b42ddc1a",
+          "document": "1909.04242",
+          "answerable": true,
+          "predicted": [
+            "1909.04242:44",
+            "1909.04242:9",
+            "1909.04242:17",
+            "1909.04242:11",
+            "1909.04242:12"
+          ],
+          "recall": 1.0,
+          "mrr": 0.2,
+          "ndcg": 0.38685280723454163,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "ed44f7e698d6124cb86791841d02fc6f8b4d862a",
+          "document": "1908.11049",
+          "answerable": true,
+          "predicted": [
+            "1908.11049:7",
+            "1908.11049:8",
+            "1908.11049:4",
+            "1908.11049:3"
+          ],
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "ee2c2fb01d67f4c58855bf23186cbd45cecbfa56",
+          "document": "1606.07947",
+          "answerable": true,
+          "predicted": [
+            "1606.07947:60",
+            "1606.07947:59",
+            "1606.07947:66",
+            "1606.07947:32",
+            "1606.07947:65"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "f15bc40960bd3f81bc791f43ab5c94c52378692d",
+          "document": "1804.00982",
+          "answerable": true,
+          "predicted": [
+            "1804.00982:24",
+            "1804.00982:15",
+            "1804.00982:3",
+            "1804.00982:17",
+            "1804.00982:4"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "f1a50f88898556ecdba8e9cac13ae54c11835945",
+          "document": "1909.03553",
+          "answerable": true,
+          "predicted": [
+            "1909.03553:6",
+            "1909.03553:3",
+            "1909.03553:64",
+            "1909.03553:8",
+            "1909.03553:16"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "f1e70b63c45ab0fc35dc63de089c802543e30c8f",
+          "document": "1711.11118",
+          "answerable": false,
+          "predicted": [
+            "1711.11118:4",
+            "1711.11118:18",
+            "1711.11118:16"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "f77d7cddef3e021d70e16b9e16cecfd4b8ee80d3",
+          "document": "1606.07947",
+          "answerable": true,
+          "predicted": [
+            "1606.07947:35",
+            "1606.07947:40",
+            "1606.07947:10",
+            "1606.07947:44",
+            "1606.07947:68"
+          ],
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false,
+          "evidence_coverage": 0.0
+        },
+        {
+          "id": "f7b91b99279833f9f489635eb8f77c6d13136098",
+          "document": "1912.11980",
+          "answerable": true,
+          "predicted": [
+            "1912.11980:21",
+            "1912.11980:61",
+            "1912.11980:6",
+            "1912.11980:8",
+            "1912.11980:82"
+          ],
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "f92c344e9b1a986754277fd0f08a47dc3e5f9feb",
+          "document": "1803.08419",
+          "answerable": true,
+          "predicted": [
+            "1803.08419:72",
+            "1803.08419:71",
+            "1803.08419:20",
+            "1803.08419:52",
+            "1803.08419:66"
+          ],
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        },
+        {
+          "id": "fa468c31dd0f9095d7cec010f2262eeed565a7d2",
+          "document": "1911.05652",
+          "answerable": false,
+          "predicted": [
+            "1911.05652:6",
+            "1911.05652:2",
+            "1911.05652:17",
+            "1911.05652:7",
+            "1911.05652:39"
+          ],
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false,
+          "evidence_coverage": null
+        },
+        {
+          "id": "fa800a21469a70fa6490bfc67cabdcc8bf086fb5",
+          "document": "1902.06734",
+          "answerable": true,
+          "predicted": [
+            "1902.06734:27",
+            "1902.06734:2",
+            "1902.06734:45",
+            "1902.06734:19",
+            "1902.06734:6"
+          ],
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false,
+          "evidence_coverage": 1.0
+        }
+      ]
+    }
+  }
+}

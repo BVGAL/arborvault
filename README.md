@@ -8,14 +8,21 @@ ArborVault stores document hierarchies in PostgreSQL and returns source-backed s
 through a small HTTP API. Use it as an experimental retrieval component in an agent or
 RAG pipeline. The framework-neutral API supports reusable integrations with any AI agent.
 
-**Measured fine-tuning experiment:** Qwen3-4B QLoRA with lexical fallback reaches test
-Recall@5 of 0.6944, versus 0.6667 for its matched NF4 base and 0.9167 for MiniLM dense
-retrieval. Pure navigation regresses from 0.6111 to 0.4722. Both model variants make invalid
-selections, so this is an exploratory result, not a demonstrated upgrade. See
-[results and failures](docs/evaluation.md#qwen3-4b-qlora-on-runpod) and the
-[training recipe](docs/qwen3-fine-tuning.md). The earlier Ollama baseline is retained separately.
-The [error audit](docs/qwen3-error-analysis.md) identifies premature rejection and missing
-hierarchical training coverage; the [v2 plan](docs/routing-v2-plan.md) remains unexecuted.
+**Measured routing v2 pilot:** on a separate QASPER test, base plus lexical retrieval
+reaches Recall@5 **0.7558**, versus **0.7442**
+for MiniLM vector retrieval; this small difference does not establish superiority.
+Greedy navigation is **0.7058** for the base and **0.4025**
+for the selected adapter. With up to four decoding hypotheses, the matched results are
+**0.7375** and **0.6983**.
+The additional beam-base-plus-lexical ablation reaches **0.8025**,
+with uncertainty overlapping the dense baseline; it was not promoted based on this test.
+Fine-tuning fails the development promotion rules; retain the base.
+
+See the [complete results, uncertainty and failures](docs/routing-v2-results.md),
+[fixed protocol](docs/routing-v2-experiment.md) and [dataset card](datasets/qasper-routing-v2/README.md).
+This pilot retrieves paragraphs inside a known document; it does not measure corpus-wide
+search or generated-answer quality. The [historical v1 experiment](docs/evaluation.md#qwen3-4b-qlora-on-runpod)
+and its [error audit](docs/qwen3-error-analysis.md) remain available separately.
 
 **Status: v0.3 research preview; production qualification is still ongoing.** It is not a drop-in Qdrant
 replacement and does not establish that structured retrieval outperforms dense retrieval.
@@ -82,6 +89,10 @@ variable syntax, or run `python examples/agent_client.py` after setting the key.
   comparison, synthetic smoke fixtures, regression tests and PostgreSQL CI.
 - A [routing training dataset](datasets/routing-bootstrap-v1/README.md), optional LoRA recipe,
   bounded Ollama evaluation and guarded base/fine-tuned [comparison workflow](docs/llm-evaluation.md).
+- A separate [QASPER routing v2 dataset](datasets/qasper-routing-v2/README.md), heading-first
+  Python navigation engine, constrained candidate selection, two-seed Qwen3 training and
+  a [document-scoped experiment protocol](docs/routing-v2-experiment.md). This experimental
+  engine does not automatically replace the existing HTTP API's navigation path.
 - Apache-2.0 license for original code, documentation and synthetic fixtures.
 
 ## API

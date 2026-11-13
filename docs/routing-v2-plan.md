@@ -1,8 +1,18 @@
-# Routing v2: proposed data and training protocol
+# Routing v2: original proposal and implementation scope
 
-Status: **proposed, not trained or measured**. This plan follows the
-[v1 error audit](qwen3-error-analysis.md). Numerical targets below are engineering acceptance
-criteria to freeze before running, not measured improvements or statistical guarantees.
+This historical proposal follows the [v1 error audit](qwen3-error-analysis.md).
+The implemented pilot is specified in the [frozen experiment protocol](routing-v2-experiment.md).
+It uses human-annotated QASPER questions, document-disjoint train/dev/test sets, heading-first
+outlines, constrained navigation, two training seeds and development-based checkpoint selection.
+The bullets below preserve the broader proposal; they are not all completed features.
+
+Scope differences: the pilot is English-only NLP papers and document-scoped retrieval, with
+600 training questions producing 1,400 decisions. Exact question duplicates are excluded;
+semantic-family separation and a new independent human review are not claimed. Dense-mined
+negative review, multilingual data, oracle-frontier inference ablation, direct candidate scoring,
+one-pass full-outline retrieval, hybrid reranking and a learning-rate sweep remain future work.
+The pilot uses one conservative rate and two seeds within its fixed cost envelope. Its v2 Python
+engine is an experimental component; the existing HTTP API does not automatically switch to it.
 
 ## 1. Separate diagnosis, development and final testing
 
@@ -125,4 +135,6 @@ another corpus. Report paired per-query changes and uncertainty, with resampling
 family/document rather than treating near-duplicate questions as independent observations.
 
 Before execution, freeze data hashes, the experiment matrix, acceptance rules and the cloud
-cost ceiling after a runtime estimate. No new paid run is part of this diagnostic update.
+cost ceiling after a runtime estimate. The original diagnostic proposed no paid run; the
+subsequent authorized v2 pilot and its development-triggered decoding ablation are documented
+separately in the experiment protocol.

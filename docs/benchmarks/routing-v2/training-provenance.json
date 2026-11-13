@@ -1,0 +1,163 @@
+{
+  "recipe": {
+    "recipe": "qwen3-routing-v2",
+    "base_model": "Qwen/Qwen3-4B",
+    "base_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "seed": 42,
+    "confirmation_seed": 43,
+    "epochs": 1,
+    "learning_rate": 5e-05,
+    "gradient_accumulation_steps": 8,
+    "max_length": 4096,
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ],
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "thinking": false,
+    "quantization": "nf4-double-bf16",
+    "evaluation_num_ctx": 4096,
+    "evaluation_max_output_tokens": 64,
+    "checkpoints": [
+      0.5,
+      1.0
+    ],
+    "selection": "Primary seed only; development navigation recall, evidence coverage, MRR, subject to base error/abstention guards. Epoch zero remains deployment fallback.",
+    "max_total_seconds": 9000,
+    "max_total_usd": 10
+  },
+  "recipe_sha256": "088b3d23c2adc0ca4fb660deb6c05f8881e0f4325f67545fb086d56192064ca2",
+  "dataset_manifest_sha256": "c5e71cfbf60be0a22fd6bedb754607d5974101034d920adab40a6c404a191288",
+  "routing_prompt_sha256": "3d5f66ca7661fd90e6d35dab361e59a7d4206908693091935ab10e25644fccdb",
+  "packages": {
+    "torch": "2.10.0+cu128",
+    "transformers": "5.22.2",
+    "peft": "0.21.3",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.15.0",
+    "safetensors": "0.8.0"
+  },
+  "code_revision": "e342dc3431e62bacd3b3a9fdae4b25aa49dd4bf3",
+  "selection_uses": "development only; test not loaded until adapter choice is saved",
+  "checkpoints": [
+    {
+      "seed": 42,
+      "step": 88,
+      "fraction": 0.5,
+      "adapter": "adapters/seed-42-step-88",
+      "quality": [
+        0.31583333333333335,
+        0.31583333333333335,
+        0.345
+      ],
+      "qualifies": false,
+      "completion_token_nll": 0.8663490306716222,
+      "adapter_sha256": "bbbc4cf22ed18b2baf6e965ccda9b3d70a425466f70c0e6e00883b7acd4fd847"
+    },
+    {
+      "seed": 42,
+      "step": 175,
+      "fraction": 1.0,
+      "adapter": "adapters/seed-42-step-175",
+      "quality": [
+        0.32083333333333336,
+        0.32083333333333336,
+        0.3475
+      ],
+      "qualifies": false,
+      "completion_token_nll": 0.6823372651798606,
+      "adapter_sha256": "3ba01fde6648db96b9bf7657115e0c1a46d3a059e001ddbd061a7fd3c880c7f4"
+    },
+    {
+      "seed": 43,
+      "step": 88,
+      "fraction": 0.5,
+      "adapter": "adapters/seed-43-step-88",
+      "quality": [
+        0.35583333333333333,
+        0.35583333333333333,
+        0.385
+      ],
+      "qualifies": false,
+      "completion_token_nll": 0.8972027433836443,
+      "adapter_sha256": "4c44ffa0e1135faa8872c48d67f18b337d43269b35e23d3985423b872aabd4ee"
+    },
+    {
+      "seed": 43,
+      "step": 175,
+      "fraction": 1.0,
+      "adapter": "adapters/seed-43-step-175",
+      "quality": [
+        0.3525,
+        0.3525,
+        0.39
+      ],
+      "qualifies": false,
+      "completion_token_nll": 0.6938164861043716,
+      "adapter_sha256": "773b620f4633e29ccc46309fbaf8ff9a18917f7c7992a4f354cdb57787bdd0d0"
+    }
+  ],
+  "training_routes_sha256": "7e48a950cd091fe14a9af8ec6f4261e0fc6ab7b92281da4115c0ae9067c6eb27",
+  "training_examples": 1400,
+  "maximum_training_tokens": 3680,
+  "excerpt_budget_histogram": {
+    "9000": 1398,
+    "6000": 1,
+    "1000": 1
+  },
+  "chat_template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "trainable_parameters": 2949120,
+  "encoded_training_sha256": "98b8dc40249856c840aab843eb61432788d6aa0a472f20e5bd0935e42aa8162f",
+  "complete": true,
+  "elapsed_seconds": 2771.392263029702,
+  "selection": {
+    "chosen_primary_adapter": {
+      "seed": 42,
+      "step": 175,
+      "fraction": 1.0,
+      "adapter": "adapters/seed-42-step-175",
+      "quality": [
+        0.32083333333333336,
+        0.32083333333333336,
+        0.3475
+      ],
+      "qualifies": false,
+      "completion_token_nll": 0.6823372651798606,
+      "adapter_sha256": "3ba01fde6648db96b9bf7657115e0c1a46d3a059e001ddbd061a7fd3c880c7f4"
+    },
+    "confirmation_same_fraction": {
+      "seed": 43,
+      "step": 175,
+      "fraction": 1.0,
+      "adapter": "adapters/seed-43-step-175",
+      "quality": [
+        0.3525,
+        0.3525,
+        0.39
+      ],
+      "qualifies": false,
+      "completion_token_nll": 0.6938164861043716,
+      "adapter_sha256": "773b620f4633e29ccc46309fbaf8ff9a18917f7c7992a4f354cdb57787bdd0d0"
+    },
+    "promote_over_base": false,
+    "deployment_recommendation": "retain_base",
+    "test_not_yet_evaluated": true
+  },
+  "base_test_quality": [
+    0.7058333333333333,
+    0.6858333333333333,
+    0.6191666666666666
+  ],
+  "tuned_test_quality": [
+    0.4025,
+    0.4025,
+    0.435
+  ],
+  "test_shared_base_tensors": true,
+  "test_complete": true
+}

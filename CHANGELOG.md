@@ -2,9 +2,26 @@
 
 ## Unreleased
 
+- Publish the separate v2 test: greedy base 0.7058, adapted
+  0.4025; with up to four hypotheses, base 0.7375, adapted
+  0.6983. Base plus lexical 0.7558; MiniLM 0.7442.
+  Neither adaptation passes the development promotion gate; preserve the base recommendation.
+- Report the beam-plus-lexical ablations too: base 0.8025,
+  adapted 0.7633. The base's numerical lead over MiniLM
+  has an uncertainty interval crossing zero and does not establish general superiority.
+- Disclose the incomplete beam attempt and retry with memory-bounded SDPA scheduling, preserving
+  weights, context, precision and decoding policy. Verify and retain artifacts before pod deletion.
+- Add a separate routing-v2 research pilot: 600 human QASPER training questions, 120 development
+  and 120 test questions, with disjoint documents, evidence mappings and source/license hashes.
+- Add heading-first tree outlines, shared tokenizer-aware features, constrained valid-ID
+  selection, per-depth diagnostics and a development-triggered four-hypothesis decoding ablation.
+- Train two Qwen3-4B LoRA seeds for one epoch, retain four checkpoints and select using development
+  retrieval with abstention/error guards. Keep the base when adaptation fails the promotion gate.
+- Add paired document-bootstrap summaries, artifact validation and 78 passing application tests;
+  four optional PyTorch checks also pass in the training environment (15 runtime checks total).
 - Audit the Qwen3 regression per query: six losses/one gain, 3-to-9 first-call rejections,
   and no real subsection-routing examples in training. Add a reproducible offline diagnostic,
-  gold-ancestor ceiling check, and an unexecuted v2 dataset/training plan.
+  gold-ancestor ceiling check, and an initial v2 dataset/training plan, subsequently implemented as a separate pilot.
 - Correct the failure description: navigation retains evidence collected before an invalid
   selection; the 4/12 empty answerable results are separate valid no-route decisions.
 - Train Qwen3-4B QLoRA on one Runpod RTX 4090: 392 train/84 validation examples,

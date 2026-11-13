@@ -1,0 +1,33 @@
+{
+  "chosen_primary_adapter": {
+    "seed": 42,
+    "step": 175,
+    "fraction": 1.0,
+    "adapter": "adapters/seed-42-step-175",
+    "quality": [
+      0.32083333333333336,
+      0.32083333333333336,
+      0.3475
+    ],
+    "qualifies": false,
+    "completion_token_nll": 0.6823372651798606,
+    "adapter_sha256": "3ba01fde6648db96b9bf7657115e0c1a46d3a059e001ddbd061a7fd3c880c7f4"
+  },
+  "confirmation_same_fraction": {
+    "seed": 43,
+    "step": 175,
+    "fraction": 1.0,
+    "adapter": "adapters/seed-43-step-175",
+    "quality": [
+      0.3525,
+      0.3525,
+      0.39
+    ],
+    "qualifies": false,
+    "completion_token_nll": 0.6938164861043716,
+    "adapter_sha256": "773b620f4633e29ccc46309fbaf8ff9a18917f7c7992a4f354cdb57787bdd0d0"
+  },
+  "promote_over_base": false,
+  "deployment_recommendation": "retain_base",
+  "test_not_yet_evaluated": true
+}

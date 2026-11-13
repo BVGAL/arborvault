@@ -1,0 +1,59 @@
+{
+  "recipe": {
+    "recipe": "qwen3-routing-v2",
+    "base_model": "Qwen/Qwen3-4B",
+    "base_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "seed": 42,
+    "confirmation_seed": 43,
+    "epochs": 1,
+    "learning_rate": 5e-05,
+    "gradient_accumulation_steps": 8,
+    "max_length": 4096,
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ],
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "thinking": false,
+    "quantization": "nf4-double-bf16",
+    "evaluation_num_ctx": 4096,
+    "evaluation_max_output_tokens": 64,
+    "checkpoints": [
+      0.5,
+      1.0
+    ],
+    "selection": "Primary seed only; development navigation recall, evidence coverage, MRR, subject to base error/abstention guards. Epoch zero remains deployment fallback.",
+    "max_total_seconds": 9000,
+    "max_total_usd": 10
+  },
+  "recipe_sha256": "088b3d23c2adc0ca4fb660deb6c05f8881e0f4325f67545fb086d56192064ca2",
+  "dataset_manifest_sha256": "c5e71cfbf60be0a22fd6bedb754607d5974101034d920adab40a6c404a191288",
+  "routing_prompt_sha256": "3d5f66ca7661fd90e6d35dab361e59a7d4206908693091935ab10e25644fccdb",
+  "packages": {
+    "torch": "2.10.0+cu128",
+    "transformers": "5.22.2",
+    "peft": "0.21.3",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.15.0",
+    "safetensors": "0.8.0"
+  },
+  "code_revision": "e342dc3431e62bacd3b3a9fdae4b25aa49dd4bf3",
+  "selection_uses": "development only; test not loaded until adapter choice is saved",
+  "checkpoints": [],
+  "training_routes_sha256": "7e48a950cd091fe14a9af8ec6f4261e0fc6ab7b92281da4115c0ae9067c6eb27",
+  "training_examples": 1400,
+  "maximum_training_tokens": 3680,
+  "excerpt_budget_histogram": {
+    "9000": 1398,
+    "6000": 1,
+    "1000": 1
+  },
+  "chat_template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "trainable_parameters": 2949120,
+  "encoded_training_sha256": "98b8dc40249856c840aab843eb61432788d6aa0a472f20e5bd0935e42aa8162f"
+}

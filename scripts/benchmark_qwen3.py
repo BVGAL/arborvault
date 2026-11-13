@@ -143,6 +143,8 @@ def main():
             report["gpu"] = torch.cuda.get_device_name()
             report["code_revision"] = os.getenv("ARBORVAULT_CODE_REVISION", "unknown")
             report["provider_usage"] = selector.usage()
+            report["selector_failure_events"] = [e for e in selector.events if not e["ok"]]
+            report["generation_eos_token_ids"] = model.generation_config.eos_token_id
             report["provider_max_prompt_tokens"] = max(
                 (e["prompt_tokens"] for e in selector.events), default=0
             )

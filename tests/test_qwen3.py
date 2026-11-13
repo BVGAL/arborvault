@@ -5,7 +5,13 @@ from types import SimpleNamespace
 
 import pytest
 
-from arborvault.qwen3 import TransformersSelector, completion_loss, encode_completion, load_recipe
+from arborvault.qwen3 import (
+    TransformersSelector,
+    completion_loss,
+    encode_completion,
+    end_token_ids,
+    load_recipe,
+)
 
 
 class Tokenizer:
@@ -95,3 +101,16 @@ def test_completion_only_logits_match_full_masked_loss_and_gradients():
     reduced_gradient = torch.autograd.grad(reduced, logits, retain_graph=True)[0]
     full_gradient = torch.autograd.grad(full, logits)[0]
     torch.testing.assert_close(reduced_gradient, full_gradient)
+
+
+def test_generation_accepts_all_configured_end_tokens_and_rejects_invalid_config():
+    tokenizer = SimpleNamespace(eos_token_id=151645)
+    model = SimpleNamespace(generation_config=SimpleNamespace(eos_token_id=[151645, 151643]))
+    assert end_token_ids(model, tokenizer) == {151645, 151643}
+    model.generation_config.eos_token_id = 151645
+    assert end_token_ids(model, tokenizer) == {151645}
+    model.generation_config.eos_token_id = None
+    assert end_token_ids(model, tokenizer) == {151645}
+    model.generation_config.eos_token_id = [None]
+    with pytest.raises(ValueError, match="EOS"):
+        end_token_ids(model, tokenizer)

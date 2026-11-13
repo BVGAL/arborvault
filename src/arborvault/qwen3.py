@@ -111,6 +111,17 @@ def completion_loss(model, example):
     return F.cross_entropy(output.logits[0, :-1].float(), ids[0, -count:]), count
 
 
+def end_token_ids(model, tokenizer):
+    """Honor every terminator used by generate(), including Qwen3's end-of-text token."""
+    value = model.generation_config.eos_token_id
+    values = value if isinstance(value, (list, tuple)) else [value]
+    if value is None:
+        values = [tokenizer.eos_token_id]
+    if not values or any(type(i) is not int or i < 0 for i in values):
+        raise ValueError("Invalid generation EOS configuration")
+    return set(values)
+
+
 class TransformersSelector:
     """Sequential experiment selector, sharing the production routing prompt and decoder."""
 
@@ -128,6 +139,7 @@ class TransformersSelector:
             raise ValueError("Selector call budget exhausted")
         self.calls += 1
         event = {"ok": False, "prompt_tokens": 0, "output_tokens": 0}
+        stage = "prompt"
         start = time.perf_counter()
         try:
             messages, labels = routing_messages(query, candidates, width)
@@ -136,6 +148,7 @@ class TransformersSelector:
             if len(tokens) + self.max_output_tokens > self.num_ctx:
                 raise ValueError("Prompt exceeds context budget; refusing truncation")
             ids = torch.tensor([tokens], device=self.model.device)
+            stage = "generation"
             with torch.inference_mode():
                 result = self.model.generate(
                     input_ids=ids,
@@ -146,12 +159,18 @@ class TransformersSelector:
                     pad_token_id=self.tokenizer.eos_token_id,
                 )[0, len(tokens) :].tolist()
             event["output_tokens"] = len(result)
-            if not result or result[-1] != self.tokenizer.eos_token_id:
+            event["last_token"] = result[-1] if result else None
+            stage = "termination"
+            if not result or result[-1] not in end_token_ids(self.model, self.tokenizer):
                 raise ValueError("Incomplete selector result")
             answer = self.tokenizer.decode(result, skip_special_tokens=True)
+            stage = "selection_validation"
             selected = decode_selection(answer.strip(), labels, width)
             event["ok"] = True
             return selected
+        except Exception as exc:
+            event.update(failure_stage=stage, error_type=type(exc).__name__)
+            raise
         finally:
             event["latency_ms"] = (time.perf_counter() - start) * 1000
             self.events.append(event)

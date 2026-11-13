@@ -10,6 +10,7 @@ from pathlib import Path
 from run_routing_v2 import qualifies, quality, save
 
 from arborvault.qwen3 import file_hash, load_model, load_recipe, packages
+from arborvault.routing_attention import enable_sequential_sdpa
 from arborvault.routing_beams import POLICY, POLICY_SHA256, BeamQwenSelector
 from arborvault.routing_eval import evaluate
 from arborvault.routing_v2 import PROMPT_SHA256
@@ -55,6 +56,7 @@ def main():
     from peft import PeftModel, prepare_model_for_kbit_training
     from transformers import set_seed
 
+    enable_sequential_sdpa()
     model, tokenizer = load_model(recipe)
     model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=False)
     for index, c in enumerate(candidates):
@@ -76,6 +78,7 @@ def main():
         "packages": packages(),
         "gpu": torch.cuda.get_device_name(),
         "all_evaluations_shared_base_tensors": True,
+        "attention_execution": "SDPA one beam batch row at a time; unchanged precision and masks",
     }
     save(args.output / "preregistered-plan.json", metadata)
 

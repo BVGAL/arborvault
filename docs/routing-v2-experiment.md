@@ -88,7 +88,8 @@ The primary seed's half-epoch development recall fell from 60.92% to 31.58%. Its
 usually selected one path (239/264 calls), whereas the base usually selected four (168/264).
 This motivates a decoding ablation, not a claim that the training has improved retrieval.
 
-`BeamQwenSelector` uses four constrained generation beams (two for a single candidate),
+`BeamQwenSelector` uses up to four constrained generation beams: `min(4, candidate_count + 1)`
+(two for a single candidate, three for two candidates, four otherwise),
 length penalty 1.0 and early stopping. Score-ranked valid JSON hypotheses are combined into
 at most four distinct candidate IDs. If the highest-scoring hypothesis is empty, abstain.
 No thresholds, weights, prompts, training examples or test questions change. The same policy
@@ -106,3 +107,14 @@ policies on the test regardless of outcome; never use test performance to pick a
 
 Generation output and sequence scores follow the
 [Transformers beam output API](https://huggingface.co/docs/transformers/v5.22.2/en/internal/generation_utils#transformers.generation.GenerateBeamDecoderOnlyOutput).
+
+### Memory incident and execution-only correction
+
+The initial beam run exhausted 24 GB GPU memory during base development, after 92 completed
+questions and before adapter development or any beam test. Preserve that incomplete attempt;
+it is not a completed benchmark. The retry schedules SDPA attention one beam batch row at a
+time, retaining the standard causal/padding mask builder. Numerical parity tests cover prefill,
+cached-style decoding and distinct per-beam masks. It changes memory scheduling, not weights,
+activation precision, context length, candidate features, beam count or selection rules.
+Both base and adapter use the same corrected execution. The retry starts development from
+the beginning in a new output directory; the original three-hour cloud stop remains active.

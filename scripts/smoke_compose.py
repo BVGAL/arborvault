@@ -74,7 +74,7 @@ def main():
             )
             backup.chmod(0o600)
             restored = restore_check(backup)
-            assert restored["revisions"] >= 2 and restored["schema_version"] == 3
+            assert restored["revisions"] >= 2 and restored["schema_version"] == 4
         print(json.dumps({"compose_smoke": "passed", "restore": restored}))
     finally:
         if identity:

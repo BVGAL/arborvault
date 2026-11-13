@@ -1,10 +1,12 @@
 FROM python:3.12-slim@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
 WORKDIR /app
+ARG INSTALL_OCR=false
+RUN if [ "$INSTALL_OCR" = "true" ]; then apt-get update && apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng tesseract-ocr-ita && rm -rf /var/lib/apt/lists/*; fi
 COPY pyproject.toml README.md LICENSE constraints.txt ./
 COPY src ./src
 RUN pip install --no-cache-dir --upgrade 'pip>=26.3,<27' \
-    && pip install --no-cache-dir -c constraints.txt . \
+    && if [ "$INSTALL_OCR" = "true" ]; then pip install --no-cache-dir -c constraints.txt '.[ocr]'; else pip install --no-cache-dir -c constraints.txt .; fi \
     && useradd --create-home --uid 10001 arborvault
 USER 10001
 EXPOSE 8000

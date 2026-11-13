@@ -7,7 +7,7 @@ from fastapi.testclient import TestClient
 
 from arborvault.api import create_app
 from arborvault.evaluate import metrics, run
-from arborvault.parsing import build_nodes, parse
+from arborvault.parsing import MAX_BYTES, build_nodes, parse
 from arborvault.retrieval import TitleSelector, navigate
 from arborvault.storage import MemoryStore
 
@@ -81,7 +81,7 @@ def test_auth_validation_and_size(client):
         client.post("/v1/namespaces/demo/query", json={"query": "x", "tenant": "b"}).status_code
         == 422
     )
-    assert upload(client, b"x" * 2_000_001).status_code == 413
+    assert upload(client, b"x" * (MAX_BYTES + 1)).status_code == 413
     assert upload(client, b"\xff").status_code == 422
     assert upload(client, b"").status_code == 422
     client.headers.clear()

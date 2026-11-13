@@ -33,7 +33,9 @@ def budgeted(rows, k, word_budget):
     return selected
 
 
-def run(directory, url, split="dev", dense=False, k=5, word_budget=512, cache_dir=None):
+def run(
+    directory, url, split="dev", dense=False, k=5, word_budget=512, cache_dir=None, selector=None
+):
     manifest, documents, queries, _, dataset_hash = load_dataset(directory)
     queries = [q for q in queries if q["split"] == split]
     store = PostgresStore(url, enforce_runtime_role=True)
@@ -68,16 +70,26 @@ def run(directory, url, split="dev", dense=False, k=5, word_budget=512, cache_di
         )
         build_ms = (time.perf_counter() - start) * 1000
         methods = ["navigation", "auto", "lexical"] + (["dense_sections"] if dense else [])
+        if selector is not None:
+            methods += ["llm_navigation", "llm_auto"]
         for method in methods:
             rows = []
             for query in queries:
                 start = time.perf_counter()
+                reason = None
+                before = selector.usage() if selector is not None else {}
                 if method == "dense_sections":
                     hits = [(*pairs[i], 0.0, "dense") for i in index.search(query["question"])[:k]]
                     fallback = False
                 else:
-                    hits, _, fallback, _ = retrieve(
-                        store, tenant, namespace, query["question"], k, TitleSelector(), method
+                    hits, _, fallback, reason = retrieve(
+                        store,
+                        tenant,
+                        namespace,
+                        query["question"],
+                        k,
+                        selector if method.startswith("llm_") else TitleSelector(),
+                        method.removeprefix("llm_"),
                     )
                 selected = budgeted(hits, k, word_budget)
                 elapsed = (time.perf_counter() - start) * 1000
@@ -107,6 +119,12 @@ def run(directory, url, split="dev", dense=False, k=5, word_budget=512, cache_di
                         "predicted": predicted,
                         "latency_ms": elapsed,
                         "fallback": fallback,
+                        "fallback_reason": reason,
+                        "provider_usage": {
+                            key: value - before[key] for key, value in selector.usage().items()
+                        }
+                        if selector is not None
+                        else {},
                         "returned_words": sum(len(text.split()) for *_, text in selected),
                         "evidence_coverage": evidence_coverage,
                         **metrics(predicted, gold, k),

@@ -1,6 +1,7 @@
 """Internal-only parser service. Compose provides no egress or credentials."""
 
 from dataclasses import asdict
+from typing import Literal
 
 from fastapi import FastAPI, HTTPException, Query, Request
 from starlette.concurrency import run_in_threadpool
@@ -18,14 +19,18 @@ def health():
 
 
 @app.post("/parse")
-async def parse(request: Request, filename: str = Query(max_length=255)):
+async def parse(
+    request: Request,
+    filename: str = Query(max_length=255),
+    ocr_mode: Literal["off", "auto", "always"] | None = None,
+):
     data = bytearray()
     async for chunk in request.stream():
         data.extend(chunk)
         if len(data) > MAX_BYTES:
             raise HTTPException(413, "Document too large")
     try:
-        sections = await run_in_threadpool(parser.parse, bytes(data), filename)
+        sections = await run_in_threadpool(parser.parse, bytes(data), filename, ocr_mode)
     except ValueError:
         raise HTTPException(422, "Malformed or unsupported document") from None
     except ParserBusy:

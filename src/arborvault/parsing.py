@@ -1,6 +1,7 @@
 """Deterministic, bounded parsers. Never fetches a source URI."""
 
 import io
+import os
 import re
 import zipfile
 from dataclasses import dataclass
@@ -12,10 +13,11 @@ from markdown_it import MarkdownIt
 from pypdf import PdfReader
 
 from .domain import Node
+from .settings import ParsingLimits
 
-MAX_BYTES = 2_000_000
-MAX_TEXT = 1_000_000
-MAX_NODES = 2000
+MAX_BYTES = ParsingLimits.from_env().max_bytes
+MAX_TEXT = ParsingLimits.from_env().max_text
+MAX_NODES = ParsingLimits.from_env().max_nodes
 PART_SIZE = 4000
 
 
@@ -27,9 +29,13 @@ class Section:
     locator: dict
 
 
-def parse(data: bytes, filename: str) -> list[Section]:
-    if not data or len(data) > MAX_BYTES:
-        raise ValueError("Document must contain 1..2000000 bytes")
+def parse(data: bytes, filename: str, *, limits=None, ocr_mode=None) -> list[Section]:
+    limits = limits or ParsingLimits.from_env()
+    ocr_mode = ocr_mode or os.getenv("OCR_MODE", "auto")
+    if ocr_mode not in {"off", "auto", "always"}:
+        raise ValueError("OCR mode must be off, auto or always")
+    if not data or len(data) > limits.max_bytes:
+        raise ValueError("Document exceeds the configured upload budget")
     ext = filename.rsplit(".", 1)[-1].lower()
     sections = [Section(0, "Preamble", "", {})]
     if ext in {"md", "markdown"}:
@@ -58,13 +64,28 @@ def parse(data: bytes, filename: str) -> list[Section]:
                 sections[-1].text += str(item) + " "
     elif ext == "pdf":
         reader = PdfReader(io.BytesIO(data), strict=True)
-        if reader.is_encrypted or len(reader.pages) > 200:
-            raise ValueError("Encrypted PDFs and PDFs over 200 pages are unsupported")
+        if reader.is_encrypted or len(reader.pages) > limits.max_pdf_pages:
+            raise ValueError("Encrypted PDF or configured page budget exceeded")
         sections = []
-        for i, page in enumerate(reader.pages):
-            sections.append(Section(1, f"Page {i + 1}", page.extract_text() or "", {"page": i + 1}))
-            if sum(len(s.text) for s in sections) > MAX_TEXT:
-                raise ValueError("Extracted text exceeds limit")
+        ocr, total = None, 0
+        try:
+            for i, page in enumerate(reader.pages):
+                text = page.extract_text() or ""
+                used_ocr = ocr_mode == "always" or (ocr_mode == "auto" and not text.strip())
+                if used_ocr:
+                    if ocr is None:
+                        from .ocr import PDFOCR
+
+                        ocr = PDFOCR(data, limits, os.getenv("OCR_LANGUAGES", "eng+ita"))
+                    text = ocr.page_text(i)
+                locator = {"page": i + 1, **({"ocr": True} if used_ocr else {})}
+                sections.append(Section(1, f"Page {i + 1}", text, locator))
+                total += len(text)
+                if total > limits.max_text:
+                    raise ValueError("Extracted text exceeds limit")
+        finally:
+            if ocr is not None:
+                ocr.close()
     elif ext == "docx":
         with zipfile.ZipFile(io.BytesIO(data)) as archive:
             if sum(i.file_size for i in archive.infolist()) > 20_000_000:
@@ -87,22 +108,27 @@ def parse(data: bytes, filename: str) -> list[Section]:
             )
     else:
         raise ValueError("Supported formats: md, txt, html, pdf, docx")
-    if sum(len(s.text) + len(s.title) for s in sections) > MAX_TEXT:
+    if sum(len(s.text) + len(s.title) for s in sections) > limits.max_text:
         raise ValueError("Extracted text exceeds limit")
     if any("\x00" in s.text or "\x00" in s.title for s in sections):
         raise ValueError("NUL characters are not valid document text")
     if not any(s.text.strip() for s in sections):
-        raise ValueError("No extractable text; scanned PDFs need external OCR")
-    if len(sections) > MAX_NODES:
+        raise ValueError("No extractable text after configured text/OCR processing")
+    if len(sections) > limits.max_nodes:
         raise ValueError("Too many sections")
     return sections
 
 
-def build_nodes(sections: list[Section], document_id: str, revision: int, title: str):
+def build_nodes(
+    sections: list[Section], document_id: str, revision: int, title: str, *, limits=None
+):
+    limits = limits or ParsingLimits.from_env()
     nodes: list[Node] = []
 
     def add(parent, heading, content, locator):
         ordinal = len(nodes)
+        if ordinal >= limits.max_nodes:
+            raise ValueError("Too many nodes for the configured budget")
         identity = str(uuid5(UUID(document_id), f"{revision}:{ordinal}"))
         path = (parent.path if parent else []) + [heading]
         node = Node(
@@ -130,6 +156,6 @@ def build_nodes(sections: list[Section], document_id: str, revision: int, title:
                 text[offset : offset + PART_SIZE],
                 {**section.locator, "character_offset": offset},
             )
-    if len(nodes) > MAX_NODES:
+    if len(nodes) > limits.max_nodes:
         raise ValueError("Too many nodes")
     return nodes

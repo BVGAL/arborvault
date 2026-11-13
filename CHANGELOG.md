@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.0 — 2026-11-13
+
+- Add optional page OCR with PDFium/Tesseract in isolated parser workers.
+- Make upload/text/page/node/resource budgets configurable; raise conservative defaults.
+- Enforce document read/write/delete ACLs across current and historical API surfaces and RLS.
+- Fetch navigation candidates lazily; remove the 10,000-node automatic lexical handoff.
+- Add tree cursor pagination, routing-summary migration and scoped ACL administration.
+- Add native Ollama routing with request/output caps and usage accounting.
+- Publish reproducible routing bootstrap data, an optional attention-LoRA recipe and paired evaluation checks.
+- Keep public test labels out of training; distinguish cloud/runtime differences and draft annotations.
+- No trained model, paid cloud benchmark result or verified STAIR reproduction is included.
+
 ## 0.2.0 — 2026-11-13
 
 - Add checksum-verified, transactional migrations adopting v0.1 without losing its current tree.

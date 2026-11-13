@@ -8,7 +8,7 @@ from importlib.resources import files
 import psycopg
 from psycopg import sql
 
-SCHEMA_VERSION = 3
+SCHEMA_VERSION = 4
 
 
 def migrate(url):
@@ -70,6 +70,11 @@ def provision_runtime_role(url, password, role="arborvault_app"):
         )
         conn.execute(
             sql.SQL("GRANT SELECT ON schema_migrations TO {}").format(sql.Identifier(role))
+        )
+        conn.execute(
+            sql.SQL("GRANT SELECT,INSERT,UPDATE,DELETE ON document_access TO {}").format(
+                sql.Identifier(role)
+            )
         )
 
 

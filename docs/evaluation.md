@@ -1,5 +1,20 @@
 # Evaluation protocol
 
+## v0.3 regression and LLM workflow
+
+The v0.3 rerun uses the same frozen corpus, annotations, MiniLM weights, k=5 and 512-word
+budget. Test Recall@5 remains 0.5833 for local navigation/auto, 0.4444 for lexical and
+0.9167 for dense sections. Raw [dev](benchmarks/public-docs-v03-dev.json) and
+[test](benchmarks/public-docs-v03-test.json) reports retain all per-query outcomes.
+The dataset SHA-256 is unchanged. Timings remain exploratory single-pass measurements;
+ACL checks and lazy SQL traversal alter database work and are not a scalability proof.
+
+The [LLM workflow](llm-evaluation.md) adds native Ollama routing, base/adapted comparisons
+and separately split [training data](../datasets/routing-bootstrap-v1/README.md). This release
+validates the protocol with mocked provider responses; no paid model result or fine-tuned
+model is claimed. A future comparison must evaluate the same original base checkpoint and
+its adapter, with matched serving conditions and an independently reviewed held-out set.
+
 ## v0.2 public documentation baseline
 
 The [dataset card](../datasets/public-docs-v1/README.md) describes eight licensed, pinned

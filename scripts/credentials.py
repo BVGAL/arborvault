@@ -16,7 +16,10 @@ def main():
     parser.add_argument("--file", type=Path, default=Path(".secrets/keys.json"))
     parser.add_argument("--tenant")
     parser.add_argument("--namespaces", nargs="+")
-    parser.add_argument("--permissions", nargs="+", choices=["read", "write", "delete"])
+    parser.add_argument(
+        "--permissions", nargs="+", choices=["read", "write", "delete", "manage_acl"]
+    )
+    parser.add_argument("--subject", help="Stable ACL identity; defaults to credential ID")
     parser.add_argument("--token-file", type=Path)
     args = parser.parse_args()
     records = json.loads(args.file.read_text())
@@ -32,6 +35,7 @@ def main():
         records.append(
             {
                 "id": args.id,
+                "subject": args.subject or args.id,
                 "key_sha256": key_digest(token),
                 "tenant": args.tenant,
                 "namespaces": args.namespaces,

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "arborvault"
-version = "0.2.0"
+version = "0.3.0"
 description = "Structure-aware knowledge retrieval for AI agents"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -19,12 +19,15 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "ruff>=0.11,<1", "pip-audit>=2.9,<3"]
 eval = ["fastembed>=0.7,<1", "numpy>=2,<3"]
+ocr = ["pypdfium2>=5,<6", "Pillow>=12,<14"]
 
 [project.scripts]
 arborvault-eval = "arborvault.evaluate:main"
 arborvault-migrate = "arborvault.migrate:main"
 arborvault-dataset = "arborvault.dataset:main"
 arborvault-benchmark = "arborvault.benchmark:main"
+arborvault-routing-data = "arborvault.training_data:main"
+arborvault-llm-eval = "arborvault.llm_eval:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/arborvault"]

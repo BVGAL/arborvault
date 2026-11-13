@@ -133,7 +133,7 @@ def test_parser_environment_timeout_and_slot_release(monkeypatch):
         captured.update(kwargs)
         raise subprocess.TimeoutExpired(args, kwargs["timeout"])
 
-    monkeypatch.setattr(subprocess, "run", timeout)
+    monkeypatch.setattr("arborvault.isolated_parser.run_worker", timeout)
     parser = IsolatedParser(concurrency=1)
     for _ in range(2):
         with pytest.raises(ParserTimeout):
@@ -141,7 +141,7 @@ def test_parser_environment_timeout_and_slot_release(monkeypatch):
     assert "DATABASE_URL" not in captured["env"]
     assert "SELECTOR_API_KEY" not in captured["env"]
     assert not Path(captured["cwd"]).exists()
-    assert captured["timeout"] == 10
+    assert captured["timeout"] == 300
 
 
 def test_real_disposable_parser_and_capacity():
@@ -184,6 +184,6 @@ def test_parser_reports_resource_exhaustion_as_validation(monkeypatch):
     def crashed(*args, **kwargs):
         return subprocess.CompletedProcess(args[0], -9, stdout=b"")
 
-    monkeypatch.setattr(subprocess, "run", crashed)
+    monkeypatch.setattr("arborvault.isolated_parser.run_worker", crashed)
     with pytest.raises(ValueError):
         IsolatedParser().parse(b"text", "a.pdf")

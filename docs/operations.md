@@ -1,4 +1,4 @@
-# Operating v0.2
+# Operating v0.3
 
 ## Startup and health
 
@@ -28,8 +28,13 @@ credential management system. Changing environment-backed `ARBORVAULT_KEYS` requ
 Defaults are 60 requests/minute with burst 60 per credential per API process. Set
 `RATE_PER_MINUTE` and `RATE_BURST` for your deployment. Replicas have independent buckets;
 enforce aggregate quotas at your gateway. Parsers allow two concurrent processes and
-bound each to ten seconds wall time, five seconds CPU and 384 MiB virtual address space
-on Linux. These limits intentionally reject some complex documents; adjust only with testing.
+bound each by default to 300 seconds wall time, 300 seconds CPU and 1 GiB virtual address
+space on Linux. OCR has a 30-second per-page timeout and 12-million-pixel render cap.
+The parser container has 3 GiB memory and 256 MiB temporary space; the API has 2 GiB memory.
+Set the `PARSER_*`, `OCR_MODE` and `OCR_LANGUAGES` variables listed in `.env.example` and
+restart both services. Limits must match between API and parser. Larger limits require
+corresponding container resources and deployment testing. OCR quality varies with scans;
+`auto` handles pages with no extracted text, while `always` also handles poor text layers.
 
 ## Backup and recovery
 
@@ -48,7 +53,7 @@ secret-management process. Test recovery regularly; volume persistence alone is 
 
 ## Distribution and updates
 
-Application version is 0.2.0. Compose base images are pinned by digest and dependency
+Application version is 0.3.0. Compose base images are pinned by digest and dependency
 versions constrained in `constraints.txt`; the wheel build backend is pinned too. These
 pins improve repeatability but are not a promise of permanently vulnerability-free images
 or a complete hash-locked supply chain. Refresh pins deliberately, audit and rerun CI.

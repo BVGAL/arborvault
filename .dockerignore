@@ -10,3 +10,7 @@ data
 .secrets
 .arborvault-*
 *.dump
+models
+checkpoints
+*.safetensors
+*.gguf

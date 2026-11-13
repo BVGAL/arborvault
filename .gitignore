@@ -19,3 +19,7 @@ reports/
 .secrets/
 .arborvault-*
 *.dump
+models/
+checkpoints/
+*.safetensors
+*.gguf

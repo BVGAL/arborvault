@@ -10,14 +10,17 @@ from typing import Literal
 from uuid import UUID, uuid4
 
 from fastapi import Depends, FastAPI, Header, HTTPException, Query, Request
-from pydantic import BaseModel, ConfigDict, Field
+from psycopg.errors import UniqueViolation
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 from starlette.concurrency import run_in_threadpool
 
 from . import __version__
+from .access import AuthorizedStore, Principal, Scope
 from .auth import Credentials
 from .domain import Document, Node
 from .isolated_parser import IsolatedParser, ParserBusy, ParserTimeout, RemoteParser
 from .limits import RateLimiter
+from .ollama import OllamaSelector
 from .parsing import MAX_BYTES, build_nodes
 from .retrieval import ChatSelector, TitleSelector, retrieve
 from .storage import PostgresStore
@@ -48,6 +51,21 @@ class RevisionsResponse(BaseModel):
 class TreeResponse(BaseModel):
     document: Document
     nodes: list[Node]
+    next_cursor: int | None = None
+
+
+class DocumentACL(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    read: list[str] = Field(max_length=100)
+    write: list[str] = Field(max_length=100)
+    delete: list[str] = Field(max_length=100)
+
+    @field_validator("read", "write", "delete")
+    @classmethod
+    def valid_members(cls, values):
+        if any(v != "*" and not re.fullmatch(r"[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}", v) for v in values):
+            raise ValueError("ACL members must be credential subjects or *")
+        return list(dict.fromkeys(values))
 
 
 class Citation(BaseModel):
@@ -102,10 +120,23 @@ def create_app(store=None, keys=None, selector=None, parser=None, keys_file=None
         )
         app.state.selector = selector or TitleSelector()
         if selector is None and os.getenv("SELECTOR_URL"):
-            app.state.selector = ChatSelector(
+            provider = os.getenv("SELECTOR_PROVIDER", "openai-compatible")
+            if provider not in {"ollama", "openai-compatible"}:
+                raise RuntimeError("Unsupported selector provider")
+            adapter = OllamaSelector if provider == "ollama" else ChatSelector
+            options = (
+                {
+                    "max_calls": int(os.getenv("SELECTOR_MAX_CALLS", "1000")),
+                    "max_output_tokens": int(os.getenv("SELECTOR_MAX_OUTPUT_TOKENS", "1024")),
+                }
+                if provider == "ollama"
+                else {}
+            )
+            app.state.selector = adapter(
                 os.environ["SELECTOR_URL"],
                 os.environ["SELECTOR_MODEL"],
                 os.environ.get("SELECTOR_API_KEY", ""),
+                **options,
             )
         yield
         if store is None:
@@ -173,11 +204,18 @@ def create_app(store=None, keys=None, selector=None, parser=None, keys_file=None
                 else "read"
             )
         )
-        if permission not in credential["permissions"]:
+        if request.url.path.endswith("/acl"):
+            permission = "write"
+        if permission not in credential["permissions"] and not (
+            request.url.path.endswith("/acl") and "manage_acl" in credential["permissions"]
+        ):
             raise HTTPException(403, f"Missing {permission} permission")
         if not request.app.state.limiter.allow(credential["key_sha256"]):
             raise HTTPException(429, "Request quota exceeded", headers={"Retry-After": "1"})
-        return credential["tenant"], namespace
+        principal = Principal(credential["subject"], "manage_acl" in credential["permissions"])
+        return Scope(
+            credential["tenant"], namespace, AuthorizedStore(request.app.state.store, principal)
+        )
 
     @app.get("/healthz")
     def health():
@@ -209,6 +247,8 @@ def create_app(store=None, keys=None, selector=None, parser=None, keys_file=None
         source_key: str = Query(min_length=1, max_length=300),
         title: str = Query(min_length=1, max_length=500),
         source_uri: str | None = Query(default=None, max_length=2000),
+        visibility: Literal["namespace", "private"] = "namespace",
+        ocr_mode: Literal["off", "auto", "always"] | None = None,
         context=Depends(scope),
     ):
         data = await request.body()
@@ -217,19 +257,35 @@ def create_app(store=None, keys=None, selector=None, parser=None, keys_file=None
         if source_uri and not source_uri.startswith(("https://", "http://", "urn:")):
             raise HTTPException(422, "Source URI must use https, http or urn")
         try:
-            sections = await run_in_threadpool(request.app.state.parser.parse, data, filename)
+            effective_ocr = ocr_mode or os.getenv("OCR_MODE", "auto")
+            sections = await run_in_threadpool(
+                request.app.state.parser.parse, data, filename, effective_ocr
+            )
             digest = hashlib.sha256(
-                data + json.dumps([filename, title, source_uri]).encode()
+                data
+                + json.dumps(
+                    [
+                        filename,
+                        title,
+                        source_uri,
+                        "parser-v3",
+                        effective_ocr,
+                        os.getenv("OCR_LANGUAGES", "eng+ita"),
+                    ]
+                ).encode()
             ).hexdigest()
             doc, changed = await run_in_threadpool(
-                request.app.state.store.upsert,
+                context.store.upsert,
                 *context,
                 source_key,
                 title,
                 source_uri,
                 digest,
                 lambda i, v: build_nodes(sections, i, v, title),
+                visibility=visibility,
             )
+        except (PermissionError, UniqueViolation):
+            raise HTTPException(404, "Document unavailable") from None
         except (ValueError, UnicodeError):
             raise HTTPException(
                 422, "Unsupported, empty, malformed or oversized document"
@@ -249,9 +305,7 @@ def create_app(store=None, keys=None, selector=None, parser=None, keys_file=None
         cursor: UUID | None = None,
         context=Depends(scope),
     ):
-        rows = request.app.state.store.documents(
-            *context, limit + 1, str(cursor) if cursor else None
-        )
+        rows = context.store.documents(*context, limit + 1, str(cursor) if cursor else None)
         return {
             "documents": [asdict(d) for d in rows[:limit]],
             "next_cursor": rows[limit - 1].id if len(rows) > limit else None,
@@ -268,7 +322,7 @@ def create_app(store=None, keys=None, selector=None, parser=None, keys_file=None
         cursor: int | None = Query(default=None, ge=1),
         context=Depends(scope),
     ):
-        rows = request.app.state.store.revisions(*context, str(document_id), limit + 1, cursor)
+        rows = context.store.revisions(*context, str(document_id), limit + 1, cursor)
         if not rows and cursor is None:
             raise HTTPException(404, "Document not found")
         return {
@@ -281,22 +335,40 @@ def create_app(store=None, keys=None, selector=None, parser=None, keys_file=None
         document_id: UUID,
         request: Request,
         revision: int | None = Query(default=None, ge=1),
+        limit: int = Query(default=500, ge=1, le=2000),
+        cursor: int = Query(default=-1, ge=-1),
         context=Depends(scope),
     ):
-        rows = request.app.state.store.nodes(*context, str(document_id), revision)
+        rows = context.store.nodes(*context, str(document_id), revision, limit + 1, cursor)
         if not rows:
             raise HTTPException(404, "Document not found")
-        return {"document": asdict(rows[0][0]), "nodes": [n.as_dict() for _, n in rows]}
+        return {
+            "document": asdict(rows[0][0]),
+            "nodes": [n.as_dict() for _, n in rows[:limit]],
+            "next_cursor": rows[limit - 1][1].ordinal if len(rows) > limit else None,
+        }
+
+    @app.get("/v1/namespaces/{namespace}/documents/{document_id}/acl")
+    def get_acl(document_id: UUID, context=Depends(scope)):
+        acl = context.store.get_acl(*context, str(document_id))
+        if acl is None:
+            raise HTTPException(404, "Document unavailable")
+        return acl
+
+    @app.put("/v1/namespaces/{namespace}/documents/{document_id}/acl", status_code=204)
+    def put_acl(document_id: UUID, body: DocumentACL, context=Depends(scope)):
+        if not context.store.set_acl(*context, str(document_id), body.model_dump()):
+            raise HTTPException(404, "Document unavailable")
 
     @app.delete("/v1/namespaces/{namespace}/documents/{document_id}", status_code=204)
     def delete(document_id: UUID, request: Request, context=Depends(scope)):
-        if not request.app.state.store.delete(*context, str(document_id)):
+        if not context.store.delete(*context, str(document_id)):
             raise HTTPException(404, "Document not found")
 
     @app.post("/v1/namespaces/{namespace}/query", response_model=QueryResponse)
     def query(body: QueryRequest, request: Request, context=Depends(scope)):
         hits, trace, fallback, reason = retrieve(
-            request.app.state.store,
+            context.store,
             *context,
             body.query,
             body.k,

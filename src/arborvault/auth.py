@@ -6,7 +6,7 @@ import json
 import re
 from pathlib import Path
 
-PERMISSIONS = {"read", "write", "delete"}
+PERMISSIONS = {"read", "write", "delete", "manage_acl"}
 IDENTIFIER = re.compile(r"[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}\Z")
 
 
@@ -56,7 +56,10 @@ class Credentials:
             ):
                 raise ValueError("Invalid credential scope; explicit permissions are required")
             seen.add(digest)
-            validated.append({**record, "key_sha256": digest})
+            subject = record.get("subject", record.get("id", digest))
+            if not isinstance(subject, str) or not IDENTIFIER.fullmatch(subject):
+                raise ValueError("Credential subject must be a stable scoped identifier")
+            validated.append({**record, "key_sha256": digest, "subject": subject})
         return validated
 
     def authenticate(self, token):

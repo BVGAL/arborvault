@@ -8,9 +8,9 @@ ArborVault stores document hierarchies in PostgreSQL and returns source-backed s
 through a small HTTP API. Use it as an experimental retrieval component in an agent or
 RAG pipeline. The framework-neutral API supports reusable integrations with any AI agent.
 
-**Status: v0.2 reliability preview; production qualification is still ongoing.** It is not a drop-in Qdrant
+**Status: v0.3 research preview; production qualification is still ongoing.** It is not a drop-in Qdrant
 replacement and does not establish that structured retrieval outperforms dense retrieval.
-See [v0.2 release notes](docs/releases/v0.2.0.md), [upgrade instructions](docs/upgrade-v02.md)
+See [v0.3 release notes](docs/releases/v0.3.0.md), [upgrade instructions](docs/upgrade-v03.md)
 and the historical [v0.1 validation record](docs/validation.md).
 
 ## Relationship to STAIR
@@ -56,21 +56,23 @@ variable syntax, or run `python examples/agent_client.py` after setting the key.
 ## Included
 
 - FastAPI, versioned HTTP routes, generated OpenAPI, bearer authentication.
-- Tenant derived from the credential, namespace allowlists, separate read/write/delete
-  permissions, hot credential revocation and per-process request quotas.
+- Tenant derived from the credential, namespace allowlists, document ACLs with stable
+  subjects, separate read/write/delete permissions, hot credential revocation and request quotas.
 - Markdown heading trees (including fenced-code handling), UTF-8 text, HTML headings,
   DOCX headings/tables, PDF page extraction. PDFs are page trees, not inferred chapters;
-  scanned PDFs need external OCR. DOCX tables follow paragraphs and lose original placement.
+  scanned pages support Tesseract OCR (`auto`, `always`, `off`). DOCX tables follow paragraphs and lose original placement.
 - PostgreSQL adjacency tree, materialized title paths, scoped foreign keys, GIN full-text
   index, immutable retained revisions, atomic upserts and idempotent unchanged uploads.
 - Numbered checksum-verified migrations, PostgreSQL Row-Level Security and a restricted
   runtime role; historical tree reads, cursor pagination and consistent retrieval snapshots.
 - Disposable parser workers with deadlines/resource limits, in a separate no-egress
   container without database credentials when using Compose; backup/restore verification.
-- Bounded beam navigation, optional model selector, validated node IDs, lexical fallback,
+- Lazy PostgreSQL beam navigation, optional Ollama/OpenAI-compatible selector, validated node IDs, lexical fallback,
   query trace, source locator, digest and revision with every result.
 - A frozen [public-document dataset](datasets/public-docs-v1/README.md), PostgreSQL-backed
   comparison, synthetic smoke fixtures, regression tests and PostgreSQL CI.
+- A [routing training dataset](datasets/routing-bootstrap-v1/README.md), optional LoRA recipe,
+  bounded Ollama evaluation and guarded base/fine-tuned [comparison workflow](docs/llm-evaluation.md).
 - Apache-2.0 license for original code, documentation and synthetic fixtures.
 
 ## API
@@ -80,10 +82,11 @@ Clients cannot choose their tenant in a request body or a header.
 
 | Method and suffix | Behavior |
 | --- | --- |
-| `POST /documents` | Raw file body; query fields `filename`, `source_key`, `title`, optional `source_uri` |
+| `POST /documents` | Raw file; `filename`, `source_key`, `title`; optional `source_uri`, `visibility=private`, `ocr_mode=auto` |
 | `GET /documents?limit=100&cursor=…` | Current documents; follow `next_cursor` until null |
 | `GET /documents/{id}/revisions` | Retained revisions, descending; supports limit/cursor |
-| `GET /documents/{id}/tree?revision=1` | Historical tree; omit revision for current content |
+| `GET /documents/{id}/tree?revision=1&limit=500` | Historical/current tree; follow `next_cursor` until null |
+| `GET /documents/{id}/acl`, `PUT /documents/{id}/acl` | Owner or scoped `manage_acl` administrator; read/write/delete subject lists |
 | `DELETE /documents/{id}` | Permanently delete document and every retained revision |
 | `POST /query` | `{ "query": "…", "k": 5, "mode": "auto" }` |
 
@@ -102,7 +105,14 @@ resolve to new content. Source URIs are metadata and are never fetched.
 ## Optional model routing
 
 Local title/excerpt matching is the default and has limited synonym understanding.
-Set `SELECTOR_URL` to an OpenAI-compatible **base URL ending in `/v1`**, `SELECTOR_MODEL`,
+For Ollama Cloud, run `python scripts/configure_ollama.py --model gpt-oss:20b` locally.
+It prompts for the key without displaying it and writes only ignored `.env` settings.
+Restart the API to opt into sending authorized candidate excerpts to the provider.
+The native adapter uses `SELECTOR_PROVIDER=ollama` and `https://ollama.com/api`.
+Call/output caps and provider failures are recorded by the evaluation runner. Cloud
+inference and user-run fine-tuning are separate operations; no paid job starts during setup.
+
+Alternatively set `SELECTOR_URL` to an OpenAI-compatible **base URL ending in `/v1`**, `SELECTOR_MODEL`,
 and `SELECTOR_API_KEY` in the server environment. The adapter calls `/chat/completions`.
 Queries, titles and short excerpts will be sent to that provider; this is explicitly opt-in.
 Responses must contain only a JSON array of supplied node IDs. Unknown IDs, invalid JSON,
@@ -114,7 +124,7 @@ This adapter is not a fine-tuned STAIR model. Use a trusted provider endpoint.
 ```sh
 python -m venv .venv
 # Activate .venv for your shell
-pip install -c constraints.txt -e '.[dev]'
+pip install -c constraints.txt -e '.[dev,ocr]'
 pytest
 ruff check .
 python -m arborvault.evaluate --output reports/smoke.json
@@ -154,20 +164,26 @@ See [architecture](docs/architecture.md), [security](SECURITY.md) and
 [Agent integration](docs/agent-integration.md). The memory store exists only for tests/evaluation;
 the deployed server requires PostgreSQL and valid credentials and fails closed otherwise.
 
-MVP limits: 2 MB request body, 1 million extracted characters, 2,000 nodes/document,
-200 PDF pages, 10,000 nodes loaded for navigation, 160 candidates/level, depth 12,
-beam width 4. Larger corpora fall back to PostgreSQL lexical retrieval. There is no streaming
-ingestion, OCR, document-level ACL, shared quota across replicas, automatic memory consolidation,
-cross-document reasoning or training pipeline. Local subprocess parsing is weaker isolation
+Default parsing budgets: 25 MB request body, 20 million extracted characters, 50,000 nodes
+per document and 2,000 PDF pages. These are configurable deployment budgets, not throughput
+guarantees; CPU, memory and time limits can reject a complex file earlier. OCR is installed
+in the Compose parser; native installations also need Tesseract language packs.
+Navigation loads up to 160 candidates per level, depth 12, beam width 4. Large sibling sets
+are shortlisted by lexical routing-summary score in PostgreSQL; there is no 10,000-node
+corpus cutoff. This shortlist can miss semantic matches. Default summaries are extractive,
+not learned. There is no streaming ingestion, shared quota across replicas, automatic memory consolidation,
+or cross-document answer reasoning. Local subprocess parsing is weaker isolation
 than the provided Compose service. Retained history increases storage use; DELETE purges all
 revisions. Use a gateway with TLS and shared quotas for a multi-instance deployment.
 
 ## Roadmap
 
 1. Validate on independently reviewed agent workloads and publish retrieval/abstention measurements.
-2. Fetch children lazily from PostgreSQL; add ingestion jobs and shared resource quotas.
+2. Add durable ingestion jobs, shared resource quotas and broader scale measurements.
 3. Add hybrid dense retrieval only if held-out measurements justify it.
-4. Explore a separately versioned learned ToC selector and SearchTome evaluation after
+4. Run the base LLM baseline, user-trained adapter evaluation and independently reviewed
+   comparison. No trained checkpoint or LLM quality result is claimed by this release.
+5. Explore a separately versioned learned ToC selector and SearchTome evaluation after
    checking dataset rights. Any reproduction claim requires its own evidence.
 
 Contributions: see [CONTRIBUTING.md](CONTRIBUTING.md). License: [Apache-2.0](LICENSE).

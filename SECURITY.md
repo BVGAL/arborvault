@@ -1,6 +1,6 @@
 # Security
 
-ArborVault v0.2 is a reliability preview, not a completed production security assessment.
+ArborVault v0.3 is a research preview, not a completed production security assessment.
 Use the supplied Compose topology or equivalent controls. Keep TLS, network admission,
 shared quotas and monitoring at your gateway for any shared deployment.
 
@@ -18,7 +18,15 @@ RLS independently filters documents, revisions and nodes. API startup rejects a 
 owner, superuser or BYPASSRLS role. The administrator migration job is separate from the
 API. Database service credentials remain trusted; a compromised API can set another tenant
 context, so this is defense against application mistakes, not isolation from a compromised
-service. There are no per-document ACLs or per-user permissions within a shared credential.
+service. Document ACLs filter all API read surfaces, retrieval candidates and historical
+revisions before provider calls. Subjects are taken only from authenticated credential
+records; never accept a caller-supplied subject header. Shared credentials still share authority.
+Owners can manage their own ACLs; `manage_acl` allows management only within the credential's
+tenant/namespaces and does not independently grant content access. ACL wildcards mean all
+authenticated subjects in that namespace, never other tenants. Existing documents migrate
+with namespace-wide ACLs for compatibility; use the upgrade guide to restrict them explicitly.
+An in-flight repeatable-read query retains its starting ACL snapshot. Revocation affects
+subsequent requests; it cannot recall excerpts already sent to a provider.
 
 ## Document processing and providers
 

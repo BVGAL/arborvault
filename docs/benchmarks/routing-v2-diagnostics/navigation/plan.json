@@ -1,0 +1,14 @@
+{
+  "reason": "A40 oracle-state initial decisions differ from archived RTX4090 decisions; replay all three fixed policies on the same GPU as diagnostics",
+  "split": "dev",
+  "training": false,
+  "policy_changes": false,
+  "recipe_sha256": "088b3d23c2adc0ca4fb660deb6c05f8881e0f4325f67545fb086d56192064ca2",
+  "dataset_sha256": "c5e71cfbf60be0a22fd6bedb754607d5974101034d920adab40a6c404a191288",
+  "base_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "code_revision": "00328f48d7a641a3b475e69d7698dbcbb853cee9",
+  "adapter_hashes": {
+    "88": "bbbc4cf22ed18b2baf6e965ccda9b3d70a425466f70c0e6e00883b7acd4fd847",
+    "175": "3ba01fde6648db96b9bf7657115e0c1a46d3a059e001ddbd061a7fd3c880c7f4"
+  }
+}

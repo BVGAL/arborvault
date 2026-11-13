@@ -1,0 +1,1711 @@
+[
+  {
+    "case": "A01",
+    "stratum": "regression",
+    "query_id": "352bc6de5c5068c6c19062bad1b8f644919b1145",
+    "document": "1712.05608",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1712.05608:25",
+          "1712.05608:26",
+          "1712.05608:24",
+          "1712.05608:27"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.5,
+        "predicted": [
+          "1712.05608:25"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.5,
+        "predicted": [
+          "1712.05608:25"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A02",
+    "stratum": "shared_failure",
+    "query_id": "62f27fe08ddb67f16857fab2a8a721926ecbb6fb",
+    "document": "1909.06200",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1909.06200:33",
+          "1909.06200:29",
+          "1909.06200:34",
+          "1909.06200:30"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1909.06200:58"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1909.06200:33",
+          "1909.06200:30"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A03",
+    "stratum": "shared_failure",
+    "query_id": "8ce11515634236165cdb06ba80b9a36a8b9099a2",
+    "document": "1706.08198",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1706.08198:4",
+          "1706.08198:3",
+          "1706.08198:5",
+          "1706.08198:2"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1706.08198:44"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      }
+    }
+  },
+  {
+    "case": "A04",
+    "stratum": "control",
+    "query_id": "642e8cf1d39faa1cd985d16750cdc6696c52db2f",
+    "document": "1606.02891",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1606.02891:4",
+          "1606.02891:5",
+          "1606.02891:6"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1606.02891:4"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1606.02891:4"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A05",
+    "stratum": "shared_failure",
+    "query_id": "05887a8466e0a2f0df4d6a5ffc5815acd7d9066a",
+    "document": "1706.06894",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1706.06894:16",
+          "1706.06894:17",
+          "1706.06894:19",
+          "1706.06894:22"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1706.06894:19"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      }
+    }
+  },
+  {
+    "case": "A06",
+    "stratum": "regression",
+    "query_id": "df6d327e176740da9edcc111a06374c54c8e809c",
+    "document": "1908.05441",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1908.05441:14",
+          "1908.05441:19",
+          "1908.05441:20",
+          "1908.05441:15"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1908.05441:14"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1908.05441:14"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A07",
+    "stratum": "shared_failure",
+    "query_id": "660284b0a21fe3801e64dc9e0e51da5400223fe3",
+    "document": "1911.06118",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1911.06118:6",
+          "1911.06118:10",
+          "1911.06118:2",
+          "1911.06118:3",
+          "1911.06118:9"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1911.06118:33"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1911.06118:28"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A08",
+    "stratum": "shared_failure",
+    "query_id": "9b4dc790e4ff49562992aae4fad3a38621fadd8b",
+    "document": "1810.12091",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1810.12091:4",
+          "1810.12091:5"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1810.12091:26"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1810.12091:17"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A09",
+    "stratum": "regression",
+    "query_id": "8dda1ef371933811e2a25a286529c31623cca0c6",
+    "document": "2004.02192",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "2004.02192:16"
+        ],
+        "reason": "no_route"
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "2004.02192:27"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      }
+    }
+  },
+  {
+    "case": "A10",
+    "stratum": "control",
+    "query_id": "f1f1dcc67b3e4d554bfeb508226cdadb3c32d2e9",
+    "document": "1806.04511",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1806.04511:21",
+          "1806.04511:20",
+          "1806.04511:22",
+          "1806.04511:28"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1806.04511:21",
+          "1806.04511:20",
+          "1806.04511:22"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1806.04511:21",
+          "1806.04511:20",
+          "1806.04511:22"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A11",
+    "stratum": "control",
+    "query_id": "c2e475adeddcdc4d637ef0d4f5065b6a9b299827",
+    "document": "1804.07789",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1804.07789:43"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1804.07789:43"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1804.07789:43"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A12",
+    "stratum": "regression",
+    "query_id": "7e38e0279a620d3df05ab9b5e2795044f18d4471",
+    "document": "1801.06482",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1801.06482:4",
+          "1801.06482:3",
+          "1801.06482:29",
+          "1801.06482:7"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1801.06482:4"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1801.06482:3"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A13",
+    "stratum": "regression",
+    "query_id": "8eefa116e3c3d3db751423cc4095d1c4153d3a5f",
+    "document": "1608.06757",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1608.06757:29",
+          "1608.06757:28",
+          "1608.06757:30"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.5,
+        "predicted": [
+          "1608.06757:29"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.5,
+        "predicted": [
+          "1608.06757:29"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A14",
+    "stratum": "shared_failure",
+    "query_id": "78292bc57ee68fdb93ed45430d80acca25a9e916",
+    "document": "1911.03343",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1911.03343:16",
+          "1911.03343:14",
+          "1911.03343:20",
+          "1911.03343:8"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1911.03343:8"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1911.03343:8"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A15",
+    "stratum": "regression",
+    "query_id": "45a5961a4e1d1c22874c4918e5c98bd3c0a670b3",
+    "document": "1801.02073",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1801.02073:12",
+          "1801.02073:14",
+          "1801.02073:9",
+          "1801.02073:15"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1801.02073:7"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1801.02073:6"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A16",
+    "stratum": "regression",
+    "query_id": "bd5bd1765362c2d972a762ca12675108754aa437",
+    "document": "1804.05918",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1804.05918:59",
+          "1804.05918:60",
+          "1804.05918:58",
+          "1804.05918:61"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1804.05918:59"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1804.05918:59"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A17",
+    "stratum": "shared_failure",
+    "query_id": "b6f15fb6279b82e34a5bf4828b7b5ddabfdf1d54",
+    "document": "1912.01214",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1912.01214:12",
+          "1912.01214:13",
+          "1912.01214:11",
+          "1912.01214:10"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1912.01214:13"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1912.01214:13"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A18",
+    "stratum": "shared_failure",
+    "query_id": "22744c3bc68f120669fc69490f8e539b09e34b94",
+    "document": "1805.01445",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1805.01445:5",
+          "1805.01445:4",
+          "1805.01445:2",
+          "1805.01445:3"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1805.01445:5"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1805.01445:5"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A19",
+    "stratum": "regression",
+    "query_id": "18c5d366b1da8447b5404eab71f4cc658ba12e6f",
+    "document": "1810.08699",
+    "results": {
+      "base-dev": {
+        "recall": 0.75,
+        "predicted": [
+          "1810.08699:42",
+          "1810.08699:33",
+          "1810.08699:36",
+          "1810.08699:37"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.25,
+        "predicted": [
+          "1810.08699:33"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.25,
+        "predicted": [
+          "1810.08699:33"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A20",
+    "stratum": "control",
+    "query_id": "cf874cd9023d901e10aa8664b813d32501e7e4d2",
+    "document": "1705.05437",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1705.05437:9",
+          "1705.05437:10",
+          "1705.05437:7",
+          "1705.05437:8"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1705.05437:7"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1705.05437:7"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A21",
+    "stratum": "shared_failure",
+    "query_id": "d6e353e0231d09fd5dcba493544d53706f3fe1ab",
+    "document": "1912.01852",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1912.01852:3",
+          "1912.01852:2",
+          "1912.01852:7",
+          "1912.01852:4"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1912.01852:21"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      }
+    }
+  },
+  {
+    "case": "A22",
+    "stratum": "regression",
+    "query_id": "bc01853512eb3c11528e33003ceb233d7c1d7038",
+    "document": "1905.11268",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1905.11268:3",
+          "1905.11268:7",
+          "1905.11268:2",
+          "1905.11268:4"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1905.11268:3"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1905.11268:4"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A23",
+    "stratum": "shared_failure",
+    "query_id": "3355918bbdccac644afe441f085d0ffbbad565d7",
+    "document": "2001.01269",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "2001.01269:31",
+          "2001.01269:37",
+          "2001.01269:26",
+          "2001.01269:27"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "2001.01269:31"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "2001.01269:27"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A24",
+    "stratum": "regression",
+    "query_id": "7705dd04acedaefee30d8b2c9978537afb2040dc",
+    "document": "1604.00727",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1604.00727:58",
+          "1604.00727:57",
+          "1604.00727:59",
+          "1604.00727:50"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1604.00727:57",
+          "1604.00727:59"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1604.00727:57",
+          "1604.00727:59"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A25",
+    "stratum": "control",
+    "query_id": "c37f65c9f0d543a35c784263b79236ccf1c44fac",
+    "document": "1806.00738",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1806.00738:9",
+          "1806.00738:11",
+          "1806.00738:13",
+          "1806.00738:15"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1806.00738:9"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1806.00738:9"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A26",
+    "stratum": "regression",
+    "query_id": "2317ca8d475b01f6632537b95895608dc40c4415",
+    "document": "1910.06592",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1910.06592:9",
+          "1910.06592:10",
+          "1910.06592:18",
+          "1910.06592:19"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1910.06592:27"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      }
+    }
+  },
+  {
+    "case": "A27",
+    "stratum": "regression",
+    "query_id": "8a7615fc6ff1de287d36ab21bf2c6a3b2914f73d",
+    "document": "1908.05828",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1908.05828:14",
+          "1908.05828:23",
+          "1908.05828:16",
+          "1908.05828:18",
+          "1908.05828:21"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1908.05828:54",
+          "1908.05828:55"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1908.05828:21"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A28",
+    "stratum": "regression",
+    "query_id": "1bdc990c7e948724ab04e70867675a334fdd3051",
+    "document": "1909.00105",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1909.00105:2",
+          "1909.00105:6",
+          "1909.00105:28",
+          "1909.00105:7"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1909.00105:28"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      }
+    }
+  },
+  {
+    "case": "A29",
+    "stratum": "regression",
+    "query_id": "5e324846a99a5573cd2e843d1657e87f4eb22fa6",
+    "document": "1710.07960",
+    "results": {
+      "base-dev": {
+        "recall": 0.5,
+        "predicted": [
+          "1710.07960:5",
+          "1710.07960:2",
+          "1710.07960:4",
+          "1710.07960:3"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1710.07960:65"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1710.07960:65"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A30",
+    "stratum": "partial_gain",
+    "query_id": "b4f881331b975e6e4cab1868267211ed729d782d",
+    "document": "1908.04042",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1908.04042:15",
+          "1908.04042:13",
+          "1908.04042:14",
+          "1908.04042:12"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1908.04042:16"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      }
+    }
+  },
+  {
+    "case": "A31",
+    "stratum": "shared_failure",
+    "query_id": "67e9e147b2cab5ba43572ce8a17fc863690172f0",
+    "document": "1912.00667",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1912.00667:51",
+          "1912.00667:56",
+          "1912.00667:57",
+          "1912.00667:9",
+          "1912.00667:63"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1912.00667:59"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1912.00667:63"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A32",
+    "stratum": "regression",
+    "query_id": "2275b0e195cd9cb25f50c5c570da97a4cce5dca8",
+    "document": "2002.07306",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "2002.07306:4",
+          "2002.07306:3",
+          "2002.07306:2",
+          "2002.07306:5"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "2002.07306:11"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "2002.07306:11"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A33",
+    "stratum": "regression",
+    "query_id": "cfbec1ef032ac968560a7c76dec70faf1269b27c",
+    "document": "1704.06194",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1704.06194:2",
+          "1704.06194:3",
+          "1704.06194:5"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1704.06194:52"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1704.06194:2"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A34",
+    "stratum": "partial_gain",
+    "query_id": "d4db7df65aa4ece63e1de813e5ce98ce1b4dbe7f",
+    "document": "1909.10012",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1909.10012:3",
+          "1909.10012:9",
+          "1909.10012:12",
+          "1909.10012:8",
+          "1909.10012:13"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1909.10012:29"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.3333333333333333,
+        "predicted": [
+          "1909.10012:37",
+          "1909.10012:36",
+          "1909.10012:35",
+          "1909.10012:38"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A35",
+    "stratum": "regression",
+    "query_id": "92dfacbbfa732ecea006e251be415a6f89fb4ec6",
+    "document": "1911.07555",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1911.07555:5",
+          "1911.07555:16",
+          "1911.07555:19",
+          "1911.07555:20"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1911.07555:11"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      }
+    }
+  },
+  {
+    "case": "A36",
+    "stratum": "shared_failure",
+    "query_id": "54e945ea4b014e11ed4e1e61abc2aa9e68fea310",
+    "document": "1910.03634",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1910.03634:23"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1910.03634:23"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1910.03634:23"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A37",
+    "stratum": "shared_failure",
+    "query_id": "114934e1a1e818630ff33ac5c4cd4be6c6f75bb2",
+    "document": "1811.08603",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1811.08603:74",
+          "1811.08603:75",
+          "1811.08603:71",
+          "1811.08603:72"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1811.08603:72"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1811.08603:72"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A38",
+    "stratum": "regression",
+    "query_id": "f8da63df16c4c42093e5778c01a8e7e9b270142e",
+    "document": "2002.04095",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "2002.04095:37",
+          "2002.04095:4",
+          "2002.04095:47",
+          "2002.04095:46"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "2002.04095:47"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "2002.04095:47"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A39",
+    "stratum": "partial_gain",
+    "query_id": "f03df5d99b753dc4833ef27b32bb95ba53d790ee",
+    "document": "1712.05999",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1712.05999:11",
+          "1712.05999:4",
+          "1712.05999:2",
+          "1712.05999:3"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.3333333333333333,
+        "predicted": [
+          "1712.05999:43"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1712.05999:36"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A40",
+    "stratum": "regression",
+    "query_id": "1beb4a590fa6127a138f4ed1dd13d5d51cc96809",
+    "document": "1610.08815",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1610.08815:66",
+          "1610.08815:53",
+          "1610.08815:63",
+          "1610.08815:38"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1610.08815:53"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1610.08815:53"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A41",
+    "stratum": "regression",
+    "query_id": "4986f420884f917d1f60d3cea04dc8e64d3b5bf1",
+    "document": "1603.01514",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1603.01514:19",
+          "1603.01514:21",
+          "1603.01514:8",
+          "1603.01514:20"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1603.01514:65"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1603.01514:19"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A42",
+    "stratum": "regression",
+    "query_id": "7b4fb6da74e6bd1baea556788a02969134cf0800",
+    "document": "1909.03405",
+    "results": {
+      "base-dev": {
+        "recall": 0.5,
+        "predicted": [
+          "1909.03405:31"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.5,
+        "predicted": [
+          "1909.03405:31"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      }
+    }
+  },
+  {
+    "case": "A43",
+    "stratum": "shared_failure",
+    "query_id": "8dc707a0daf7bff61a97d9d854283e65c0c85064",
+    "document": "2002.01320",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "2002.01320:3",
+          "2002.01320:2",
+          "2002.01320:41"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "2002.01320:3"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "2002.01320:3"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A44",
+    "stratum": "regression",
+    "query_id": "b7381927764536bd97b099b6a172708125364954",
+    "document": "1805.03710",
+    "results": {
+      "base-dev": {
+        "recall": 0.5,
+        "predicted": [
+          "1805.03710:10",
+          "1805.03710:38",
+          "1805.03710:37",
+          "1805.03710:12"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1805.03710:37"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1805.03710:32"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A45",
+    "stratum": "shared_failure",
+    "query_id": "392fb87564c4f45d0d8d491a9bb217c4fce87f03",
+    "document": "1909.13104",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1909.13104:24",
+          "1909.13104:17",
+          "1909.13104:19",
+          "1909.13104:23"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1909.13104:17"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1909.13104:17"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A46",
+    "stratum": "shared_failure",
+    "query_id": "88ab7811662157680144ed3fdd00939e36552672",
+    "document": "2002.08795",
+    "results": {
+      "base-dev": {
+        "recall": 0.5,
+        "predicted": [
+          "2002.08795:12",
+          "2002.08795:15",
+          "2002.08795:10",
+          "2002.08795:9"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.5,
+        "predicted": [
+          "2002.08795:12"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.5,
+        "predicted": [
+          "2002.08795:12"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A47",
+    "stratum": "shared_failure",
+    "query_id": "87bb3105e03ed6ac5abfde0a7ca9b8de8985663c",
+    "document": "1903.11437",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1903.11437:3",
+          "1903.11437:5",
+          "1903.11437:7",
+          "1903.11437:2"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      }
+    }
+  },
+  {
+    "case": "A48",
+    "stratum": "regression",
+    "query_id": "2fbb6322e485e7743ec3fb4bb02d44bf4b5ea8a6",
+    "document": "1701.02962",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1701.02962:40",
+          "1701.02962:42",
+          "1701.02962:39"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1701.02962:40"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1701.02962:39"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A49",
+    "stratum": "shared_failure",
+    "query_id": "96a4091f681872e6d98d0efee777d9e820cb8dae",
+    "document": "1910.12574",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1910.12574:7"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1910.12574:24"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      }
+    }
+  },
+  {
+    "case": "A50",
+    "stratum": "shared_failure",
+    "query_id": "ee7e9a948ee6888aa5830b1a3d0d148ff656d864",
+    "document": "1806.11432",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      }
+    }
+  },
+  {
+    "case": "A51",
+    "stratum": "shared_failure",
+    "query_id": "d6401cece55a14d2a35ba797a0878dfe2deabedc",
+    "document": "1601.02403",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1601.02403:89",
+          "1601.02403:149",
+          "1601.02403:95",
+          "1601.02403:141"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1601.02403:76"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1601.02403:76"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A52",
+    "stratum": "regression",
+    "query_id": "357eb9f0c07fa45e482d998a8268bd737beb827f",
+    "document": "1910.08293",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1910.08293:64"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1910.08293:47",
+          "1910.08293:49",
+          "1910.08293:51"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1910.08293:47",
+          "1910.08293:49",
+          "1910.08293:51"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A53",
+    "stratum": "shared_failure",
+    "query_id": "19cf7884c0c509c189b1e74fe92c149ff59e444b",
+    "document": "2003.11562",
+    "results": {
+      "base-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "2003.11562:26"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "2003.11562:26"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      }
+    }
+  },
+  {
+    "case": "A54",
+    "stratum": "regression",
+    "query_id": "326588b1de9ba0fd049ab37c907e6e5413e14acd",
+    "document": "1810.04428",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1810.04428:8",
+          "1810.04428:28",
+          "1810.04428:29",
+          "1810.04428:7"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [
+          "1810.04428:8"
+        ],
+        "reason": null
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.5,
+        "predicted": [
+          "1810.04428:29"
+        ],
+        "reason": null
+      }
+    }
+  },
+  {
+    "case": "A55",
+    "stratum": "regression",
+    "query_id": "bc16ce6e9c61ae13d46970ebe6c4728a47f8f425",
+    "document": "1603.09631",
+    "results": {
+      "base-dev": {
+        "recall": 1.0,
+        "predicted": [
+          "1603.09631:42"
+        ],
+        "reason": null
+      },
+      "seed-42-step-88-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      },
+      "seed-42-step-175-dev": {
+        "recall": 0.0,
+        "predicted": [],
+        "reason": "no_route"
+      }
+    }
+  }
+]

@@ -1,0 +1,3480 @@
+{
+  "reviewer": "AI-assisted qualitative review; not independently human-validated",
+  "scores_changed": false,
+  "failure_cases": 50,
+  "control_cases": 5,
+  "mapping_checks_passed": 55,
+  "failure_gold_assessment": {
+    "ambiguous": 10,
+    "possibly_overcomplete": 5,
+    "sufficient": 29,
+    "possibly_incomplete": 6
+  },
+  "control_gold_assessment": {
+    "possibly_overcomplete": 1,
+    "sufficient": 4
+  },
+  "failure_cases_with_proposed_alternatives": 12,
+  "failure_cases_with_high_confidence_alternatives": 8,
+  "high_confidence_alternative_fully_visible_in_a_failing_variant": [
+    "A14",
+    "A32",
+    "A37",
+    "A41",
+    "A43",
+    "A44"
+  ],
+  "protocol": {
+    "salt": "arborvault-routing-v2-audit-20261113",
+    "split": "dev",
+    "pool": {
+      "control": 22,
+      "partial_gain": 4,
+      "shared_failure": 33,
+      "regression": 41
+    },
+    "quotas": {
+      "partial_gain": 3,
+      "regression": 26,
+      "shared_failure": 21,
+      "control": 5
+    },
+    "selected_counts": {
+      "regression": 26,
+      "shared_failure": 21,
+      "control": 5,
+      "partial_gain": 3
+    },
+    "distinct_documents": 55,
+    "reviewer": "AI-assisted; no independent human adjudication",
+    "source_sha256": "2ae7ee62a65b1c4225791c70de80c2aad4e8998cf1fd4f09a53103db4f21af93",
+    "input_report_hashes": {
+      "base-dev": "0f21e561ca501b288178dd07caeaa02d149286682a1586fa917d5f701f9716d7",
+      "seed-42-step-88-dev": "499770591100d0707668ef3b8a3a23bfde33da593f98b06b157b88916ed5a891",
+      "seed-42-step-175-dev": "e98a730ca5a4f877318bc4b9da83a8ebb18c03264e2c14125e275f11cf19c64b"
+    },
+    "packet_sha256": "6fe3826ad3a1948cfe50ec7cff6b74388ab33d669bb83cc67572d980071c8da7"
+  },
+  "cases": [
+    {
+      "case": "A01",
+      "stratum": "regression",
+      "query_id": "352bc6de5c5068c6c19062bad1b8f644919b1145",
+      "document": "1712.05608",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1712.05608:25",
+            "1712.05608:26",
+            "1712.05608:24",
+            "1712.05608:27"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.5,
+          "predicted": [
+            "1712.05608:25"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.5,
+          "predicted": [
+            "1712.05608:25"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "ambiguous",
+      "alternative_ids": [],
+      "confidence": "medium",
+      "rationale": "The annotated experimental paragraphs give task-specific counts (120, 141 and 198) and mention the full 535-utterance emotion corpus. The question does not distinguish full corpus from used binary subsets, and proportion formulas are placeholders. No returned unannotated paragraph independently resolves the maximum; human adjudication should clarify the intended scope.",
+      "question": "Up to how many samples do they experiment with?",
+      "gold_sets": [
+        [
+          "1712.05608:24",
+          "1712.05608:25"
+        ],
+        [
+          "1712.05608:26"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1712.05608",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.5,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.5,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A02",
+      "stratum": "shared_failure",
+      "query_id": "62f27fe08ddb67f16857fab2a8a721926ecbb6fb",
+      "document": "1909.06200",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1909.06200:33",
+            "1909.06200:29",
+            "1909.06200:34",
+            "1909.06200:30"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1909.06200:58"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1909.06200:33",
+            "1909.06200:30"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "possibly_overcomplete",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Paragraph 55 directly identifies four English-proficient annotators. Paragraph 54 describes automatic metrics and may be unnecessary for the who question. Returned training-reward/classifier passages and result rankings do not identify the human judges.",
+      "question": "Who judged the irony accuracy, sentiment preservation and content preservation?",
+      "gold_sets": [
+        [
+          "1909.06200:54"
+        ],
+        [
+          "1909.06200:55"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1909.06200",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A03",
+      "stratum": "shared_failure",
+      "query_id": "8ce11515634236165cdb06ba80b9a36a8b9099a2",
+      "document": "1706.08198",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1706.08198:4",
+            "1706.08198:3",
+            "1706.08198:5",
+            "1706.08198:2"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1706.08198:44"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Annotated paragraphs 7 and 59 explicitly conclude pre-training is necessary. Returned paragraph 44 describes the experiment and a hypothesis, not its result; the other returned introduction paragraphs are background. No equivalent answer evidence found in the pooled retrieved passages.",
+      "question": "Is pre-training effective in their evaluation?",
+      "gold_sets": [
+        [
+          "1706.08198:59"
+        ],
+        [
+          "1706.08198:7"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1706.08198",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A04",
+      "stratum": "control",
+      "query_id": "642e8cf1d39faa1cd985d16750cdc6696c52db2f",
+      "document": "1606.02891",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1606.02891:4",
+            "1606.02891:5",
+            "1606.02891:6"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1606.02891:4"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1606.02891:4"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "possibly_overcomplete",
+      "alternative_ids": [],
+      "confidence": "medium",
+      "rationale": "Paragraph 4 identifies the attentional encoder-decoder baseline and implementation. Paragraphs 5 and 6 add training and decoding specifications. Depending on intended granularity, naming the system alone may suffice; missing configuration paragraphs should not automatically imply an unusable answer.",
+      "question": "what are the baseline systems?",
+      "gold_sets": [
+        [
+          "1606.02891:4"
+        ],
+        [
+          "1606.02891:4",
+          "1606.02891:5",
+          "1606.02891:6"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1606.02891",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A05",
+      "stratum": "shared_failure",
+      "query_id": "05887a8466e0a2f0df4d6a5ffc5815acd7d9066a",
+      "document": "1706.06894",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1706.06894:16",
+            "1706.06894:17",
+            "1706.06894:19",
+            "1706.06894:22"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1706.06894:19"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        }
+      },
+      "gold_assessment": "ambiguous",
+      "alternative_ids": [
+        "1706.06894:19"
+      ],
+      "confidence": "medium",
+      "rationale": "Unannotated returned paragraph 19 explicitly compares unigram and bigram SVM features and states unigrams perform better. Annotated paragraph 18 instead compares target/class outcomes. Paragraph 19 is a plausible sufficient alternative for the natural feature-approach interpretation of the question; adjudication is needed to settle intended meaning.",
+      "question": "Which SVM approach resulted in the best performance?",
+      "gold_sets": [
+        [
+          "1706.06894:18"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1706.06894",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A06",
+      "stratum": "regression",
+      "query_id": "df6d327e176740da9edcc111a06374c54c8e809c",
+      "document": "1908.05441",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1908.05441:14",
+            "1908.05441:19",
+            "1908.05441:20",
+            "1908.05441:15"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1908.05441:14"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1908.05441:14"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "possibly_incomplete",
+      "alternative_ids": [],
+      "confidence": "medium",
+      "rationale": "The gold covers bag-of-words/hierarchical features and CNN, while paragraph 14 announces five earlier models. These two annotated paragraphs may not exhaust the requested baseline list. Returned paragraph 14 is useful context but does not name all five; the BERT-QC paragraph is the proposed model, not a baseline. Inspect neighboring source paragraphs before adjudication.",
+      "additional_source_review": {
+        "paragraphs": [
+          "1908.05441:16",
+          "1908.05441:17",
+          "1908.05441:18"
+        ],
+        "finding": "Neighboring source paragraphs additionally identify dependency features, hypernym expansion and essential terms. The two gold paragraphs omit these compared feature configurations; this supports the incomplete-enumeration concern."
+      },
+      "question": "What previous methods is their model compared to?",
+      "gold_sets": [
+        [
+          "1908.05441:15",
+          "1908.05441:19"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1908.05441",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A07",
+      "stratum": "shared_failure",
+      "query_id": "660284b0a21fe3801e64dc9e0e51da5400223fe3",
+      "document": "1911.06118",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1911.06118:6",
+            "1911.06118:10",
+            "1911.06118:2",
+            "1911.06118:3",
+            "1911.06118:9"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1911.06118:33"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1911.06118:28"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "ambiguous",
+      "alternative_ids": [],
+      "confidence": "medium",
+      "rationale": "The question says WSD, while the gold reports correlation on SCWS word similarity. Paragraph 33 compares entailment performance, a different evaluation, and cannot replace the SCWS result without broadening the question. The returned background/method paragraphs do not state the requested comparison.",
+      "question": "How does this approach compare to other WSD approaches employing word embeddings?",
+      "gold_sets": [
+        [
+          "1911.06118:31"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1911.06118",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A08",
+      "stratum": "shared_failure",
+      "query_id": "9b4dc790e4ff49562992aae4fad3a38621fadd8b",
+      "document": "1810.12091",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1810.12091:4",
+            "1810.12091:5"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1810.12091:26"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1810.12091:17"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "ambiguous",
+      "alternative_ids": [],
+      "confidence": "medium",
+      "rationale": "The question does not specify prior literature versus evaluated baselines. Gold paragraph 50 enumerates the experiment's baseline variants. Returned paragraph 17 describes one earlier bag-of-words plus structured-data approach, but does not give the full baseline set; count it as partial context, not a verified sufficient alternative.",
+      "question": "what are the existing approaches?",
+      "gold_sets": [
+        [
+          "1810.12091:50"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1810.12091",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A09",
+      "stratum": "regression",
+      "query_id": "8dda1ef371933811e2a25a286529c31623cca0c6",
+      "document": "2004.02192",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "2004.02192:16"
+          ],
+          "reason": "no_route"
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "2004.02192:27"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Gold paragraph 16 explicitly says one annotator carried out all annotation. Paragraph 27 refers to three additional annotators only for a 100-tweet quality-check sample, so substituting it would answer the wrong scope.",
+      "question": "How many annotators tagged each tweet?",
+      "gold_sets": [
+        [
+          "2004.02192:16"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/2004.02192",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A10",
+      "stratum": "control",
+      "query_id": "f1f1dcc67b3e4d554bfeb508226cdadb3c32d2e9",
+      "document": "1806.04511",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1806.04511:21",
+            "1806.04511:20",
+            "1806.04511:22",
+            "1806.04511:28"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1806.04511:21",
+            "1806.04511:20",
+            "1806.04511:22"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1806.04511:21",
+            "1806.04511:20",
+            "1806.04511:22"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "The preserved alternatives identify the review corpora and SemEval-2016 evaluation datasets. Paragraph 21 explicitly discusses training sets and paragraph 28 statistical comparisons; neither is an equivalent source for the evaluation-dataset question.",
+      "question": "what datasets were used in evaluation?",
+      "gold_sets": [
+        [
+          "1806.04511:20"
+        ],
+        [
+          "1806.04511:22"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1806.04511",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A11",
+      "stratum": "control",
+      "query_id": "c2e475adeddcdc4d637ef0d4f5065b6a9b299827",
+      "document": "1804.07789",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1804.07789:43"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1804.07789:43"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1804.07789:43"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "The retrieved gold paragraph explicitly lists BLEU-4, NIST-4 and ROUGE-4. No unannotated candidate appears in the pooled output.",
+      "question": "What metrics are used for evaluation?",
+      "gold_sets": [
+        [
+          "1804.07789:43"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1804.07789",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A12",
+      "stratum": "regression",
+      "query_id": "7e38e0279a620d3df05ab9b5e2795044f18d4471",
+      "document": "1801.06482",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1801.06482:4",
+            "1801.06482:3",
+            "1801.06482:29",
+            "1801.06482:7"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1801.06482:4"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1801.06482:3"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [
+        "1801.06482:29"
+      ],
+      "confidence": "high",
+      "rationale": "Unannotated returned paragraph 29 explicitly identifies sexism/racism in Twitter and personal attacks in Wikipedia, matching the three topics stated in both annotated alternatives. It is a sufficient alternative for the topic-list question.",
+      "question": "What cyberbulling topics did they address?",
+      "gold_sets": [
+        [
+          "1801.06482:4"
+        ],
+        [
+          "1801.06482:7"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1801.06482",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        },
+        "step-88": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A13",
+      "stratum": "regression",
+      "query_id": "8eefa116e3c3d3db751423cc4095d1c4153d3a5f",
+      "document": "1608.06757",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1608.06757:29",
+            "1608.06757:28",
+            "1608.06757:30"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.5,
+          "predicted": [
+            "1608.06757:29"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.5,
+          "predicted": [
+            "1608.06757:29"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Annotated paragraphs distinguish training corpora (GENIA, CoNLL2003) from evaluation sets (also KORE50, ACE2004 and MSNBC). Alternative gold sets are already retained. Unannotated paragraph 28 gives sample counts and hardware but no dataset names.",
+      "question": "what standard dataset were used?",
+      "gold_sets": [
+        [
+          "1608.06757:29",
+          "1608.06757:30"
+        ],
+        [
+          "1608.06757:30"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1608.06757",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.5,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.5,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A14",
+      "stratum": "shared_failure",
+      "query_id": "78292bc57ee68fdb93ed45430d80acca25a9e916",
+      "document": "1911.03343",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1911.03343:16",
+            "1911.03343:14",
+            "1911.03343:20",
+            "1911.03343:8"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1911.03343:8"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1911.03343:8"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [
+        "1911.03343:8"
+      ],
+      "confidence": "high",
+      "rationale": "Returned unannotated paragraph 8 directly explains manually adding negation to templates/statements in Google-RE, T-REx, SQuAD and a selected ConceptNet subset. This answers the construction question without requiring the annotated introductory paragraph.",
+      "question": "How did they extend LAMA evaluation framework to focus on negation?",
+      "gold_sets": [
+        [
+          "1911.03343:4"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1911.03343",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        }
+      }
+    },
+    {
+      "case": "A15",
+      "stratum": "regression",
+      "query_id": "45a5961a4e1d1c22874c4918e5c98bd3c0a670b3",
+      "document": "1801.02073",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1801.02073:12",
+            "1801.02073:14",
+            "1801.02073:9",
+            "1801.02073:15"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1801.02073:7"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1801.02073:6"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Only the annotated paragraph 14 states seven question types. Other returned paragraphs describe datasets, task types, or answer categories; these do not supply the requested count.",
+      "question": "How many question types do they find in the datasets analyzed?",
+      "gold_sets": [
+        [
+          "1801.02073:14"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1801.02073",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A16",
+      "stratum": "regression",
+      "query_id": "bd5bd1765362c2d972a762ca12675108754aa437",
+      "document": "1804.05918",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1804.05918:59",
+            "1804.05918:60",
+            "1804.05918:58",
+            "1804.05918:61"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1804.05918:59"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1804.05918:59"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Gold paragraph 61 gives the full model's gain over the previous best system. Paragraph 59 reports a different variant against different baselines, so its larger improvement numbers are not an equivalent answer. An alternative gold set already permits paragraph 61 alone.",
+      "question": "How much does this model improve state-of-the-art?",
+      "gold_sets": [
+        [
+          "1804.05918:60",
+          "1804.05918:61",
+          "1804.05918:64"
+        ],
+        [
+          "1804.05918:61"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1804.05918",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A17",
+      "stratum": "shared_failure",
+      "query_id": "b6f15fb6279b82e34a5bf4828b7b5ddabfdf1d54",
+      "document": "1912.01214",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1912.01214:12",
+            "1912.01214:13",
+            "1912.01214:11",
+            "1912.01214:10"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1912.01214:13"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1912.01214:13"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Gold paragraph 47 states the actual experimental comparators. Returned related-work paragraphs describe method families but do not establish which particular approaches were evaluated; listing the literature is insufficient evidence for the comparison question.",
+      "question": "which multilingual approaches do they compare with?",
+      "gold_sets": [
+        [
+          "1912.01214:47"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1912.01214",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A18",
+      "stratum": "shared_failure",
+      "query_id": "22744c3bc68f120669fc69490f8e539b09e34b94",
+      "document": "1805.01445",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1805.01445:5",
+            "1805.01445:4",
+            "1805.01445:2",
+            "1805.01445:3"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1805.01445:5"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1805.01445:5"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "ambiguous",
+      "alternative_ids": [
+        "1805.01445:5"
+      ],
+      "confidence": "medium",
+      "rationale": "The gold conclusion explicitly leaves natural-language generalization for future work. Returned paragraph 5 also states the evidence is from a simple symbol-replacement task, supporting a qualified answer that broader applicability is not established. Treat this as a provisional alternative for scope limitation, not evidence of general-purpose generalization.",
+      "question": "Can the findings of this paper be generalized to a general-purpose task?",
+      "gold_sets": [
+        [
+          "1805.01445:24"
+        ],
+        [
+          "1805.01445:7"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1805.01445",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        }
+      }
+    },
+    {
+      "case": "A19",
+      "stratum": "regression",
+      "query_id": "18c5d366b1da8447b5404eab71f4cc658ba12e6f",
+      "document": "1810.08699",
+      "results": {
+        "base-dev": {
+          "recall": 0.75,
+          "predicted": [
+            "1810.08699:42",
+            "1810.08699:33",
+            "1810.08699:36",
+            "1810.08699:37"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.25,
+          "predicted": [
+            "1810.08699:33"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.25,
+          "predicted": [
+            "1810.08699:33"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "possibly_overcomplete",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Annotated and returned paragraph 33 alone names all three evaluated systems: Stanford NER, spaCy 2.0 and the recurrent BiLSTM-CRF model. Both gold sets require several model-description paragraphs, so a context containing paragraph 33 can answer the naming question while receiving incomplete paragraph recall. This is evidence-set redundancy, not an unannotated alternative.",
+      "question": "what ner models were evaluated?",
+      "gold_sets": [
+        [
+          "1810.08699:33",
+          "1810.08699:35",
+          "1810.08699:36",
+          "1810.08699:37"
+        ],
+        [
+          "1810.08699:35",
+          "1810.08699:36",
+          "1810.08699:37"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1810.08699",
+      "context_check": {
+        "base": {
+          "original_recall": 0.75,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.25,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.25,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A20",
+      "stratum": "control",
+      "query_id": "cf874cd9023d901e10aa8664b813d32501e7e4d2",
+      "document": "1705.05437",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1705.05437:9",
+            "1705.05437:10",
+            "1705.05437:7",
+            "1705.05437:8"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1705.05437:7"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1705.05437:7"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Gold paragraph 7 expands NER and explains recognition of biomedical entities. Other retrieved paragraphs describe specific NER systems and extraction examples but do not independently give the same explicit definition/acronym expansion.",
+      "question": "What is NER?",
+      "gold_sets": [
+        [
+          "1705.05437:7"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1705.05437",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A21",
+      "stratum": "shared_failure",
+      "query_id": "d6e353e0231d09fd5dcba493544d53706f3fe1ab",
+      "document": "1912.01852",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1912.01852:3",
+            "1912.01852:2",
+            "1912.01852:7",
+            "1912.01852:4"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1912.01852:21"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        }
+      },
+      "gold_assessment": "possibly_overcomplete",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Paragraphs 35 and 36 describe NCC pitch matching and subjective MOS naturalness/similarity; paragraph 34 is introductory and 37 an additional pitch experiment. Returned method/introduction paragraphs describe improving quality, not measuring it. Redundancy in the gold does not explain failing to retrieve either actual metric paragraph.",
+      "question": "How is the quality of singing voice measured?",
+      "gold_sets": [
+        [
+          "1912.01852:34",
+          "1912.01852:35",
+          "1912.01852:36"
+        ],
+        [
+          "1912.01852:34",
+          "1912.01852:35",
+          "1912.01852:36",
+          "1912.01852:37"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1912.01852",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A22",
+      "stratum": "regression",
+      "query_id": "bc01853512eb3c11528e33003ceb233d7c1d7038",
+      "document": "1905.11268",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1905.11268:3",
+            "1905.11268:7",
+            "1905.11268:2",
+            "1905.11268:4"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1905.11268:3"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1905.11268:4"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Gold paragraph 3 supplies the real-world motivation: deliberate misspellings in spam and censorship evasion. Paragraph 4 explains human-readable perturbations and paragraph 7 describes the defense, but neither replaces the real-world adversarial-setting rationale.",
+      "question": "Why is the adversarial setting appropriate for misspelling recognition?",
+      "gold_sets": [
+        [
+          "1905.11268:3"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1905.11268",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A23",
+      "stratum": "shared_failure",
+      "query_id": "3355918bbdccac644afe441f085d0ffbbad565d7",
+      "document": "2001.01269",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "2001.01269:31",
+            "2001.01269:37",
+            "2001.01269:26",
+            "2001.01269:27"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "2001.01269:31"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "2001.01269:27"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "possibly_incomplete",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Gold paragraph 29 describes the effect/use of supervised polarity rather than its calculation. Returned paragraphs 26-27 discuss training-only counts, normalization and smoothing; paragraph 31 defines contextual min/max/mean scores. The actual formula is replaced by DISPLAY_FORM4 in the exported source. The question and annotation require adjudication; these are useful unannotated partial evidence, not a verified complete formula answer.",
+      "additional_source_review": {
+        "paragraphs": [
+          "2001.01269:26",
+          "2001.01269:27",
+          "2001.01269:28",
+          "2001.01269:31"
+        ],
+        "finding": "Full neighboring source confirms the raw formula is represented only by DISPLAY_FORM4, and paragraph 28 describes a separate +1/-1 alternative. The broad supervised-score question has multiple possible referents; no new exact formula was reconstructed."
+      },
+      "question": "How are the supervised scores of the words calculated?",
+      "gold_sets": [
+        [
+          "2001.01269:29"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/2001.01269",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A24",
+      "stratum": "regression",
+      "query_id": "7705dd04acedaefee30d8b2c9978537afb2040dc",
+      "document": "1604.00727",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1604.00727:58",
+            "1604.00727:57",
+            "1604.00727:59",
+            "1604.00727:50"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1604.00727:57",
+            "1604.00727:59"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1604.00727:57",
+            "1604.00727:59"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "ambiguous",
+      "alternative_ids": [],
+      "confidence": "medium",
+      "rationale": "Gold paragraph 50 names MemNN baselines, while the question's word-level/character-level phrasing also points to the ablation in paragraph 57. The latter does not identify architectures. The alternatives preserve paragraph 50 alone; no additional complete baseline description is present in the returned passages.",
+      "question": "What word level and character level model baselines are used?",
+      "gold_sets": [
+        [
+          "1604.00727:49",
+          "1604.00727:50"
+        ],
+        [
+          "1604.00727:50"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1604.00727",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A25",
+      "stratum": "control",
+      "query_id": "c37f65c9f0d543a35c784263b79236ccf1c44fac",
+      "document": "1806.00738",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1806.00738:9",
+            "1806.00738:11",
+            "1806.00738:13",
+            "1806.00738:15"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1806.00738:9"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1806.00738:9"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [
+        "1806.00738:15"
+      ],
+      "confidence": "high",
+      "rationale": "Unannotated returned paragraph 15 explicitly states Inception v3 obtains each image representation and describes the sequence encoder, duplicating the relevant information in annotated paragraph 11. It is a sufficient alternative for the image-encoding model question.",
+      "question": "What model is used to encode the images?",
+      "gold_sets": [
+        [
+          "1806.00738:11"
+        ],
+        [
+          "1806.00738:9"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1806.00738",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        },
+        "step-88": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A26",
+      "stratum": "regression",
+      "query_id": "2317ca8d475b01f6632537b95895608dc40c4415",
+      "document": "1910.06592",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1910.06592:9",
+            "1910.06592:10",
+            "1910.06592:18",
+            "1910.06592:19"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1910.06592:27"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Gold paragraph 10 directly defines date-sorted fixed-size tweet chunks; paragraph 9 describes sorting and account labels. Other retrieved passages describe how chunks are modeled or classified rather than defining their construction. One preserved gold alternative already permits paragraph 10 alone.",
+      "question": "How is a \"chunk of posts\" defined in this work?",
+      "gold_sets": [
+        [
+          "1910.06592:10"
+        ],
+        [
+          "1910.06592:3",
+          "1910.06592:9"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1910.06592",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A27",
+      "stratum": "regression",
+      "query_id": "8a7615fc6ff1de287d36ab21bf2c6a3b2914f73d",
+      "document": "1908.05828",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1908.05828:14",
+            "1908.05828:23",
+            "1908.05828:16",
+            "1908.05828:18",
+            "1908.05828:21"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1908.05828:54",
+            "1908.05828:55"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1908.05828:21"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Paragraph 14 enumerates the model families; paragraph 41 gives the neural variants. Retrieved embedding paragraphs are feature representations, and paragraphs 18/55 discuss only individual components or systems, not an equivalent complete list.",
+      "question": "Which machine learning models do they explore?",
+      "gold_sets": [
+        [
+          "1908.05828:14"
+        ],
+        [
+          "1908.05828:41"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1908.05828",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A28",
+      "stratum": "regression",
+      "query_id": "1bdc990c7e948724ab04e70867675a334fdd3051",
+      "document": "1909.00105",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1909.00105:2",
+            "1909.00105:6",
+            "1909.00105:28",
+            "1909.00105:7"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1909.00105:28"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Gold paragraph 28 explicitly identifies Food.com as the collected recipe source. Returned introduction paragraphs discuss the task and dataset size without naming the source.",
+      "question": "Where do they get the recipes from?",
+      "gold_sets": [
+        [
+          "1909.00105:28"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1909.00105",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A29",
+      "stratum": "regression",
+      "query_id": "5e324846a99a5573cd2e843d1657e87f4eb22fa6",
+      "document": "1710.07960",
+      "results": {
+        "base-dev": {
+          "recall": 0.5,
+          "predicted": [
+            "1710.07960:5",
+            "1710.07960:2",
+            "1710.07960:4",
+            "1710.07960:3"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1710.07960:65"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1710.07960:65"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "possibly_overcomplete",
+      "alternative_ids": [],
+      "confidence": "medium",
+      "rationale": "Returned annotated paragraph 5 already explains modifying naive Bayes to remove bias toward senses with more training data. Gold sets additionally require paragraph 17 or a formula-bearing group; paragraph 47 is only a formula placeholder. Unannotated paragraph 65 concerns sense ordering, not the classifier correction. Partial gold recall can understate a useful high-level answer.",
+      "question": "How do they deal with unknown distribution senses?",
+      "gold_sets": [
+        [
+          "1710.07960:17",
+          "1710.07960:5"
+        ],
+        [
+          "1710.07960:47",
+          "1710.07960:48",
+          "1710.07960:69"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1710.07960",
+      "context_check": {
+        "base": {
+          "original_recall": 0.5,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A30",
+      "stratum": "partial_gain",
+      "query_id": "b4f881331b975e6e4cab1868267211ed729d782d",
+      "document": "1908.04042",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1908.04042:15",
+            "1908.04042:13",
+            "1908.04042:14",
+            "1908.04042:12"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1908.04042:16"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        }
+      },
+      "gold_assessment": "ambiguous",
+      "alternative_ids": [],
+      "confidence": "medium",
+      "rationale": "Gold paragraph 16 states 33,663 distinct review keywords, but the paper has several annotation vocabularies and the question does not specify which. Other returned dataset paragraphs give books/time ranges rather than a vocabulary count. No equivalent unannotated count is present.",
+      "question": "how large is the vocabulary?",
+      "gold_sets": [
+        [
+          "1908.04042:16"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1908.04042",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A31",
+      "stratum": "shared_failure",
+      "query_id": "67e9e147b2cab5ba43572ce8a17fc863690172f0",
+      "document": "1912.00667",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1912.00667:51",
+            "1912.00667:56",
+            "1912.00667:57",
+            "1912.00667:9",
+            "1912.00667:63"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1912.00667:59"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1912.00667:63"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "medium",
+      "rationale": "Gold paragraph 73 explains interpretability through human-solicited informative keywords. Retrieved AUC/accuracy improvements establish prediction quality, not interpretability. Paragraph 63's example of keyword co-occurrence is related context but does not independently establish the claimed human-understandable explanation mechanism.",
+      "question": "How are the interpretability merits of the approach demonstrated?",
+      "gold_sets": [
+        [
+          "1912.00667:73"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1912.00667",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A32",
+      "stratum": "regression",
+      "query_id": "2275b0e195cd9cb25f50c5c570da97a4cce5dca8",
+      "document": "2002.07306",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "2002.07306:4",
+            "2002.07306:3",
+            "2002.07306:2",
+            "2002.07306:5"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "2002.07306:11"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "2002.07306:11"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [
+        "2002.07306:11"
+      ],
+      "confidence": "high",
+      "rationale": "Unannotated paragraph 11 gives the full transfer procedure: initialize target embeddings in English space, fit embeddings with the encoder frozen, then jointly fine-tune the bilingual model. It is a more detailed sufficient alternative to the annotated introduction.",
+      "question": "How is the model transferred to other languages?",
+      "gold_sets": [
+        [
+          "2002.07306:4"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/2002.07306",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        }
+      }
+    },
+    {
+      "case": "A33",
+      "stratum": "regression",
+      "query_id": "cfbec1ef032ac968560a7c76dec70faf1269b27c",
+      "document": "1704.06194",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1704.06194:2",
+            "1704.06194:3",
+            "1704.06194:5"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1704.06194:52"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1704.06194:2"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Only the annotated paragraph 2 explicitly expands Knowledge Base Question Answering. The other returned paragraphs use KBQA without expanding it, so general domain knowledge should not be counted as retrieved evidence.",
+      "question": "What does KBQA abbreviate for",
+      "gold_sets": [
+        [
+          "1704.06194:2"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1704.06194",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A34",
+      "stratum": "partial_gain",
+      "query_id": "d4db7df65aa4ece63e1de813e5ce98ce1b4dbe7f",
+      "document": "1909.10012",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1909.10012:3",
+            "1909.10012:9",
+            "1909.10012:12",
+            "1909.10012:8",
+            "1909.10012:13"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1909.10012:29"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.3333333333333333,
+          "predicted": [
+            "1909.10012:37",
+            "1909.10012:36",
+            "1909.10012:35",
+            "1909.10012:38"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "medium",
+      "rationale": "Gold covers frequency, changed attribute types and similarity to previous values. Unannotated paragraph 37 gives useful quantitative support for the frequency facet, but does not replace the other facets. Returned research questions describe what is studied, not the findings; no complete alternative evidence set appears in the pooled output.",
+      "question": "How do profile changes vary for influential leads and their followers over the social movement?",
+      "gold_sets": [
+        [
+          "1909.10012:38",
+          "1909.10012:39",
+          "1909.10012:45"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1909.10012",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.3333333333333333,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A35",
+      "stratum": "regression",
+      "query_id": "92dfacbbfa732ecea006e251be415a6f89fb4ec6",
+      "document": "1911.07555",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1911.07555:5",
+            "1911.07555:16",
+            "1911.07555:19",
+            "1911.07555:20"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1911.07555:11"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Gold paragraph 5 names the members of the Nguni and Sotho groups and explicitly states within-group similarity. Method paragraphs 19-20 mention grouping but do not list the member languages or provide an equivalent explicit comparison.",
+      "question": "Which languages are similar to each other?",
+      "gold_sets": [
+        [
+          "1911.07555:5"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1911.07555",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A36",
+      "stratum": "shared_failure",
+      "query_id": "54e945ea4b014e11ed4e1e61abc2aa9e68fea310",
+      "document": "1910.03634",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1910.03634:23"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1910.03634:23"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1910.03634:23"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Gold paragraph 19 gives the best BLEU value 29.65 and comparator 26.97. Returned paragraph 23 only discusses BLEU versus sentence length and points to a figure without the requested number.",
+      "question": "What is best BLEU score of language style transfer authors got?",
+      "gold_sets": [
+        [
+          "1910.03634:19"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1910.03634",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A37",
+      "stratum": "shared_failure",
+      "query_id": "114934e1a1e818630ff33ac5c4cd4be6c6f75bb2",
+      "document": "1811.08603",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1811.08603:74",
+            "1811.08603:75",
+            "1811.08603:71",
+            "1811.08603:72"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1811.08603:72"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1811.08603:72"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [
+        "1811.08603:72",
+        "1811.08603:75"
+      ],
+      "confidence": "high",
+      "rationale": "Together, returned unannotated paragraphs 72 and 75 report strong generalization and better performance across GERBIL and the easy/hard TAC2010/WW cases, with numerical F1 gains. This jointly supplies a substantive overall-effectiveness answer equivalent to the gold introduction's summary. Both passages form the proposed alternative set.",
+      "question": "How effective is their NCEL approach overall?",
+      "gold_sets": [
+        [
+          "1811.08603:10"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1811.08603",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A38",
+      "stratum": "regression",
+      "query_id": "f8da63df16c4c42093e5778c01a8e7e9b270142e",
+      "document": "2002.04095",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "2002.04095:37",
+            "2002.04095:4",
+            "2002.04095:47",
+            "2002.04095:46"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "2002.04095:47"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "2002.04095:47"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "medium",
+      "rationale": "Gold paragraph 37 explains comparing boundary word pairs against Annodis; other gold paragraphs describe metrics and reference annotators. Returned paragraph 47 adds precision/recall/F-score arithmetic but not the boundary matching definition, so it is useful partial evidence rather than a complete replacement.",
+      "question": "How is segmentation quality evaluated?",
+      "gold_sets": [
+        [
+          "2002.04095:37"
+        ],
+        [
+          "2002.04095:46",
+          "2002.04095:48",
+          "2002.04095:51"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/2002.04095",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A39",
+      "stratum": "partial_gain",
+      "query_id": "f03df5d99b753dc4833ef27b32bb95ba53d790ee",
+      "document": "1712.05999",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1712.05999:11",
+            "1712.05999:4",
+            "1712.05999:2",
+            "1712.05999:3"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.3333333333333333,
+          "predicted": [
+            "1712.05999:43"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1712.05999:36"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Gold identifies verification status and friend/follower ratios, with paragraph 55 accepted alone. Unannotated paragraph 4 is a noisy abstract/header extraction and names dimensions without stating their directions. Formatting-only paragraphs 2 and 3 are retrieval distractors; their mapping is faithful to the noisy upstream source, not a new exporter mismatch.",
+      "question": "What are the characteristics of the accounts that spread fake news?",
+      "gold_sets": [
+        [
+          "1712.05999:38",
+          "1712.05999:43",
+          "1712.05999:46"
+        ],
+        [
+          "1712.05999:55"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1712.05999",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.3333333333333333,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A40",
+      "stratum": "regression",
+      "query_id": "1beb4a590fa6127a138f4ed1dd13d5d51cc96809",
+      "document": "1610.08815",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1610.08815:66",
+            "1610.08815:53",
+            "1610.08815:63",
+            "1610.08815:38"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1610.08815:53"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1610.08815:53"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Gold paragraph 38 defines 100 features from the baseline CNN's fully connected layer. Paragraph 53 refers to n-gram baselines in prior literature, not this network, and the other passages discuss performance rather than feature definition.",
+      "question": "What are the network's baseline features?",
+      "gold_sets": [
+        [
+          "1610.08815:38"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1610.08815",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A41",
+      "stratum": "regression",
+      "query_id": "4986f420884f917d1f60d3cea04dc8e64d3b5bf1",
+      "document": "1603.01514",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1603.01514:19",
+            "1603.01514:21",
+            "1603.01514:8",
+            "1603.01514:20"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1603.01514:65"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1603.01514:19"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [
+        "1603.01514:65"
+      ],
+      "confidence": "high",
+      "rationale": "Unannotated returned conclusion paragraph 65 explicitly identifies crosslingual latent variables and their role in capturing alignments/correlations between roles across languages. It suffices for the variable-identification question.",
+      "question": "Which additional latent variables are used in the model?",
+      "gold_sets": [
+        [
+          "1603.01514:19"
+        ],
+        [
+          "1603.01514:8"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1603.01514",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        },
+        "step-175": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A42",
+      "stratum": "regression",
+      "query_id": "7b4fb6da74e6bd1baea556788a02969134cf0800",
+      "document": "1909.03405",
+      "results": {
+        "base-dev": {
+          "recall": 0.5,
+          "predicted": [
+            "1909.03405:31"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.5,
+          "predicted": [
+            "1909.03405:31"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        }
+      },
+      "gold_assessment": "possibly_incomplete",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Gold paragraphs specify BERTbase architecture, pre-training data, optimizer and two training phases, but never explicitly state whether initialization uses a saved checkpoint. The retrieved paragraph cannot justify a yes/no conclusion on its own. Inspect the full source for an initialization statement before treating this as a retrieval-only error.",
+      "additional_source_review": {
+        "paragraphs": [
+          "1909.03405:16",
+          "1909.03405:30",
+          "1909.03405:31",
+          "1909.03405:43",
+          "1909.03405:52"
+        ],
+        "finding": "Source describes pre-training and downstream fine-tuning; the explicit checkpoint mention in paragraph 43 concerns choosing a checkpoint for prediction. This does not resolve whether the proposed pre-training run was initialized from an existing checkpoint. Leave initialization unadjudicated."
+      },
+      "question": "Do they train their model starting from a checkpoint?",
+      "gold_sets": [
+        [
+          "1909.03405:30",
+          "1909.03405:31"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1909.03405",
+      "context_check": {
+        "base": {
+          "original_recall": 0.5,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.5,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A43",
+      "stratum": "shared_failure",
+      "query_id": "8dc707a0daf7bff61a97d9d854283e65c0c85064",
+      "document": "2002.01320",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "2002.01320:3",
+            "2002.01320:2",
+            "2002.01320:41"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "2002.01320:3"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "2002.01320:3"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [
+        "2002.01320:3"
+      ],
+      "confidence": "high",
+      "rationale": "Unannotated returned introduction paragraph 3 enumerates all eleven CoVoST source languages and does not include Arabic, giving the same complete-list basis for a negative answer as the gold paragraph.",
+      "question": "Is Arabic one of the 11 languages in CoVost?",
+      "gold_sets": [
+        [
+          "2002.01320:7"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/2002.01320",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        }
+      }
+    },
+    {
+      "case": "A44",
+      "stratum": "regression",
+      "query_id": "b7381927764536bd97b099b6a172708125364954",
+      "document": "1805.03710",
+      "results": {
+        "base-dev": {
+          "recall": 0.5,
+          "predicted": [
+            "1805.03710:10",
+            "1805.03710:38",
+            "1805.03710:37",
+            "1805.03710:12"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1805.03710:37"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1805.03710:32"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "possibly_incomplete",
+      "alternative_ids": [
+        "1805.03710:32"
+      ],
+      "confidence": "high",
+      "rationale": "Returned unannotated paragraph 32 summarizes intrinsic word similarity/analogy, downstream evaluation and OOV nearest-neighbor analysis. Gold paragraphs cover downstream tasks and selected OOV examples but omit the intrinsic tasks. Paragraph 32 is a sufficient high-level answer; paragraph 37 adds unannotated intrinsic dataset details.",
+      "question": "How do they evaluate their resulting word embeddings?",
+      "gold_sets": [
+        [
+          "1805.03710:38",
+          "1805.03710:39"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1805.03710",
+      "context_check": {
+        "base": {
+          "original_recall": 0.5,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        }
+      }
+    },
+    {
+      "case": "A45",
+      "stratum": "shared_failure",
+      "query_id": "392fb87564c4f45d0d8d491a9bb217c4fce87f03",
+      "document": "1909.13104",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1909.13104:24",
+            "1909.13104:17",
+            "1909.13104:19",
+            "1909.13104:23"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1909.13104:17"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1909.13104:17"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "ambiguous",
+      "alternative_ids": [],
+      "confidence": "medium",
+      "rationale": "Gold paragraph 38 lists several compared RNN configurations, whereas the question asks for one baseline. Returned paragraph 17 describes the basic last-state RNN, and paragraph 24 discusses the prior attention approach, but neither identifies the entire comparison setup. Treat intended baseline scope as unresolved rather than declaring either a complete alternative.",
+      "question": "What baseline model is used?",
+      "gold_sets": [
+        [
+          "1909.13104:38"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1909.13104",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A46",
+      "stratum": "shared_failure",
+      "query_id": "88ab7811662157680144ed3fdd00939e36552672",
+      "document": "2002.08795",
+      "results": {
+        "base-dev": {
+          "recall": 0.5,
+          "predicted": [
+            "2002.08795:12",
+            "2002.08795:15",
+            "2002.08795:10",
+            "2002.08795:9"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.5,
+          "predicted": [
+            "2002.08795:12"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.5,
+          "predicted": [
+            "2002.08795:12"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "possibly_incomplete",
+      "alternative_ids": [
+        "2002.08795:10",
+        "2002.08795:12"
+      ],
+      "confidence": "medium",
+      "rationale": "The gold alternative containing paragraphs 12-13 describes only KG-A2C-Explore, while paragraph 7 covers both contributions. Returned paragraph 10 identifies KG-A2C-chained and its bottleneck strategy; together with returned annotated paragraph 12 it names and outlines both strategies. This proposed mixed annotated/unannotated set is provisionally sufficient for the naming question, though paragraph 13 is needed for fuller graph-integration detail.",
+      "question": "What are the two new strategies?",
+      "gold_sets": [
+        [
+          "2002.08795:12",
+          "2002.08795:13"
+        ],
+        [
+          "2002.08795:7"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/2002.08795",
+      "context_check": {
+        "base": {
+          "original_recall": 0.5,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        },
+        "step-88": {
+          "original_recall": 0.5,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.5,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A47",
+      "stratum": "shared_failure",
+      "query_id": "87bb3105e03ed6ac5abfde0a7ca9b8de8985663c",
+      "document": "1903.11437",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1903.11437:3",
+            "1903.11437:5",
+            "1903.11437:7",
+            "1903.11437:2"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Gold explains avoiding a backward translation engine or using a modified copy of the target. Returned paragraph 3 explains why conventional back-translation is costly, but does not establish how the proposed methods avoid that work; paragraph 5 merely claims cheaper techniques.",
+      "question": "why are their techniques cheaper to implement?",
+      "gold_sets": [
+        [
+          "1903.11437:33"
+        ],
+        [
+          "1903.11437:75"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1903.11437",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A48",
+      "stratum": "regression",
+      "query_id": "2fbb6322e485e7743ec3fb4bb02d44bf4b5ea8a6",
+      "document": "1701.02962",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1701.02962:40",
+            "1701.02962:42",
+            "1701.02962:39"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1701.02962:40"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1701.02962:39"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "ambiguous",
+      "alternative_ids": [],
+      "confidence": "medium",
+      "rationale": "The two gold alternatives refer to word-pair source data and the Wikipedia corpus used to derive patterns. Returned paragraph 40 clarifies that the pairs are split into train/test/validation, but does not identify their source by itself. The question conflates corpus and evaluation set; source-plus-split evidence would be clearer than either current alternative alone.",
+      "question": "What dataset do they use to evaluate their method?",
+      "gold_sets": [
+        [
+          "1701.02962:39"
+        ],
+        [
+          "1701.02962:42"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1701.02962",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A49",
+      "stratum": "shared_failure",
+      "query_id": "96a4091f681872e6d98d0efee777d9e820cb8dae",
+      "document": "1910.12574",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1910.12574:7"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1910.12574:24"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "medium",
+      "rationale": "Gold paragraph 34 specifies sampling/annotation biases tied to dialect, geography and context-insensitive labels. Returned paragraph 7 only names broad collection/annotation bias categories, and paragraph 24 describes sampling procedures without establishing their effects. These support a partial answer but not the specific demonstrated biases.",
+      "question": "What biases does their model capture?",
+      "gold_sets": [
+        [
+          "1910.12574:34"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1910.12574",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A50",
+      "stratum": "shared_failure",
+      "query_id": "ee7e9a948ee6888aa5830b1a3d0d148ff656d864",
+      "document": "1806.11432",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "The annotated data paragraph explicitly states roughly 40,000 Manhattan listings and the time range. No paragraph was returned by any of the three pooled variants, so there is no alternative retrieved evidence that could rescue this failure.",
+      "question": "What is the size of the Airbnb?",
+      "gold_sets": [
+        [
+          "1806.11432:11"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1806.11432",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A51",
+      "stratum": "shared_failure",
+      "query_id": "d6401cece55a14d2a35ba797a0878dfe2deabedc",
+      "document": "1601.02403",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1601.02403:89",
+            "1601.02403:149",
+            "1601.02403:95",
+            "1601.02403:141"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1601.02403:76"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1601.02403:76"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "ambiguous",
+      "alternative_ids": [
+        "1601.02403:149"
+      ],
+      "confidence": "medium",
+      "rationale": "Gold paragraph 75 describes linguistic variability across educational topics and stakeholders. Unannotated paragraph 149 directly explains the register challenge: implicit argumentation in user-generated discourse versus explicit argumentation and higher agreement in essays. This is a plausible alternative for the register part of the question and useful complementary evidence for the domain part; sufficiency needs human adjudication.",
+      "question": "What challenges do different registers and domains pose to this task?",
+      "gold_sets": [
+        [
+          "1601.02403:75"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1601.02403",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": true,
+          "alternative_paragraphs_fully_visible": true
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A52",
+      "stratum": "regression",
+      "query_id": "357eb9f0c07fa45e482d998a8268bd737beb827f",
+      "document": "1910.08293",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1910.08293:64"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1910.08293:47",
+            "1910.08293:49",
+            "1910.08293:51"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1910.08293:47",
+            "1910.08293:49",
+            "1910.08293:51"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [
+        "1910.08293:7",
+        "1910.08293:47"
+      ],
+      "confidence": "high",
+      "rationale": "Gold paragraph 64 lists four baselines. Annotated paragraph 7 identifies three and explicitly says they are used as baselines; unannotated paragraph 47 under the BERT bi-ranker heading identifies the fourth and its training setup. Together these form a plausible complete alternative set; paragraph 47 alone is insufficient.",
+      "question": "What baseline models are used?",
+      "gold_sets": [
+        [
+          "1910.08293:64"
+        ],
+        [
+          "1910.08293:64",
+          "1910.08293:7"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1910.08293",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A53",
+      "stratum": "shared_failure",
+      "query_id": "19cf7884c0c509c189b1e74fe92c149ff59e444b",
+      "document": "2003.11562",
+      "results": {
+        "base-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "2003.11562:26"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "2003.11562:26"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        }
+      },
+      "gold_assessment": "possibly_incomplete",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "The gold prose introduces an approximated joint probability but the actual formula after paragraph 14 is absent in the exported paragraph text. Paragraph 12 defines ordinary perplexity; paragraph 15 refers back to the missing approximation. Returned result paragraph 26 does not define pseudo-perplexity. This is a source-representation limitation plus retrieval failure, not a verified sufficient gold definition.",
+      "additional_source_review": {
+        "paragraphs": [
+          "2003.11562:11",
+          "2003.11562:12",
+          "2003.11562:13",
+          "2003.11562:14",
+          "2003.11562:15"
+        ],
+        "finding": "The surrounding exported source also lacks the displayed probability equations. Prose introduces an approximation but does not supply the full formula; this was not an exporter ID-mapping mismatch."
+      },
+      "question": "How is pseudo-perplexity defined?",
+      "gold_sets": [
+        [
+          "2003.11562:11",
+          "2003.11562:12",
+          "2003.11562:14",
+          "2003.11562:15"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/2003.11562",
+      "context_check": {
+        "base": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A54",
+      "stratum": "regression",
+      "query_id": "326588b1de9ba0fd049ab37c907e6e5413e14acd",
+      "document": "1810.04428",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1810.04428:8",
+            "1810.04428:28",
+            "1810.04428:29",
+            "1810.04428:7"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [
+            "1810.04428:8"
+          ],
+          "reason": null
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.5,
+          "predicted": [
+            "1810.04428:29"
+          ],
+          "reason": null
+        }
+      },
+      "gold_assessment": "possibly_overcomplete",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "Gold paragraph 29 already enumerates PBMT-R, Hybrid, SBMT-SARI, NMT and Dress. Paragraph 28 adds implementation/baseline-training details rather than additional named state-of-the-art comparators. The unannotated related-work paragraphs are not equivalent complete experiment lists; requiring both gold paragraphs may over-penalize retrieval of paragraph 29 alone.",
+      "question": "what state of the art methods did they compare with?",
+      "gold_sets": [
+        [
+          "1810.04428:28",
+          "1810.04428:29"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1810.04428",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.5,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    },
+    {
+      "case": "A55",
+      "stratum": "regression",
+      "query_id": "bc16ce6e9c61ae13d46970ebe6c4728a47f8f425",
+      "document": "1603.09631",
+      "results": {
+        "base-dev": {
+          "recall": 1.0,
+          "predicted": [
+            "1603.09631:42"
+          ],
+          "reason": null
+        },
+        "seed-42-step-88-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        },
+        "seed-42-step-175-dev": {
+          "recall": 0.0,
+          "predicted": [],
+          "reason": "no_route"
+        }
+      },
+      "gold_assessment": "sufficient",
+      "alternative_ids": [],
+      "confidence": "high",
+      "rationale": "The retrieved gold gives 8,533 turns and 1,900 dialogs, sufficient to compute the mean number of turns per dialog. The answer requires arithmetic rather than an explicitly written average; no unannotated candidate was returned.",
+      "question": "What is the average length of dialog?",
+      "gold_sets": [
+        [
+          "1603.09631:42"
+        ]
+      ],
+      "source": "https://arxiv.org/abs/1603.09631",
+      "context_check": {
+        "base": {
+          "original_recall": 1.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-88": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        },
+        "step-175": {
+          "original_recall": 0.0,
+          "alternative_ids_present": false,
+          "alternative_paragraphs_fully_visible": false
+        }
+      }
+    }
+  ]
+}

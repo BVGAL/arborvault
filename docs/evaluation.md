@@ -2,6 +2,10 @@
 
 ## Routing v2: separate QASPER pilot
 
+The [post-hoc checkpoint diagnostics and evidence audit](routing-v2-diagnostics.md)
+use development only and preserve the test table below. They compare correct-prefix
+predictions, free oracle-state decisions and matched autonomous navigation.
+
 The [v2 report](routing-v2-results.md) records the new dataset, two training seeds, four
 checkpoints, development-only selection, a decoding ablation and its disclosed memory retry.
 The test has 100 answerable and 20 unanswerable questions on 96 disjoint papers. Each method

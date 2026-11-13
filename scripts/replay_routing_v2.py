@@ -62,7 +62,7 @@ def main():
             model.set_adapter(variant)
         model.eval()
 
-        def progress(event):
+        def progress(event, variant=variant):
             if time.monotonic() - started > 3600:
                 raise TimeoutError("Replay deadline exceeded")
             print(variant, event["query_id"], flush=True)

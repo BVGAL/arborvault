@@ -24,6 +24,10 @@ This pilot retrieves paragraphs inside a known document; it does not measure cor
 search or generated-answer quality. The [historical v1 experiment](docs/evaluation.md#qwen3-4b-qlora-on-runpod)
 and its [error audit](docs/qwen3-error-analysis.md) remain available separately.
 
+**Post-hoc diagnosis:** adapted routing already loses recall on correct oracle states.
+Read the [base / step-88 / step-175 diagnostics and 50-failure evidence audit](docs/routing-v2-diagnostics.md).
+The audit is AI-assisted and leaves the published labels and test scores unchanged.
+
 **Status: v0.3 research preview; production qualification is still ongoing.** It is not a drop-in Qdrant
 replacement and does not establish that structured retrieval outperforms dense retrieval.
 See [v0.3 release notes](docs/releases/v0.3.0.md), [upgrade instructions](docs/upgrade-v03.md)

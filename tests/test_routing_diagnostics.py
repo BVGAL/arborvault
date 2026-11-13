@@ -5,7 +5,12 @@ import pytest
 
 from arborvault.domain import Node
 from arborvault.qasper import load_split
-from arborvault.routing_diagnostics import oracle_states, set_metrics, token_diagnostics
+from arborvault.routing_diagnostics import (
+    oracle_states,
+    set_metrics,
+    summarize_states,
+    token_diagnostics,
+)
 from arborvault.routing_v2 import SelectionGrammar, Tree
 
 
@@ -72,3 +77,25 @@ def test_teacher_forced_metrics_exclude_forced_tokens_and_detect_early_close():
     assert any(r["legal_count"] == 1 for r in rows)
     expected = torch.nn.functional.cross_entropy(logits, torch.tensor(target)).item()
     assert sum(r["nll"] for r in rows) / len(rows) == pytest.approx(expected)
+
+
+def test_nonterminal_choice_accuracy_excludes_equivalent_eos_choices():
+    token = {
+        "nll": 1.0,
+        "constrained_nll": 0.5,
+        "raw_correct": True,
+        "constrained_correct": True,
+        "legal_count": 2,
+        "premature_close": False,
+    }
+    row = {
+        "target_ids": ["a"],
+        "depth": 0,
+        "metrics": set_metrics(["a"], ["a"]),
+        "union_metrics": set_metrics(["a"], ["a", "b"]),
+        "teacher_forced": [{**token, "constrained_correct": False}, token],
+    }
+    result = summarize_states([row])["all"]
+    assert result["choice_token_accuracy"] == 0.5
+    assert result["nonterminal_choice_accuracy"] == 0
+    assert result["nonterminal_choice_tokens"] == 1

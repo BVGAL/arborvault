@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Diagnose base and existing seed-42 checkpoints on 244 development oracle states each,
+  with teacher-forced token metrics, free decisions and matched autonomous replay.
+  Publish a masked AI-assisted audit of 50 failures plus five controls, full context checks,
+  verified artifacts and resource cleanup; no new fine-tuning or changed test scores.
+
 - Publish the separate v2 test: greedy base 0.7058, adapted
   0.4025; with up to four hypotheses, base 0.7375, adapted
   0.6983. Base plus lexical 0.7558; MiniLM 0.7442.

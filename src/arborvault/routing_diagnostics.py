@@ -138,6 +138,11 @@ def summarize_states(rows):
     def subset(items):
         tokens = [t for r in items for t in r["teacher_forced"]]
         choices = [t for t in tokens if t["legal_count"] > 1]
+        # Qwen accepts multiple EOS IDs. Choosing between equivalent terminators
+        # is not a branch/cardinality decision, so exclude the final target token.
+        content_choices = [
+            t for r in items for t in r["teacher_forced"][:-1] if t["legal_count"] > 1
+        ]
         positive = [r for r in items if r["target_ids"]]
         empty = [r for r in items if not r["target_ids"]]
 
@@ -154,8 +159,15 @@ def summarize_states(rows):
             "constrained_token_nll": mean([t["constrained_nll"] for t in tokens]),
             "raw_token_accuracy": mean([t["raw_correct"] for t in tokens]),
             "choice_token_accuracy": mean([t["constrained_correct"] for t in choices]),
+            "nonterminal_choice_tokens": len(content_choices),
+            "nonterminal_choice_accuracy": mean(
+                [t["constrained_correct"] for t in content_choices]
+            ),
             "premature_close_tokens": sum(t["premature_close"] for t in tokens),
             "positive_precision": mean([r["metrics"]["precision"] for r in positive]),
+            "positive_precision_any_annotation": mean(
+                [r["union_metrics"]["precision"] for r in positive]
+            ),
             "positive_recall": mean([r["metrics"]["recall"] for r in positive]),
             "positive_f1": mean([r["metrics"]["f1"] for r in positive]),
             "positive_exact": mean([r["metrics"]["exact"] for r in positive]),

@@ -1,0 +1,31 @@
+{
+  "salt": "arborvault-routing-v2-audit-20261113",
+  "split": "dev",
+  "pool": {
+    "control": 22,
+    "partial_gain": 4,
+    "shared_failure": 33,
+    "regression": 41
+  },
+  "quotas": {
+    "partial_gain": 3,
+    "regression": 26,
+    "shared_failure": 21,
+    "control": 5
+  },
+  "selected_counts": {
+    "regression": 26,
+    "shared_failure": 21,
+    "control": 5,
+    "partial_gain": 3
+  },
+  "distinct_documents": 55,
+  "reviewer": "AI-assisted; no independent human adjudication",
+  "source_sha256": "2ae7ee62a65b1c4225791c70de80c2aad4e8998cf1fd4f09a53103db4f21af93",
+  "input_report_hashes": {
+    "base-dev": "0f21e561ca501b288178dd07caeaa02d149286682a1586fa917d5f701f9716d7",
+    "seed-42-step-88-dev": "499770591100d0707668ef3b8a3a23bfde33da593f98b06b157b88916ed5a891",
+    "seed-42-step-175-dev": "e98a730ca5a4f877318bc4b9da83a8ebb18c03264e2c14125e275f11cf19c64b"
+  },
+  "packet_sha256": "6fe3826ad3a1948cfe50ec7cff6b74388ab33d669bb83cc67572d980071c8da7"
+}

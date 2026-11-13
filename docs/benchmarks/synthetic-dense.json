@@ -1,0 +1,911 @@
+{
+  "warning": "Tiny synthetic smoke benchmark; not SearchTome or evidence of superiority.",
+  "k": 3,
+  "queries": 12,
+  "sections": 9,
+  "chunks": 6,
+  "chunk_characters": 256,
+  "chunk_overlap": 64,
+  "backend": "MemoryStore",
+  "corpus_sha256": "49c70e69f7b5926b1fd8d71f8bc5dcf5afd22c49a7535249eeb69bebb08c2756",
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "model_files_sha256": {
+    "models--Qdrant--all-MiniLM-L6-v2-onnx/files_metadata.json": "850afa31b6cf2c9ba71d5afe9ef6cb73e8bec9759e4e1cba5d5e2925cfce006a",
+    "models--Qdrant--all-MiniLM-L6-v2-onnx/snapshots/d13954661f83248295ba75c1ed411eef3b7b936e/config.json": "1b4d8e2a3988377ed8b519a31d8d31025a25f1c5f8606998e8014111438efcd7",
+    "models--Qdrant--all-MiniLM-L6-v2-onnx/snapshots/d13954661f83248295ba75c1ed411eef3b7b936e/model.onnx": "bbd7b466f6d58e646fdc2bd5fd67b2f5e93c0b687011bd4548c420f7bd46f0c5",
+    "models--Qdrant--all-MiniLM-L6-v2-onnx/snapshots/d13954661f83248295ba75c1ed411eef3b7b936e/special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+    "models--Qdrant--all-MiniLM-L6-v2-onnx/snapshots/d13954661f83248295ba75c1ed411eef3b7b936e/tokenizer.json": "851ca67100d372ca3ae031a6abd168f53489eebfd7d89523f35c5c9b4d372c3c",
+    "models--Qdrant--all-MiniLM-L6-v2-onnx/snapshots/d13954661f83248295ba75c1ed411eef3b7b936e/tokenizer_config.json": "abda01c8c14c5151ae498aceb30db406d6b91242c394fd88d3b6fd5a63a101e6",
+    "models--Qdrant--all-MiniLM-L6-v2-onnx/trees/d13954661f83248295ba75c1ed411eef3b7b936e.json": "bd96e5670f75057382a8c79e07fecb951c3ca673c5b62cad6b7831eebb2ca2ce"
+  },
+  "python": "3.12.14",
+  "platform": "Linux",
+  "packages": {
+    "arborvault": "0.1.0",
+    "fastembed": "0.9.1",
+    "numpy": "2.5.4"
+  },
+  "structure_build_ms": 2.431002000008675,
+  "vector_index_build_ms": 8011.357011000001,
+  "methods": {
+    "navigation": {
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "unanswerable_abstention": 0.5,
+      "latency_p50_ms": 0.3884030000023131,
+      "latency_max_ms": 0.5447620000040843,
+      "queries": [
+        {
+          "query": "How long are backups retained?",
+          "gold": [
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c"
+          ],
+          "predicted": [
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c"
+          ],
+          "latency_ms": 0.5447620000040843,
+          "units": 1,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "Who renews temporary access?",
+          "gold": [
+            "c89a4bfc-3a57-5da8-98db-0f7cd053e743"
+          ],
+          "predicted": [
+            "c89a4bfc-3a57-5da8-98db-0f7cd053e743"
+          ],
+          "latency_ms": 0.29422800000133975,
+          "units": 1,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "What does the incident coordinator do during an outage?",
+          "gold": [
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b"
+          ],
+          "predicted": [
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b",
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706"
+          ],
+          "latency_ms": 0.45690900000749934,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "Where should dry seeds be stored?",
+          "gold": [
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706"
+          ],
+          "predicted": [
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706",
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "7407b513-3084-5122-81cf-b98f6168668f"
+          ],
+          "latency_ms": 0.3516689999969458,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "When should young plants be watered?",
+          "gold": [
+            "b87dad0c-d453-5014-a27c-c44e747114d7"
+          ],
+          "predicted": [
+            "b87dad0c-d453-5014-a27c-c44e747114d7",
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52"
+          ],
+          "latency_ms": 0.3341689999842856,
+          "units": 2,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "What materials should I mix for compost?",
+          "gold": [
+            "7407b513-3084-5122-81cf-b98f6168668f"
+          ],
+          "predicted": [
+            "7407b513-3084-5122-81cf-b98f6168668f",
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c"
+          ],
+          "latency_ms": 0.33262499999864303,
+          "units": 2,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "Where are shadows helpful for observing moon craters?",
+          "gold": [
+            "076d46fd-e427-5f6e-974d-3313612f9150"
+          ],
+          "predicted": [
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c"
+          ],
+          "latency_ms": 0.4387049999934334,
+          "units": 2,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "How do I protect telescope lenses?",
+          "gold": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52"
+          ],
+          "predicted": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52",
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976"
+          ],
+          "latency_ms": 0.33045000000697655,
+          "units": 2,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "Do I need a telescope to see meteor showers?",
+          "gold": [
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976"
+          ],
+          "predicted": [
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976",
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b",
+            "076d46fd-e427-5f6e-974d-3313612f9150"
+          ],
+          "latency_ms": 0.4251370000076804,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "How can I keep the optical glass clean and safe?",
+          "gold": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52"
+          ],
+          "predicted": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52",
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b"
+          ],
+          "latency_ms": 0.4425219999859564,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "What is the price of a train ticket to Mars?",
+          "gold": [],
+          "predicted": [
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b",
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976"
+          ],
+          "latency_ms": 0.45286799999644245,
+          "units": 3,
+          "fallback": false,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "query": "quasarxyz zzzunknown",
+          "gold": [],
+          "predicted": [],
+          "latency_ms": 0.21416199999180208,
+          "units": 0,
+          "fallback": false,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": true
+        }
+      ]
+    },
+    "navigation_fallback": {
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "unanswerable_abstention": 0.5,
+      "latency_p50_ms": 0.47883599999920534,
+      "latency_max_ms": 0.5692649999957666,
+      "queries": [
+        {
+          "query": "How long are backups retained?",
+          "gold": [
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c"
+          ],
+          "predicted": [
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c"
+          ],
+          "latency_ms": 0.504309000007197,
+          "units": 1,
+          "fallback": true,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "Who renews temporary access?",
+          "gold": [
+            "c89a4bfc-3a57-5da8-98db-0f7cd053e743"
+          ],
+          "predicted": [
+            "c89a4bfc-3a57-5da8-98db-0f7cd053e743"
+          ],
+          "latency_ms": 0.5184670000062397,
+          "units": 1,
+          "fallback": true,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "What does the incident coordinator do during an outage?",
+          "gold": [
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b"
+          ],
+          "predicted": [
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b",
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706"
+          ],
+          "latency_ms": 0.4432110000038847,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "Where should dry seeds be stored?",
+          "gold": [
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706"
+          ],
+          "predicted": [
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706",
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "7407b513-3084-5122-81cf-b98f6168668f"
+          ],
+          "latency_ms": 0.3402750000134347,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "When should young plants be watered?",
+          "gold": [
+            "b87dad0c-d453-5014-a27c-c44e747114d7"
+          ],
+          "predicted": [
+            "b87dad0c-d453-5014-a27c-c44e747114d7",
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52"
+          ],
+          "latency_ms": 0.5357019999792101,
+          "units": 2,
+          "fallback": true,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "What materials should I mix for compost?",
+          "gold": [
+            "7407b513-3084-5122-81cf-b98f6168668f"
+          ],
+          "predicted": [
+            "7407b513-3084-5122-81cf-b98f6168668f",
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c"
+          ],
+          "latency_ms": 0.5430919999867001,
+          "units": 2,
+          "fallback": true,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "Where are shadows helpful for observing moon craters?",
+          "gold": [
+            "076d46fd-e427-5f6e-974d-3313612f9150"
+          ],
+          "predicted": [
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c"
+          ],
+          "latency_ms": 0.5692649999957666,
+          "units": 2,
+          "fallback": true,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "How do I protect telescope lenses?",
+          "gold": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52"
+          ],
+          "predicted": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52",
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976"
+          ],
+          "latency_ms": 0.4847849999976006,
+          "units": 2,
+          "fallback": true,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "Do I need a telescope to see meteor showers?",
+          "gold": [
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976"
+          ],
+          "predicted": [
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976",
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b",
+            "076d46fd-e427-5f6e-974d-3313612f9150"
+          ],
+          "latency_ms": 0.40957599998137084,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "How can I keep the optical glass clean and safe?",
+          "gold": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52"
+          ],
+          "predicted": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52",
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b"
+          ],
+          "latency_ms": 0.41541799998867646,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "What is the price of a train ticket to Mars?",
+          "gold": [],
+          "predicted": [
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b",
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976"
+          ],
+          "latency_ms": 0.4343210000001818,
+          "units": 3,
+          "fallback": false,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "query": "quasarxyz zzzunknown",
+          "gold": [],
+          "predicted": [],
+          "latency_ms": 0.4728870000008101,
+          "units": 0,
+          "fallback": true,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": true
+        }
+      ]
+    },
+    "lexical": {
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "unanswerable_abstention": 0.5,
+      "latency_p50_ms": 0.20741449999661654,
+      "latency_max_ms": 0.23524899998506044,
+      "queries": [
+        {
+          "query": "How long are backups retained?",
+          "gold": [
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c"
+          ],
+          "predicted": [
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c"
+          ],
+          "latency_ms": 0.21029199999134107,
+          "units": 1,
+          "fallback": true,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "Who renews temporary access?",
+          "gold": [
+            "c89a4bfc-3a57-5da8-98db-0f7cd053e743"
+          ],
+          "predicted": [
+            "c89a4bfc-3a57-5da8-98db-0f7cd053e743"
+          ],
+          "latency_ms": 0.20197399999233312,
+          "units": 1,
+          "fallback": true,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "What does the incident coordinator do during an outage?",
+          "gold": [
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b"
+          ],
+          "predicted": [
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b",
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706"
+          ],
+          "latency_ms": 0.21368500000562562,
+          "units": 3,
+          "fallback": true,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "Where should dry seeds be stored?",
+          "gold": [
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706"
+          ],
+          "predicted": [
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706",
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "7407b513-3084-5122-81cf-b98f6168668f"
+          ],
+          "latency_ms": 0.20332100001496656,
+          "units": 3,
+          "fallback": true,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "When should young plants be watered?",
+          "gold": [
+            "b87dad0c-d453-5014-a27c-c44e747114d7"
+          ],
+          "predicted": [
+            "b87dad0c-d453-5014-a27c-c44e747114d7",
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52"
+          ],
+          "latency_ms": 0.23524899998506044,
+          "units": 2,
+          "fallback": true,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "What materials should I mix for compost?",
+          "gold": [
+            "7407b513-3084-5122-81cf-b98f6168668f"
+          ],
+          "predicted": [
+            "7407b513-3084-5122-81cf-b98f6168668f",
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c"
+          ],
+          "latency_ms": 0.20570699999211683,
+          "units": 2,
+          "fallback": true,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "Where are shadows helpful for observing moon craters?",
+          "gold": [
+            "076d46fd-e427-5f6e-974d-3313612f9150"
+          ],
+          "predicted": [
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c"
+          ],
+          "latency_ms": 0.20855400001096314,
+          "units": 2,
+          "fallback": true,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "How do I protect telescope lenses?",
+          "gold": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52"
+          ],
+          "predicted": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52",
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976"
+          ],
+          "latency_ms": 0.20008199999210774,
+          "units": 2,
+          "fallback": true,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "Do I need a telescope to see meteor showers?",
+          "gold": [
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976"
+          ],
+          "predicted": [
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976",
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b",
+            "076d46fd-e427-5f6e-974d-3313612f9150"
+          ],
+          "latency_ms": 0.20627499998226995,
+          "units": 3,
+          "fallback": true,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "How can I keep the optical glass clean and safe?",
+          "gold": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52"
+          ],
+          "predicted": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52",
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b"
+          ],
+          "latency_ms": 0.2128369999923052,
+          "units": 3,
+          "fallback": true,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "What is the price of a train ticket to Mars?",
+          "gold": [],
+          "predicted": [
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b",
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976"
+          ],
+          "latency_ms": 0.21139700001526762,
+          "units": 3,
+          "fallback": true,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "query": "quasarxyz zzzunknown",
+          "gold": [],
+          "predicted": [],
+          "latency_ms": 0.1913090000016382,
+          "units": 0,
+          "fallback": true,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": true
+        }
+      ]
+    },
+    "dense_minilm_chunks": {
+      "recall_at_k": 1.0,
+      "mrr": 0.85,
+      "ndcg": 0.8892789260714372,
+      "unanswerable_abstention": 0,
+      "latency_p50_ms": 2.421750999999972,
+      "latency_max_ms": 4.047815000006949,
+      "queries": [
+        {
+          "query": "How long are backups retained?",
+          "gold": [
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c"
+          ],
+          "predicted": [
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c",
+            "c89a4bfc-3a57-5da8-98db-0f7cd053e743",
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b",
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706",
+            "b87dad0c-d453-5014-a27c-c44e747114d7",
+            "7407b513-3084-5122-81cf-b98f6168668f"
+          ],
+          "latency_ms": 2.803809999988971,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "Who renews temporary access?",
+          "gold": [
+            "c89a4bfc-3a57-5da8-98db-0f7cd053e743"
+          ],
+          "predicted": [
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c",
+            "c89a4bfc-3a57-5da8-98db-0f7cd053e743",
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b",
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706",
+            "b87dad0c-d453-5014-a27c-c44e747114d7",
+            "7407b513-3084-5122-81cf-b98f6168668f"
+          ],
+          "latency_ms": 4.047815000006949,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "query": "What does the incident coordinator do during an outage?",
+          "gold": [
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b"
+          ],
+          "predicted": [
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b",
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c",
+            "c89a4bfc-3a57-5da8-98db-0f7cd053e743",
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706",
+            "b87dad0c-d453-5014-a27c-c44e747114d7",
+            "7407b513-3084-5122-81cf-b98f6168668f"
+          ],
+          "latency_ms": 2.9668789999846013,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "Where should dry seeds be stored?",
+          "gold": [
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706"
+          ],
+          "predicted": [
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706",
+            "b87dad0c-d453-5014-a27c-c44e747114d7",
+            "7407b513-3084-5122-81cf-b98f6168668f",
+            "85f73fbb-4dc3-5419-bbda-ce2818f4e31c",
+            "c89a4bfc-3a57-5da8-98db-0f7cd053e743",
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b"
+          ],
+          "latency_ms": 2.1946530000036546,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "When should young plants be watered?",
+          "gold": [
+            "b87dad0c-d453-5014-a27c-c44e747114d7"
+          ],
+          "predicted": [
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706",
+            "b87dad0c-d453-5014-a27c-c44e747114d7",
+            "7407b513-3084-5122-81cf-b98f6168668f",
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b"
+          ],
+          "latency_ms": 2.147382999993397,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "query": "What materials should I mix for compost?",
+          "gold": [
+            "7407b513-3084-5122-81cf-b98f6168668f"
+          ],
+          "predicted": [
+            "7407b513-3084-5122-81cf-b98f6168668f",
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706",
+            "b87dad0c-d453-5014-a27c-c44e747114d7",
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52",
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976"
+          ],
+          "latency_ms": 2.29589399998531,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "Where are shadows helpful for observing moon craters?",
+          "gold": [
+            "076d46fd-e427-5f6e-974d-3313612f9150"
+          ],
+          "predicted": [
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52",
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976",
+            "7407b513-3084-5122-81cf-b98f6168668f"
+          ],
+          "latency_ms": 2.219140000022435,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "How do I protect telescope lenses?",
+          "gold": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52"
+          ],
+          "predicted": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52",
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976",
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706",
+            "b87dad0c-d453-5014-a27c-c44e747114d7",
+            "7407b513-3084-5122-81cf-b98f6168668f"
+          ],
+          "latency_ms": 2.084094999986519,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "Do I need a telescope to see meteor showers?",
+          "gold": [
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976"
+          ],
+          "predicted": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52",
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976",
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706",
+            "b87dad0c-d453-5014-a27c-c44e747114d7",
+            "7407b513-3084-5122-81cf-b98f6168668f"
+          ],
+          "latency_ms": 2.665610999997625,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "query": "How can I keep the optical glass clean and safe?",
+          "gold": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52"
+          ],
+          "predicted": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52",
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976",
+            "7407b513-3084-5122-81cf-b98f6168668f",
+            "076d46fd-e427-5f6e-974d-3313612f9150"
+          ],
+          "latency_ms": 2.874232000010579,
+          "units": 3,
+          "fallback": false,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "query": "What is the price of a train ticket to Mars?",
+          "gold": [],
+          "predicted": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52",
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976",
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "4dd8b533-175b-5ad3-8ba3-fe0204c2d706",
+            "b87dad0c-d453-5014-a27c-c44e747114d7",
+            "7407b513-3084-5122-81cf-b98f6168668f"
+          ],
+          "latency_ms": 2.543685000006235,
+          "units": 3,
+          "fallback": false,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "query": "quasarxyz zzzunknown",
+          "gold": [],
+          "predicted": [
+            "d042ed41-305d-5c2f-bee8-071ec3bb4a52",
+            "1dfb638e-3325-569a-9acc-6cac3dcb2976",
+            "076d46fd-e427-5f6e-974d-3313612f9150",
+            "c29e91c4-006a-5c12-8ab0-982eaa8f111b"
+          ],
+          "latency_ms": 2.299816999993709,
+          "units": 3,
+          "fallback": false,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        }
+      ]
+    }
+  }
+}

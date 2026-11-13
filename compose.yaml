@@ -1,0 +1,50 @@
+name: arborvault
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: arborvault
+      POSTGRES_DB: arborvault
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run python scripts/configure.py first}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U arborvault -d arborvault"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  migrate:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://arborvault:${POSTGRES_PASSWORD}@db:5432/arborvault
+    command: ["python", "-m", "arborvault.storage"]
+    depends_on:
+      db:
+        condition: service_healthy
+  api:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      DATABASE_URL: postgresql://arborvault:${POSTGRES_PASSWORD}@db:5432/arborvault
+      ARBORVAULT_KEYS: ${ARBORVAULT_KEYS:?Run python scripts/configure.py first}
+      SELECTOR_URL: ${SELECTOR_URL:-}
+      SELECTOR_MODEL: ${SELECTOR_MODEL:-}
+      SELECTOR_API_KEY: ${SELECTOR_API_KEY:-}
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 512m
+    cpus: 2
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/readyz')"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+volumes:
+  pgdata:

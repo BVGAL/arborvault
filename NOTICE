@@ -1,0 +1,7 @@
+ArborVault
+Copyright 2026 ArborVault contributors
+
+Independent research software inspired by the document-structure retrieval direction in
+STAIR (STructure Aware Information Retriever), Kumar et al., arXiv:2609.03874v2 (2026).
+Not affiliated with, endorsed by, or an official implementation of IBM or the authors.
+No STAIR source code, model weights, book corpus or SearchTome data is bundled.

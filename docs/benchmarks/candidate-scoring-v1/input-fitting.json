@@ -1,0 +1,7 @@
+{
+  "pairs": 16808,
+  "shortened": 78,
+  "max_qwen_tokens": 512,
+  "max_cross_encoder_tokens": 512,
+  "fitted_training_groups_sha256": "409848fd8800fd24f83084c93549af4c3b104b10d758dcb202d445aa0c6455f4"
+}

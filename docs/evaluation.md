@@ -1,5 +1,22 @@
 # Evaluation protocol
 
+## Candidate scoring v1: development follow-up
+
+The [candidate-scoring report](candidate-scoring-v1-results.md) evaluates a new
+Qwen LoRA and a small cross-encoder with the same candidate labels and texts.
+It compares each scorer on flat reranking and tree traversal, plus E5, BM25 and RRF.
+Training uses 457 questions, calibration 143 on separate documents, and evaluation
+the existing 120-question development split. Checkpoints and thresholds are locked
+before development inference. The historical test is not re-evaluated.
+
+Flat Recall@5 is 0.8000 for Qwen base and 0.7867 for the new adapter; the small
+cross-encoder rises from 0.7217 to 0.8100. Standard-text E5 reaches 0.7100.
+Tree traversal still loses recall, including the secondary control retaining
+scored leaves. All reported 64-pair operating points abstain on 0/20 unknown
+development questions. These are exploratory results, not a production promotion
+or a fresh held-out confirmation; see the [protocol](candidate-scoring-v1-protocol.md),
+paired intervals and unchanged historical test results below.
+
 ## Routing v2: separate QASPER pilot
 
 The [post-hoc checkpoint diagnostics and evidence audit](routing-v2-diagnostics.md)

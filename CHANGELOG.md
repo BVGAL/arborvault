@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+- Add an experimental candidate scorer with matched flat/tree retrieval, independent
+  yes/no scores, weak-negative supervision and a small cross-encoder comparison.
+  Train both on 457 document-separated questions, calibrate on 143 and evaluate
+  on the existing 120-question development split without re-evaluating the old test.
+- Publish all checkpoint curves, per-question results, paired uncertainty, E5/BM25/RRF
+  references and the disclosed scored-leaf retention control. Flat development recall:
+  Qwen base 0.8000, new LoRA 0.7867; cross-encoder base 0.7217, adapted 0.8100;
+  standard-text E5 0.7100. Keep the production default; no claim of general superiority.
+- Record failed abstention calibration, full artifact verification and Runpod deletion.
+  Retain checkpoint weights locally with public hashes; no model-hub release.
+
 - Diagnose base and existing seed-42 checkpoints on 244 development oracle states each,
   with teacher-forced token metrics, free decisions and matched autonomous replay.
   Publish a masked AI-assisted audit of 50 failures plus five controls, full context checks,

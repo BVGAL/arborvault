@@ -1,0 +1,140 @@
+{
+  "flat": {
+    "chosen": {
+      "threshold": -18.24863624572754,
+      "qualifies": true,
+      "recall": 0.6761695906432749,
+      "evidence_coverage": 0.6476608187134503,
+      "unknown_abstentions": 0,
+      "answerable_empty": 0
+    },
+    "candidates": [
+      {
+        "threshold": null,
+        "qualifies": true,
+        "recall": 0.6761695906432749,
+        "evidence_coverage": 0.6476608187134503,
+        "unknown_abstentions": 0,
+        "answerable_empty": 0
+      },
+      {
+        "threshold": -18.24863624572754,
+        "qualifies": true,
+        "recall": 0.6761695906432749,
+        "evidence_coverage": 0.6476608187134503,
+        "unknown_abstentions": 0,
+        "answerable_empty": 0
+      },
+      {
+        "threshold": 1.9586257934570312,
+        "qualifies": false,
+        "recall": 0.5942982456140351,
+        "evidence_coverage": 0.5723684210526315,
+        "unknown_abstentions": 9,
+        "answerable_empty": 5
+      },
+      {
+        "threshold": 7.480504989624023,
+        "qualifies": false,
+        "recall": 0.472953216374269,
+        "evidence_coverage": 0.4641812865497076,
+        "unknown_abstentions": 17,
+        "answerable_empty": 18
+      },
+      {
+        "threshold": 11.654672622680664,
+        "qualifies": false,
+        "recall": 0.31067251461988304,
+        "evidence_coverage": 0.31067251461988304,
+        "unknown_abstentions": 24,
+        "answerable_empty": 47
+      },
+      {
+        "threshold": 14.509037971496582,
+        "qualifies": false,
+        "recall": 0.14839181286549707,
+        "evidence_coverage": 0.14839181286549707,
+        "unknown_abstentions": 26,
+        "answerable_empty": 81
+      },
+      {
+        "threshold": 16.246187210083008,
+        "qualifies": false,
+        "recall": 0.05701754385964912,
+        "evidence_coverage": 0.05701754385964912,
+        "unknown_abstentions": 28,
+        "answerable_empty": 100
+      }
+    ],
+    "calibration_questions": 143
+  },
+  "tree": {
+    "chosen": {
+      "threshold": -18.24863624572754,
+      "qualifies": true,
+      "recall": 0.6089181286549707,
+      "evidence_coverage": 0.5928362573099415,
+      "unknown_abstentions": 0,
+      "answerable_empty": 0
+    },
+    "candidates": [
+      {
+        "threshold": null,
+        "qualifies": true,
+        "recall": 0.6089181286549707,
+        "evidence_coverage": 0.5928362573099415,
+        "unknown_abstentions": 0,
+        "answerable_empty": 0
+      },
+      {
+        "threshold": -18.24863624572754,
+        "qualifies": true,
+        "recall": 0.6089181286549707,
+        "evidence_coverage": 0.5928362573099415,
+        "unknown_abstentions": 0,
+        "answerable_empty": 0
+      },
+      {
+        "threshold": 0.9230785369873047,
+        "qualifies": false,
+        "recall": 0.5226608187134503,
+        "evidence_coverage": 0.5109649122807017,
+        "unknown_abstentions": 10,
+        "answerable_empty": 4
+      },
+      {
+        "threshold": 6.8306732177734375,
+        "qualifies": false,
+        "recall": 0.42909356725146197,
+        "evidence_coverage": 0.4247076023391813,
+        "unknown_abstentions": 17,
+        "answerable_empty": 18
+      },
+      {
+        "threshold": 10.886116027832031,
+        "qualifies": false,
+        "recall": 0.29312865497076024,
+        "evidence_coverage": 0.2887426900584795,
+        "unknown_abstentions": 24,
+        "answerable_empty": 47
+      },
+      {
+        "threshold": 14.269425392150879,
+        "qualifies": false,
+        "recall": 0.1440058479532164,
+        "evidence_coverage": 0.1440058479532164,
+        "unknown_abstentions": 26,
+        "answerable_empty": 81
+      },
+      {
+        "threshold": 15.94273853302002,
+        "qualifies": false,
+        "recall": 0.07675438596491228,
+        "evidence_coverage": 0.07675438596491228,
+        "unknown_abstentions": 28,
+        "answerable_empty": 100
+      }
+    ],
+    "calibration_questions": 143
+  }
+}

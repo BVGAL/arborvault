@@ -1,0 +1,113 @@
+{"stage": "inference", "variant": "cross-encoder-base-probe", "questions": 24, "total": 24, "elapsed_seconds": 27.094}
+{"stage": "training", "variant": "cross-encoder", "step": 5, "steps": 115, "cumulative_query_bce": 2.6065277021892683, "elapsed_seconds": 29.222}
+{"stage": "training", "variant": "cross-encoder", "step": 10, "steps": 115, "cumulative_query_bce": 2.4363625912205356, "elapsed_seconds": 30.775}
+{"stage": "training", "variant": "cross-encoder", "step": 15, "steps": 115, "cumulative_query_bce": 2.0500573233321164, "elapsed_seconds": 32.118}
+{"stage": "training", "variant": "cross-encoder", "step": 20, "steps": 115, "cumulative_query_bce": 1.8583714821832504, "elapsed_seconds": 33.372}
+{"stage": "training", "variant": "cross-encoder", "step": 25, "steps": 115, "cumulative_query_bce": 1.6889504072205752, "elapsed_seconds": 34.676}
+{"stage": "inference", "variant": "cross-encoder-step-25-probe", "questions": 24, "total": 24, "elapsed_seconds": 36.398}
+{"stage": "checkpoint", "variant": "cross-encoder", "step": 25, "quality": [0.51875, 0.51875, 0.49125], "checkpoint": "checkpoints/cross-encoder-step-25", "cumulative_query_bce": 1.6889504072205752, "probe_usage": {"elapsed_seconds": 1.4033391745761037, "actual_scored_pairs": 1578, "actual_input_tokens": 292060}, "elapsed_seconds": 36.625}
+{"stage": "training", "variant": "cross-encoder", "step": 30, "steps": 115, "cumulative_query_bce": 1.5806078065773914, "elapsed_seconds": 38.308}
+{"stage": "training", "variant": "cross-encoder", "step": 35, "steps": 115, "cumulative_query_bce": 1.5093723942155863, "elapsed_seconds": 40.21}
+{"stage": "training", "variant": "cross-encoder", "step": 40, "steps": 115, "cumulative_query_bce": 1.46527332875814, "elapsed_seconds": 42.01}
+{"stage": "training", "variant": "cross-encoder", "step": 45, "steps": 115, "cumulative_query_bce": 1.3823954154268565, "elapsed_seconds": 43.858}
+{"stage": "training", "variant": "cross-encoder", "step": 50, "steps": 115, "cumulative_query_bce": 1.3372605143863041, "elapsed_seconds": 45.817}
+{"stage": "inference", "variant": "cross-encoder-step-50-probe", "questions": 24, "total": 24, "elapsed_seconds": 47.646}
+{"stage": "checkpoint", "variant": "cross-encoder", "step": 50, "quality": [0.53125, 0.53125, 0.48083333333333333], "checkpoint": "checkpoints/cross-encoder-step-50", "cumulative_query_bce": 1.3372605143863041, "probe_usage": {"elapsed_seconds": 1.3736814209260046, "actual_scored_pairs": 1578, "actual_input_tokens": 292060}, "elapsed_seconds": 47.87}
+{"stage": "training", "variant": "cross-encoder", "step": 55, "steps": 115, "cumulative_query_bce": 1.2954666515010733, "elapsed_seconds": 49.587}
+{"stage": "training", "variant": "cross-encoder", "step": 60, "steps": 115, "cumulative_query_bce": 1.2544654472015708, "elapsed_seconds": 50.913}
+{"stage": "training", "variant": "cross-encoder", "step": 65, "steps": 115, "cumulative_query_bce": 1.197303071336456, "elapsed_seconds": 52.105}
+{"stage": "training", "variant": "cross-encoder", "step": 70, "steps": 115, "cumulative_query_bce": 1.1564290594122577, "elapsed_seconds": 53.341}
+{"stage": "training", "variant": "cross-encoder", "step": 75, "steps": 115, "cumulative_query_bce": 1.1281757590568646, "elapsed_seconds": 54.598}
+{"stage": "inference", "variant": "cross-encoder-step-75-probe", "questions": 24, "total": 24, "elapsed_seconds": 56.334}
+{"stage": "checkpoint", "variant": "cross-encoder", "step": 75, "quality": [0.575, 0.56875, 0.47541666666666665], "checkpoint": "checkpoints/cross-encoder-step-75", "cumulative_query_bce": 1.1281757590568646, "probe_usage": {"elapsed_seconds": 1.3836175799369812, "actual_scored_pairs": 1578, "actual_input_tokens": 292060}, "elapsed_seconds": 56.559}
+{"stage": "training", "variant": "cross-encoder", "step": 80, "steps": 115, "cumulative_query_bce": 1.1031103365099717, "elapsed_seconds": 57.767}
+{"stage": "training", "variant": "cross-encoder", "step": 85, "steps": 115, "cumulative_query_bce": 1.0771850302245431, "elapsed_seconds": 59.114}
+{"stage": "training", "variant": "cross-encoder", "step": 90, "steps": 115, "cumulative_query_bce": 1.0510532584887067, "elapsed_seconds": 60.935}
+{"stage": "training", "variant": "cross-encoder", "step": 95, "steps": 115, "cumulative_query_bce": 1.0240208838617593, "elapsed_seconds": 62.892}
+{"stage": "training", "variant": "cross-encoder", "step": 100, "steps": 115, "cumulative_query_bce": 0.9997727925695727, "elapsed_seconds": 64.007}
+{"stage": "inference", "variant": "cross-encoder-step-100-probe", "questions": 24, "total": 24, "elapsed_seconds": 65.738}
+{"stage": "checkpoint", "variant": "cross-encoder", "step": 100, "quality": [0.64375, 0.58125, 0.4766666666666667], "checkpoint": "checkpoints/cross-encoder-step-100", "cumulative_query_bce": 0.9997727925695727, "probe_usage": {"elapsed_seconds": 1.3960459739901125, "actual_scored_pairs": 1578, "actual_input_tokens": 292060}, "elapsed_seconds": 65.962}
+{"stage": "training", "variant": "cross-encoder", "step": 105, "steps": 115, "cumulative_query_bce": 0.9824439196773997, "elapsed_seconds": 67.93}
+{"stage": "training", "variant": "cross-encoder", "step": 110, "steps": 115, "cumulative_query_bce": 0.9600931825660056, "elapsed_seconds": 69.848}
+{"stage": "training", "variant": "cross-encoder", "step": 115, "steps": 115, "cumulative_query_bce": 0.9456975010046199, "elapsed_seconds": 71.561}
+{"stage": "inference", "variant": "cross-encoder-step-115-probe", "questions": 24, "total": 24, "elapsed_seconds": 73.448}
+{"stage": "checkpoint", "variant": "cross-encoder", "step": 115, "quality": [0.61875, 0.58125, 0.48166666666666663], "checkpoint": "checkpoints/cross-encoder-step-115", "cumulative_query_bce": 0.9456975010046199, "probe_usage": {"elapsed_seconds": 1.4604186117649078, "actual_scored_pairs": 1578, "actual_input_tokens": 292060}, "elapsed_seconds": 73.673}
+{"stage": "inference", "variant": "qwen-base-probe", "questions": 24, "total": 24, "elapsed_seconds": 155.632}
+{"stage": "training", "variant": "qwen", "step": 5, "steps": 115, "cumulative_query_bce": 1.762892209278326, "elapsed_seconds": 192.682}
+{"stage": "training", "variant": "qwen", "step": 10, "steps": 115, "cumulative_query_bce": 1.5461706519966145, "elapsed_seconds": 229.66}
+{"stage": "training", "variant": "qwen", "step": 15, "steps": 115, "cumulative_query_bce": 1.3031844744717556, "elapsed_seconds": 266.295}
+{"stage": "training", "variant": "qwen", "step": 20, "steps": 115, "cumulative_query_bce": 1.111355506999542, "elapsed_seconds": 302.15}
+{"stage": "training", "variant": "qwen", "step": 25, "steps": 115, "cumulative_query_bce": 0.9934588711345629, "elapsed_seconds": 340.497}
+{"stage": "inference", "variant": "qwen-step-25-probe", "questions": 24, "total": 24, "elapsed_seconds": 401.597}
+{"stage": "checkpoint", "variant": "qwen", "step": 25, "quality": [0.5562499999999999, 0.55, 0.47250000000000003], "checkpoint": "checkpoints/qwen-step-25", "cumulative_query_bce": 0.9934588711345629, "probe_usage": {"elapsed_seconds": 60.48723061103374, "actual_scored_pairs": 1578, "actual_input_tokens": 393130}, "elapsed_seconds": 401.824}
+{"stage": "training", "variant": "qwen", "step": 30, "steps": 115, "cumulative_query_bce": 0.9190781826403741, "elapsed_seconds": 440.321}
+{"stage": "training", "variant": "qwen", "step": 35, "steps": 115, "cumulative_query_bce": 0.8573373975247254, "elapsed_seconds": 479.331}
+{"stage": "training", "variant": "qwen", "step": 40, "steps": 115, "cumulative_query_bce": 0.8210215668003403, "elapsed_seconds": 512.906}
+{"stage": "training", "variant": "qwen", "step": 45, "steps": 115, "cumulative_query_bce": 0.7936794314644585, "elapsed_seconds": 550.561}
+{"stage": "training", "variant": "qwen", "step": 50, "steps": 115, "cumulative_query_bce": 0.7687069404348906, "elapsed_seconds": 587.759}
+{"stage": "inference", "variant": "qwen-step-50-probe", "questions": 24, "total": 24, "elapsed_seconds": 649.016}
+{"stage": "checkpoint", "variant": "qwen", "step": 50, "quality": [0.5125, 0.50625, 0.4675], "checkpoint": "checkpoints/qwen-step-50", "cumulative_query_bce": 0.7687069404348906, "probe_usage": {"elapsed_seconds": 60.50671398593113, "actual_scored_pairs": 1578, "actual_input_tokens": 393130}, "elapsed_seconds": 649.244}
+{"stage": "training", "variant": "qwen", "step": 55, "steps": 115, "cumulative_query_bce": 0.7611126991602307, "elapsed_seconds": 684.275}
+{"stage": "training", "variant": "qwen", "step": 60, "steps": 115, "cumulative_query_bce": 0.7423722696024586, "elapsed_seconds": 721.423}
+{"stage": "training", "variant": "qwen", "step": 65, "steps": 115, "cumulative_query_bce": 0.7271875562504194, "elapsed_seconds": 756.54}
+{"stage": "training", "variant": "qwen", "step": 70, "steps": 115, "cumulative_query_bce": 0.7074308770467304, "elapsed_seconds": 794.365}
+{"stage": "training", "variant": "qwen", "step": 75, "steps": 115, "cumulative_query_bce": 0.705863870215808, "elapsed_seconds": 834.152}
+{"stage": "inference", "variant": "qwen-step-75-probe", "questions": 24, "total": 24, "elapsed_seconds": 895.625}
+{"stage": "checkpoint", "variant": "qwen", "step": 75, "quality": [0.5874999999999999, 0.5562499999999999, 0.5058333333333334], "checkpoint": "checkpoints/qwen-step-75", "cumulative_query_bce": 0.705863870215808, "probe_usage": {"elapsed_seconds": 60.53188763419166, "actual_scored_pairs": 1578, "actual_input_tokens": 393130}, "elapsed_seconds": 895.858}
+{"stage": "training", "variant": "qwen", "step": 80, "steps": 115, "cumulative_query_bce": 0.7019300719195345, "elapsed_seconds": 932.746}
+{"stage": "training", "variant": "qwen", "step": 85, "steps": 115, "cumulative_query_bce": 0.6954980992230773, "elapsed_seconds": 971.215}
+{"stage": "training", "variant": "qwen", "step": 90, "steps": 115, "cumulative_query_bce": 0.6870004770442368, "elapsed_seconds": 1010.231}
+{"stage": "training", "variant": "qwen", "step": 95, "steps": 115, "cumulative_query_bce": 0.6767706663635159, "elapsed_seconds": 1044.896}
+{"stage": "training", "variant": "qwen", "step": 100, "steps": 115, "cumulative_query_bce": 0.6643083753570115, "elapsed_seconds": 1081.268}
+{"stage": "inference", "variant": "qwen-step-100-probe", "questions": 24, "total": 24, "elapsed_seconds": 1142.676}
+{"stage": "checkpoint", "variant": "qwen", "step": 100, "quality": [0.6375, 0.6375, 0.5466666666666666], "checkpoint": "checkpoints/qwen-step-100", "cumulative_query_bce": 0.6643083753570115, "probe_usage": {"elapsed_seconds": 60.511190173681825, "actual_scored_pairs": 1578, "actual_input_tokens": 393130}, "elapsed_seconds": 1142.91}
+{"stage": "training", "variant": "qwen", "step": 105, "steps": 115, "cumulative_query_bce": 0.6556550345169616, "elapsed_seconds": 1181.134}
+{"stage": "training", "variant": "qwen", "step": 110, "steps": 115, "cumulative_query_bce": 0.6487048539626215, "elapsed_seconds": 1218.096}
+{"stage": "training", "variant": "qwen", "step": 115, "steps": 115, "cumulative_query_bce": 0.6446911783015198, "elapsed_seconds": 1247.779}
+{"stage": "inference", "variant": "qwen-step-115-probe", "questions": 24, "total": 24, "elapsed_seconds": 1309.117}
+{"stage": "checkpoint", "variant": "qwen", "step": 115, "quality": [0.6625000000000001, 0.65625, 0.5454166666666667], "checkpoint": "checkpoints/qwen-step-115", "cumulative_query_bce": 0.6446911783015198, "probe_usage": {"elapsed_seconds": 60.490432150196284, "actual_scored_pairs": 1578, "actual_input_tokens": 393130}, "elapsed_seconds": 1309.352}
+{"stage": "inference", "variant": "cross-encoder-base-calibration", "questions": 25, "total": 143, "elapsed_seconds": 1319.835}
+{"stage": "inference", "variant": "cross-encoder-base-calibration", "questions": 50, "total": 143, "elapsed_seconds": 1321.324}
+{"stage": "inference", "variant": "cross-encoder-base-calibration", "questions": 75, "total": 143, "elapsed_seconds": 1323.341}
+{"stage": "inference", "variant": "cross-encoder-base-calibration", "questions": 100, "total": 143, "elapsed_seconds": 1324.655}
+{"stage": "inference", "variant": "cross-encoder-base-calibration", "questions": 125, "total": 143, "elapsed_seconds": 1326.287}
+{"stage": "inference", "variant": "cross-encoder-base-calibration", "questions": 143, "total": 143, "elapsed_seconds": 1327.602}
+{"stage": "inference", "variant": "cross-encoder-base-development", "questions": 25, "total": 120, "elapsed_seconds": 1337.999}
+{"stage": "inference", "variant": "cross-encoder-base-development", "questions": 50, "total": 120, "elapsed_seconds": 1339.257}
+{"stage": "inference", "variant": "cross-encoder-base-development", "questions": 75, "total": 120, "elapsed_seconds": 1340.546}
+{"stage": "inference", "variant": "cross-encoder-base-development", "questions": 100, "total": 120, "elapsed_seconds": 1341.8}
+{"stage": "inference", "variant": "cross-encoder-base-development", "questions": 120, "total": 120, "elapsed_seconds": 1342.921}
+{"stage": "inference", "variant": "cross-encoder-tuned-calibration", "questions": 25, "total": 143, "elapsed_seconds": 1349.025}
+{"stage": "inference", "variant": "cross-encoder-tuned-calibration", "questions": 50, "total": 143, "elapsed_seconds": 1350.481}
+{"stage": "inference", "variant": "cross-encoder-tuned-calibration", "questions": 75, "total": 143, "elapsed_seconds": 1352.467}
+{"stage": "inference", "variant": "cross-encoder-tuned-calibration", "questions": 100, "total": 143, "elapsed_seconds": 1353.816}
+{"stage": "inference", "variant": "cross-encoder-tuned-calibration", "questions": 125, "total": 143, "elapsed_seconds": 1355.468}
+{"stage": "inference", "variant": "cross-encoder-tuned-calibration", "questions": 143, "total": 143, "elapsed_seconds": 1356.772}
+{"stage": "inference", "variant": "cross-encoder-tuned-development", "questions": 25, "total": 120, "elapsed_seconds": 1367.498}
+{"stage": "inference", "variant": "cross-encoder-tuned-development", "questions": 50, "total": 120, "elapsed_seconds": 1368.755}
+{"stage": "inference", "variant": "cross-encoder-tuned-development", "questions": 75, "total": 120, "elapsed_seconds": 1370.019}
+{"stage": "inference", "variant": "cross-encoder-tuned-development", "questions": 100, "total": 120, "elapsed_seconds": 1371.242}
+{"stage": "inference", "variant": "cross-encoder-tuned-development", "questions": 120, "total": 120, "elapsed_seconds": 1372.38}
+{"stage": "inference", "variant": "qwen-base-calibration", "questions": 25, "total": 143, "elapsed_seconds": 1459.295}
+{"stage": "inference", "variant": "qwen-base-calibration", "questions": 50, "total": 143, "elapsed_seconds": 1518.295}
+{"stage": "inference", "variant": "qwen-base-calibration", "questions": 75, "total": 143, "elapsed_seconds": 1599.32}
+{"stage": "inference", "variant": "qwen-base-calibration", "questions": 100, "total": 143, "elapsed_seconds": 1652.274}
+{"stage": "inference", "variant": "qwen-base-calibration", "questions": 125, "total": 143, "elapsed_seconds": 1716.621}
+{"stage": "inference", "variant": "qwen-base-calibration", "questions": 143, "total": 143, "elapsed_seconds": 1767.765}
+{"stage": "inference", "variant": "qwen-base-development", "questions": 25, "total": 120, "elapsed_seconds": 1834.474}
+{"stage": "inference", "variant": "qwen-base-development", "questions": 50, "total": 120, "elapsed_seconds": 1885.21}
+{"stage": "inference", "variant": "qwen-base-development", "questions": 75, "total": 120, "elapsed_seconds": 1935.858}
+{"stage": "inference", "variant": "qwen-base-development", "questions": 100, "total": 120, "elapsed_seconds": 1988.7}
+{"stage": "inference", "variant": "qwen-base-development", "questions": 120, "total": 120, "elapsed_seconds": 2037.094}
+{"stage": "inference", "variant": "qwen-tuned-calibration", "questions": 25, "total": 143, "elapsed_seconds": 2105.727}
+{"stage": "inference", "variant": "qwen-tuned-calibration", "questions": 50, "total": 143, "elapsed_seconds": 2168.378}
+{"stage": "inference", "variant": "qwen-tuned-calibration", "questions": 75, "total": 143, "elapsed_seconds": 2253.953}
+{"stage": "inference", "variant": "qwen-tuned-calibration", "questions": 100, "total": 143, "elapsed_seconds": 2309.9}
+{"stage": "inference", "variant": "qwen-tuned-calibration", "questions": 125, "total": 143, "elapsed_seconds": 2377.809}
+{"stage": "inference", "variant": "qwen-tuned-calibration", "questions": 143, "total": 143, "elapsed_seconds": 2431.878}
+{"stage": "inference", "variant": "qwen-tuned-development", "questions": 25, "total": 120, "elapsed_seconds": 2501.906}
+{"stage": "inference", "variant": "qwen-tuned-development", "questions": 50, "total": 120, "elapsed_seconds": 2555.419}
+{"stage": "inference", "variant": "qwen-tuned-development", "questions": 75, "total": 120, "elapsed_seconds": 2608.823}
+{"stage": "inference", "variant": "qwen-tuned-development", "questions": 100, "total": 120, "elapsed_seconds": 2664.725}
+{"stage": "inference", "variant": "qwen-tuned-development", "questions": 120, "total": 120, "elapsed_seconds": 2715.735}
+{"stage": "complete", "elapsed_seconds": 2737.124}

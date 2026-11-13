@@ -8,7 +8,17 @@ ArborVault stores document hierarchies in PostgreSQL and returns source-backed s
 through a small HTTP API. Use it as an experimental retrieval component in an agent or
 RAG pipeline. The framework-neutral API supports reusable integrations with any AI agent.
 
-**Measured routing v2 pilot:** on a separate QASPER test, base plus lexical retrieval
+**Latest development experiment:** independent candidate scoring with BM25 reranking
+reaches Recall@5 **0.8000** for Qwen base and **0.7867** for its new LoRA. A small
+retrieval-pretrained cross-encoder improves from **0.7217** to **0.8100**; standard-text
+E5 vector retrieval reaches **0.7100**. Tree traversal trails matched flat reranking,
+and abstention remains unresolved. This is exploratory development on 100 answerable
+and 20 unknown questions, with one training seed; no production model was replaced.
+Read the [complete candidate-scoring results](docs/candidate-scoring-v1-results.md)
+and [frozen protocol](docs/candidate-scoring-v1-protocol.md). These are **development**
+scores and must not be compared directly with the historical test figures below.
+
+**Historical routing v2 pilot:** on a separate QASPER test, base plus lexical retrieval
 reaches Recall@5 **0.7558**, versus **0.7442**
 for MiniLM vector retrieval; this small difference does not establish superiority.
 Greedy navigation is **0.7058** for the base and **0.4025**

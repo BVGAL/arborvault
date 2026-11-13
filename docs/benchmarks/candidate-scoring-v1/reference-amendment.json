@@ -1,0 +1,13 @@
+{
+  "reference_code_revision": "f1648c0e687ec2d11e9f1d537a3262a9c391f7df",
+  "specified_before_e5_stage_utc": "2026-11-13T18:19:22.057500+00:00",
+  "last_event": {
+    "stage": "inference",
+    "variant": "qwen-tuned-calibration",
+    "questions": 50,
+    "total": 143,
+    "elapsed_seconds": 2168.378
+  },
+  "primary_results_not_yet_generated": true,
+  "change": "Additional standard-text E5/BM25/RRF reference; preserve JSON-view references and all neural selections"
+}

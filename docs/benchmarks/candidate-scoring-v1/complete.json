@@ -1,0 +1,9 @@
+{
+  "complete": true,
+  "elapsed_seconds": 2737.1184672042727,
+  "peak_gpu_gib": 4.684065818786621,
+  "test_not_opened": true,
+  "new_training_seeds": [
+    42
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "secondary_code_revision": "b3a964aa0b443e5bf8f28a760ab0c6ea4d17bd33",
+  "verified_before_checkpoint_selection_utc": "2026-11-13T18:02:31.433762+00:00",
+  "last_event": {
+    "stage": "training",
+    "variant": "qwen",
+    "step": 105,
+    "steps": 115,
+    "cumulative_query_bce": 0.6556550345169616,
+    "elapsed_seconds": 1181.134
+  },
+  "checkpoint_selection_not_yet_locked": true,
+  "development_scores_not_yet_generated": true,
+  "change": "Retain all scored leaves in an additional replay; primary policies and selection unchanged"
+}

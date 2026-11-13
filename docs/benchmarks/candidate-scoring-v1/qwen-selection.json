@@ -1,0 +1,112 @@
+{
+  "selected_trained": {
+    "step": 115,
+    "quality": [
+      0.6625000000000001,
+      0.65625,
+      0.5454166666666667
+    ],
+    "checkpoint": "checkpoints/qwen-step-115",
+    "cumulative_query_bce": 0.6446911783015198,
+    "probe_usage": {
+      "elapsed_seconds": 60.490432150196284,
+      "actual_scored_pairs": 1578,
+      "actual_input_tokens": 393130
+    }
+  },
+  "base_probe": {
+    "step": 0,
+    "quality": [
+      0.5874999999999999,
+      0.58125,
+      0.49250000000000005
+    ]
+  },
+  "all_checkpoints": [
+    {
+      "step": 0,
+      "quality": [
+        0.5874999999999999,
+        0.58125,
+        0.49250000000000005
+      ]
+    },
+    {
+      "step": 25,
+      "quality": [
+        0.5562499999999999,
+        0.55,
+        0.47250000000000003
+      ],
+      "checkpoint": "checkpoints/qwen-step-25",
+      "cumulative_query_bce": 0.9934588711345629,
+      "probe_usage": {
+        "elapsed_seconds": 60.48723061103374,
+        "actual_scored_pairs": 1578,
+        "actual_input_tokens": 393130
+      }
+    },
+    {
+      "step": 50,
+      "quality": [
+        0.5125,
+        0.50625,
+        0.4675
+      ],
+      "checkpoint": "checkpoints/qwen-step-50",
+      "cumulative_query_bce": 0.7687069404348906,
+      "probe_usage": {
+        "elapsed_seconds": 60.50671398593113,
+        "actual_scored_pairs": 1578,
+        "actual_input_tokens": 393130
+      }
+    },
+    {
+      "step": 75,
+      "quality": [
+        0.5874999999999999,
+        0.5562499999999999,
+        0.5058333333333334
+      ],
+      "checkpoint": "checkpoints/qwen-step-75",
+      "cumulative_query_bce": 0.705863870215808,
+      "probe_usage": {
+        "elapsed_seconds": 60.53188763419166,
+        "actual_scored_pairs": 1578,
+        "actual_input_tokens": 393130
+      }
+    },
+    {
+      "step": 100,
+      "quality": [
+        0.6375,
+        0.6375,
+        0.5466666666666666
+      ],
+      "checkpoint": "checkpoints/qwen-step-100",
+      "cumulative_query_bce": 0.6643083753570115,
+      "probe_usage": {
+        "elapsed_seconds": 60.511190173681825,
+        "actual_scored_pairs": 1578,
+        "actual_input_tokens": 393130
+      }
+    },
+    {
+      "step": 115,
+      "quality": [
+        0.6625000000000001,
+        0.65625,
+        0.5454166666666667
+      ],
+      "checkpoint": "checkpoints/qwen-step-115",
+      "cumulative_query_bce": 0.6446911783015198,
+      "probe_usage": {
+        "elapsed_seconds": 60.490432150196284,
+        "actual_scored_pairs": 1578,
+        "actual_input_tokens": 393130
+      }
+    }
+  ],
+  "beats_base_on_probe": true,
+  "selection_rule": "Mean flat/tree Recall@5, then coverage/MRR on 24 calibration probe questions; earliest step breaks ties"
+}

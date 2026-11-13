@@ -1,0 +1,22 @@
+{
+  "comparison": "exploratory",
+  "limitations": [
+    "incomplete_or_failed_provider_calls",
+    "Checkpoint provenance and runtime metadata are operator declarations.",
+    "Small draft labels do not establish statistical significance."
+  ],
+  "delta_fine_tuned_minus_base": {
+    "llm_navigation": {
+      "recall_at_k": -0.13888888888888895,
+      "mrr": -0.14120370370370366,
+      "ndcg": -0.1408145400535168,
+      "evidence_coverage": -0.13888888888888895
+    },
+    "llm_auto": {
+      "recall_at_k": 0.02777777777777779,
+      "mrr": -0.02777777777777779,
+      "ndcg": -0.014103253618937606,
+      "evidence_coverage": 0.02777777777777779
+    }
+  }
+}

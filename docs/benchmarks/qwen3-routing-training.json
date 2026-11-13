@@ -1,0 +1,85 @@
+{
+  "complete": true,
+  "recipe": {
+    "recipe": "qwen3-routing-qlora-v1",
+    "base_model": "Qwen/Qwen3-4B",
+    "base_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "seed": 42,
+    "epochs": 3,
+    "learning_rate": 0.0001,
+    "gradient_accumulation_steps": 8,
+    "max_length": 2048,
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ],
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "selection": "minimum validation completion-token NLL after each full epoch",
+    "thinking": false,
+    "quantization": "nf4-double-bf16",
+    "evaluation_num_ctx": 8192,
+    "evaluation_max_output_tokens": 256
+  },
+  "recipe_sha256": "37b1397bb93605a7b09dc6f169162832f34c64640465f8d9598eed1245fce58c",
+  "base_model": "Qwen/Qwen3-4B",
+  "base_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "prompt_sha256": "08da412e7e0412114f3e102f5a3f14af7216bd8f655598bfd5ddb774c0148578",
+  "dataset_sha256": {
+    "train": "487dddda74d7d98ba340f5e8d152831a7f10f6980ccbe3baec7dd64206a3bd83",
+    "validation": "8d0fc79bae03cc5ee00b0236600a9dd80777f0133323fdcb39aca9f69573b20e",
+    "synthetic_test": "d459a1746b91b3c30a0bf540aeaa8863fb9c40e567a1d25103a456c14f7b7487"
+  },
+  "public_dataset_sha256": "a76183361bf0a7e730850d38bcc5b172ac7386efd56ea4306c2b163ab1c5c408",
+  "chat_template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+  "selected_epoch": 2,
+  "best_validation_completion_token_nll": 0.11158048222172828,
+  "epochs": [
+    {
+      "epoch": 1,
+      "step": 49,
+      "training_completion_token_nll": 0.2253645258714857,
+      "validation_completion_token_nll": 0.12978532974905232
+    },
+    {
+      "epoch": 2,
+      "step": 98,
+      "training_completion_token_nll": 0.001985273118652213,
+      "validation_completion_token_nll": 0.11158048222172828
+    },
+    {
+      "epoch": 3,
+      "step": 147,
+      "training_completion_token_nll": 4.556846703120028e-05,
+      "validation_completion_token_nll": 0.12693745665538408
+    }
+  ],
+  "optimizer_steps": 147,
+  "trainable_parameters": 2949120,
+  "maximum_training_tokens": 710,
+  "maximum_validation_tokens": 711,
+  "elapsed_seconds": 511.2338977647014,
+  "peak_gpu_allocated_bytes": 4234574848,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "packages": {
+    "torch": "2.10.0+cu128",
+    "transformers": "5.22.2",
+    "peft": "0.21.3",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.15.0",
+    "safetensors": "0.8.0"
+  },
+  "adapter_sha256": {
+    "README.md": "cff2a85f6671c4c0f1c24ed3f0afcdf1cbba3c695bf8c47ba7f4c9faad1c5f92",
+    "adapter_config.json": "0e2e69ed360260ff0ab017811cf061651aa355ed96d03c6c01f3feb0cdcf5618",
+    "adapter_model.safetensors": "b5fdee4dcb5ddcc55bda8ed03daba0db2b43af4e4a01a2a6b02438b219d1eb4c",
+    "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+    "tokenizer.json": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+    "tokenizer_config.json": "04b1682c59acbd057f4c9072297faa73d56fc9de053094c659cdb4c464f58f86"
+  },
+  "selection_scope": "Only training/validation examples; public test excluded",
+  "retrieval_quality": "Not established by training loss; requires held-out retrieval evaluation"
+}

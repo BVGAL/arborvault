@@ -1,0 +1,21 @@
+{
+  "comparison": "paired_with_declared_provenance",
+  "limitations": [
+    "Checkpoint provenance and runtime metadata are operator declarations.",
+    "Small draft labels do not establish statistical significance."
+  ],
+  "delta_fine_tuned_minus_base": {
+    "llm_navigation": {
+      "recall_at_k": -0.08333333333333326,
+      "mrr": -0.08333333333333337,
+      "ndcg": -0.08333333333333337,
+      "evidence_coverage": -0.08333333333333326
+    },
+    "llm_auto": {
+      "recall_at_k": 0.0,
+      "mrr": 0.0,
+      "ndcg": 0.0,
+      "evidence_coverage": 0.0
+    }
+  }
+}

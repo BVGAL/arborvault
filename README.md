@@ -8,10 +8,12 @@ ArborVault stores document hierarchies in PostgreSQL and returns source-backed s
 through a small HTTP API. Use it as an experimental retrieval component in an agent or
 RAG pipeline. The framework-neutral API supports reusable integrations with any AI agent.
 
-**Measured local baseline:** with Qwen3-4B and lexical fallback, test Recall@5 is 0.6389
-versus 0.9167 for MiniLM dense retrieval on the small public-docs benchmark. Pure Qwen
-navigation abstains on all 8 unanswerable questions but also misses 9 answerable ones
-entirely. See [full results and limitations](docs/evaluation.md#local-qwen3-4b-baseline).
+**Measured fine-tuning experiment:** Qwen3-4B QLoRA with lexical fallback reaches test
+Recall@5 of 0.6944, versus 0.6667 for its matched NF4 base and 0.9167 for MiniLM dense
+retrieval. Pure navigation regresses from 0.6111 to 0.4722. Both model variants make invalid
+selections, so this is an exploratory result, not a demonstrated upgrade. See
+[results and failures](docs/evaluation.md#qwen3-4b-qlora-on-runpod) and the
+[training recipe](docs/qwen3-fine-tuning.md). The earlier Ollama baseline is retained separately.
 
 **Status: v0.3 research preview; production qualification is still ongoing.** It is not a drop-in Qdrant
 replacement and does not establish that structured retrieval outperforms dense retrieval.
@@ -191,8 +193,8 @@ revisions. Use a gateway with TLS and shared quotas for a multi-instance deploym
 1. Validate on independently reviewed agent workloads and publish retrieval/abstention measurements.
 2. Add durable ingestion jobs, shared resource quotas and broader scale measurements.
 3. Add hybrid dense retrieval only if held-out measurements justify it.
-4. Expand the local Qwen3-4B baseline with independent label review and new corpora, then
-   evaluate a user-trained adapter under matched conditions. No fine-tuned checkpoint is published.
+4. Expand independently reviewed routing data and unseen corpora before further Qwen3
+   fine-tuning. The first measured adapter is experimental; weights are not hosted on Hugging Face.
 5. Explore a separately versioned learned ToC selector and SearchTome evaluation after
    checking dataset rights. Any reproduction claim requires its own evidence.
 

@@ -2,7 +2,10 @@
 
 The first measured local baseline uses [Qwen3-4B](https://huggingface.co/Qwen/Qwen3-4B)
 with the explicit Ollama tag `qwen3:4b-q4_K_M`; see [local setup and results](local-ollama.md).
-No trained adapter is published. Pin the exact Hugging Face base commit before training.
+The first Qwen3 routing adapter has now been trained and evaluated on Runpod; use the
+[measured QLoRA recipe](qwen3-fine-tuning.md) and [matched results](evaluation.md#qwen3-4b-qlora-on-runpod).
+It does not demonstrate an overall improvement, and its weights are not hosted on Hugging Face.
+Pin the exact Hugging Face base commit before training.
 An alternative cloud family is [gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b),
 also open-weight under Apache-2.0. The native cloud API uses `gpt-oss:20b`; check the current
 [Ollama catalog](https://ollama.com/library/gpt-oss:20b-cloud) before running.
@@ -48,6 +51,10 @@ are administrator configuration; redirects are not followed with credentials.
 
 ## 2. Validate and train personally
 
+For Qwen3-4B, use `scripts/train_qwen3.py` and `scripts/benchmark_qwen3.py` as documented
+in the [Qwen3 guide](qwen3-fine-tuning.md). The older `train_lora.py` example below remains
+a separate optional recipe, principally for gpt-oss; it is not the measured Qwen3 QLoRA run.
+
 The checked-in [bootstrap dataset](../datasets/routing-bootstrap-v1/README.md) contains
 procedural examples plus oracle routes from the public **development** questions. The
 44 public test questions and their relevance labels are excluded from training exports.
@@ -78,8 +85,8 @@ These ranges are a starting recipe, not a tested GPU lockfile. Record resolved p
 and freeze your successful environment. The gpt-oss path dequantizes the base to BF16;
 budget for a large GPU. The [official training example](https://developers.openai.com/cookbook/articles/gpt-oss/fine-tune-transfomers)
 uses an 80 GB H100; inference memory requirements do not describe this training recipe.
-Only data preparation/validation has been executed for this release; the full 20B training
-run is intentionally left to the model author. No hardware/time/quality guarantee is made.
+Only data preparation/validation has been executed for this older gpt-oss recipe; a full
+20B training run has not been performed. No hardware/time/quality guarantee is made.
 
 ## 3. Compare the same base and adapted model
 

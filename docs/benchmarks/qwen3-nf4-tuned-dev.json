@@ -1,0 +1,2832 @@
+{
+  "dataset": "public-docs-v1",
+  "dataset_sha256": "a76183361bf0a7e730850d38bcc5b172ac7386efd56ea4306c2b163ab1c5c408",
+  "split": "dev",
+  "annotation_status": "assistant_draft_needs_independent_review",
+  "backend": "PostgreSQL",
+  "k": 5,
+  "word_budget": 512,
+  "unit": "same extracted sections for all methods",
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "model_sha256": {
+    "models--Qdrant--all-MiniLM-L6-v2-onnx/snapshots/d13954661f83248295ba75c1ed411eef3b7b936e/model.onnx": "bbd7b466f6d58e646fdc2bd5fd67b2f5e93c0b687011bd4548c420f7bd46f0c5"
+  },
+  "python": "3.12.14",
+  "arborvault": "0.3.0",
+  "packages": {
+    "psycopg": "3.3.9",
+    "numpy": "2.5.4",
+    "fastembed": "0.9.1"
+  },
+  "documents": 8,
+  "content_sections": 85,
+  "timing_protocol": "One sequential pass, base before adapter; one excluded synthetic warm-up per variant; GPU routing versus CPU MiniLM. Latency is exploratory.",
+  "vector_build_ms": 4508.907469920814,
+  "methods": {
+    "navigation": {
+      "recall_at_k": 0.8333333333333334,
+      "mrr": 0.6111111111111112,
+      "ndcg": 0.6666666666666666,
+      "evidence_coverage": 0.8333333333333334,
+      "unanswerable_abstention": 0,
+      "latency_p50_ms": 39.05146359466016,
+      "latency_p95_ms": 87.67227875068784,
+      "queries": [
+        {
+          "id": "fastapi-query-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:1"
+          ],
+          "predicted": [
+            "fastapi-query:1",
+            "fastapi-query:6",
+            "fastapi-query:2",
+            "fastapi-query:5"
+          ],
+          "latency_ms": 87.67227875068784,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:2"
+          ],
+          "predicted": [
+            "fastapi-query:2",
+            "fastapi-query:6",
+            "fastapi-query:1",
+            "fastapi-body:1"
+          ],
+          "latency_ms": 70.63163490965962,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:3"
+          ],
+          "predicted": [
+            "fastapi-query:6",
+            "fastapi-query:1",
+            "fastapi-query:3",
+            "fastapi-body:1"
+          ],
+          "latency_ms": 55.5472569540143,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:4"
+          ],
+          "predicted": [
+            "fastapi-query:6",
+            "fastapi-query:2",
+            "fastapi-query:4",
+            "fastapi-query:5",
+            "fastapi-query:1"
+          ],
+          "latency_ms": 38.44954026862979,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:5"
+          ],
+          "predicted": [
+            "fastapi-query:6",
+            "fastapi-query:1",
+            "fastapi-query:5",
+            "fastapi-path:19"
+          ],
+          "latency_ms": 35.434057004749775,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-06",
+          "language": "it",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:6"
+          ],
+          "predicted": [
+            "fastapi-query:1",
+            "fastapi-query:2",
+            "fastapi-query:6",
+            "fastapi-query:4"
+          ],
+          "latency_ms": 31.088578049093485,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:2",
+            "httpx-quickstart:15",
+            "httpx-clients:7",
+            "httpx-timeouts:0"
+          ],
+          "latency_ms": 29.8197278752923,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 381,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:3",
+            "httpx-clients:7",
+            "httpx-quickstart:18"
+          ],
+          "latency_ms": 31.535574235022068,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:2",
+            "httpx-timeouts:3",
+            "httpx-quickstart:14",
+            "httpx-quickstart:15"
+          ],
+          "latency_ms": 37.6023780554533,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:3",
+            "httpx-clients:5",
+            "httpx-timeouts:2"
+          ],
+          "latency_ms": 26.83174517005682,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-quickstart:2",
+            "httpx-quickstart:3",
+            "httpx-timeouts:3",
+            "httpx-clients:3"
+          ],
+          "latency_ms": 42.03984793275595,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-clients:1",
+            "fastapi-errors:1",
+            "httpx-quickstart:17",
+            "httpx-quickstart:18"
+          ],
+          "latency_ms": 43.0396213196218,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-01",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "fastapi-body:7",
+            "fastapi-body:10",
+            "fastapi-body:1"
+          ],
+          "latency_ms": 54.01507159695029,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-02",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "fastapi-body:1",
+            "fastapi-query:6",
+            "fastapi-errors:1"
+          ],
+          "latency_ms": 47.2123920917511,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-03",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:7",
+            "httpx-clients:3",
+            "httpx-limits:0"
+          ],
+          "latency_ms": 26.698850095272064,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-04",
+          "language": "it",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-clients:3",
+            "httpx-clients:7",
+            "httpx-limits:0",
+            "httpx-quickstart:1",
+            "httpx-quickstart:3"
+          ],
+          "latency_ms": 39.65338692069054,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 460,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        }
+      ]
+    },
+    "auto": {
+      "recall_at_k": 0.8333333333333334,
+      "mrr": 0.6111111111111112,
+      "ndcg": 0.6666666666666666,
+      "evidence_coverage": 0.8333333333333334,
+      "unanswerable_abstention": 0,
+      "latency_p50_ms": 41.465458227321506,
+      "latency_p95_ms": 53.80658386275172,
+      "queries": [
+        {
+          "id": "fastapi-query-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:1"
+          ],
+          "predicted": [
+            "fastapi-query:1",
+            "fastapi-query:6",
+            "fastapi-query:2",
+            "fastapi-query:5"
+          ],
+          "latency_ms": 42.8033540956676,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:2"
+          ],
+          "predicted": [
+            "fastapi-query:2",
+            "fastapi-query:6",
+            "fastapi-query:1",
+            "fastapi-body:1"
+          ],
+          "latency_ms": 43.114574160426855,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:3"
+          ],
+          "predicted": [
+            "fastapi-query:6",
+            "fastapi-query:1",
+            "fastapi-query:3",
+            "fastapi-body:1"
+          ],
+          "latency_ms": 42.262314818799496,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:4"
+          ],
+          "predicted": [
+            "fastapi-query:6",
+            "fastapi-query:2",
+            "fastapi-query:4",
+            "fastapi-query:5",
+            "fastapi-query:1"
+          ],
+          "latency_ms": 41.623893193900585,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:5"
+          ],
+          "predicted": [
+            "fastapi-query:6",
+            "fastapi-query:1",
+            "fastapi-query:5",
+            "fastapi-path:19"
+          ],
+          "latency_ms": 48.12003206461668,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-06",
+          "language": "it",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:6"
+          ],
+          "predicted": [
+            "fastapi-query:1",
+            "fastapi-query:2",
+            "fastapi-query:6",
+            "fastapi-query:4"
+          ],
+          "latency_ms": 40.57419812306762,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:2",
+            "httpx-quickstart:15",
+            "httpx-clients:7",
+            "httpx-timeouts:0"
+          ],
+          "latency_ms": 40.13220313936472,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 381,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:3",
+            "httpx-clients:7",
+            "httpx-quickstart:18"
+          ],
+          "latency_ms": 40.86698777973652,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:2",
+            "httpx-timeouts:3",
+            "httpx-quickstart:14",
+            "httpx-quickstart:15"
+          ],
+          "latency_ms": 41.025593876838684,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:3",
+            "httpx-clients:5",
+            "httpx-timeouts:2"
+          ],
+          "latency_ms": 26.8003330565989,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-quickstart:2",
+            "httpx-quickstart:3",
+            "httpx-timeouts:3",
+            "httpx-clients:3"
+          ],
+          "latency_ms": 41.307023260742426,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-clients:1",
+            "fastapi-errors:1",
+            "httpx-quickstart:17",
+            "httpx-quickstart:18"
+          ],
+          "latency_ms": 42.926407884806395,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-01",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "fastapi-body:7",
+            "fastapi-body:10",
+            "fastapi-body:1"
+          ],
+          "latency_ms": 53.80658386275172,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-02",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "fastapi-body:1",
+            "fastapi-query:6",
+            "fastapi-errors:1"
+          ],
+          "latency_ms": 46.61012114956975,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-03",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:7",
+            "httpx-clients:3",
+            "httpx-limits:0"
+          ],
+          "latency_ms": 26.2987669557333,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-04",
+          "language": "it",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-clients:3",
+            "httpx-clients:7",
+            "httpx-limits:0",
+            "httpx-quickstart:1",
+            "httpx-quickstart:3"
+          ],
+          "latency_ms": 39.62440602481365,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 460,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        }
+      ]
+    },
+    "lexical": {
+      "recall_at_k": 0.4166666666666667,
+      "mrr": 0.375,
+      "ndcg": 0.38591081279762146,
+      "evidence_coverage": 0.4166666666666667,
+      "unanswerable_abstention": 0,
+      "latency_p50_ms": 24.02212005108595,
+      "latency_p95_ms": 30.988944694399834,
+      "queries": [
+        {
+          "id": "fastapi-query-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:1"
+          ],
+          "predicted": [
+            "fastapi-query:1",
+            "fastapi-query:6",
+            "fastapi-body:10"
+          ],
+          "latency_ms": 30.988944694399834,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:2"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 25.066205766052008,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:3"
+          ],
+          "predicted": [
+            "fastapi-query:6",
+            "fastapi-body:10",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 24.29040987044573,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:4"
+          ],
+          "predicted": [
+            "fastapi-query:6",
+            "fastapi-body:10",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 24.23845697194338,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:5"
+          ],
+          "predicted": [
+            "fastapi-body:10",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 24.440154898911715,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-06",
+          "language": "it",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:6"
+          ],
+          "predicted": [
+            "fastapi-query:6",
+            "fastapi-errors:13",
+            "fastapi-body:10"
+          ],
+          "latency_ms": 21.30618831142783,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:2",
+            "httpx-timeouts:3",
+            "httpx-timeouts:0",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 19.507597666233778,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:10",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 23.991308640688658,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:3",
+            "httpx-timeouts:2",
+            "fastapi-query:1"
+          ],
+          "latency_ms": 20.853104069828987,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-limits:0",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 24.31884966790676,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-quickstart:13",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 21.552816964685917,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 24.177436251193285,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-01",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:10",
+            "fastapi-body:5"
+          ],
+          "latency_ms": 24.020629934966564,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-02",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 23.3892691321671,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-03",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:1",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 24.023610167205334,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-04",
+          "language": "it",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-timeouts:0",
+            "httpx-clients:0",
+            "httpx-limits:0",
+            "httpx-clients:8"
+          ],
+          "latency_ms": 14.942033216357231,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        }
+      ]
+    },
+    "dense_sections": {
+      "recall_at_k": 0.9166666666666666,
+      "mrr": 0.8333333333333334,
+      "ndcg": 0.8551549589285763,
+      "evidence_coverage": 0.9166666666666666,
+      "unanswerable_abstention": 0,
+      "latency_p50_ms": 6.037309067323804,
+      "latency_p95_ms": 9.913323912769556,
+      "queries": [
+        {
+          "id": "fastapi-query-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:1"
+          ],
+          "predicted": [
+            "fastapi-query:1",
+            "fastapi-query:2",
+            "fastapi-query:5",
+            "fastapi-query:3",
+            "fastapi-query:4"
+          ],
+          "latency_ms": 9.488360024988651,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 458,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:2"
+          ],
+          "predicted": [
+            "fastapi-query:2",
+            "fastapi-query:1",
+            "fastapi-query:3",
+            "fastapi-query:6"
+          ],
+          "latency_ms": 9.913323912769556,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:3"
+          ],
+          "predicted": [
+            "fastapi-query:3",
+            "fastapi-query:6",
+            "fastapi-query:2",
+            "fastapi-body:3"
+          ],
+          "latency_ms": 8.71639372780919,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:4"
+          ],
+          "predicted": [
+            "fastapi-query:1",
+            "fastapi-query:2",
+            "fastapi-query:3",
+            "fastapi-query:6"
+          ],
+          "latency_ms": 8.313119877129793,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:5"
+          ],
+          "predicted": [
+            "fastapi-query:5",
+            "fastapi-path:13",
+            "fastapi-query:2",
+            "fastapi-query:1",
+            "fastapi-path:9"
+          ],
+          "latency_ms": 7.695729844272137,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 331,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-06",
+          "language": "it",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:6"
+          ],
+          "predicted": [
+            "fastapi-query:2",
+            "fastapi-query:6",
+            "fastapi-query:3",
+            "fastapi-query:1"
+          ],
+          "latency_ms": 8.296160027384758,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:3",
+            "httpx-timeouts:0",
+            "httpx-clients:1"
+          ],
+          "latency_ms": 5.970702040940523,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:0",
+            "httpx-timeouts:3",
+            "httpx-timeouts:2",
+            "httpx-quickstart:16"
+          ],
+          "latency_ms": 6.071675103157759,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 478,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-timeouts:0",
+            "httpx-limits:0",
+            "httpx-timeouts:3",
+            "httpx-timeouts:2",
+            "httpx-quickstart:16"
+          ],
+          "latency_ms": 6.186008919030428,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 478,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:3",
+            "httpx-timeouts:2",
+            "httpx-timeouts:0",
+            "httpx-clients:2"
+          ],
+          "latency_ms": 5.686950869858265,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 457,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:3",
+            "httpx-timeouts:0",
+            "httpx-timeouts:1",
+            "httpx-timeouts:2"
+          ],
+          "latency_ms": 6.002943031489849,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 458,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-clients:7",
+            "httpx-timeouts:1",
+            "httpx-clients:4",
+            "httpx-timeouts:2"
+          ],
+          "latency_ms": 4.6203951351344585,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 361,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-01",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "fastapi-errors:1",
+            "fastapi-path:20",
+            "fastapi-path:6",
+            "fastapi-errors:2",
+            "fastapi-path:18"
+          ],
+          "latency_ms": 4.63462620973587,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 350,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-02",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "fastapi-path:20",
+            "fastapi-path:6",
+            "fastapi-body:3",
+            "fastapi-path:7",
+            "fastapi-body:6"
+          ],
+          "latency_ms": 4.608786199241877,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 354,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-03",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-clients:1",
+            "httpx-clients:3",
+            "httpx-timeouts:1",
+            "httpx-clients:0",
+            "httpx-clients:7"
+          ],
+          "latency_ms": 4.542903043329716,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 475,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-04",
+          "language": "it",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-quickstart:3",
+            "httpx-clients:0",
+            "httpx-clients:8",
+            "fastapi-errors:2",
+            "httpx-quickstart:18"
+          ],
+          "latency_ms": 4.710567649453878,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 0,
+            "failures": 0,
+            "prompt_tokens": 0,
+            "output_tokens": 0
+          },
+          "returned_words": 511,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        }
+      ]
+    },
+    "llm_navigation": {
+      "recall_at_k": 0.8333333333333334,
+      "mrr": 0.75,
+      "ndcg": 0.7718216255952429,
+      "evidence_coverage": 0.8333333333333334,
+      "unanswerable_abstention": 1,
+      "latency_p50_ms": 284.35212280601263,
+      "latency_p95_ms": 1234.9278507754207,
+      "queries": [
+        {
+          "id": "fastapi-query-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:1"
+          ],
+          "predicted": [
+            "fastapi-query:1",
+            "fastapi-query:5",
+            "fastapi-query:4"
+          ],
+          "latency_ms": 1183.5100268945098,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 3,
+            "failures": 0,
+            "prompt_tokens": 1432,
+            "output_tokens": 18
+          },
+          "returned_words": 290,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:2"
+          ],
+          "predicted": [
+            "fastapi-query:2",
+            "fastapi-query:1"
+          ],
+          "latency_ms": 822.903276886791,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 3,
+            "failures": 0,
+            "prompt_tokens": 1346,
+            "output_tokens": 12
+          },
+          "returned_words": 230,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:3"
+          ],
+          "predicted": [
+            "fastapi-query:1",
+            "fastapi-query:3",
+            "fastapi-query:2"
+          ],
+          "latency_ms": 1017.6614350639284,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 3,
+            "failures": 0,
+            "prompt_tokens": 1331,
+            "output_tokens": 15
+          },
+          "returned_words": 313,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:4"
+          ],
+          "predicted": [
+            "fastapi-query:4",
+            "fastapi-query:1"
+          ],
+          "latency_ms": 834.091265220195,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 3,
+            "failures": 0,
+            "prompt_tokens": 1325,
+            "output_tokens": 12
+          },
+          "returned_words": 231,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:5"
+          ],
+          "predicted": [
+            "fastapi-query:1",
+            "fastapi-path:8",
+            "fastapi-path:1"
+          ],
+          "latency_ms": 1234.9278507754207,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 3,
+            "failures": 0,
+            "prompt_tokens": 2273,
+            "output_tokens": 18
+          },
+          "returned_words": 326,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-06",
+          "language": "it",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:6"
+          ],
+          "predicted": [
+            "fastapi-query:1",
+            "fastapi-query:6"
+          ],
+          "latency_ms": 828.7169840186834,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 3,
+            "failures": 0,
+            "prompt_tokens": 1328,
+            "output_tokens": 12
+          },
+          "returned_words": 383,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [],
+          "latency_ms": 154.12877686321735,
+          "fallback": false,
+          "fallback_reason": "no_route",
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 698,
+            "output_tokens": 2
+          },
+          "returned_words": 0,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": true
+        },
+        {
+          "id": "httpx-limits-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0"
+          ],
+          "latency_ms": 281.0639077797532,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 699,
+            "output_tokens": 4
+          },
+          "returned_words": 76,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0"
+          ],
+          "latency_ms": 282.41614159196615,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 701,
+            "output_tokens": 4
+          },
+          "returned_words": 76,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0"
+          ],
+          "latency_ms": 283.1989387050271,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 701,
+            "output_tokens": 4
+          },
+          "returned_words": 76,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0"
+          ],
+          "latency_ms": 285.72188410907984,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 705,
+            "output_tokens": 4
+          },
+          "returned_words": 76,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0"
+          ],
+          "latency_ms": 285.50530690699816,
+          "fallback": false,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 700,
+            "output_tokens": 4
+          },
+          "returned_words": 76,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-01",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [],
+          "latency_ms": 156.05785325169563,
+          "fallback": false,
+          "fallback_reason": "no_route",
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 699,
+            "output_tokens": 2
+          },
+          "returned_words": 0,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": true
+        },
+        {
+          "id": "unanswerable-02",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [],
+          "latency_ms": 157.16006886214018,
+          "fallback": false,
+          "fallback_reason": "no_route",
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 698,
+            "output_tokens": 2
+          },
+          "returned_words": 0,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": true
+        },
+        {
+          "id": "unanswerable-03",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [],
+          "latency_ms": 156.69378312304616,
+          "fallback": false,
+          "fallback_reason": "no_route",
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 698,
+            "output_tokens": 2
+          },
+          "returned_words": 0,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": true
+        },
+        {
+          "id": "unanswerable-04",
+          "language": "it",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [],
+          "latency_ms": 155.9659200720489,
+          "fallback": false,
+          "fallback_reason": "no_route",
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 700,
+            "output_tokens": 2
+          },
+          "returned_words": 0,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": true
+        }
+      ]
+    },
+    "llm_auto": {
+      "recall_at_k": 0.9166666666666666,
+      "mrr": 0.8333333333333334,
+      "ndcg": 0.8551549589285763,
+      "evidence_coverage": 0.9166666666666666,
+      "unanswerable_abstention": 0,
+      "latency_p50_ms": 346.0048525594175,
+      "latency_p95_ms": 1308.3892879076302,
+      "queries": [
+        {
+          "id": "fastapi-query-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:1"
+          ],
+          "predicted": [
+            "fastapi-query:1",
+            "fastapi-query:5",
+            "fastapi-query:4",
+            "fastapi-query:6"
+          ],
+          "latency_ms": 1249.1834009997547,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 3,
+            "failures": 0,
+            "prompt_tokens": 1432,
+            "output_tokens": 18
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:2"
+          ],
+          "predicted": [
+            "fastapi-query:2",
+            "fastapi-query:1",
+            "httpx-timeouts:3",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 888.9740658923984,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 3,
+            "failures": 0,
+            "prompt_tokens": 1346,
+            "output_tokens": 12
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:3"
+          ],
+          "predicted": [
+            "fastapi-query:1",
+            "fastapi-query:3",
+            "fastapi-query:2",
+            "fastapi-query:6"
+          ],
+          "latency_ms": 1089.1921571455896,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 3,
+            "failures": 0,
+            "prompt_tokens": 1331,
+            "output_tokens": 15
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:4"
+          ],
+          "predicted": [
+            "fastapi-query:4",
+            "fastapi-query:1",
+            "fastapi-query:6",
+            "fastapi-body:10"
+          ],
+          "latency_ms": 929.2168831452727,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 3,
+            "failures": 0,
+            "prompt_tokens": 1325,
+            "output_tokens": 12
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-query:5"
+          ],
+          "predicted": [
+            "fastapi-query:1",
+            "fastapi-path:8",
+            "fastapi-path:1",
+            "fastapi-body:10"
+          ],
+          "latency_ms": 1308.3892879076302,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 3,
+            "failures": 0,
+            "prompt_tokens": 2273,
+            "output_tokens": 18
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-query-06",
+          "language": "it",
+          "category": "lookup",
+          "gold": [
+            "fastapi-query:6"
+          ],
+          "predicted": [
+            "fastapi-query:1",
+            "fastapi-query:6",
+            "fastapi-errors:13",
+            "fastapi-body:10"
+          ],
+          "latency_ms": 883.7572601623833,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 3,
+            "failures": 0,
+            "prompt_tokens": 1328,
+            "output_tokens": 12
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:2",
+            "httpx-timeouts:3",
+            "httpx-timeouts:0",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 200.52357204258442,
+          "fallback": true,
+          "fallback_reason": "no_route",
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 698,
+            "output_tokens": 2
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:3",
+            "fastapi-body:10"
+          ],
+          "latency_ms": 334.2745420522988,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 699,
+            "output_tokens": 4
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:3",
+            "httpx-timeouts:2",
+            "fastapi-query:1"
+          ],
+          "latency_ms": 349.3016390129924,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 701,
+            "output_tokens": 4
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:3",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 333.8090959005058,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 701,
+            "output_tokens": 4
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-quickstart:13",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 342.7080661058426,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 705,
+            "output_tokens": 4
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-limits-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-limits:0"
+          ],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:3",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 350.08687479421496,
+          "fallback": true,
+          "fallback_reason": null,
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 700,
+            "output_tokens": 4
+          },
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-01",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:10",
+            "fastapi-body:5"
+          ],
+          "latency_ms": 207.73955481126904,
+          "fallback": true,
+          "fallback_reason": "no_route",
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 699,
+            "output_tokens": 2
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-02",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 220.58861795812845,
+          "fallback": true,
+          "fallback_reason": "no_route",
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 698,
+            "output_tokens": 2
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-03",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:1",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 221.38924524188042,
+          "fallback": true,
+          "fallback_reason": "no_route",
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 698,
+            "output_tokens": 2
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-04",
+          "language": "it",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-timeouts:0",
+            "httpx-clients:0",
+            "httpx-limits:0",
+            "httpx-clients:8"
+          ],
+          "latency_ms": 203.31289526075125,
+          "fallback": true,
+          "fallback_reason": "no_route",
+          "provider_usage": {
+            "calls": 1,
+            "failures": 0,
+            "prompt_tokens": 700,
+            "output_tokens": 2
+          },
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Single small developer-documentation corpus",
+    "Model-authored draft qrels",
+    "Budget counts whitespace words, not model tokens",
+    "No answer generation evaluated",
+    "MiniLM is primarily English; its default tokenizer truncates long section inputs",
+    "Latency is exploratory, not a controlled database performance comparison",
+    "Public test set; do not tune on reported test results",
+    "The earlier Ollama Q4_K_M run is not the controlled base for this NF4 experiment.",
+    "Development questions partly appear in training/validation; dev is diagnostic only.",
+    "This public test set was measured previously; it is held out from gradients, not a new blind benchmark."
+  ],
+  "experiment": {
+    "variant": "fine-tuned",
+    "base_model": "Qwen/Qwen3-4B",
+    "base_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "runtime_id": "transformers-5.22.2/torch-2.10.0+cu128",
+    "provider": "transformers-local",
+    "quantization": "nf4-double-bf16",
+    "prompt_version": "routing-v1",
+    "prompt_sha256": "08da412e7e0412114f3e102f5a3f14af7216bd8f655598bfd5ddb774c0148578",
+    "temperature": 0,
+    "seed": 0,
+    "think": false,
+    "num_ctx": 8192,
+    "max_output_tokens": 256,
+    "max_calls": 1056
+  },
+  "served_artifact": {
+    "template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+    "parameters_sha256": "f840ecfba82690e05c2b6608e9d70ba05aabbc85b881c0d76b68fa38c1bca49d",
+    "adapter_enabled": true,
+    "adapter_sha256": "b5fdee4dcb5ddcc55bda8ed03daba0db2b43af4e4a01a2a6b02438b219d1eb4c",
+    "shared_base_tensors": true
+  },
+  "training_provenance_sha256": "748cfd1f5536bce0de88040d1ae898ceb33ee61ca803c77afb457ad647dc3e09",
+  "runtime_packages": {
+    "torch": "2.10.0+cu128",
+    "transformers": "5.22.2",
+    "peft": "0.21.3",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.15.0",
+    "safetensors": "0.8.0"
+  },
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "code_revision": "ecc67bbc8a8bc1a9fcdbf15139429c6cbf168fd2",
+  "provider_usage": {
+    "calls": 56,
+    "failures": 0,
+    "prompt_tokens": 32068,
+    "output_tokens": 234
+  },
+  "selector_failure_events": [],
+  "generation_eos_token_ids": [
+    151645,
+    151643
+  ],
+  "provider_max_prompt_tokens": 1329,
+  "complete": true
+}

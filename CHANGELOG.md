@@ -2,12 +2,23 @@
 
 ## Unreleased
 
+- Train Qwen3-4B QLoRA on one Runpod RTX 4090: 392 train/84 validation examples,
+  three epochs and 147 optimizer steps; select epoch two by validation loss only.
+- Publish matched NF4 base/adapter retrieval runs with unchanged corpus and MiniLM weights.
+  Test Recall@5: base 0.6111, adapted 0.4722; with lexical fallback 0.6667 and 0.6944;
+  MiniLM 0.9167. Two invalid selections per model keep the comparison exploratory.
+- Retain the initial and repeated reports. Correct multi-EOS validation and add failure-stage
+  diagnostics; repeated retrieval scores are identical, with no retraining or test-driven tuning.
+- Add pinned optional training dependencies, adapter/checkpoint hashes and portable provenance.
+- Verify 64 regression tests (one optional Torch test skipped in the API environment) and
+  all five Qwen runtime checks in the training environment.
 - Add local Qwen3-4B configuration, explicit thinking/context controls and model provenance checks.
 - Add a disposable-database benchmark runner and publish all development/test query results.
-- Measure 270 local model calls across both splits without provider/JSON errors; no fine-tuning.
+- Measure 270 local Ollama baseline calls across both splits without provider/JSON errors,
+  using unmodified weights.
 - Record the generic-tag Thinking-2507 mismatch and pin the original `qwen3:4b-q4_K_M` artifact.
 - Test Recall@5: Qwen navigation 0.5278, Qwen + lexical 0.6389, MiniLM dense 0.9167.
-- Expand regression coverage to 60 tests, including local controls and provenance privacy.
+- Add local controls and provenance privacy regression coverage.
 
 ## 0.3.0 — 2026-11-13
 

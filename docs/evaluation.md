@@ -1,5 +1,76 @@
 # Evaluation protocol
 
+## Qwen3-4B QLoRA on Runpod
+
+Measured on 2026-11-13 using a single RTX 4090. Base and adapted inference share the same
+NF4 base tensors, tokenizer, prompt, decoding and corpus. The adapter is enabled or disabled
+in the same process. This **rerun base**, rather than the earlier Ollama Q4_K_M artifact, is
+the relevant comparison. The frozen public test contains 36 answerable and 8 unanswerable
+questions, with k=5 and a 512-word context budget. Dataset and MiniLM weight hashes are
+unchanged from the previous experiment.
+
+| Method | Test Recall@5 | MRR | Evidence coverage | Unknown abstention | Answerable empty results |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Local navigation | 0.5833 | 0.5162 | 0.5833 | 1/8 | 0/36 |
+| PostgreSQL lexical | 0.4444 | 0.4167 | 0.4722 | 1/8 | 0/36 |
+| MiniLM dense sections | **0.9167** | **0.7000** | **0.9444** | 0/8 | 0/36 |
+| Qwen3 NF4 base navigation | 0.6111 | 0.5579 | 0.6111 | **8/8** | 4/36 |
+| Qwen3 NF4 base + lexical | 0.6667 | 0.6134 | 0.6667 | 1/8 | 0/36 |
+| Qwen3 QLoRA navigation | 0.4722 | 0.4167 | 0.4722 | **8/8** | 12/36 |
+| Qwen3 QLoRA + lexical | 0.6944 | 0.5856 | 0.6944 | 1/8 | 0/36 |
+
+**This adapter is not a demonstrated retrieval upgrade.** Pure navigation loses 13.89
+percentage points of recall and returns no evidence for more answerable questions. With
+fallback, recall rises by 2.78 points (one question-equivalent out of 36), but MRR and nDCG
+fall. MiniLM remains substantially stronger at finding labeled evidence. Both model variants
+reject all eight unknown questions in pure navigation; fallback fills seven with lexical hits.
+Dense retrieval has no rejection threshold in this benchmark, so its 0/8 does not establish
+that dense systems cannot abstain.
+
+**Failures are included, not discarded.** Each model makes two invalid selections: the same
+question once in `llm_navigation` and once in `llm_auto`. Base fails on `fastapi-errors-04`,
+the adapter on `httpx-clients-04`. The recorded failure stage is `selection_validation`
+with `ValueError`, after valid termination with token 151645. These are selection-contract
+failures, not context truncation or transport errors. Pure navigation treats the failure as
+empty evidence; auto uses the same lexical fallback as before. All 44 questions were attempted
+in every method, but the reports deliberately retain `complete: false` for test and the
+comparison is labeled **exploratory**. Empty-result counts above include failed selections.
+
+The final evaluation uses 528 measured model calls: 64 base-dev, 56 adapted-dev, 222
+base-test and 186 adapted-test. There are four failed calls, all on test. One synthetic warm-up
+per variant/split is excluded. No generated answers are scored. Development recall is 0.9167
+for base navigation and 0.8333 for adapted navigation, and 0.9167 for both with fallback;
+dev is diagnostic because its questions partly appear in training/validation.
+
+Raw final reports: [base dev](benchmarks/qwen3-nf4-base-dev.json),
+[adapted dev](benchmarks/qwen3-nf4-tuned-dev.json),
+[base test](benchmarks/qwen3-nf4-base-test.json),
+[adapted test](benchmarks/qwen3-nf4-tuned-test.json),
+[paired test comparison](benchmarks/qwen3-nf4-comparison-test.json).
+The [training record](benchmarks/qwen3-routing-training.json),
+[runtime inventory](benchmarks/qwen3-routing-environment.json),
+[base artifact hashes](benchmarks/qwen3-routing-base-artifacts.json) and
+[adapter checks](benchmarks/qwen3-routing-adapter-checks.json) support reproduction.
+
+An initial evaluation was repeated after correcting the runner to accept both EOS tokens
+declared by Qwen3, and adding failure-stage diagnostics. The recorded errors still occur in
+selection validation; retrieval scores, abstention and call counts are identical. No weights,
+labels, prompts, rankings or decoding settings were adjusted. Initial reports are retained:
+[base dev](benchmarks/qwen3-initial-base-dev.json),
+[adapted dev](benchmarks/qwen3-initial-tuned-dev.json),
+[base test](benchmarks/qwen3-initial-base-test.json),
+[adapted test](benchmarks/qwen3-initial-tuned-test.json).
+Both passes together used 1,056 measured calls and eight excluded warm-ups.
+
+Training code: `4494b3a6f770fc62c67c050d4e9572d812c95c2e`; corrected evaluation code is
+recorded in [evaluation provenance](benchmarks/qwen3-routing-evaluation-provenance.json).
+See the [recipe and reproduction guide](qwen3-fine-tuning.md). Training uses 392 examples
+and 84 validation examples; epoch two is selected from three by validation loss only.
+No test questions/qrels enter training. However, this small public test was measured before
+training, labels remain assistant-authored drafts, and synthetic training templates repeat.
+It is not a new blind or independently reviewed benchmark. Latency is exploratory: GPU
+routing, CPU dense ranking, different database work, one sequential pass and fixed order.
+
 ## Local Qwen3-4B baseline
 
 Measured on 2026-11-13, using original Qwen3-4B weights through Ollama **without fine-tuning**.
@@ -48,7 +119,7 @@ index on CPU. Qwen runs on an 8 GB GPU. Fixed order, prefix caches, one warm-up 
 prevent a controlled latency comparison. These are **retrieval-stage results**, not generated
 answer scores or a Qdrant/PostgreSQL deployment comparison. Labels are assistant-authored
 drafts and the corpus is tiny and public; general or statistical superiority is not established.
-The future fine-tuned model must be measured separately.
+The fine-tuned model is measured separately above under a matched NF4 runtime.
 
 ## v0.3 regression and LLM workflow
 
@@ -62,8 +133,8 @@ ACL checks and lazy SQL traversal alter database work and are not a scalability 
 The [LLM workflow](llm-evaluation.md) adds native Ollama routing, base/adapted comparisons
 and separately split [training data](../datasets/routing-bootstrap-v1/README.md). The release
 initially validated the protocol with mocked responses; the measurement above adds real local
-inference on main. A future comparison must evaluate the same original base checkpoint and
-its adapter, with matched serving conditions and an independently reviewed held-out set.
+inference on main. The subsequent Qwen3 experiment above evaluates the original base and
+its adapter under matched serving conditions; independent label review remains outstanding.
 
 ## v0.2 public documentation baseline
 

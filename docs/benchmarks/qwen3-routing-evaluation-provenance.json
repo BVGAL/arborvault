@@ -1,0 +1,7 @@
+{
+  "training_code_revision": "4494b3a6f770fc62c67c050d4e9572d812c95c2e",
+  "evaluation_code_revision": "ecc67bbc8a8bc1a9fcdbf15139429c6cbf168fd2",
+  "evaluation_source_archive_sha256": "c621e178d25c4a6492ba4f29ac23074a906b981cc50a1ffa905eaaa580441025",
+  "reason_for_repeated_evaluation": "Honor both configured generation EOS IDs; add failure-stage diagnostics. No weights, prompt, decoding settings, labels or ranking rules changed.",
+  "initial_evaluation_preserved": true
+}

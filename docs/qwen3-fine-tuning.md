@@ -2,8 +2,28 @@
 
 This is a small candidate-routing QLoRA experiment, not a STAIR reproduction or
 general-purpose knowledge fine-tuning. The initial recipe is fixed in
-[`qwen3-routing-v1.json`](../configs/qwen3-routing-v1.json). GPU execution and measured
-results must be reported separately; passing CPU tests does not validate training.
+[`qwen3-routing-v1.json`](../configs/qwen3-routing-v1.json). The first run was completed
+on 2026-11-13 using one Runpod RTX 4090. See [retrieval results and failures](evaluation.md#qwen3-4b-qlora-on-runpod):
+the adapter is experimental and does not establish an overall improvement over the base.
+
+## Measured training
+
+Training updated 2,949,120 LoRA parameters in 147 optimizer steps over approximately
+511 seconds, excluding environment setup. Base weights stayed frozen. Epoch two was selected
+using validation loss; test results played no role in selecting the checkpoint.
+
+| Epoch | Steps completed | Training completion-token NLL | Validation completion-token NLL |
+| --- | ---: | ---: | ---: |
+| 1 | 49 | 0.225365 | 0.129785 |
+| **2 (selected)** | 98 | 0.001985 | **0.111580** |
+| 3 | 147 | 0.000046 | 0.126937 |
+
+Very low training loss does not imply retrieval quality: the repeated procedural templates
+are easy to fit. All 144 adapter tensors are finite, and all 72 LoRA-B tensors are nonzero.
+The adapter config pins the original base revision. Maximum training/validation lengths are
+710/711 tokens, below the 2,048-token cap. [Provenance and adapter hashes](benchmarks/qwen3-routing-training.json)
+and [runtime versions](benchmarks/qwen3-routing-environment.json) are public; weights have
+not been uploaded to Hugging Face and no placeholder model link is advertised.
 
 ## Protocol fixed before the run
 
@@ -28,7 +48,8 @@ corpus and repeated synthetic templates limit conclusions. No generated answers 
 Use one CUDA GPU with BF16 support and preferably at least 24 GB VRAM. The optional
 `Dockerfile.training` and `requirements.training.txt` keep training dependencies outside
 the API image. Model weights and adapters are ignored by Git. Record the actual resolved
-packages and image digest when executing; this initial recipe is experimental.
+packages and image digest when executing. The recorded environment passed dependency checks;
+the recipe remains experimental because of its small dataset and observed retrieval regression.
 
 ```sh
 python scripts/train_qwen3.py --output reports/qwen3-check --validate-only

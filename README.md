@@ -8,9 +8,10 @@ ArborVault stores document hierarchies in PostgreSQL and returns source-backed s
 through a small HTTP API. Use it as an experimental retrieval component in an agent or
 RAG pipeline. The framework-neutral API supports reusable integrations with any AI agent.
 
-**Status: working research MVP, not production hardened.** It is not a drop-in Qdrant
+**Status: v0.2 reliability preview; production qualification is still ongoing.** It is not a drop-in Qdrant
 replacement and does not establish that structured retrieval outperforms dense retrieval.
-See the [initial validation record](docs/validation.md) for what was actually tested.
+See [v0.2 release notes](docs/releases/v0.2.0.md), [upgrade instructions](docs/upgrade-v02.md)
+and the historical [v0.1 validation record](docs/validation.md).
 
 ## Relationship to STAIR
 
@@ -20,7 +21,7 @@ parameters. ArborVault instead persists a mutable tree and navigates it at query
 with a deterministic local selector or optional external model. No fine-tuning is required.
 This is an **independent project, not affiliated with or endorsed by IBM, not an official
 STAIR implementation, and not a verified reproduction**. Paper results do not describe
-this repository. No paper code, SearchTome books, or benchmark data are bundled.
+this repository. No paper code, SearchTome books, or SearchTome benchmark data are bundled.
 
 ## Quick start
 
@@ -32,9 +33,11 @@ docker compose up --build -d
 curl http://localhost:8000/readyz
 ```
 
-The configuration script generates local credentials in ignored `.env`; it never prints
-their values. Copy the `demo` bearer key from `.env` into your client environment as
-`ARBORVAULT_API_KEY`. The API binds only to `127.0.0.1`; PostgreSQL has no published port.
+The configuration script generates database passwords in ignored `.env`, API credential
+hashes in ignored `.secrets/keys.json` and a bearer token in `.arborvault-demo-token`.
+It never prints secret values. Load that token into your client environment as
+`ARBORVAULT_API_KEY`. Existing v0.1 users must follow the upgrade guide before starting.
+The API binds only to `127.0.0.1`; PostgreSQL and the parser have no published ports.
 Interactive API documentation: <http://localhost:8000/docs>.
 
 ```sh
@@ -53,15 +56,21 @@ variable syntax, or run `python examples/agent_client.py` after setting the key.
 ## Included
 
 - FastAPI, versioned HTTP routes, generated OpenAPI, bearer authentication.
-- Tenant derived from the credential, namespace allowlists, scoped reads and writes.
+- Tenant derived from the credential, namespace allowlists, separate read/write/delete
+  permissions, hot credential revocation and per-process request quotas.
 - Markdown heading trees (including fenced-code handling), UTF-8 text, HTML headings,
   DOCX headings/tables, PDF page extraction. PDFs are page trees, not inferred chapters;
   scanned PDFs need external OCR. DOCX tables follow paragraphs and lose original placement.
 - PostgreSQL adjacency tree, materialized title paths, scoped foreign keys, GIN full-text
-  index, atomic upsert/revision replacement and idempotent unchanged uploads.
+  index, immutable retained revisions, atomic upserts and idempotent unchanged uploads.
+- Numbered checksum-verified migrations, PostgreSQL Row-Level Security and a restricted
+  runtime role; historical tree reads, cursor pagination and consistent retrieval snapshots.
+- Disposable parser workers with deadlines/resource limits, in a separate no-egress
+  container without database credentials when using Compose; backup/restore verification.
 - Bounded beam navigation, optional model selector, validated node IDs, lexical fallback,
   query trace, source locator, digest and revision with every result.
-- Runnable comparative evaluation, synthetic data, tests and PostgreSQL CI.
+- A frozen [public-document dataset](datasets/public-docs-v1/README.md), PostgreSQL-backed
+  comparison, synthetic smoke fixtures, regression tests and PostgreSQL CI.
 - Apache-2.0 license for original code, documentation and synthetic fixtures.
 
 ## API
@@ -72,9 +81,10 @@ Clients cannot choose their tenant in a request body or a header.
 | Method and suffix | Behavior |
 | --- | --- |
 | `POST /documents` | Raw file body; query fields `filename`, `source_key`, `title`, optional `source_uri` |
-| `GET /documents` | List current documents (MVP limit: 1,000) |
-| `GET /documents/{id}/tree` | Current tree with content, IDs and source locators |
-| `DELETE /documents/{id}` | Delete current document and its tree |
+| `GET /documents?limit=100&cursor=…` | Current documents; follow `next_cursor` until null |
+| `GET /documents/{id}/revisions` | Retained revisions, descending; supports limit/cursor |
+| `GET /documents/{id}/tree?revision=1` | Historical tree; omit revision for current content |
+| `DELETE /documents/{id}` | Permanently delete document and every retained revision |
 | `POST /query` | `{ "query": "…", "k": 5, "mode": "auto" }` |
 
 Modes: `auto` navigates then fills with lexical hits on route failure/insufficient results;
@@ -84,9 +94,10 @@ An empty response means no hit was found, not a proof that the corpus cannot ans
 No answer generator is included: agents receive untrusted source text and citations.
 
 Uploads sharing a `(tenant, namespace, source_key)` update the same document. Unchanged
-bytes and metadata keep the revision; changes replace the tree atomically. Node IDs are
-revision-specific. Historical content is not retained: consumers must keep returned text
-and digests when they need durable evidence. Source URIs are metadata and are never fetched.
+bytes and metadata keep the revision; changes append a new revision atomically. Node IDs
+are revision-specific and previous content remains readable until the document is deleted.
+Deleting and re-ingesting a source creates a new document ID so old citations never silently
+resolve to new content. Source URIs are metadata and are never fetched.
 
 ## Optional model routing
 
@@ -107,24 +118,31 @@ pip install -c constraints.txt -e '.[dev]'
 pytest
 ruff check .
 python -m arborvault.evaluate --output reports/smoke.json
+python -m arborvault.dataset datasets/public-docs-v1
 # Actual dense embedding baseline (downloads model weights on first run):
 pip install -c constraints.txt -e '.[eval]'
 python -m arborvault.evaluate --dense --output reports/dense.json
+# With EVAL_DATABASE_URL pointing to a migrated disposable database's runtime role:
+python -m arborvault.benchmark datasets/public-docs-v1 --split dev --dense --output reports/dev.json
 ```
 
-Without `--dense`, the vector baseline uses TF-IDF cosine and is explicitly labeled as
+In the synthetic runner, without `--dense`, the vector baseline uses TF-IDF cosine and is labeled as
 lexical, not semantic embeddings. With `--dense`, FastEmbed runs MiniLM embeddings and
 exact cosine search over fixed-size chunks. This compares the retrieval stage of vector
 RAG, not end-to-end answer quality or Qdrant deployment performance. See
 [evaluation](docs/evaluation.md) for metrics, corpus alignment, controls and limitations.
-`constraints.txt` records the Linux package versions used for the initial test/evaluation
+The public-docs runner uses the actual PostgreSQL implementation and identical section
+units/context budgets for all methods. Its 60 questions are assistant-authored drafts
+awaiting independent human review; see the dataset card before interpreting results.
+`constraints.txt` records the Linux package versions used for the test/evaluation
 run; it is a version constraint file, not a hash-verified lockfile. Update it deliberately
 and rerun tests/audit when upgrading dependencies.
 
 Set `TEST_DATABASE_URL` to an **isolated disposable PostgreSQL database** to run integration
 tests as well. CI supplies one automatically. Those tests create and remove their own
 random tenant data. Schema initialization is a separate command:
-`python -m arborvault.storage` using `DATABASE_URL`. Compose runs it before starting the API.
+`python -m arborvault.migrate` using an administrator `DATABASE_URL`. Compose also provisions
+the non-owner runtime role before starting the API. See [operations](docs/operations.md).
 
 To run every test in isolated Linux containers, including PostgreSQL:
 `docker compose -f compose.test.yaml up --build --abort-on-container-exit --exit-code-from tests`.
@@ -138,17 +156,16 @@ the deployed server requires PostgreSQL and valid credentials and fails closed o
 
 MVP limits: 2 MB request body, 1 million extracted characters, 2,000 nodes/document,
 200 PDF pages, 10,000 nodes loaded for navigation, 160 candidates/level, depth 12,
-beam width 4. Larger corpora fall back to PostgreSQL lexical retrieval. No streaming
-ingestion, OCR, user-level document ACLs, RLS, production quotas, history, automatic
-memory consolidation, cross-document reasoning, or training pipeline is included.
-Resource limits reduce risk but do not make parsers a security boundary; isolate ingestion
-workers before accepting hostile public uploads. Authentication grants read/write/delete
-within allowed namespaces; split deployment credentials if different roles are required.
+beam width 4. Larger corpora fall back to PostgreSQL lexical retrieval. There is no streaming
+ingestion, OCR, document-level ACL, shared quota across replicas, automatic memory consolidation,
+cross-document reasoning or training pipeline. Local subprocess parsing is weaker isolation
+than the provided Compose service. Retained history increases storage use; DELETE purges all
+revisions. Use a gateway with TLS and shared quotas for a multi-instance deployment.
 
 ## Roadmap
 
 1. Validate on independently reviewed agent workloads and publish retrieval/abstention measurements.
-2. Fetch children lazily from PostgreSQL; add jobs, parser isolation, pagination and RLS.
+2. Fetch children lazily from PostgreSQL; add ingestion jobs and shared resource quotas.
 3. Add hybrid dense retrieval only if held-out measurements justify it.
 4. Explore a separately versioned learned ToC selector and SearchTome evaluation after
    checking dataset rights. Any reproduction claim requires its own evidence.

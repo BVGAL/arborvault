@@ -1,10 +1,10 @@
 [build-system]
-requires = ["hatchling>=1.27,<2"]
+requires = ["hatchling==1.27.0"]
 build-backend = "hatchling.build"
 
 [project]
 name = "arborvault"
-version = "0.1.0"
+version = "0.2.0"
 description = "Structure-aware knowledge retrieval for AI agents"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -22,6 +22,9 @@ eval = ["fastembed>=0.7,<1", "numpy>=2,<3"]
 
 [project.scripts]
 arborvault-eval = "arborvault.evaluate:main"
+arborvault-migrate = "arborvault.migrate:main"
+arborvault-dataset = "arborvault.dataset:main"
+arborvault-benchmark = "arborvault.benchmark:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/arborvault"]
@@ -33,6 +36,7 @@ markers = ["postgres: requires TEST_DATABASE_URL"]
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+extend-exclude = ["datasets/**/corpus/**"]
 
 [tool.ruff.lint]
 select = ["E4", "E7", "E9", "F", "I", "B"]

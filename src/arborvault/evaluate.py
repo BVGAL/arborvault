@@ -112,7 +112,7 @@ class DenseIndex:
         q = np.array(list(self.model.embed([query])))[0]
         q /= max(np.linalg.norm(q), 1e-12)
         # No tuned abstention threshold; all candidates are returned in score order.
-        return np.argsort(-(self.embeddings @ q)).tolist()
+        return np.argsort(-(self.embeddings @ q), kind="stable").tolist()
 
 
 def run(dense=False, k=3, model="sentence-transformers/all-MiniLM-L6-v2", cache_dir=None):

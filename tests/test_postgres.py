@@ -66,7 +66,10 @@ def test_postgres_atomic_revisions_scoping_and_foreign_keys(store):
         assert store.documents(tenant, "one")[0].revision == 8
         key = "synthetic-postgres-key-000000000"
         with TestClient(
-            create_app(store, [{"key": key, "tenant": tenant, "namespaces": ["one"]}])
+            create_app(
+                store,
+                [{"key": key, "tenant": tenant, "namespaces": ["one"], "permissions": ["read"]}],
+            )
         ) as client:
             response = client.post(
                 "/v1/namespaces/one/query",

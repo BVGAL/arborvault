@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:17-alpine
+        image: postgres:17-alpine@sha256:d3244e8ce3f165ee3c93d9c4a4b1d0fe48b3a89e2287b717fdcbbde92d405065
         env:
           POSTGRES_USER: arborvault_test
           POSTGRES_PASSWORD: synthetic-ci-only
@@ -26,10 +26,28 @@ jobs:
       - run: python -m pip install --upgrade 'pip>=26.3,<27'
       - run: pip install -c constraints.txt -e '.[dev]'
       - run: ruff check .
+      - run: ruff format --check .
       - run: pytest -q
+      - run: python -m arborvault.dataset datasets/public-docs-v1 --export reports/beir
       - run: python -m arborvault.evaluate --output reports/smoke.json
       - run: python scripts/scan_public.py
+      - run: pip-audit --skip-editable
+      - run: pip wheel --no-deps --wheel-dir dist .
       - uses: actions/upload-artifact@v4
         with:
-          name: synthetic-evaluation
-          path: reports/smoke.json
+          name: evaluation-and-wheel
+          path: |
+            reports/
+            dist/
+  compose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/configure.py
+      - run: docker compose up --build -d --wait --wait-timeout 180
+      - run: python scripts/smoke_compose.py
+      - if: always()
+        run: docker compose down

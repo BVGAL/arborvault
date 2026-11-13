@@ -1,0 +1,3917 @@
+{
+  "dataset": "public-docs-v1",
+  "dataset_sha256": "a76183361bf0a7e730850d38bcc5b172ac7386efd56ea4306c2b163ab1c5c408",
+  "split": "test",
+  "annotation_status": "assistant_draft_needs_independent_review",
+  "backend": "PostgreSQL",
+  "k": 5,
+  "word_budget": 512,
+  "unit": "same extracted sections for all methods",
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "model_sha256": {
+    "models--Qdrant--all-MiniLM-L6-v2-onnx/snapshots/d13954661f83248295ba75c1ed411eef3b7b936e/model.onnx": "bbd7b466f6d58e646fdc2bd5fd67b2f5e93c0b687011bd4548c420f7bd46f0c5"
+  },
+  "python": "3.12.14",
+  "arborvault": "0.2.0",
+  "packages": {
+    "psycopg": "3.3.9",
+    "numpy": "2.5.4",
+    "fastembed": "0.9.1"
+  },
+  "documents": 8,
+  "content_sections": 85,
+  "timing_protocol": "single sequential pass; PostgreSQL paths include database I/O, dense index is in memory",
+  "vector_build_ms": 4274.664038999617,
+  "methods": {
+    "navigation": {
+      "recall_at_k": 0.5833333333333334,
+      "mrr": 0.5162037037037037,
+      "ndcg": 0.5189080543858372,
+      "evidence_coverage": 0.5833333333333334,
+      "unanswerable_abstention": 0.125,
+      "latency_p50_ms": 5.0217989999055135,
+      "latency_p95_ms": 5.648584000027768,
+      "queries": [
+        {
+          "id": "fastapi-path-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-path:2"
+          ],
+          "predicted": [
+            "fastapi-path:19",
+            "fastapi-body:1",
+            "fastapi-path:18",
+            "fastapi-path:1",
+            "fastapi-path:9"
+          ],
+          "latency_ms": 7.60053300018626,
+          "fallback": false,
+          "returned_words": 419,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-path:4"
+          ],
+          "predicted": [
+            "fastapi-body:1",
+            "fastapi-path:18",
+            "fastapi-query:1",
+            "fastapi-path:19",
+            "fastapi-path:1"
+          ],
+          "latency_ms": 6.629266999880201,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-path:8"
+          ],
+          "predicted": [
+            "fastapi-path:8",
+            "fastapi-body:6",
+            "fastapi-body:9",
+            "fastapi-errors:1",
+            "fastapi-errors:6"
+          ],
+          "latency_ms": 5.446267000024818,
+          "fallback": false,
+          "returned_words": 440,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-path:10"
+          ],
+          "predicted": [
+            "fastapi-query:2",
+            "fastapi-path:10",
+            "fastapi-query:1",
+            "fastapi-path:1",
+            "fastapi-path:9"
+          ],
+          "latency_ms": 5.612235000171495,
+          "fallback": false,
+          "returned_words": 418,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-path:15"
+          ],
+          "predicted": [
+            "fastapi-errors:10",
+            "fastapi-path:10",
+            "fastapi-path:16",
+            "fastapi-body:1",
+            "fastapi-errors:1"
+          ],
+          "latency_ms": 5.485973999839189,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-path:19"
+          ],
+          "predicted": [
+            "fastapi-path:19",
+            "fastapi-path:17",
+            "fastapi-path:18",
+            "fastapi-path:8",
+            "fastapi-path:1"
+          ],
+          "latency_ms": 5.3325250000852975,
+          "fallback": false,
+          "returned_words": 366,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-body:1"
+          ],
+          "predicted": [
+            "fastapi-body:10",
+            "fastapi-body:1",
+            "fastapi-body:9",
+            "fastapi-body:6",
+            "fastapi-errors:1"
+          ],
+          "latency_ms": 5.648584000027768,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-body:3"
+          ],
+          "predicted": [
+            "fastapi-body:3",
+            "fastapi-errors:9",
+            "fastapi-errors:10",
+            "fastapi-errors:8",
+            "fastapi-errors:14"
+          ],
+          "latency_ms": 5.480122000335541,
+          "fallback": false,
+          "returned_words": 473,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-body:5"
+          ],
+          "predicted": [
+            "fastapi-body:10",
+            "fastapi-body:1",
+            "fastapi-body:3",
+            "fastapi-query:1"
+          ],
+          "latency_ms": 5.499864000285015,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-04",
+          "language": "it",
+          "category": "lookup",
+          "gold": [
+            "fastapi-body:6"
+          ],
+          "predicted": [
+            "fastapi-body:5",
+            "fastapi-errors:9",
+            "fastapi-errors:11",
+            "fastapi-errors:13",
+            "fastapi-body:10"
+          ],
+          "latency_ms": 5.389815999933489,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-body:9"
+          ],
+          "predicted": [
+            "fastapi-body:10",
+            "fastapi-body:1",
+            "fastapi-body:9",
+            "fastapi-body:4",
+            "fastapi-path:1"
+          ],
+          "latency_ms": 4.877566999766714,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-body:10"
+          ],
+          "predicted": [
+            "fastapi-body:10",
+            "fastapi-body:1",
+            "fastapi-query:1"
+          ],
+          "latency_ms": 5.09608099991965,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-errors:4"
+          ],
+          "predicted": [
+            "fastapi-body:10",
+            "fastapi-body:9",
+            "fastapi-body:1",
+            "fastapi-path:1",
+            "fastapi-errors:1"
+          ],
+          "latency_ms": 5.561109000154829,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-errors:5"
+          ],
+          "predicted": [
+            "fastapi-errors:5",
+            "fastapi-errors:13",
+            "fastapi-errors:11",
+            "fastapi-path:1",
+            "fastapi-body:1"
+          ],
+          "latency_ms": 5.194926000058331,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-errors:6"
+          ],
+          "predicted": [
+            "fastapi-errors:6",
+            "fastapi-errors:7",
+            "fastapi-body:1",
+            "fastapi-errors:1"
+          ],
+          "latency_ms": 5.020234999847162,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-errors:7"
+          ],
+          "predicted": [
+            "fastapi-errors:13",
+            "fastapi-errors:7",
+            "fastapi-errors:9",
+            "fastapi-errors:11",
+            "fastapi-errors:6"
+          ],
+          "latency_ms": 5.134406000252056,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-errors:10"
+          ],
+          "predicted": [
+            "fastapi-errors:10",
+            "fastapi-errors:11",
+            "fastapi-body:10",
+            "fastapi-errors:14",
+            "fastapi-errors:13"
+          ],
+          "latency_ms": 5.643443000280968,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-errors:12"
+          ],
+          "predicted": [
+            "fastapi-body:10",
+            "fastapi-body:5",
+            "fastapi-body:9",
+            "fastapi-body:1"
+          ],
+          "latency_ms": 5.045320000135689,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-quickstart:2"
+          ],
+          "predicted": [
+            "fastapi-query:6",
+            "fastapi-query:1",
+            "httpx-clients:5"
+          ],
+          "latency_ms": 4.697947000295244,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-quickstart:5"
+          ],
+          "predicted": [
+            "httpx-quickstart:11",
+            "httpx-quickstart:4",
+            "httpx-quickstart:3",
+            "httpx-clients:8"
+          ],
+          "latency_ms": 4.951719000018784,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-quickstart:11"
+          ],
+          "predicted": [
+            "httpx-clients:8",
+            "httpx-clients:7",
+            "httpx-timeouts:3"
+          ],
+          "latency_ms": 4.847367999900598,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-04",
+          "language": "it",
+          "category": "lookup",
+          "gold": [
+            "httpx-quickstart:12"
+          ],
+          "predicted": [
+            "httpx-clients:3",
+            "httpx-clients:7",
+            "httpx-limits:0",
+            "httpx-quickstart:1",
+            "httpx-quickstart:17"
+          ],
+          "latency_ms": 5.208984000091732,
+          "fallback": false,
+          "returned_words": 445,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-quickstart:13"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:8",
+            "fastapi-body:1"
+          ],
+          "latency_ms": 4.6783779998804675,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-quickstart:15"
+          ],
+          "predicted": [
+            "httpx-quickstart:15",
+            "httpx-quickstart:3",
+            "httpx-quickstart:18",
+            "httpx-clients:5"
+          ],
+          "latency_ms": 5.099891999634565,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-quickstart:16",
+            "httpx-timeouts:0"
+          ],
+          "predicted": [
+            "httpx-quickstart:16",
+            "httpx-timeouts:3",
+            "httpx-clients:7",
+            "httpx-quickstart:18"
+          ],
+          "latency_ms": 5.252436999853671,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.5,
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-quickstart:16",
+            "httpx-timeouts:1"
+          ],
+          "predicted": [
+            "httpx-timeouts:1",
+            "httpx-timeouts:3",
+            "httpx-clients:7",
+            "httpx-timeouts:2",
+            "httpx-limits:0"
+          ],
+          "latency_ms": 4.1417689999434515,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.5,
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-03",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-timeouts:2"
+          ],
+          "predicted": [
+            "httpx-timeouts:2",
+            "httpx-clients:3",
+            "httpx-limits:0",
+            "httpx-clients:6",
+            "httpx-clients:1"
+          ],
+          "latency_ms": 4.086112000095454,
+          "fallback": false,
+          "returned_words": 471,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-timeouts:3"
+          ],
+          "predicted": [
+            "httpx-timeouts:1",
+            "httpx-quickstart:18",
+            "httpx-quickstart:3",
+            "httpx-quickstart:11",
+            "httpx-timeouts:2"
+          ],
+          "latency_ms": 4.782067000178358,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-timeouts:3"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-limits:0",
+            "httpx-timeouts:2",
+            "httpx-clients:1"
+          ],
+          "latency_ms": 4.385167000236834,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-timeouts:3"
+          ],
+          "predicted": [
+            "httpx-clients:1",
+            "httpx-quickstart:16",
+            "httpx-timeouts:2",
+            "httpx-quickstart:11",
+            "httpx-quickstart:17"
+          ],
+          "latency_ms": 5.040898999595811,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-clients:1"
+          ],
+          "predicted": [
+            "httpx-clients:1",
+            "httpx-clients:3",
+            "httpx-clients:6",
+            "httpx-timeouts:2",
+            "httpx-limits:0"
+          ],
+          "latency_ms": 4.45162000005439,
+          "fallback": false,
+          "returned_words": 471,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-clients:2"
+          ],
+          "predicted": [
+            "fastapi-errors:10",
+            "fastapi-errors:1",
+            "fastapi-errors:5",
+            "httpx-clients:2",
+            "fastapi-errors:4"
+          ],
+          "latency_ms": 4.762723000112601,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-clients:4"
+          ],
+          "predicted": [
+            "httpx-clients:3",
+            "httpx-clients:4",
+            "httpx-clients:6",
+            "httpx-limits:0",
+            "httpx-timeouts:2"
+          ],
+          "latency_ms": 4.176027000085014,
+          "fallback": false,
+          "returned_words": 330,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-clients:5"
+          ],
+          "predicted": [
+            "httpx-clients:5",
+            "httpx-clients:7",
+            "fastapi-query:1",
+            "fastapi-query:6"
+          ],
+          "latency_ms": 4.485741999815218,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-clients:6"
+          ],
+          "predicted": [
+            "httpx-clients:6",
+            "httpx-clients:3",
+            "httpx-limits:0",
+            "httpx-timeouts:2",
+            "httpx-clients:1"
+          ],
+          "latency_ms": 4.912621000130457,
+          "fallback": false,
+          "returned_words": 471,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-clients:8"
+          ],
+          "predicted": [
+            "httpx-clients:8",
+            "httpx-quickstart:11",
+            "httpx-clients:3",
+            "httpx-clients:7"
+          ],
+          "latency_ms": 5.063466000137851,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-05",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:1",
+            "fastapi-body:10"
+          ],
+          "latency_ms": 4.385894000279222,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-06",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "fastapi-body:3",
+            "fastapi-body:10",
+            "fastapi-query:5",
+            "fastapi-body:8",
+            "fastapi-body:1"
+          ],
+          "latency_ms": 4.449633999684011,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-07",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-quickstart:18",
+            "httpx-clients:3",
+            "httpx-quickstart:14",
+            "httpx-quickstart:7",
+            "httpx-timeouts:3"
+          ],
+          "latency_ms": 4.735618000268005,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-08",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:1",
+            "fastapi-body:5"
+          ],
+          "latency_ms": 4.367195000213542,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-09",
+          "language": "it",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [],
+          "latency_ms": 3.5393880002629885,
+          "fallback": false,
+          "returned_words": 0,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": true
+        },
+        {
+          "id": "unanswerable-10",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-clients:3",
+            "httpx-clients:5",
+            "httpx-limits:0",
+            "httpx-quickstart:18",
+            "httpx-quickstart:3"
+          ],
+          "latency_ms": 4.729670999950031,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-11",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:1",
+            "fastapi-body:10"
+          ],
+          "latency_ms": 5.023362999963865,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-12",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:1",
+            "fastapi-body:5"
+          ],
+          "latency_ms": 4.805441999906179,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        }
+      ]
+    },
+    "auto": {
+      "recall_at_k": 0.5833333333333334,
+      "mrr": 0.5162037037037037,
+      "ndcg": 0.5189080543858372,
+      "evidence_coverage": 0.5833333333333334,
+      "unanswerable_abstention": 0.125,
+      "latency_p50_ms": 4.709717499963517,
+      "latency_p95_ms": 6.133012000191229,
+      "queries": [
+        {
+          "id": "fastapi-path-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-path:2"
+          ],
+          "predicted": [
+            "fastapi-path:19",
+            "fastapi-body:1",
+            "fastapi-path:18",
+            "fastapi-path:1",
+            "fastapi-path:9"
+          ],
+          "latency_ms": 5.385255999954097,
+          "fallback": false,
+          "returned_words": 419,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-path:4"
+          ],
+          "predicted": [
+            "fastapi-body:1",
+            "fastapi-path:18",
+            "fastapi-query:1",
+            "fastapi-path:19",
+            "fastapi-path:1"
+          ],
+          "latency_ms": 5.7025230003091565,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-path:8"
+          ],
+          "predicted": [
+            "fastapi-path:8",
+            "fastapi-body:6",
+            "fastapi-body:9",
+            "fastapi-errors:1",
+            "fastapi-errors:6"
+          ],
+          "latency_ms": 4.708647999905224,
+          "fallback": false,
+          "returned_words": 440,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-path:10"
+          ],
+          "predicted": [
+            "fastapi-query:2",
+            "fastapi-path:10",
+            "fastapi-query:1",
+            "fastapi-path:1",
+            "fastapi-path:9"
+          ],
+          "latency_ms": 5.245281000043178,
+          "fallback": false,
+          "returned_words": 418,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-path:15"
+          ],
+          "predicted": [
+            "fastapi-errors:10",
+            "fastapi-path:10",
+            "fastapi-path:16",
+            "fastapi-body:1",
+            "fastapi-errors:1"
+          ],
+          "latency_ms": 5.364694000036252,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-path:19"
+          ],
+          "predicted": [
+            "fastapi-path:19",
+            "fastapi-path:17",
+            "fastapi-path:18",
+            "fastapi-path:8",
+            "fastapi-path:1"
+          ],
+          "latency_ms": 4.477219999898807,
+          "fallback": false,
+          "returned_words": 366,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-body:1"
+          ],
+          "predicted": [
+            "fastapi-body:10",
+            "fastapi-body:1",
+            "fastapi-body:9",
+            "fastapi-body:6",
+            "fastapi-errors:1"
+          ],
+          "latency_ms": 4.488820000005944,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-body:3"
+          ],
+          "predicted": [
+            "fastapi-body:3",
+            "fastapi-errors:9",
+            "fastapi-errors:10",
+            "fastapi-errors:8",
+            "fastapi-errors:14"
+          ],
+          "latency_ms": 4.467574000045715,
+          "fallback": false,
+          "returned_words": 473,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-body:5"
+          ],
+          "predicted": [
+            "fastapi-body:10",
+            "fastapi-body:1",
+            "fastapi-body:3",
+            "fastapi-query:1"
+          ],
+          "latency_ms": 4.462154000066221,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-04",
+          "language": "it",
+          "category": "lookup",
+          "gold": [
+            "fastapi-body:6"
+          ],
+          "predicted": [
+            "fastapi-body:5",
+            "fastapi-errors:9",
+            "fastapi-errors:11",
+            "fastapi-errors:13",
+            "fastapi-body:10"
+          ],
+          "latency_ms": 4.533290999916062,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-body:9"
+          ],
+          "predicted": [
+            "fastapi-body:10",
+            "fastapi-body:1",
+            "fastapi-body:9",
+            "fastapi-body:4",
+            "fastapi-path:1"
+          ],
+          "latency_ms": 5.47743500010256,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-body:10"
+          ],
+          "predicted": [
+            "fastapi-body:10",
+            "fastapi-body:1",
+            "fastapi-query:1"
+          ],
+          "latency_ms": 6.133012000191229,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-errors:4"
+          ],
+          "predicted": [
+            "fastapi-body:10",
+            "fastapi-body:9",
+            "fastapi-body:1",
+            "fastapi-path:1",
+            "fastapi-errors:1"
+          ],
+          "latency_ms": 4.840794000301685,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-errors:5"
+          ],
+          "predicted": [
+            "fastapi-errors:5",
+            "fastapi-errors:13",
+            "fastapi-errors:11",
+            "fastapi-path:1",
+            "fastapi-body:1"
+          ],
+          "latency_ms": 5.679154000063136,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-errors:6"
+          ],
+          "predicted": [
+            "fastapi-errors:6",
+            "fastapi-errors:7",
+            "fastapi-body:1",
+            "fastapi-errors:1"
+          ],
+          "latency_ms": 5.367633999867394,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-errors:7"
+          ],
+          "predicted": [
+            "fastapi-errors:13",
+            "fastapi-errors:7",
+            "fastapi-errors:9",
+            "fastapi-errors:11",
+            "fastapi-errors:6"
+          ],
+          "latency_ms": 5.146597000020847,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-errors:10"
+          ],
+          "predicted": [
+            "fastapi-errors:10",
+            "fastapi-errors:11",
+            "fastapi-body:10",
+            "fastapi-errors:14",
+            "fastapi-errors:13"
+          ],
+          "latency_ms": 5.233703999692807,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-errors:12"
+          ],
+          "predicted": [
+            "fastapi-body:10",
+            "fastapi-body:5",
+            "fastapi-body:9",
+            "fastapi-body:1"
+          ],
+          "latency_ms": 4.79854900004284,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-quickstart:2"
+          ],
+          "predicted": [
+            "fastapi-query:6",
+            "fastapi-query:1",
+            "httpx-clients:5"
+          ],
+          "latency_ms": 5.875617000128841,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-quickstart:5"
+          ],
+          "predicted": [
+            "httpx-quickstart:11",
+            "httpx-quickstart:4",
+            "httpx-quickstart:3",
+            "httpx-clients:8"
+          ],
+          "latency_ms": 4.71078700002181,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-quickstart:11"
+          ],
+          "predicted": [
+            "httpx-clients:8",
+            "httpx-clients:7",
+            "httpx-timeouts:3"
+          ],
+          "latency_ms": 4.460358999949676,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-04",
+          "language": "it",
+          "category": "lookup",
+          "gold": [
+            "httpx-quickstart:12"
+          ],
+          "predicted": [
+            "httpx-clients:3",
+            "httpx-clients:7",
+            "httpx-limits:0",
+            "httpx-quickstart:1",
+            "httpx-quickstart:17"
+          ],
+          "latency_ms": 4.82661600017309,
+          "fallback": false,
+          "returned_words": 445,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-quickstart:13"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:8",
+            "fastapi-body:1"
+          ],
+          "latency_ms": 5.1566489996730525,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-quickstart:15"
+          ],
+          "predicted": [
+            "httpx-quickstart:15",
+            "httpx-quickstart:3",
+            "httpx-quickstart:18",
+            "httpx-clients:5"
+          ],
+          "latency_ms": 5.540559000110079,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-quickstart:16",
+            "httpx-timeouts:0"
+          ],
+          "predicted": [
+            "httpx-quickstart:16",
+            "httpx-timeouts:3",
+            "httpx-clients:7",
+            "httpx-quickstart:18"
+          ],
+          "latency_ms": 4.488355999910709,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.5,
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-quickstart:16",
+            "httpx-timeouts:1"
+          ],
+          "predicted": [
+            "httpx-timeouts:1",
+            "httpx-timeouts:3",
+            "httpx-clients:7",
+            "httpx-timeouts:2",
+            "httpx-limits:0"
+          ],
+          "latency_ms": 3.7734050001745345,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.5,
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-03",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-timeouts:2"
+          ],
+          "predicted": [
+            "httpx-timeouts:2",
+            "httpx-clients:3",
+            "httpx-limits:0",
+            "httpx-clients:6",
+            "httpx-clients:1"
+          ],
+          "latency_ms": 3.7765100000797247,
+          "fallback": false,
+          "returned_words": 471,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-timeouts:3"
+          ],
+          "predicted": [
+            "httpx-timeouts:1",
+            "httpx-quickstart:18",
+            "httpx-quickstart:3",
+            "httpx-quickstart:11",
+            "httpx-timeouts:2"
+          ],
+          "latency_ms": 4.101576000266505,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-timeouts:3"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-limits:0",
+            "httpx-timeouts:2",
+            "httpx-clients:1"
+          ],
+          "latency_ms": 3.9414859998032625,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-timeouts:3"
+          ],
+          "predicted": [
+            "httpx-clients:1",
+            "httpx-quickstart:16",
+            "httpx-timeouts:2",
+            "httpx-quickstart:11",
+            "httpx-quickstart:17"
+          ],
+          "latency_ms": 4.5306729998628725,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-clients:1"
+          ],
+          "predicted": [
+            "httpx-clients:1",
+            "httpx-clients:3",
+            "httpx-clients:6",
+            "httpx-timeouts:2",
+            "httpx-limits:0"
+          ],
+          "latency_ms": 3.8151210001160507,
+          "fallback": false,
+          "returned_words": 471,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-clients:2"
+          ],
+          "predicted": [
+            "fastapi-errors:10",
+            "fastapi-errors:1",
+            "fastapi-errors:5",
+            "httpx-clients:2",
+            "fastapi-errors:4"
+          ],
+          "latency_ms": 4.195839999738382,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-clients:4"
+          ],
+          "predicted": [
+            "httpx-clients:3",
+            "httpx-clients:4",
+            "httpx-clients:6",
+            "httpx-limits:0",
+            "httpx-timeouts:2"
+          ],
+          "latency_ms": 6.344042000364425,
+          "fallback": false,
+          "returned_words": 330,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-clients:5"
+          ],
+          "predicted": [
+            "httpx-clients:5",
+            "httpx-clients:7",
+            "fastapi-query:1",
+            "fastapi-query:6"
+          ],
+          "latency_ms": 4.426752000199485,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-clients:6"
+          ],
+          "predicted": [
+            "httpx-clients:6",
+            "httpx-clients:3",
+            "httpx-limits:0",
+            "httpx-timeouts:2",
+            "httpx-clients:1"
+          ],
+          "latency_ms": 3.7801060002493614,
+          "fallback": false,
+          "returned_words": 471,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-clients:8"
+          ],
+          "predicted": [
+            "httpx-clients:8",
+            "httpx-quickstart:11",
+            "httpx-clients:3",
+            "httpx-clients:7"
+          ],
+          "latency_ms": 5.554291999942507,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-05",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:1",
+            "fastapi-body:10"
+          ],
+          "latency_ms": 3.833828000097128,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-06",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "fastapi-body:3",
+            "fastapi-body:10",
+            "fastapi-query:5",
+            "fastapi-body:8",
+            "fastapi-body:1"
+          ],
+          "latency_ms": 4.078435999872454,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-07",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-quickstart:18",
+            "httpx-clients:3",
+            "httpx-quickstart:14",
+            "httpx-quickstart:7",
+            "httpx-timeouts:3"
+          ],
+          "latency_ms": 5.850753000231634,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-08",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:1",
+            "fastapi-body:5"
+          ],
+          "latency_ms": 4.599327000050835,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-09",
+          "language": "it",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [],
+          "latency_ms": 6.439526000121987,
+          "fallback": true,
+          "returned_words": 0,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": true
+        },
+        {
+          "id": "unanswerable-10",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-clients:3",
+            "httpx-clients:5",
+            "httpx-limits:0",
+            "httpx-quickstart:18",
+            "httpx-quickstart:3"
+          ],
+          "latency_ms": 5.030884000007063,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-11",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:1",
+            "fastapi-body:10"
+          ],
+          "latency_ms": 4.254409999703057,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-12",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:1",
+            "fastapi-body:5"
+          ],
+          "latency_ms": 3.8144789996295003,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        }
+      ]
+    },
+    "lexical": {
+      "recall_at_k": 0.4444444444444444,
+      "mrr": 0.4166666666666667,
+      "ndcg": 0.42394054186508096,
+      "evidence_coverage": 0.4722222222222222,
+      "unanswerable_abstention": 0.125,
+      "latency_p50_ms": 30.32379549995312,
+      "latency_p95_ms": 43.362639999941166,
+      "queries": [
+        {
+          "id": "fastapi-path-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-path:2"
+          ],
+          "predicted": [
+            "fastapi-body:10",
+            "fastapi-query:6",
+            "httpx-timeouts:3"
+          ],
+          "latency_ms": 37.89377800012517,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-path:4"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:10",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 34.81973799989646,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-path:8"
+          ],
+          "predicted": [
+            "fastapi-path:8",
+            "fastapi-errors:13",
+            "fastapi-body:10",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 27.433660000042437,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-path:10"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 40.46831599998768,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-path:15"
+          ],
+          "predicted": [
+            "fastapi-errors:13",
+            "fastapi-errors:10",
+            "httpx-quickstart:13",
+            "fastapi-errors:4"
+          ],
+          "latency_ms": 28.019748000133404,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-path:19"
+          ],
+          "predicted": [
+            "httpx-clients:10",
+            "fastapi-path:19",
+            "fastapi-path:8"
+          ],
+          "latency_ms": 30.162468000071385,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-body:1"
+          ],
+          "predicted": [
+            "fastapi-body:1",
+            "httpx-clients:10",
+            "fastapi-body:10"
+          ],
+          "latency_ms": 42.97667899982116,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-body:3"
+          ],
+          "predicted": [
+            "fastapi-query:6",
+            "httpx-clients:7",
+            "fastapi-body:10"
+          ],
+          "latency_ms": 29.582212999684998,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-body:5"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:1",
+            "httpx-clients:7"
+          ],
+          "latency_ms": 30.485122999834857,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-04",
+          "language": "it",
+          "category": "lookup",
+          "gold": [
+            "fastapi-body:6"
+          ],
+          "predicted": [
+            "fastapi-errors:13",
+            "fastapi-errors:5",
+            "httpx-quickstart:9",
+            "fastapi-body:3",
+            "fastapi-errors:7"
+          ],
+          "latency_ms": 16.311413000039465,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-body:9"
+          ],
+          "predicted": [
+            "fastapi-body:1",
+            "fastapi-body:10",
+            "fastapi-path:19",
+            "httpx-timeouts:3"
+          ],
+          "latency_ms": 39.11357200013299,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-body:10"
+          ],
+          "predicted": [
+            "fastapi-body:10",
+            "httpx-timeouts:3",
+            "fastapi-body:1"
+          ],
+          "latency_ms": 42.797943000095984,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-errors:4"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 47.68544400030805,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-errors:5"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 37.86302299977251,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-errors:6"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 31.286160000036034,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-errors:7"
+          ],
+          "predicted": [
+            "fastapi-errors:7",
+            "httpx-timeouts:3",
+            "fastapi-errors:13"
+          ],
+          "latency_ms": 35.26404800004457,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-errors:10"
+          ],
+          "predicted": [
+            "fastapi-errors:10",
+            "fastapi-errors:13",
+            "fastapi-errors:14",
+            "fastapi-body:10"
+          ],
+          "latency_ms": 21.330000000034488,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-errors:12"
+          ],
+          "predicted": [
+            "fastapi-body:1",
+            "httpx-timeouts:3",
+            "fastapi-body:10"
+          ],
+          "latency_ms": 38.55043299972749,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-quickstart:2"
+          ],
+          "predicted": [
+            "fastapi-query:6",
+            "fastapi-query:1",
+            "httpx-clients:7",
+            "httpx-clients:5"
+          ],
+          "latency_ms": 30.778842000017903,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-quickstart:5"
+          ],
+          "predicted": [
+            "fastapi-errors:5",
+            "httpx-quickstart:18",
+            "httpx-quickstart:11",
+            "httpx-quickstart:4"
+          ],
+          "latency_ms": 24.776910000127828,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-quickstart:11"
+          ],
+          "predicted": [
+            "httpx-quickstart:11",
+            "httpx-timeouts:3",
+            "httpx-quickstart:18"
+          ],
+          "latency_ms": 47.332479000033345,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-04",
+          "language": "it",
+          "category": "lookup",
+          "gold": [
+            "httpx-quickstart:12"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-timeouts:0",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 12.537748999875475,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-quickstart:13"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 43.32748700016964,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-quickstart:15"
+          ],
+          "predicted": [
+            "httpx-quickstart:15",
+            "httpx-clients:10",
+            "httpx-quickstart:3"
+          ],
+          "latency_ms": 32.23905300001206,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-quickstart:16",
+            "httpx-timeouts:0"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:10",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 25.777483000183565,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-quickstart:16",
+            "httpx-timeouts:1"
+          ],
+          "predicted": [
+            "httpx-clients:7",
+            "httpx-timeouts:3",
+            "httpx-clients:5",
+            "httpx-quickstart:11"
+          ],
+          "latency_ms": 24.276353000004747,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-03",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-timeouts:2"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-timeouts:2",
+            "httpx-clients:1",
+            "httpx-clients:5"
+          ],
+          "latency_ms": 17.289662000166572,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-timeouts:3"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-timeouts:2",
+            "httpx-quickstart:16",
+            "fastapi-errors:4"
+          ],
+          "latency_ms": 13.487190999967424,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-timeouts:3"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 43.362639999941166,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-timeouts:3"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-timeouts:2",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 31.983221999780653,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-clients:1"
+          ],
+          "predicted": [
+            "httpx-clients:1",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 32.96449499976006,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-clients:2"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 33.043282000107865,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-clients:4"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:1",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 33.71199400044134,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-clients:5"
+          ],
+          "predicted": [
+            "httpx-clients:5",
+            "httpx-clients:7",
+            "fastapi-query:1",
+            "fastapi-query:6"
+          ],
+          "latency_ms": 36.83460899992497,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-clients:6"
+          ],
+          "predicted": [
+            "httpx-clients:6",
+            "httpx-clients:5",
+            "httpx-clients:1",
+            "httpx-clients:7",
+            "httpx-timeouts:2"
+          ],
+          "latency_ms": 17.82577400035734,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-clients:8"
+          ],
+          "predicted": [
+            "httpx-clients:8",
+            "httpx-quickstart:13",
+            "httpx-quickstart:18"
+          ],
+          "latency_ms": 29.85891799971796,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-05",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:10",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 23.182958999768744,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-06",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "fastapi-errors:13",
+            "fastapi-body:3",
+            "fastapi-body:10",
+            "fastapi-body:8",
+            "fastapi-errors:14"
+          ],
+          "latency_ms": 11.85278900038611,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-07",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-clients:1",
+            "fastapi-query:1",
+            "fastapi-errors:4",
+            "httpx-quickstart:18"
+          ],
+          "latency_ms": 16.590973999882408,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-08",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:10",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 25.9331590000329,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-09",
+          "language": "it",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [],
+          "latency_ms": 5.231155999808834,
+          "fallback": true,
+          "returned_words": 0,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": true
+        },
+        {
+          "id": "unanswerable-10",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 11.252409999997326,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-11",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 21.824035000008735,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-12",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:3",
+            "fastapi-body:10",
+            "httpx-clients:10"
+          ],
+          "latency_ms": 27.191022999886627,
+          "fallback": true,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        }
+      ]
+    },
+    "dense_sections": {
+      "recall_at_k": 0.9166666666666666,
+      "mrr": 0.7,
+      "ndcg": 0.75097361889311,
+      "evidence_coverage": 0.9444444444444444,
+      "unanswerable_abstention": 0,
+      "latency_p50_ms": 3.283022000005076,
+      "latency_p95_ms": 4.833721000068181,
+      "queries": [
+        {
+          "id": "fastapi-path-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-path:2"
+          ],
+          "predicted": [
+            "fastapi-path:13",
+            "fastapi-path:9",
+            "fastapi-path:2",
+            "fastapi-path:11",
+            "fastapi-path:14"
+          ],
+          "latency_ms": 5.1337069999135565,
+          "fallback": false,
+          "returned_words": 128,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-path:4"
+          ],
+          "predicted": [
+            "fastapi-path:9",
+            "fastapi-path:18",
+            "fastapi-path:13",
+            "fastapi-path:2",
+            "fastapi-path:17"
+          ],
+          "latency_ms": 3.4651420000955113,
+          "fallback": false,
+          "returned_words": 187,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-path:8"
+          ],
+          "predicted": [
+            "fastapi-path:8",
+            "fastapi-path:17",
+            "fastapi-path:18",
+            "fastapi-query:2",
+            "fastapi-path:13"
+          ],
+          "latency_ms": 3.822302000116906,
+          "fallback": false,
+          "returned_words": 314,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-path:10"
+          ],
+          "predicted": [
+            "fastapi-query:2",
+            "fastapi-path:9",
+            "fastapi-path:18",
+            "fastapi-path:4",
+            "fastapi-path:13"
+          ],
+          "latency_ms": 4.02839500020491,
+          "fallback": false,
+          "returned_words": 323,
+          "evidence_coverage": 1.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-path:15"
+          ],
+          "predicted": [
+            "fastapi-path:9",
+            "fastapi-path:15",
+            "fastapi-path:14",
+            "fastapi-path:13",
+            "fastapi-path:3"
+          ],
+          "latency_ms": 4.030966999835073,
+          "fallback": false,
+          "returned_words": 160,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-path-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-path:19"
+          ],
+          "predicted": [
+            "fastapi-path:17",
+            "fastapi-path:19",
+            "fastapi-path:12",
+            "fastapi-path:18",
+            "fastapi-path:9"
+          ],
+          "latency_ms": 3.315244000077655,
+          "fallback": false,
+          "returned_words": 235,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-body:1"
+          ],
+          "predicted": [
+            "fastapi-body:1",
+            "fastapi-errors:8",
+            "fastapi-errors:1",
+            "fastapi-errors:5",
+            "fastapi-path:5"
+          ],
+          "latency_ms": 3.486381000129768,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-body:3"
+          ],
+          "predicted": [
+            "fastapi-body:3",
+            "fastapi-query:6",
+            "fastapi-body:5",
+            "fastapi-errors:10"
+          ],
+          "latency_ms": 2.924076999988756,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-body:5"
+          ],
+          "predicted": [
+            "fastapi-errors:10",
+            "fastapi-path:20",
+            "fastapi-body:5",
+            "fastapi-errors:13",
+            "fastapi-errors:9"
+          ],
+          "latency_ms": 6.149104999622068,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-04",
+          "language": "it",
+          "category": "lookup",
+          "gold": [
+            "fastapi-body:6"
+          ],
+          "predicted": [
+            "fastapi-body:6",
+            "fastapi-body:5",
+            "fastapi-path:16",
+            "fastapi-body:3",
+            "fastapi-path:14"
+          ],
+          "latency_ms": 4.35347799975716,
+          "fallback": false,
+          "returned_words": 388,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-body:9"
+          ],
+          "predicted": [
+            "fastapi-body:11",
+            "fastapi-body:1",
+            "fastapi-body:9",
+            "fastapi-path:7",
+            "fastapi-body:4"
+          ],
+          "latency_ms": 3.3145570000669977,
+          "fallback": false,
+          "returned_words": 382,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-body-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-body:10"
+          ],
+          "predicted": [
+            "fastapi-query:1",
+            "fastapi-path:20",
+            "fastapi-query:2",
+            "fastapi-path:18",
+            "fastapi-body:1"
+          ],
+          "latency_ms": 3.2271499999296793,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-errors:4"
+          ],
+          "predicted": [
+            "fastapi-errors:4",
+            "fastapi-errors:13",
+            "fastapi-errors:2",
+            "fastapi-errors:8",
+            "fastapi-errors:1"
+          ],
+          "latency_ms": 3.5102130000268517,
+          "fallback": false,
+          "returned_words": 458,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-errors:5"
+          ],
+          "predicted": [
+            "fastapi-errors:2",
+            "fastapi-errors:5",
+            "fastapi-errors:13",
+            "fastapi-errors:4",
+            "fastapi-errors:8"
+          ],
+          "latency_ms": 4.288704999908077,
+          "fallback": false,
+          "returned_words": 419,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-errors:6"
+          ],
+          "predicted": [
+            "fastapi-errors:6",
+            "fastapi-errors:8",
+            "fastapi-errors:2",
+            "fastapi-errors:11",
+            "fastapi-errors:10"
+          ],
+          "latency_ms": 3.0501219998768647,
+          "fallback": false,
+          "returned_words": 309,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-errors:7"
+          ],
+          "predicted": [
+            "fastapi-errors:14",
+            "fastapi-errors:8",
+            "fastapi-errors:13",
+            "fastapi-errors:7",
+            "fastapi-errors:4"
+          ],
+          "latency_ms": 2.907803999733005,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "fastapi-errors:10"
+          ],
+          "predicted": [
+            "fastapi-errors:2",
+            "fastapi-errors:10",
+            "fastapi-errors:3",
+            "fastapi-errors:1",
+            "fastapi-errors:13"
+          ],
+          "latency_ms": 4.290452000077494,
+          "fallback": false,
+          "returned_words": 420,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "fastapi-errors-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "fastapi-errors:12"
+          ],
+          "predicted": [
+            "fastapi-errors:12",
+            "fastapi-errors:2",
+            "fastapi-errors:8",
+            "fastapi-errors:1",
+            "fastapi-errors:10"
+          ],
+          "latency_ms": 3.540643000178534,
+          "fallback": false,
+          "returned_words": 429,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-quickstart:2"
+          ],
+          "predicted": [
+            "httpx-quickstart:2",
+            "httpx-quickstart:7",
+            "httpx-quickstart:3",
+            "httpx-clients:5",
+            "fastapi-query:1"
+          ],
+          "latency_ms": 3.0191860000741144,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-quickstart:5"
+          ],
+          "predicted": [
+            "httpx-quickstart:5",
+            "httpx-quickstart:3",
+            "httpx-quickstart:4",
+            "httpx-quickstart:9",
+            "httpx-quickstart:12"
+          ],
+          "latency_ms": 2.7558520000638964,
+          "fallback": false,
+          "returned_words": 388,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-quickstart:11"
+          ],
+          "predicted": [
+            "httpx-quickstart:18",
+            "fastapi-errors:8",
+            "httpx-timeouts:1",
+            "httpx-quickstart:11",
+            "httpx-timeouts:0"
+          ],
+          "latency_ms": 3.2044239997048862,
+          "fallback": false,
+          "returned_words": 449,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-04",
+          "language": "it",
+          "category": "lookup",
+          "gold": [
+            "httpx-quickstart:12"
+          ],
+          "predicted": [
+            "httpx-quickstart:3",
+            "httpx-quickstart:12",
+            "fastapi-errors:3",
+            "fastapi-errors:6",
+            "httpx-quickstart:6"
+          ],
+          "latency_ms": 4.0511279999009275,
+          "fallback": false,
+          "returned_words": 297,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-quickstart:13"
+          ],
+          "predicted": [
+            "httpx-quickstart:13",
+            "httpx-timeouts:3",
+            "httpx-clients:8"
+          ],
+          "latency_ms": 3.1145250000008673,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-quickstart-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-quickstart:15"
+          ],
+          "predicted": [
+            "httpx-quickstart:15",
+            "httpx-timeouts:0",
+            "httpx-timeouts:3",
+            "httpx-quickstart:18"
+          ],
+          "latency_ms": 3.298929000266071,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-quickstart:16",
+            "httpx-timeouts:0"
+          ],
+          "predicted": [
+            "httpx-timeouts:0",
+            "httpx-timeouts:2",
+            "httpx-timeouts:3",
+            "httpx-quickstart:16",
+            "httpx-timeouts:1"
+          ],
+          "latency_ms": 2.741241999956401,
+          "fallback": false,
+          "returned_words": 457,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.8772153153380493,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-quickstart:16",
+            "httpx-timeouts:1"
+          ],
+          "predicted": [
+            "httpx-timeouts:0",
+            "httpx-timeouts:1",
+            "httpx-timeouts:2",
+            "httpx-timeouts:3",
+            "httpx-quickstart:16"
+          ],
+          "latency_ms": 2.71963599971059,
+          "fallback": false,
+          "returned_words": 457,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6240505200038379,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-03",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-timeouts:2"
+          ],
+          "predicted": [
+            "httpx-timeouts:2",
+            "httpx-timeouts:0",
+            "httpx-timeouts:1",
+            "httpx-timeouts:3",
+            "httpx-clients:0"
+          ],
+          "latency_ms": 4.833721000068181,
+          "fallback": false,
+          "returned_words": 399,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-timeouts:3"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-timeouts:0",
+            "httpx-limits:0",
+            "httpx-timeouts:2",
+            "httpx-timeouts:1"
+          ],
+          "latency_ms": 3.089918999648944,
+          "fallback": false,
+          "returned_words": 458,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-05",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-timeouts:3"
+          ],
+          "predicted": [
+            "httpx-timeouts:3",
+            "httpx-timeouts:0",
+            "httpx-timeouts:1",
+            "httpx-timeouts:2",
+            "httpx-quickstart:16"
+          ],
+          "latency_ms": 3.3300730001428747,
+          "fallback": false,
+          "returned_words": 457,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-timeouts-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-timeouts:3"
+          ],
+          "predicted": [
+            "httpx-timeouts:0",
+            "httpx-timeouts:3",
+            "httpx-timeouts:2",
+            "httpx-timeouts:1",
+            "httpx-quickstart:16"
+          ],
+          "latency_ms": 3.2671149997440807,
+          "fallback": false,
+          "returned_words": 457,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-01",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-clients:1"
+          ],
+          "predicted": [
+            "httpx-clients:1",
+            "httpx-timeouts:1",
+            "httpx-clients:7",
+            "httpx-timeouts:3"
+          ],
+          "latency_ms": 2.8317109999989043,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-02",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-clients:2"
+          ],
+          "predicted": [
+            "httpx-clients:2",
+            "httpx-timeouts:0",
+            "httpx-timeouts:2",
+            "httpx-timeouts:3",
+            "httpx-timeouts:1"
+          ],
+          "latency_ms": 4.708883999683167,
+          "fallback": false,
+          "returned_words": 436,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-03",
+          "language": "en",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-clients:4"
+          ],
+          "predicted": [
+            "httpx-clients:4",
+            "httpx-quickstart:6",
+            "httpx-clients:6",
+            "httpx-clients:5",
+            "httpx-clients:3"
+          ],
+          "latency_ms": 3.052612999908888,
+          "fallback": false,
+          "returned_words": 358,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-04",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-clients:5"
+          ],
+          "predicted": [
+            "httpx-clients:5",
+            "httpx-clients:6",
+            "httpx-clients:4",
+            "httpx-clients:1",
+            "httpx-clients:3"
+          ],
+          "latency_ms": 3.1424280000464933,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-05",
+          "language": "it",
+          "category": "paraphrase",
+          "gold": [
+            "httpx-clients:6"
+          ],
+          "predicted": [
+            "httpx-quickstart:3",
+            "httpx-clients:0",
+            "httpx-clients:2",
+            "fastapi-path:3",
+            "httpx-clients:6"
+          ],
+          "latency_ms": 3.223383000204194,
+          "fallback": false,
+          "returned_words": 294,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 0.2,
+          "ndcg": 0.38685280723454163,
+          "abstained": false
+        },
+        {
+          "id": "httpx-clients-06",
+          "language": "en",
+          "category": "lookup",
+          "gold": [
+            "httpx-clients:8"
+          ],
+          "predicted": [
+            "httpx-clients:8",
+            "httpx-quickstart:4",
+            "httpx-quickstart:10",
+            "httpx-quickstart:3",
+            "httpx-quickstart:13"
+          ],
+          "latency_ms": 3.348588999870117,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 1.0,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-05",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-limits:0",
+            "httpx-timeouts:3",
+            "fastapi-errors:5",
+            "fastapi-errors:13"
+          ],
+          "latency_ms": 3.7118899999768473,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-06",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "fastapi-body:6",
+            "fastapi-path:11",
+            "fastapi-path:12",
+            "fastapi-path:13",
+            "fastapi-path:20"
+          ],
+          "latency_ms": 2.7938520001953293,
+          "fallback": false,
+          "returned_words": 162,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-07",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:1",
+            "httpx-quickstart:18",
+            "httpx-timeouts:0",
+            "httpx-timeouts:3"
+          ],
+          "latency_ms": 2.7575969997997163,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-08",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-quickstart:17",
+            "httpx-quickstart:4",
+            "fastapi-path:15",
+            "fastapi-body:2",
+            "httpx-quickstart:5"
+          ],
+          "latency_ms": 2.3410980002154247,
+          "fallback": false,
+          "returned_words": 263,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-09",
+          "language": "it",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "fastapi-query:3",
+            "fastapi-path:2",
+            "fastapi-body:10",
+            "fastapi-body:8",
+            "fastapi-body:2"
+          ],
+          "latency_ms": 2.663913000105822,
+          "fallback": false,
+          "returned_words": 400,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-10",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:0",
+            "httpx-timeouts:3",
+            "httpx-timeouts:2",
+            "httpx-clients:1"
+          ],
+          "latency_ms": 3.6373039997670276,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-11",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:2",
+            "httpx-quickstart:16",
+            "httpx-quickstart:15",
+            "httpx-timeouts:0",
+            "httpx-quickstart:5"
+          ],
+          "latency_ms": 2.735755999765388,
+          "fallback": false,
+          "returned_words": 284,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        },
+        {
+          "id": "unanswerable-12",
+          "language": "en",
+          "category": "unanswerable",
+          "gold": [],
+          "predicted": [
+            "httpx-timeouts:2",
+            "httpx-timeouts:3",
+            "httpx-timeouts:0",
+            "httpx-limits:0",
+            "httpx-clients:8"
+          ],
+          "latency_ms": 2.9054599999653874,
+          "fallback": false,
+          "returned_words": 512,
+          "evidence_coverage": 0.0,
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "abstained": false
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Single small developer-documentation corpus",
+    "Model-authored draft qrels",
+    "Budget counts whitespace words, not model tokens",
+    "No answer generation evaluated",
+    "MiniLM is primarily English; its default tokenizer truncates long section inputs",
+    "Latency is exploratory, not a controlled database performance comparison",
+    "Public test set; do not tune on reported test results"
+  ]
+}

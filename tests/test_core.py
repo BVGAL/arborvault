@@ -14,8 +14,18 @@ from arborvault.storage import MemoryStore
 KEY_A = "synthetic-test-credential-a-000000"
 KEY_B = "synthetic-test-credential-b-000000"
 KEYS = [
-    {"key": KEY_A, "tenant": "a", "namespaces": ["demo", "second"]},
-    {"key": KEY_B, "tenant": "b", "namespaces": ["demo"]},
+    {
+        "key": KEY_A,
+        "tenant": "a",
+        "namespaces": ["demo", "second"],
+        "permissions": ["read", "write", "delete"],
+    },
+    {
+        "key": KEY_B,
+        "tenant": "b",
+        "namespaces": ["demo"],
+        "permissions": ["read", "write", "delete"],
+    },
 ]
 TEXT = b"# Guide\n## Backups\nBackups last 30 days.\n## Access\nAccess lasts 24 hours."
 

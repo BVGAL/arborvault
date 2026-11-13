@@ -5,3 +5,8 @@ Independent research software inspired by the document-structure retrieval direc
 STAIR (STructure Aware Information Retriever), Kumar et al., arXiv:2609.03874v2 (2026).
 Not affiliated with, endorsed by, or an official implementation of IBM or the authors.
 No STAIR source code, model weights, book corpus or SearchTome data is bundled.
+
+The public-docs-v1 evaluation corpus includes unmodified public FastAPI and HTTPX
+documentation under their respective MIT and BSD-3-Clause licenses. Complete notices,
+source commits and content hashes are in datasets/public-docs-v1. Original dataset
+annotations remain Apache-2.0 and are explicitly marked as requiring independent review.

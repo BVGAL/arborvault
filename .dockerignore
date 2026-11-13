@@ -7,3 +7,6 @@ __pycache__
 reports
 data
 .cache
+.secrets
+.arborvault-*
+*.dump

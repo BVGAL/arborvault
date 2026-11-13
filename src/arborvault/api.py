@@ -1,19 +1,24 @@
 import hashlib
-import hmac
 import json
+import logging
 import os
 import re
+import time
 from contextlib import asynccontextmanager
 from dataclasses import asdict
 from typing import Literal
-from uuid import UUID
+from uuid import UUID, uuid4
 
 from fastapi import Depends, FastAPI, Header, HTTPException, Query, Request
 from pydantic import BaseModel, ConfigDict, Field
 from starlette.concurrency import run_in_threadpool
 
+from . import __version__
+from .auth import Credentials
 from .domain import Document, Node
-from .parsing import MAX_BYTES, build_nodes, parse
+from .isolated_parser import IsolatedParser, ParserBusy, ParserTimeout, RemoteParser
+from .limits import RateLimiter
+from .parsing import MAX_BYTES, build_nodes
 from .retrieval import ChatSelector, TitleSelector, retrieve
 from .storage import PostgresStore
 
@@ -32,6 +37,12 @@ class IngestResponse(BaseModel):
 
 class DocumentsResponse(BaseModel):
     documents: list[Document]
+    next_cursor: str | None = None
+
+
+class RevisionsResponse(BaseModel):
+    revisions: list[Document]
+    next_cursor: int | None = None
 
 
 class TreeResponse(BaseModel):
@@ -66,21 +77,29 @@ class QueryResponse(BaseModel):
     abstained: bool
 
 
-def create_app(store=None, keys=None, selector=None):
+def create_app(store=None, keys=None, selector=None, parser=None, keys_file=None, limiter=None):
     @asynccontextmanager
     async def lifespan(app):
         configured = (
             keys if keys is not None else json.loads(os.environ.get("ARBORVAULT_KEYS", "[]"))
         )
-        if not configured or any(
-            len(k.get("key", "")) < 24 or not k.get("tenant") or not k.get("namespaces")
-            for k in configured
-        ):
-            raise RuntimeError("Configure tenant credentials with keys of at least 24 characters")
-        if len({k["key"] for k in configured}) != len(configured):
-            raise RuntimeError("Keys must be unique")
-        app.state.keys = configured
-        app.state.store = store or PostgresStore(os.environ["DATABASE_URL"])
+        try:
+            app.state.credentials = Credentials(
+                configured, keys_file or os.getenv("ARBORVAULT_KEYS_FILE")
+            )
+        except (ValueError, OSError, TypeError):
+            raise RuntimeError(
+                "Invalid credential configuration; explicit permissions required"
+            ) from None
+        app.state.store = store or PostgresStore(
+            os.environ["DATABASE_URL"], enforce_runtime_role=True
+        )
+        app.state.parser = parser or (
+            RemoteParser(os.environ["PARSER_URL"]) if os.getenv("PARSER_URL") else IsolatedParser()
+        )
+        app.state.limiter = limiter or RateLimiter(
+            int(os.getenv("RATE_PER_MINUTE", "60")), int(os.getenv("RATE_BURST", "60"))
+        )
         app.state.selector = selector or TitleSelector()
         if selector is None and os.getenv("SELECTOR_URL"):
             app.state.selector = ChatSelector(
@@ -94,7 +113,7 @@ def create_app(store=None, keys=None, selector=None):
 
     app = FastAPI(
         title="ArborVault",
-        version="0.1.0",
+        version=__version__,
         lifespan=lifespan,
         description="Independent structure-aware retrieval. Not affiliated with IBM.",
     )
@@ -104,6 +123,8 @@ def create_app(store=None, keys=None, selector=None):
     async def body_limit(request, call_next):
         from starlette.responses import JSONResponse
 
+        started = time.perf_counter()
+        request_id = str(uuid4())
         chunks, size = [], 0
         async for chunk in request.stream():
             size += len(chunk)
@@ -111,7 +132,21 @@ def create_app(store=None, keys=None, selector=None):
                 return JSONResponse({"detail": "Request body too large"}, status_code=413)
             chunks.append(chunk)
         request._body = b"".join(chunks)
-        return await call_next(request)
+        response = await call_next(request)
+        response.headers["X-Request-ID"] = request_id
+        route = request.scope.get("route")
+        logging.getLogger("uvicorn.error.arborvault.requests").info(
+            json.dumps(
+                {
+                    "request_id": request_id,
+                    "method": request.method,
+                    "route": getattr(route, "path", "unmatched"),
+                    "status": response.status_code,
+                    "duration_ms": round((time.perf_counter() - started) * 1000, 2),
+                }
+            )
+        )
+        return response
 
     def scope(namespace: str, request: Request, authorization: str = Header(default="")):
         if not re.fullmatch(r"[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}", namespace):
@@ -119,17 +154,30 @@ def create_app(store=None, keys=None, selector=None):
         supplied = (
             authorization.removeprefix("Bearer ") if authorization.startswith("Bearer ") else ""
         )
-        for credential in request.app.state.keys:
-            if hmac.compare_digest(supplied.encode(), credential["key"].encode()):
-                if (
-                    namespace not in credential["namespaces"]
-                    and "*" not in credential["namespaces"]
-                ):
-                    raise HTTPException(403, "Namespace forbidden")
-                return credential["tenant"], namespace
-        raise HTTPException(
-            401, "Invalid bearer credential", headers={"WWW-Authenticate": "Bearer"}
+        try:
+            credential = request.app.state.credentials.authenticate(supplied)
+        except (ValueError, OSError, TypeError):
+            raise HTTPException(503, "Credential configuration unavailable") from None
+        if credential is None:
+            raise HTTPException(
+                401, "Invalid bearer credential", headers={"WWW-Authenticate": "Bearer"}
+            )
+        if namespace not in credential["namespaces"] and "*" not in credential["namespaces"]:
+            raise HTTPException(403, "Namespace forbidden")
+        permission = (
+            "delete"
+            if request.method == "DELETE"
+            else (
+                "write"
+                if request.method == "POST" and request.url.path.endswith("/documents")
+                else "read"
+            )
         )
+        if permission not in credential["permissions"]:
+            raise HTTPException(403, f"Missing {permission} permission")
+        if not request.app.state.limiter.allow(credential["key_sha256"]):
+            raise HTTPException(429, "Request quota exceeded", headers={"Retry-After": "1"})
+        return credential["tenant"], namespace
 
     @app.get("/healthz")
     def health():
@@ -164,10 +212,12 @@ def create_app(store=None, keys=None, selector=None):
         context=Depends(scope),
     ):
         data = await request.body()
+        if any("\x00" in value for value in (filename, source_key, title, source_uri or "")):
+            raise HTTPException(422, "Invalid metadata")
         if source_uri and not source_uri.startswith(("https://", "http://", "urn:")):
             raise HTTPException(422, "Source URI must use https, http or urn")
         try:
-            sections = await run_in_threadpool(parse, data, filename)
+            sections = await run_in_threadpool(request.app.state.parser.parse, data, filename)
             digest = hashlib.sha256(
                 data + json.dumps([filename, title, source_uri]).encode()
             ).hexdigest()
@@ -184,17 +234,56 @@ def create_app(store=None, keys=None, selector=None):
             raise HTTPException(
                 422, "Unsupported, empty, malformed or oversized document"
             ) from None
-        except zip_errors():
-            raise HTTPException(422, "Malformed document") from None
+        except ParserBusy:
+            raise HTTPException(
+                503, "Parser unavailable or busy", headers={"Retry-After": "1"}
+            ) from None
+        except ParserTimeout:
+            raise HTTPException(504, "Parser deadline exceeded") from None
         return {"document": asdict(doc), "changed": changed}
 
     @app.get("/v1/namespaces/{namespace}/documents", response_model=DocumentsResponse)
-    def documents(request: Request, context=Depends(scope)):
-        return {"documents": [asdict(d) for d in request.app.state.store.documents(*context)]}
+    def documents(
+        request: Request,
+        limit: int = Query(default=100, ge=1, le=1000),
+        cursor: UUID | None = None,
+        context=Depends(scope),
+    ):
+        rows = request.app.state.store.documents(
+            *context, limit + 1, str(cursor) if cursor else None
+        )
+        return {
+            "documents": [asdict(d) for d in rows[:limit]],
+            "next_cursor": rows[limit - 1].id if len(rows) > limit else None,
+        }
+
+    @app.get(
+        "/v1/namespaces/{namespace}/documents/{document_id}/revisions",
+        response_model=RevisionsResponse,
+    )
+    def revisions(
+        document_id: UUID,
+        request: Request,
+        limit: int = Query(default=100, ge=1, le=1000),
+        cursor: int | None = Query(default=None, ge=1),
+        context=Depends(scope),
+    ):
+        rows = request.app.state.store.revisions(*context, str(document_id), limit + 1, cursor)
+        if not rows and cursor is None:
+            raise HTTPException(404, "Document not found")
+        return {
+            "revisions": [asdict(d) for d in rows[:limit]],
+            "next_cursor": rows[limit - 1].revision if len(rows) > limit else None,
+        }
 
     @app.get("/v1/namespaces/{namespace}/documents/{document_id}/tree", response_model=TreeResponse)
-    def tree(document_id: UUID, request: Request, context=Depends(scope)):
-        rows = request.app.state.store.nodes(*context, str(document_id))
+    def tree(
+        document_id: UUID,
+        request: Request,
+        revision: int | None = Query(default=None, ge=1),
+        context=Depends(scope),
+    ):
+        rows = request.app.state.store.nodes(*context, str(document_id), revision)
         if not rows:
             raise HTTPException(404, "Document not found")
         return {"document": asdict(rows[0][0]), "nodes": [n.as_dict() for _, n in rows]}
@@ -241,15 +330,6 @@ def create_app(store=None, keys=None, selector=None):
         }
 
     return app
-
-
-def zip_errors():
-    from zipfile import BadZipFile
-
-    from lxml.etree import XMLSyntaxError
-    from pypdf.errors import PdfReadError
-
-    return (BadZipFile, PdfReadError, XMLSyntaxError, KeyError)
 
 
 app = create_app()

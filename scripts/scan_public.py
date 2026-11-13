@@ -27,8 +27,10 @@ def main():
         path = Path(name)
         if path.name.startswith(".env") and path.name != ".env.example":
             findings.append((name, "environment_file"))
-        if path.suffix in {".pem", ".key", ".p12", ".db"}:
+        if path.suffix in {".pem", ".key", ".p12", ".db", ".dump"}:
             findings.append((name, "private_material"))
+        if ".secrets" in path.parts or path.name.startswith(".arborvault-"):
+            findings.append((name, "credential_material"))
         text = (ROOT / path).read_text(encoding="utf-8")
         for label, pattern in PATTERNS.items():
             if pattern.search(text):

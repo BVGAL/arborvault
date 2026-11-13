@@ -1,14 +1,14 @@
-import copy
-import threading
-from importlib.resources import files
-from uuid import NAMESPACE_URL, uuid5
+from contextlib import contextmanager
+from uuid import NAMESPACE_URL, uuid4, uuid5
 
 from psycopg.rows import dict_row
 from psycopg.types.json import Jsonb
 from psycopg_pool import ConnectionPool
 
 from .domain import Document, Node
-from .retrieval import overlap, tokens
+from .memory import MemoryStore as MemoryStore
+from .migrate import SCHEMA_VERSION, migrate
+from .retrieval import tokens
 
 
 def document_id(tenant, namespace, source_key):
@@ -17,87 +17,62 @@ def document_id(tenant, namespace, source_key):
     return str(uuid5(NAMESPACE_URL, json.dumps([tenant, namespace, source_key])))
 
 
-class MemoryStore:
-    """Explicit test/demo backend, never selected implicitly."""
-
-    def __init__(self):
-        self.data = {}
-        self.lock = threading.RLock()
-
-    def upsert(self, tenant, namespace, source_key, title, source_uri, digest, builder):
-        with self.lock:
-            identity = document_id(tenant, namespace, source_key)
-            key = tenant, namespace, identity
-            old = self.data.get(key)
-            if old and old[0].digest == digest:
-                return copy.deepcopy(old[0]), False
-            revision = old[0].revision + 1 if old else 1
-            doc = Document(identity, source_key, title, source_uri, revision, digest)
-            nodes = builder(identity, revision)
-            self.data[key] = doc, nodes
-            return copy.deepcopy(doc), True
-
-    def documents(self, tenant, namespace):
-        with self.lock:
-            return copy.deepcopy(
-                [d for (t, n, _), (d, _) in self.data.items() if (t, n) == (tenant, namespace)]
-            )
-
-    def nodes(self, tenant, namespace, document_id=None):
-        with self.lock:
-            return copy.deepcopy(
-                [
-                    (d, node)
-                    for (t, n, i), (d, nodes) in self.data.items()
-                    if (t, n) == (tenant, namespace) and (document_id is None or i == document_id)
-                    for node in nodes
-                ]
-            )
-
-    def lexical(self, tenant, namespace, query, k):
-        scored = [
-            (d, n, overlap(query, n.title + " " + n.content))
-            for d, n in self.nodes(tenant, namespace)
-            if n.content
-        ]
-        return sorted([row for row in scored if row[2] > 0], key=lambda row: (-row[2], row[1].id))[
-            :k
-        ]
-
-    def delete(self, tenant, namespace, document_id):
-        with self.lock:
-            return self.data.pop((tenant, namespace, document_id), None) is not None
-
-    def ping(self):
-        return True
-
-    def close(self):
-        pass
-
-
 class PostgresStore:
-    def __init__(self, url):
+    def __init__(self, url, enforce_runtime_role=False):
+        self.url = url
         self.pool = ConnectionPool(
-            url, min_size=1, max_size=8, kwargs={"row_factory": dict_row}, timeout=10, open=True
+            url, min_size=1, max_size=8, timeout=10, open=True, kwargs={"row_factory": dict_row}
         )
         self.pool.wait(timeout=15)
+        if enforce_runtime_role:
+            try:
+                with self.pool.connection() as conn:
+                    role = conn.execute(
+                        "SELECT rolsuper,rolbypassrls FROM pg_roles WHERE rolname=current_user"
+                    ).fetchone()
+                    owns = conn.execute(
+                        "SELECT 1 FROM pg_class WHERE relname IN "
+                        "('documents','nodes','document_revisions') "
+                        "AND relowner=(SELECT oid FROM pg_roles WHERE rolname=current_user)"
+                    ).fetchone()
+                    if role["rolsuper"] or role["rolbypassrls"] or owns:
+                        raise RuntimeError(
+                            "API requires a non-owner, non-superuser, NOBYPASSRLS role"
+                        )
+                self.ping()
+            except Exception:
+                self.close()
+                raise
 
     def migrate(self):
+        return migrate(self.url)
+
+    @contextmanager
+    def scoped(self, tenant, namespace, snapshot=False):
         with self.pool.connection() as conn:
-            conn.execute("SELECT pg_advisory_xact_lock(738152931)")
-            conn.execute(files("arborvault").joinpath("schema.sql").read_text())
+            if snapshot:
+                conn.execute("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY")
+            conn.execute(
+                "SELECT set_config('arborvault.tenant',%s,true), "
+                "set_config('arborvault.namespace',%s,true), "
+                "set_config('statement_timeout','30000',true)",
+                (tenant, namespace),
+            )
+            yield conn
 
     def upsert(self, tenant, namespace, source_key, title, source_uri, digest, builder):
-        identity = document_id(tenant, namespace, source_key)
-        scope = (tenant, namespace, identity)
-        with self.pool.connection() as conn:
-            conn.execute("SELECT pg_advisory_xact_lock(hashtextextended(%s, 0))", (identity,))
+        lock_key = document_id(tenant, namespace, source_key)
+        with self.scoped(tenant, namespace) as conn:
+            conn.execute("SELECT pg_advisory_xact_lock(hashtextextended(%s,0))", (lock_key,))
             old = conn.execute(
-                "SELECT * FROM documents WHERE tenant=%s AND namespace=%s AND id=%s", scope
+                "SELECT * FROM documents WHERE tenant=%s AND namespace=%s AND source_key=%s",
+                (tenant, namespace, source_key),
             ).fetchone()
             if old and old["digest"] == digest:
                 return self._doc(old), False
             revision = old["revision"] + 1 if old else 1
+            identity = str(old["id"]) if old else str(uuid4())
+            scope = tenant, namespace, identity
             nodes = builder(identity, revision)
             conn.execute(
                 "INSERT INTO documents VALUES (%s,%s,%s,%s,%s,%s,%s,%s) "
@@ -106,15 +81,19 @@ class PostgresStore:
                 (*scope, source_key, title, source_uri, revision, digest),
             )
             conn.execute(
-                "DELETE FROM nodes WHERE tenant=%s AND namespace=%s AND document_id=%s", scope
+                "INSERT INTO document_revisions "
+                "(tenant,namespace,document_id,revision,title,source_uri,digest) "
+                "VALUES (%s,%s,%s,%s,%s,%s,%s)",
+                (*scope, revision, title, source_uri, digest),
             )
             with conn.cursor() as cur:
                 cur.executemany(
-                    "INSERT INTO nodes (tenant,namespace,document_id,id,parent_id,title,"
-                    "content,path,ordinal,locator) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
+                    "INSERT INTO nodes (tenant,namespace,document_id,revision,id,parent_id,"
+                    "title,content,path,ordinal,locator) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
                     [
                         (
                             *scope,
+                            revision,
                             n.id,
                             n.parent_id,
                             n.title,
@@ -142,7 +121,6 @@ class PostgresStore:
     @staticmethod
     def _pair(row):
         doc = Document(**row["doc"])
-        doc.id = str(doc.id)
         node = Node(
             str(row["id"]),
             str(row["parent_id"]) if row["parent_id"] else None,
@@ -154,71 +132,119 @@ class PostgresStore:
         )
         return doc, node
 
-    def documents(self, tenant, namespace):
-        with self.pool.connection() as conn:
+    def documents(self, tenant, namespace, limit=100, after=None):
+        with self.scoped(tenant, namespace) as conn:
             rows = conn.execute(
-                "SELECT * FROM documents WHERE tenant=%s AND namespace=%s ORDER BY id LIMIT 1000",
-                (tenant, namespace),
+                "SELECT * FROM documents WHERE tenant=%s AND namespace=%s "
+                "AND (%s::uuid IS NULL OR id>%s::uuid) ORDER BY id LIMIT %s",
+                (tenant, namespace, after, after, limit),
+            ).fetchall()
+        return [self._doc(row) for row in rows]
+
+    def revisions(self, tenant, namespace, document_id, limit=100, before=None):
+        with self.scoped(tenant, namespace) as conn:
+            rows = conn.execute(
+                "SELECT r.*,r.document_id AS id,d.source_key FROM document_revisions r "
+                "JOIN documents d ON (r.tenant,r.namespace,r.document_id)=(d.tenant,d.namespace,d.id) "
+                "WHERE r.tenant=%s AND r.namespace=%s AND r.document_id=%s "
+                "AND (%s::integer IS NULL OR r.revision<%s) ORDER BY r.revision DESC LIMIT %s",
+                (tenant, namespace, document_id, before, before, limit),
             ).fetchall()
         return [self._doc(row) for row in rows]
 
     _join = """SELECT n.*, jsonb_build_object('id',d.id,'source_key',d.source_key,
-        'title',d.title,'source_uri',d.source_uri,'revision',d.revision,'digest',d.digest) AS doc
-        FROM nodes n JOIN documents d ON (n.tenant,n.namespace,n.document_id) =
-        (d.tenant,d.namespace,d.id) WHERE n.tenant=%s AND n.namespace=%s """
+        'title',r.title,'source_uri',r.source_uri,'revision',r.revision,'digest',r.digest) AS doc
+        FROM nodes n JOIN document_revisions r USING (tenant,namespace,document_id,revision)
+        JOIN documents d ON (n.tenant,n.namespace,n.document_id)=(d.tenant,d.namespace,d.id)
+        WHERE n.tenant=%s AND n.namespace=%s """
 
-    def nodes(self, tenant, namespace, document_id=None):
-        query = self._join
-        params = [tenant, namespace]
+    def _nodes(self, conn, tenant, namespace, document_id=None, revision=None):
+        query, params = self._join, [tenant, namespace]
         if document_id:
             query += "AND n.document_id=%s "
             params.append(document_id)
-        with self.pool.connection() as conn:
-            rows = conn.execute(
+        if revision is not None:
+            query += "AND n.revision=%s "
+            params.append(revision)
+        else:
+            query += "AND n.revision=d.revision "
+        return [
+            self._pair(row)
+            for row in conn.execute(
                 query + "ORDER BY n.document_id,n.ordinal LIMIT 10001", params
             ).fetchall()
-        return [self._pair(r) for r in rows]
+        ]
 
-    def lexical(self, tenant, namespace, query, k):
-        # Build OR terms from alphanumeric tokens, then bind them as a value.
+    def nodes(self, tenant, namespace, document_id=None, revision=None):
+        with self.scoped(tenant, namespace) as conn:
+            return self._nodes(conn, tenant, namespace, document_id, revision)
+
+    def _lexical(self, conn, tenant, namespace, query, k):
         terms = " OR ".join(tokens(query))
         if not terms:
             return []
-        sql = self._join + "AND n.content<>'' AND n.search @@ websearch_to_tsquery('simple',%s) "
-        sql += "ORDER BY ts_rank_cd(n.search,websearch_to_tsquery('simple',%s)) DESC,n.id LIMIT %s"
-        with self.pool.connection() as conn:
-            rows = conn.execute(sql, (tenant, namespace, terms, terms, k)).fetchall()
-        return [(*self._pair(r), overlap(query, r["title"] + " " + r["content"])) for r in rows]
+        query_sql = self._join.replace(
+            "SELECT n.*,",
+            "SELECT n.*, ts_rank_cd(n.search,websearch_to_tsquery('simple',%s)) AS rank,",
+        )
+        query_sql += "AND n.revision=d.revision AND n.content<>'' "
+        query_sql += "AND n.search @@ websearch_to_tsquery('simple',%s) ORDER BY rank DESC,d.source_key,n.ordinal LIMIT %s"
+        rows = conn.execute(query_sql, (terms, tenant, namespace, terms, k)).fetchall()
+        return [(*self._pair(row), float(row["rank"])) for row in rows]
 
-    def delete(self, tenant, namespace, document_id):
-        with self.pool.connection() as conn:
+    def lexical(self, tenant, namespace, query, k):
+        with self.scoped(tenant, namespace) as conn:
+            return self._lexical(conn, tenant, namespace, query, k)
+
+    @contextmanager
+    def snapshot(self, tenant, namespace):
+        with self.scoped(tenant, namespace, snapshot=True) as conn:
+            yield _Snapshot(self, conn)
+
+    def delete(self, tenant, namespace, identity):
+        with self.scoped(tenant, namespace) as conn:
+            row = conn.execute(
+                "SELECT source_key FROM documents WHERE tenant=%s AND namespace=%s AND id=%s",
+                (tenant, namespace, identity),
+            ).fetchone()
+            if row is None:
+                return False
+            lock_key = document_id(tenant, namespace, row["source_key"])
+            conn.execute("SELECT pg_advisory_xact_lock(hashtextextended(%s,0))", (lock_key,))
             return (
                 conn.execute(
                     "DELETE FROM documents WHERE tenant=%s AND namespace=%s AND id=%s",
-                    (tenant, namespace, document_id),
+                    (tenant, namespace, identity),
                 ).rowcount
                 > 0
             )
 
     def ping(self):
         with self.pool.connection() as conn:
-            conn.execute("SELECT 1")
+            row = conn.execute(
+                "SELECT max(version) AS version,count(*) AS count FROM schema_migrations"
+            ).fetchone()
+            if row["version"] != SCHEMA_VERSION or row["count"] != SCHEMA_VERSION:
+                raise RuntimeError("Schema migration required")
+            conn.execute("SELECT 1 FROM documents LIMIT 0")
         return True
 
     def close(self):
         self.pool.close()
 
 
-def main():
-    import os
+class _Snapshot:
+    def __init__(self, store, conn):
+        self.store, self.conn = store, conn
 
-    store = PostgresStore(os.environ["DATABASE_URL"])
-    try:
-        store.migrate()
-        print("Schema v1 ready")
-    finally:
-        store.close()
+    def nodes(self, *args):
+        return self.store._nodes(self.conn, *args)
+
+    def lexical(self, *args):
+        return self.store._lexical(self.conn, *args)
 
 
 if __name__ == "__main__":
+    from .migrate import main
+
     main()

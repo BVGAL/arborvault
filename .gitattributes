@@ -1,1 +1,3 @@
 * text=auto eol=lf
+datasets/public-docs-v1/corpus/** -text
+datasets/public-docs-v1/licenses/** -text

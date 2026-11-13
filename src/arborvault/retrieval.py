@@ -26,11 +26,16 @@ class TitleSelector:
     """Local, deterministic routing on titles, ancestry and short excerpts."""
 
     def select(self, query, candidates, width):
+        stable = {n.id: (n.path, n.ordinal) for n in candidates}
         scored = [
             (n.id, 3 * overlap(query, " ".join(n.path)) + overlap(query, n.content[:240]))
             for n in candidates
         ]
-        return [i for i, score in sorted(scored, key=lambda x: (-x[1], x[0]))[:width] if score > 0]
+        return [
+            i
+            for i, score in sorted(scored, key=lambda x: (-x[1], stable[x[0]]))[:width]
+            if score > 0
+        ]
 
 
 class ChatSelector:
@@ -112,11 +117,18 @@ def navigate(query, nodes, selector, width=4, max_depth=12, max_candidates=160):
             frontier.extend(by_parent.get(identity, []))
     if frontier and reason is None:
         reason = "depth_limit"
-    found.sort(key=lambda n: (-overlap(query, n.content + " " + " ".join(n.path)), n.id))
+    found.sort(
+        key=lambda n: (-overlap(query, n.content + " " + " ".join(n.path)), n.path, n.ordinal)
+    )
     return found, trace, reason
 
 
 def retrieve(store, tenant, namespace, query, k, selector, mode="auto"):
+    with store.snapshot(tenant, namespace) as snapshot:
+        return _retrieve(snapshot, tenant, namespace, query, k, selector, mode)
+
+
+def _retrieve(store, tenant, namespace, query, k, selector, mode):
     trace, reason, nav, lookup = [], None, [], {}
     # Bounded tree loading is deliberate in this MVP; scale with SQL child fetches later.
     if mode != "lexical":

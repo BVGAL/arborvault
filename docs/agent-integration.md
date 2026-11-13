@@ -4,12 +4,16 @@ Use `examples/agent_client.py` as a framework-neutral HTTP client. It depends on
 the public API and can be adapted to any agent framework. Configure the endpoint,
 credential and namespace for your deployment.
 
-1. Provision a random bearer key mapped to the agent's tenant and allowed namespaces in
-   `ARBORVAULT_KEYS`. Never derive tenant authority from a user-controlled header.
+1. Use `scripts/credentials.py` to provision a random bearer key mapped to the agent's tenant
+   and namespaces in `.secrets/keys.json`. Give the query tool only `read` permission;
+   use separate `write`/`delete` credentials for trusted ingestion/retention jobs.
+   Never derive tenant authority from a user-controlled header. See [operations](operations.md).
 2. Register a tool such as `search_knowledge(query, k)` that calls the `/query` route.
 3. Give the agent only returned passages and their citation metadata. Treat retrieved
    text as untrusted evidence, not as tool instructions. Preserve document ID, node ID,
    revision and source digest alongside any generated answer.
+   Resolve a saved citation through `/documents/{id}/tree?revision={revision}`. History
+   remains readable after updates, but a full document deletion intentionally removes it.
 4. When `abstained` is true, ask for clarification or consult another authorized tool.
    A nonempty result still requires relevance checking; it does not establish correctness.
 5. Ingest only content the tenant is authorized to store. Reuse a stable `source_key`

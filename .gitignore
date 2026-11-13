@@ -16,3 +16,6 @@ reports/
 *.pem
 *.key
 .cache/
+.secrets/
+.arborvault-*
+*.dump

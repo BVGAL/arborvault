@@ -72,6 +72,8 @@ services:
       SELECTOR_API_KEY: ${SELECTOR_API_KEY:-}
       SELECTOR_MAX_CALLS: ${SELECTOR_MAX_CALLS:-1000}
       SELECTOR_MAX_OUTPUT_TOKENS: ${SELECTOR_MAX_OUTPUT_TOKENS:-1024}
+      SELECTOR_THINK: ${SELECTOR_THINK:-default}
+      SELECTOR_NUM_CTX: ${SELECTOR_NUM_CTX:-}
     volumes: ["./.secrets:/run/arborvault:ro"]
     depends_on:
       migrate:

@@ -20,7 +20,7 @@ from .auth import Credentials
 from .domain import Document, Node
 from .isolated_parser import IsolatedParser, ParserBusy, ParserTimeout, RemoteParser
 from .limits import RateLimiter
-from .ollama import OllamaSelector
+from .ollama import OllamaSelector, thinking_value
 from .parsing import MAX_BYTES, build_nodes
 from .retrieval import ChatSelector, TitleSelector, retrieve
 from .storage import PostgresStore
@@ -128,6 +128,10 @@ def create_app(store=None, keys=None, selector=None, parser=None, keys_file=None
                 {
                     "max_calls": int(os.getenv("SELECTOR_MAX_CALLS", "1000")),
                     "max_output_tokens": int(os.getenv("SELECTOR_MAX_OUTPUT_TOKENS", "1024")),
+                    "think": thinking_value(os.getenv("SELECTOR_THINK", "default")),
+                    "num_ctx": int(os.environ["SELECTOR_NUM_CTX"])
+                    if os.getenv("SELECTOR_NUM_CTX")
+                    else None,
                 }
                 if provider == "ollama"
                 else {}

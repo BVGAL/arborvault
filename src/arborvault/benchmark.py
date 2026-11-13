@@ -34,7 +34,15 @@ def budgeted(rows, k, word_budget):
 
 
 def run(
-    directory, url, split="dev", dense=False, k=5, word_budget=512, cache_dir=None, selector=None
+    directory,
+    url,
+    split="dev",
+    dense=False,
+    k=5,
+    word_budget=512,
+    cache_dir=None,
+    selector=None,
+    progress=None,
 ):
     manifest, documents, queries, _, dataset_hash = load_dataset(directory)
     queries = [q for q in queries if q["split"] == split]
@@ -130,6 +138,8 @@ def run(
                         **metrics(predicted, gold, k),
                     }
                 )
+                if progress is not None:
+                    progress(method, query["id"], rows[-1])
             answerable = [r for r in rows if r["gold"]]
             unknown = [r for r in rows if not r["gold"]]
             latencies = sorted(r["latency_ms"] for r in rows)

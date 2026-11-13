@@ -17,6 +17,10 @@ SYSTEM = (
 PROMPT_SHA256 = hashlib.sha256(SYSTEM.encode()).hexdigest()
 
 
+def thinking_value(value):
+    return {"default": None, "on": True, "off": False}.get(value, value)
+
+
 def routing_messages(query, candidates, width):
     # Request-local labels prevent learning or exposing persistent database UUIDs.
     labels = {str(i): node.id for i, node in enumerate(candidates)}
@@ -47,7 +51,17 @@ def decode_selection(content, labels, width):
 
 class OllamaSelector:
     def __init__(
-        self, url, model, key="", *, max_calls=1000, max_output_tokens=1024, timeout=90, client=None
+        self,
+        url,
+        model,
+        key="",
+        *,
+        max_calls=1000,
+        max_output_tokens=1024,
+        timeout=90,
+        think=None,
+        num_ctx=None,
+        client=None,
     ):
         parsed = httpx.URL(url)
         if (
@@ -66,8 +80,13 @@ class OllamaSelector:
             raise ValueError("Remote Ollama endpoints require HTTPS")
         if min(max_calls, max_output_tokens, timeout) < 1 or not model:
             raise ValueError("Positive call, output and time limits and a model are required")
+        if think is not None and type(think) is not bool and not isinstance(think, str):
+            raise ValueError("Thinking must be a boolean, a supported level or None")
+        if num_ctx is not None and (type(num_ctx) is not int or num_ctx <= max_output_tokens):
+            raise ValueError("Context size must exceed the output budget")
         self.url, self.model, self.key = url.rstrip("/"), model, key
         self.max_calls, self.max_output_tokens, self.timeout = max_calls, max_output_tokens, timeout
+        self.think, self.num_ctx = think, num_ctx
         self.client = client or httpx
         self.lock = threading.Lock()
         self.calls, self.events = 0, []
@@ -90,8 +109,14 @@ class OllamaSelector:
                     "model": self.model,
                     "stream": False,
                     "messages": messages,
+                    **({"think": self.think} if self.think is not None else {}),
                     # Cloud currently does not support structured-output format constraints.
-                    "options": {"temperature": 0, "seed": 0, "num_predict": self.max_output_tokens},
+                    "options": {
+                        "temperature": 0,
+                        "seed": 0,
+                        "num_predict": self.max_output_tokens,
+                        **({"num_ctx": self.num_ctx} if self.num_ctx is not None else {}),
+                    },
                 },
             )
             response.raise_for_status()
@@ -106,6 +131,11 @@ class OllamaSelector:
                 if type(value) is not int or value < 0:
                     raise ValueError("Invalid usage counters")
                 event[field] = value
+            if (
+                self.num_ctx is not None
+                and event["prompt_tokens"] >= self.num_ctx - self.max_output_tokens
+            ):
+                raise ValueError("Prompt reaches the context budget; possible truncation")
             if body.get("done") is not True or body.get("done_reason") == "length":
                 raise ValueError("Incomplete selector result")
             message = body.get("message")

@@ -70,6 +70,7 @@ def main():
         model,
         LoraConfig(
             task_type="CAUSAL_LM",
+            revision=recipe["base_revision"],
             r=recipe["lora_r"],
             lora_alpha=recipe["lora_alpha"],
             lora_dropout=recipe["lora_dropout"],

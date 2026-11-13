@@ -1,10 +1,11 @@
 import copy
 import json
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
-from arborvault.qwen3 import TransformersSelector, encode_completion, load_recipe
+from arborvault.qwen3 import TransformersSelector, completion_loss, encode_completion, load_recipe
 
 
 class Tokenizer:
@@ -62,3 +63,30 @@ def test_transformers_selector_rejects_invalid_budgets_without_loading_gpu_packa
         TransformersSelector(None, None, num_ctx=256, max_output_tokens=256)
     selector = TransformersSelector(None, None)
     assert selector.usage() == {"calls": 0, "failures": 0, "prompt_tokens": 0, "output_tokens": 0}
+
+
+def test_completion_only_logits_match_full_masked_loss_and_gradients():
+    torch = pytest.importorskip("torch")
+    torch.manual_seed(7)
+    logits = torch.randn(1, 5, 8, requires_grad=True)
+
+    class Model:
+        device = "cpu"
+
+        def __call__(self, input_ids, use_cache, logits_to_keep):
+            assert not use_cache and input_ids.tolist() == [[0, 1, 2, 3, 4]]
+            return SimpleNamespace(logits=logits[:, -logits_to_keep:])
+
+    reduced, count = completion_loss(
+        Model(), {"input_ids": [0, 1, 2, 3, 4], "completion_length": 2}
+    )
+    # Reference: ordinary full-sequence causal loss with prompt labels ignored.
+    labels = torch.tensor([[-100, -100, -100, 3, 4]])
+    full = torch.nn.functional.cross_entropy(
+        logits[:, :-1].reshape(-1, 8), labels[:, 1:].reshape(-1)
+    )
+    assert count == 2
+    torch.testing.assert_close(reduced, full)
+    reduced_gradient = torch.autograd.grad(reduced, logits, retain_graph=True)[0]
+    full_gradient = torch.autograd.grad(full, logits)[0]
+    torch.testing.assert_close(reduced_gradient, full_gradient)

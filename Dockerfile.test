@@ -9,4 +9,5 @@ RUN pip install --no-cache-dir --upgrade 'pip>=26.3,<27' \
 COPY tests ./tests
 COPY scripts ./scripts
 COPY datasets ./datasets
+COPY configs ./configs
 CMD ["pytest", "-q"]

@@ -1,0 +1,9 @@
+# Optional Linux/CUDA environment, independent from the API image.
+# CUDA 12.8 avoids requiring CUDA 13.x drivers on the rented host.
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.10.0+cu128
+transformers==5.22.2
+peft==0.21.3
+bitsandbytes==0.50.2
+accelerate==1.15.0
+safetensors==0.8.0

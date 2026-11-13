@@ -1,0 +1,21 @@
+{
+  "recipe": "qwen3-routing-qlora-v1",
+  "base_model": "Qwen/Qwen3-4B",
+  "base_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "seed": 42,
+  "epochs": 3,
+  "learning_rate": 0.0001,
+  "gradient_accumulation_steps": 8,
+  "max_length": 2048,
+  "lora_r": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "target_modules": ["q_proj", "v_proj"],
+  "weight_decay": 0.0,
+  "max_grad_norm": 1.0,
+  "selection": "minimum validation completion-token NLL after each full epoch",
+  "thinking": false,
+  "quantization": "nf4-double-bf16",
+  "evaluation_num_ctx": 8192,
+  "evaluation_max_output_tokens": 256
+}

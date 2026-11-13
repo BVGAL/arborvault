@@ -18,6 +18,13 @@ scope and paragraph units. The new test has different documents from training/de
 and from public-docs-v1. It is publicly available upstream and may have appeared in model
 pretraining; it is not a claim of unknown pretraining data.
 
+The split table describes the original routing-v2 experiment. The later
+[cross-encoder CV v1 protocol](../../docs/cross-encoder-cv-v1-protocol.md) explicitly
+pools all three splits into five new document-separated folds. Thus the historical
+test is reused for that retrospective CV, while its original published scores and
+these dataset files remain unchanged. Its questions are not a new untouched test
+for subsequent research decisions.
+
 The upstream questions and evidence were annotated by people. This conversion is deterministic,
 with exact evidence mapping checks and regression tests; it has not received a new independent
 human audit. No model generated extra questions or selected examples by measured performance.

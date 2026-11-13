@@ -1,0 +1,58 @@
+{
+  "selected": {
+    "step": 98,
+    "quality": [
+      0.6826923076923077,
+      0.6538461538461539,
+      0.49391025641025643
+    ],
+    "cumulative_query_bce": 1.035142106803176
+  },
+  "history": [
+    {
+      "step": 0,
+      "quality": [
+        0.657051282051282,
+        0.6185897435897436,
+        0.45064102564102565
+      ]
+    },
+    {
+      "step": 25,
+      "quality": [
+        0.6762820512820513,
+        0.6282051282051282,
+        0.4740384615384615
+      ],
+      "cumulative_query_bce": 1.9474996530650868
+    },
+    {
+      "step": 50,
+      "quality": [
+        0.6730769230769231,
+        0.625,
+        0.4637820512820513
+      ],
+      "cumulative_query_bce": 1.3803865114675722
+    },
+    {
+      "step": 75,
+      "quality": [
+        0.6634615384615384,
+        0.5961538461538461,
+        0.4778846153846154
+      ],
+      "cumulative_query_bce": 1.156631697891707
+    },
+    {
+      "step": 98,
+      "quality": [
+        0.6826923076923077,
+        0.6538461538461539,
+        0.49391025641025643
+      ],
+      "cumulative_query_bce": 1.035142106803176
+    }
+  ],
+  "rule": "Flat selection-set recall, then evidence coverage/MRR, earliest tie; best trained checkpoint reported alongside base"
+}

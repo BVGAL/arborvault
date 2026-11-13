@@ -1,5 +1,29 @@
 # Evaluation protocol
 
+## Cross-encoder CV v1: five document folds and abstention
+
+The [CV report](cross-encoder-cv-v1-results.md) pools the existing 840 questions into
+five new document-separated folds. Each outer fold keeps checkpoint selection,
+gate fitting and threshold calibration on separate inner documents. Historical
+test questions are explicitly reused in this retrospective CV; original test
+reports remain unchanged and are not fresh confirmation of the new recipe.
+
+| Method | Pooled OOF Recall@5, no abstention |
+| --- | ---: |
+| Qwen base | 0.7144 |
+| Cross-encoder adapted separately in each fold | 0.6708 |
+| Cross-encoder base | 0.6580 |
+| E5 standard-text vector retrieval | 0.5851 |
+
+The cross-encoder's incremental training gain is +1.29 points, paired conditional
+95% interval [-1.12, +3.65]. Its simple conservative query gate gives recall 0.6594,
+rejecting 15/140 unknowns and 17/700 answerable queries. The learned conservative
+gate gives recall 0.6455, rejecting 19/140 unknowns and 30/700 answerable queries.
+Calibration guards are not guaranteed to hold out of fold; balanced thresholds
+reject more unknowns at substantial recall cost. See all 20 policies, per-fold
+results, conditional document-bootstrap intervals and the
+[frozen protocol](cross-encoder-cv-v1-protocol.md) before interpreting the comparison.
+
 ## Candidate scoring v1: development follow-up
 
 The [candidate-scoring report](candidate-scoring-v1-results.md) evaluates a new

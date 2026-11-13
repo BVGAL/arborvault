@@ -1,0 +1,17 @@
+{
+  "qwen-base": {
+    "elapsed_seconds": 910.8161586299539,
+    "pairs": 37195,
+    "tokens": 9717795
+  },
+  "cross-encoder-base": {
+    "elapsed_seconds": 29.377194514963776,
+    "pairs": 37195,
+    "tokens": 7341605
+  },
+  "e5-text": {
+    "elapsed_seconds": 62.55712362192571,
+    "indexed_documents": 624,
+    "scored_passages": 42243
+  }
+}

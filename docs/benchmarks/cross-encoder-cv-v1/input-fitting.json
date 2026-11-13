@@ -1,0 +1,8 @@
+{
+  "pairs": 54595,
+  "shortened": 209,
+  "max_qwen_tokens": 512,
+  "max_cross_encoder_tokens": 512,
+  "fitted_sha256": "5f0d1a288b297f51a2ff0352fcf282eea8eb28f48007e7dc6fb76ea5f633fc52",
+  "candidate_ids_sha256": "36569b086f38902bc548afa18ccda0fc25b606d30cb74d586453f3e910be36f7"
+}

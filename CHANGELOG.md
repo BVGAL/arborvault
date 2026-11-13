@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+- Complete five-fold document CV over all 840 existing QASPER questions, with separate
+  inner roles for weight updates, checkpoint choice, gate fitting and threshold tuning.
+  Explicitly disclose retrospective reuse of historical test questions; retain old reports.
+- Report pooled coverage-first recall: Qwen base 0.7144, adapted cross-encoder 0.6708,
+  cross-encoder base 0.6580, E5 0.5851. The training gain's paired interval includes zero.
+- Add query-level abstention with raw-score and learned gates, conservative and balanced
+  thresholds, full false-abstention accounting, discrimination and calibration diagnostics.
+  The adapted cross-encoder's simple conservative gate rejects 15/140 unknowns and 17/700
+  answerable questions; its learned gate performs worse at the observed tradeoffs.
+- Verify all 154 downloaded artifacts and 20 out-of-fold policy reports, retain checkpoints
+  locally, delete the Runpod allocation and publish an estimated cumulative USD 4.99 spend.
+  No production promotion or model-hub upload; full local suite: 101 passed, six optional skips.
+
 - Add an experimental candidate scorer with matched flat/tree retrieval, independent
   yes/no scores, weak-negative supervision and a small cross-encoder comparison.
   Train both on 457 document-separated questions, calibrate on 143 and evaluate

@@ -1,0 +1,12 @@
+{
+  "inner_inference": {
+    "elapsed_seconds": 7.044528094585985,
+    "pairs": 9108,
+    "tokens": 1790025
+  },
+  "outer_inference": {
+    "elapsed_seconds": 5.659078752156347,
+    "pairs": 7542,
+    "tokens": 1466286
+  }
+}

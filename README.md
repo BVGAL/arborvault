@@ -8,7 +8,18 @@ ArborVault stores document hierarchies in PostgreSQL and returns source-backed s
 through a small HTTP API. Use it as an experimental retrieval component in an agent or
 RAG pipeline. The framework-neutral API supports reusable integrations with any AI agent.
 
-**Latest development experiment:** independent candidate scoring with BM25 reranking
+**Latest: five-fold document cross-validation.** On 840 previously collected QASPER
+questions (700 answerable, 140 unknown), pooled out-of-fold Recall@5 is **0.7144**
+for Qwen base, **0.6708** for the adapted cross-encoder, **0.6580** for its base and
+**0.5851** for E5. The cross-encoder's training gain is only **+1.29 points**, with
+a paired interval including zero. Its conservative maximum-score gate rejects
+15/140 unknown questions but also 17/700 answerable questions. No production model
+is promoted. Read the [CV results and abstention tradeoffs](docs/cross-encoder-cv-v1-results.md)
+and [frozen protocol](docs/cross-encoder-cv-v1-protocol.md). This retrospective CV
+explicitly reuses historical train/dev/test questions with new document-separated
+folds; it is not a newly untouched test.
+
+**Previous 120-question development experiment:** independent candidate scoring with BM25 reranking
 reaches Recall@5 **0.8000** for Qwen base and **0.7867** for its new LoRA. A small
 retrieval-pretrained cross-encoder improves from **0.7217** to **0.8100**; standard-text
 E5 vector retrieval reaches **0.7100**. Tree traversal trails matched flat reranking,

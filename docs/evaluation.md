@@ -1,5 +1,55 @@
 # Evaluation protocol
 
+## Local Qwen3-4B baseline
+
+Measured on 2026-11-13, using original Qwen3-4B weights through Ollama **without fine-tuning**.
+Every method uses the same frozen corpus, labels, section units, k=5 and 512-word context
+budget. Development contains 16 questions; test contains 36 answerable and 8 unanswerable
+questions. Code/settings were fixed at `52931bd9ad27767969caea59dd5d0cb5c62df4b5` before
+development and kept unchanged for test. No prompt, threshold or ranking change followed
+inspection of test results.
+
+| Method | Dev Recall@5 | Test Recall@5 | Test MRR | Test evidence coverage | No-answer abstention | Test p50 ms |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Local navigation | 0.8333 | 0.5833 | 0.5162 | 0.5833 | 1/8 | 35.1 |
+| Local navigation + lexical | 0.8333 | 0.5833 | 0.5162 | 0.5833 | 1/8 | 33.6 |
+| PostgreSQL lexical | 0.4167 | 0.4444 | 0.4167 | 0.4722 | 1/8 | 41.2 |
+| MiniLM dense sections | 0.9167 | **0.9167** | **0.7000** | **0.9444** | 0/8 | 4.0 |
+| Qwen3 navigation | 0.9167 | 0.5278 | 0.4745 | 0.5556 | **8/8** | 665.7 |
+| Qwen3 navigation + lexical | 0.9167 | 0.6389 | 0.5856 | 0.6667 | 1/8 | 694.0 |
+
+**Dense retrieval remains stronger on labeled evidence.** Qwen with lexical fallback raises
+test Recall@5 from 0.5833 to 0.6389, but remains below MiniLM's 0.9167. Pure Qwen navigation
+performs worse than the local selector on test despite matching dense recall on development.
+This small development split did not predict the test result.
+
+Abstention has a cost: Qwen navigation rejects all 8 unanswerable questions, but also returns
+no context for **9 of 36 answerable questions**. Automatic fallback runs for 34 of 44 questions
+and fills 7 of the 8 unanswerable cases with lexical hits, leaving only 1/8 correct abstentions.
+The dense baseline has no rejection threshold and always returns top-k context; its 0/8 is
+not evidence that dense systems cannot implement abstention. Develop any improved rejection
+policy on new development data and evaluate it on new held-out questions.
+
+Raw [development](benchmarks/public-docs-qwen3-4b-dev.json) and
+[test](benchmarks/public-docs-qwen3-4b-test.json) reports include all methods and all queries.
+Test used **206 model calls, zero provider/JSON failures**, 136,004 input tokens and 1,284
+output tokens. Development used 64 calls, 38,682 input tokens and 346 output tokens, also
+without failures. One synthetic warm-up per run is excluded from those counts. The largest
+test prompt was 2,113 tokens, below the 8,192-token context. Artifact hashes stayed unchanged.
+
+[Reproduction instructions](local-ollama.md) specify Ollama 0.40.16, explicit tag
+`qwen3:4b-q4_K_M`, Q4_K_M, thinking off, temperature 0, seed 0 and output cap 256. The generic
+`qwen3:4b` tag pointed to Thinking-2507 and was rejected during installation preflight.
+No custom template or weight change was used in the benchmark. Ollama does not attest the
+exact upstream Hugging Face commit; the manifest digest identifies the served artifact.
+
+Timing includes PostgreSQL and HTTP/model inference for Qwen, while MiniLM ranks an in-memory
+index on CPU. Qwen runs on an 8 GB GPU. Fixed order, prefix caches, one warm-up and one pass
+prevent a controlled latency comparison. These are **retrieval-stage results**, not generated
+answer scores or a Qdrant/PostgreSQL deployment comparison. Labels are assistant-authored
+drafts and the corpus is tiny and public; general or statistical superiority is not established.
+The future fine-tuned model must be measured separately.
+
 ## v0.3 regression and LLM workflow
 
 The v0.3 rerun uses the same frozen corpus, annotations, MiniLM weights, k=5 and 512-word
@@ -10,9 +60,9 @@ The dataset SHA-256 is unchanged. Timings remain exploratory single-pass measure
 ACL checks and lazy SQL traversal alter database work and are not a scalability proof.
 
 The [LLM workflow](llm-evaluation.md) adds native Ollama routing, base/adapted comparisons
-and separately split [training data](../datasets/routing-bootstrap-v1/README.md). This release
-validates the protocol with mocked provider responses; no paid model result or fine-tuned
-model is claimed. A future comparison must evaluate the same original base checkpoint and
+and separately split [training data](../datasets/routing-bootstrap-v1/README.md). The release
+initially validated the protocol with mocked responses; the measurement above adds real local
+inference on main. A future comparison must evaluate the same original base checkpoint and
 its adapter, with matched serving conditions and an independently reviewed held-out set.
 
 ## v0.2 public documentation baseline

@@ -8,6 +8,11 @@ ArborVault stores document hierarchies in PostgreSQL and returns source-backed s
 through a small HTTP API. Use it as an experimental retrieval component in an agent or
 RAG pipeline. The framework-neutral API supports reusable integrations with any AI agent.
 
+**Measured local baseline:** with Qwen3-4B and lexical fallback, test Recall@5 is 0.6389
+versus 0.9167 for MiniLM dense retrieval on the small public-docs benchmark. Pure Qwen
+navigation abstains on all 8 unanswerable questions but also misses 9 answerable ones
+entirely. See [full results and limitations](docs/evaluation.md#local-qwen3-4b-baseline).
+
 **Status: v0.3 research preview; production qualification is still ongoing.** It is not a drop-in Qdrant
 replacement and does not establish that structured retrieval outperforms dense retrieval.
 See [v0.3 release notes](docs/releases/v0.3.0.md), [upgrade instructions](docs/upgrade-v03.md)
@@ -105,6 +110,11 @@ resolve to new content. Source URIs are metadata and are never fetched.
 ## Optional model routing
 
 Local title/excerpt matching is the default and has limited synonym understanding.
+For local Qwen3-4B without a cloud subscription, use the explicit `qwen3:4b-q4_K_M` tag and
+`python scripts/configure_ollama.py --local --docker-client`. See the
+[installation and reproducible benchmark guide](docs/local-ollama.md). The generic `qwen3:4b`
+tag can identify a different variant, so published runs record the actual model digest.
+
 For Ollama Cloud, run `python scripts/configure_ollama.py --model gpt-oss:20b` locally.
 It prompts for the key without displaying it and writes only ignored `.env` settings.
 Restart the API to opt into sending authorized candidate excerpts to the provider.
@@ -181,8 +191,8 @@ revisions. Use a gateway with TLS and shared quotas for a multi-instance deploym
 1. Validate on independently reviewed agent workloads and publish retrieval/abstention measurements.
 2. Add durable ingestion jobs, shared resource quotas and broader scale measurements.
 3. Add hybrid dense retrieval only if held-out measurements justify it.
-4. Run the base LLM baseline, user-trained adapter evaluation and independently reviewed
-   comparison. No trained checkpoint or LLM quality result is claimed by this release.
+4. Expand the local Qwen3-4B baseline with independent label review and new corpora, then
+   evaluate a user-trained adapter under matched conditions. No fine-tuned checkpoint is published.
 5. Explore a separately versioned learned ToC selector and SearchTome evaluation after
    checking dataset rights. Any reproduction claim requires its own evidence.
 

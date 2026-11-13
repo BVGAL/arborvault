@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- Add local Qwen3-4B configuration, explicit thinking/context controls and model provenance checks.
+- Add a disposable-database benchmark runner and publish all development/test query results.
+- Measure 270 local model calls across both splits without provider/JSON errors; no fine-tuning.
+- Record the generic-tag Thinking-2507 mismatch and pin the original `qwen3:4b-q4_K_M` artifact.
+- Test Recall@5: Qwen navigation 0.5278, Qwen + lexical 0.6389, MiniLM dense 0.9167.
+- Expand regression coverage to 60 tests, including local controls and provenance privacy.
+
 ## 0.3.0 — 2026-11-13
 
 - Add optional page OCR with PDFium/Tesseract in isolated parser workers.

@@ -1,10 +1,11 @@
 # Base model, fine-tuning and reproducible evaluation
 
-The initial suggested family is [gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b):
-open weights under Apache-2.0, available through Ollama Cloud. Pin the exact Hugging Face
-base commit before training. The native cloud API uses `gpt-oss:20b`; check the current
+The first measured local baseline uses [Qwen3-4B](https://huggingface.co/Qwen/Qwen3-4B)
+with the explicit Ollama tag `qwen3:4b-q4_K_M`; see [local setup and results](local-ollama.md).
+No trained adapter is published. Pin the exact Hugging Face base commit before training.
+An alternative cloud family is [gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b),
+also open-weight under Apache-2.0. The native cloud API uses `gpt-oss:20b`; check the current
 [Ollama catalog](https://ollama.com/library/gpt-oss:20b-cloud) before running.
-No LLM quality result or trained adapter is bundled with v0.3.
 
 This is candidate-routing fine-tuning. It does not reproduce STAIR's corpus knowledge in
 model parameters, its training procedure or its published scores.
@@ -15,6 +16,9 @@ Install ArborVault and optionally `.[eval]` for MiniLM. Provide `EVAL_DATABASE_U
 your secret manager/environment: it must identify a migrated, disposable PostgreSQL database
 using the restricted runtime role. The runner inserts and removes a random evaluation tenant.
 Do not point it at production. Then configure provider access locally:
+
+For a subscription-free local run, follow [the Qwen3-4B guide](local-ollama.md).
+For optional cloud evaluation:
 
 ```sh
 python scripts/configure_ollama.py --model gpt-oss:20b

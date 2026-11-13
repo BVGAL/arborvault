@@ -13,7 +13,12 @@ class Tokenizer:
 
     def apply_chat_template(self, messages, **kwargs):
         assert [m["role"] for m in messages] == ["system", "user"]
-        assert kwargs == {"tokenize": True, "add_generation_prompt": True, "enable_thinking": False}
+        assert kwargs == {
+            "tokenize": True,
+            "return_dict": False,
+            "add_generation_prompt": True,
+            "enable_thinking": False,
+        }
         return [10, 20, 30]
 
     def encode(self, content, add_special_tokens):

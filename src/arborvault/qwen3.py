@@ -38,7 +38,11 @@ def load_recipe(path):
 
 def prompt_tokens(tokenizer, messages):
     return tokenizer.apply_chat_template(
-        messages, tokenize=True, add_generation_prompt=True, enable_thinking=False
+        messages,
+        tokenize=True,
+        return_dict=False,
+        add_generation_prompt=True,
+        enable_thinking=False,
     )
 
 

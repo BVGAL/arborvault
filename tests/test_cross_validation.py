@@ -120,3 +120,28 @@ def test_discrimination_metrics_account_for_ties_and_unknown_prevalence():
     assert tied["unknown_average_precision"] == pytest.approx(1 / 3)
     perfect = discriminative_metrics(rows, [0.8, 0.9, 0.1])
     assert perfect["answerability_auroc"] == perfect["unknown_average_precision"] == 1
+
+
+def test_paired_bootstrap_separates_classes_and_preserves_pairing(monkeypatch):
+    import importlib
+    from pathlib import Path
+
+    pytest.importorskip("numpy")
+    monkeypatch.syspath_prepend(str(Path(__file__).resolve().parents[1] / "scripts"))
+    paired_delta = importlib.import_module("summarize_cross_encoder_cv").paired_delta
+    before = []
+    for fold in range(5):
+        before.extend([{**row(f"p{fold}"), "fold": fold}, {**row(f"u{fold}", False), "fold": fold}])
+    after = copy.deepcopy(before)
+    for record in after:
+        if not record["answerable"]:
+            record["abstained"] = True
+    rejection = paired_delta(before, after, "unknown_abstention_rate")
+    assert rejection["mean_delta"] == 1
+    assert rejection["bootstrap_95_percent_interval"] == [1, 1]
+    recall = paired_delta(before, after, "recall")
+    assert recall["bootstrap_95_percent_interval"] == [0, 0]
+    assert paired_delta(before, after, "answerable_false_abstention_rate")["mean_delta"] == 0
+    after[0]["fold"] = 7
+    with pytest.raises(ValueError, match="Unpaired metadata"):
+        paired_delta(before, after, "recall")

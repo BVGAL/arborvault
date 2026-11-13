@@ -62,3 +62,13 @@ optimizer and never writes model weights. Runtime failures are surfaced and
 partial outputs preserved. GPU resources are removed after artifact verification.
 Any paid execution remains within the previously authorized total budget of $10,
 including the approximately $1.61 prior v2 allocation.
+
+### Hardware comparability amendment
+
+RTX4090 capacity was unavailable. The allocated A40 runs the same pinned software,
+NF4/BF16 precision and original weights. After base diagnostics completed, 4/120
+initial selections differed from archived RTX4090 traces. Before interpreting
+cross-condition differences, replay all three fixed greedy development policies
+on the A40 using `scripts/replay_routing_v2.py`. Preserve original traces and the
+audit sample unchanged. This is a comparability check, not a policy adjustment;
+no new model selection or held-out test is performed.

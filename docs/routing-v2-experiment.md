@@ -79,3 +79,30 @@ python scripts/run_routing_v2.py --output /workspace/experiment-v2
 The runner saves all four adapters, development/test per-query reports, seed stability,
 the locked selection, provenance and checksums. It does not publish to Hugging Face.
 The historical v1 dataset and result files are unchanged; this experiment is a new pilot.
+
+## Development-triggered beam ablation (2026-11-13)
+
+This extension was specified while seed 43 was still training, after inspecting development
+results only. The frozen greedy run remains unchanged and all of its results will be reported.
+The primary seed's half-epoch development recall fell from 60.92% to 31.58%. Its routing calls
+usually selected one path (239/264 calls), whereas the base usually selected four (168/264).
+This motivates a decoding ablation, not a claim that the training has improved retrieval.
+
+`BeamQwenSelector` uses four constrained generation beams (two for a single candidate),
+length penalty 1.0 and early stopping. Score-ranked valid JSON hypotheses are combined into
+at most four distinct candidate IDs. If the highest-scoring hypothesis is empty, abstain.
+No thresholds, weights, prompts, training examples or test questions change. The same policy
+is applied to base and adapted models sharing one set of NF4 tensors. Beam inference adds
+compute; record actual query latency and keep the original GPU stop deadline.
+
+Run `scripts/benchmark_routing_beams.py --training /workspace/experiment-v2
+--output /workspace/beam-v2` after the training process finishes. Evaluate the beam base and
+both seed-42 checkpoints on development; select with the original guards, then confirm seed
+43 at the same fraction. Save a separate locked selection before evaluating either beam test.
+The greedy test may already exist on disk, but neither the beam runner nor its operator reads
+its scores until the beam selection is frozen. Prefer the beam base to the greedy base only
+if development quality improves and the same abstention/error guards pass. Report both
+policies on the test regardless of outcome; never use test performance to pick a checkpoint.
+
+Generation output and sequence scores follow the
+[Transformers beam output API](https://huggingface.co/docs/transformers/v5.22.2/en/internal/generation_utils#transformers.generation.GenerateBeamDecoderOnlyOutput).

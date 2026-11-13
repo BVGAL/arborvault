@@ -32,3 +32,52 @@ def test_beam_eos_padding_is_not_part_of_json():
     assert before_eos([1, 2, 99, 99, 99], {98, 99}) == [1, 2]
     with pytest.raises(ValueError):
         before_eos([1, 2], {99})
+
+
+def test_real_generation_handles_small_frontiers_and_accounts_for_hypotheses():
+    torch = pytest.importorskip("torch")
+    transformers = pytest.importorskip("transformers")
+    from types import SimpleNamespace
+
+    from arborvault.routing_beams import BeamQwenSelector
+
+    class Tokenizer:
+        eos_token_id = 127
+
+        def encode(self, text, add_special_tokens=False):
+            return list(text.encode())
+
+        def decode(self, ids, skip_special_tokens=False):
+            return bytes(ids).decode()
+
+        def apply_chat_template(self, messages, **kwargs):
+            assert kwargs["enable_thinking"] is False
+            return [1]
+
+    torch.manual_seed(42)
+    model = transformers.Qwen3ForCausalLM(
+        transformers.Qwen3Config(
+            vocab_size=128,
+            hidden_size=16,
+            intermediate_size=32,
+            num_hidden_layers=1,
+            num_attention_heads=2,
+            num_key_value_heads=2,
+            head_dim=8,
+            eos_token_id=127,
+            pad_token_id=127,
+        )
+    )
+    model.eval()
+    selector = BeamQwenSelector(model, Tokenizer())
+    for count in (1, 2, 5, 12):
+        candidates = [
+            SimpleNamespace(id=f"n{i}", path=["Document", str(i)], content="Passage", locator={})
+            for i in range(count)
+        ]
+        selected = selector.select("question", candidates, 4)
+        assert len(set(selected)) == len(selected) <= 4
+        assert set(selected) <= {c.id for c in candidates}
+        event = selector.events[-1]
+        assert event["ok"]
+        assert event["output_tokens"] == sum(h["output_tokens"] for h in event["hypotheses"])

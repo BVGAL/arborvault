@@ -112,7 +112,13 @@ class BeamQwenSelector(QwenSelector):
                         "output_tokens": len(suffix) + 1,
                     }
                 )
-            event.update(stage="validation", hypotheses=hypotheses, num_beams=beams)
+            event.update(
+                stage="validation",
+                hypotheses=hypotheses,
+                num_beams=beams,
+                output_tokens=sum(h["output_tokens"] for h in hypotheses),
+                output_token_accounting="sum of returned hypothesis lengths, including EOS",
+            )
             selected = combine_hypotheses(hypotheses, labels, width)
             event.update(ok=True, selected=selected)
             return selected

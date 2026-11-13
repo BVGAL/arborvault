@@ -77,6 +77,17 @@ def test_scoring_rejects_missing_and_nonfinite_scores():
         )
 
 
+def test_secondary_tree_retains_scored_leaves_without_scoring_pruned_branches():
+    tree = fixture_tree()
+    scores = {"a": 2, "b": 1, "a1": 3, "a2": 2, "b1": 99}
+    primary, _ = retrieve(tree, "evidence", scores, mode="tree", budget=4, width=1)
+    secondary, details = retrieve(tree, "evidence", scores, mode="tree_scored", budget=4, width=1)
+    assert [n.id for n, _ in primary] == ["a1"]
+    assert [n.id for n, _ in secondary] == ["a1", "a2"]
+    assert "b1" not in details["scored_ids"]
+    assert len(details["scored_ids"]) == 4
+
+
 def test_bm25_positive_idf_and_length_normalization():
     assert BM25(["cat", "dog"]).scores("cat") == pytest.approx([math.log(2), 0])
     scores = BM25(["cat", "cat " + "dog " * 10]).scores("cat")

@@ -157,7 +157,7 @@ def training_groups(trees, queries):
 
 def retrieve(tree, query, scores, *, mode, budget=64, width=4, threshold=None):
     """Same scorer and pair budget; branches consume budget just like passages."""
-    if mode not in {"flat", "tree"} or budget < 1 or width < 1:
+    if mode not in {"flat", "tree", "tree_scored"} or budget < 1 or width < 1:
         raise ValueError("Invalid retrieval policy")
     expected = set(tree.nodes) - {tree.root.id}
     if set(scores) != expected or any(not math.isfinite(v) for v in scores.values()):
@@ -179,7 +179,14 @@ def retrieve(tree, query, scores, *, mode, budget=64, width=4, threshold=None):
         while frontier and len(used) < budget:
             evaluated = prefilter(frontier, budget - len(used))
             used.extend(evaluated)
-            chosen = ranked(evaluated)[:width]
+            if mode == "tree_scored":
+                # Secondary policy: never discard a scored leaf before final top-k.
+                # Width limits branch expansion only; every pair still costs budget.
+                leaves = [i for i in evaluated if not tree.children[i]]
+                branches = ranked([i for i in evaluated if tree.children[i]])[:width]
+                chosen = branches + ranked(leaves)
+            else:
+                chosen = ranked(evaluated)[:width]
             trace.append({"candidates": evaluated, "selected": chosen})
             reached.extend(i for i in chosen if not tree.children[i])
             frontier = [n.id for i in chosen for n in tree.children[i]]

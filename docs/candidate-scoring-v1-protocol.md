@@ -11,7 +11,11 @@ The 600 original training questions are partitioned by a fixed hash of document 
 457 questions on 333 documents train both scorers; 143 questions on 93 other
 documents calibrate policies. Calibration contains 29 unanswerable questions.
 The 120 original development questions are evaluated after checkpoint selection.
-The original test is not opened. Development has been inspected in prior work;
+The experiment runner does not load or evaluate the original test. Routine dataset
+integrity tests read split records to check hashes, source mappings and document
+separation; they produce no model predictions or performance-based selection.
+The raw `test_not_opened` flags refer to the experiment runner, not those integrity
+checks. Development has been inspected in prior work;
 these results are exploratory, not a fresh held-out confirmation.
 
 Training contains 6,563 candidate pairs, including 1,127 annotated positives.
@@ -78,11 +82,26 @@ their rank fusion (RRF k=60), over all passages of the known document, sharing
 the final context budget. E5 uses its required query/passage prefixes and 512-token
 truncation; unlike the two scorers, it indexes stable full candidate views.
 Baseline index/dot-product cost differs from cross-encoding; do not equate them.
+Reference baselines have no abstention threshold; zero unknown abstentions are a
+policy choice, not evidence that dense or lexical retrieval cannot abstain.
 
 Report all query-level results, Recall@5, MRR, evidence coverage, unknown abstentions,
 empty answerable counts, checkpoint curves and paired document-bootstrap intervals
 (2,000 replicates). Those intervals do not cover seed/domain/label uncertainty.
 No generated-answer or corpus-wide search claim follows from this pilot.
+
+## Secondary replay amendment, before development inference
+
+While Qwen training was still running, code review identified a policy confound:
+the original tree beam discards already-scored leaves beyond four per frontier,
+whereas flat ranking can return five. Preserve the primary protocol and checkpoint
+selection unchanged, and report an additional `tree_scored` replay. It retains
+all already-scored leaves for final top-five ranking and applies width four only
+to branch expansion. Scored branches and leaves still share the 64-pair cap.
+This changes the search policy, not weights, labels, inputs or the scoring cache.
+Calibrate its separate threshold on the same calibration set only. Report its
+paired difference from flat and from the primary tree; do not silently replace
+the original tree result. No new model inference or training is needed for replay.
 
 ## Reproduction and resource limit
 

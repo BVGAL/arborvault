@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Audit the Qwen3 regression per query: six losses/one gain, 3-to-9 first-call rejections,
+  and no real subsection-routing examples in training. Add a reproducible offline diagnostic,
+  gold-ancestor ceiling check, and an unexecuted v2 dataset/training plan.
+- Correct the failure description: navigation retains evidence collected before an invalid
+  selection; the 4/12 empty answerable results are separate valid no-route decisions.
 - Train Qwen3-4B QLoRA on one Runpod RTX 4090: 392 train/84 validation examples,
   three epochs and 147 optimizer steps; select epoch two by validation loss only.
 - Publish matched NF4 base/adapter retrieval runs with unchanged corpus and MiniLM weights.

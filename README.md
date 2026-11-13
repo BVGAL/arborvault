@@ -14,6 +14,8 @@ retrieval. Pure navigation regresses from 0.6111 to 0.4722. Both model variants 
 selections, so this is an exploratory result, not a demonstrated upgrade. See
 [results and failures](docs/evaluation.md#qwen3-4b-qlora-on-runpod) and the
 [training recipe](docs/qwen3-fine-tuning.md). The earlier Ollama baseline is retained separately.
+The [error audit](docs/qwen3-error-analysis.md) identifies premature rejection and missing
+hierarchical training coverage; the [v2 plan](docs/routing-v2-plan.md) remains unexecuted.
 
 **Status: v0.3 research preview; production qualification is still ongoing.** It is not a drop-in Qdrant
 replacement and does not establish that structured retrieval outperforms dense retrieval.

@@ -31,10 +31,13 @@ that dense systems cannot abstain.
 question once in `llm_navigation` and once in `llm_auto`. Base fails on `fastapi-errors-04`,
 the adapter on `httpx-clients-04`. The recorded failure stage is `selection_validation`
 with `ValueError`, after valid termination with token 151645. These are selection-contract
-failures, not context truncation or transport errors. Pure navigation treats the failure as
-empty evidence; auto uses the same lexical fallback as before. All 44 questions were attempted
+failures, not context truncation or transport errors. Navigation stops on the failed call and
+retains evidence found in earlier steps; auto can add lexical fallback. In these two cases,
+both models retain some evidence; the base still finds the labeled section and the adapter
+does not. All 44 questions were attempted
 in every method, but the reports deliberately retain `complete: false` for test and the
-comparison is labeled **exploratory**. Empty-result counts above include failed selections.
+comparison is labeled **exploratory**. The 4/12 answerable empty results are valid no-route
+decisions, separate from these selection failures. See the [post-hoc error analysis](qwen3-error-analysis.md).
 
 The final evaluation uses 528 measured model calls: 64 base-dev, 56 adapted-dev, 222
 base-test and 186 adapted-test. There are four failed calls, all on test. One synthetic warm-up

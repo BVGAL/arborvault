@@ -1,0 +1,2114 @@
+{
+  "scope": "Post-hoc diagnostic of v1; test must not become a training source",
+  "input_sha256": {
+    "docs/benchmarks/qwen3-nf4-base-test.json": "74f021ff0359031783e23d05c4b52b501d9856114fbab9df0ef1a9ac419e9dc7",
+    "docs/benchmarks/qwen3-nf4-tuned-test.json": "3ddafc76142574f2e9fab8c1cfec4f1bccc8f26130458b131fbb5ee4b2e2efe2",
+    "datasets/routing-bootstrap-v1/train.jsonl": "487dddda74d7d98ba340f5e8d152831a7f10f6980ccbe3baec7dd64206a3bd83",
+    "datasets/routing-bootstrap-v1/validation.jsonl": "8d0fc79bae03cc5ee00b0236600a9dd80777f0133323fdcb39aca9f69573b20e"
+  },
+  "training": {
+    "train": {
+      "examples": 392,
+      "origins": {
+        "procedural-original-v1": 384,
+        "public-docs-v1/dev": 8
+      },
+      "candidate_count_histogram": {
+        "6": 384,
+        "8": 8
+      },
+      "target_count_histogram": {
+        "0": 50,
+        "2": 48,
+        "1": 294
+      },
+      "public_depth_histogram": {
+        "0": 8
+      },
+      "public_positive_documents": {
+        "httpx-limits": 6
+      },
+      "public_routes": [
+        {
+          "id": "httpx-limits-01/0",
+          "depth": 0,
+          "targets": 1
+        },
+        {
+          "id": "httpx-limits-02/0",
+          "depth": 0,
+          "targets": 1
+        },
+        {
+          "id": "httpx-limits-03/0",
+          "depth": 0,
+          "targets": 1
+        },
+        {
+          "id": "httpx-limits-04/0",
+          "depth": 0,
+          "targets": 1
+        },
+        {
+          "id": "httpx-limits-05/0",
+          "depth": 0,
+          "targets": 1
+        },
+        {
+          "id": "httpx-limits-06/0",
+          "depth": 0,
+          "targets": 1
+        },
+        {
+          "id": "unanswerable-01/0",
+          "depth": 0,
+          "targets": 0
+        },
+        {
+          "id": "unanswerable-02/0",
+          "depth": 0,
+          "targets": 0
+        }
+      ],
+      "unique_procedural_query_templates": 19
+    },
+    "validation": {
+      "examples": 84,
+      "origins": {
+        "procedural-original-v1": 64,
+        "public-docs-v1/dev": 20
+      },
+      "candidate_count_histogram": {
+        "6": 64,
+        "8": 8,
+        "1": 6,
+        "5": 6
+      },
+      "target_count_histogram": {
+        "0": 11,
+        "2": 8,
+        "1": 65
+      },
+      "public_depth_histogram": {
+        "0": 8,
+        "1": 6,
+        "2": 6
+      },
+      "public_positive_documents": {
+        "fastapi-query": 17
+      },
+      "public_routes": [
+        {
+          "id": "fastapi-query-01/0",
+          "depth": 0,
+          "targets": 1
+        },
+        {
+          "id": "fastapi-query-01/1",
+          "depth": 1,
+          "targets": 1
+        },
+        {
+          "id": "fastapi-query-01/2",
+          "depth": 2,
+          "targets": 0
+        },
+        {
+          "id": "fastapi-query-02/0",
+          "depth": 0,
+          "targets": 1
+        },
+        {
+          "id": "fastapi-query-02/1",
+          "depth": 1,
+          "targets": 1
+        },
+        {
+          "id": "fastapi-query-02/2",
+          "depth": 2,
+          "targets": 1
+        },
+        {
+          "id": "fastapi-query-03/0",
+          "depth": 0,
+          "targets": 1
+        },
+        {
+          "id": "fastapi-query-03/1",
+          "depth": 1,
+          "targets": 1
+        },
+        {
+          "id": "fastapi-query-03/2",
+          "depth": 2,
+          "targets": 1
+        },
+        {
+          "id": "fastapi-query-04/0",
+          "depth": 0,
+          "targets": 1
+        },
+        {
+          "id": "fastapi-query-04/1",
+          "depth": 1,
+          "targets": 1
+        },
+        {
+          "id": "fastapi-query-04/2",
+          "depth": 2,
+          "targets": 1
+        },
+        {
+          "id": "fastapi-query-05/0",
+          "depth": 0,
+          "targets": 1
+        },
+        {
+          "id": "fastapi-query-05/1",
+          "depth": 1,
+          "targets": 1
+        },
+        {
+          "id": "fastapi-query-05/2",
+          "depth": 2,
+          "targets": 1
+        },
+        {
+          "id": "fastapi-query-06/0",
+          "depth": 0,
+          "targets": 1
+        },
+        {
+          "id": "fastapi-query-06/1",
+          "depth": 1,
+          "targets": 1
+        },
+        {
+          "id": "fastapi-query-06/2",
+          "depth": 2,
+          "targets": 1
+        },
+        {
+          "id": "unanswerable-03/0",
+          "depth": 0,
+          "targets": 0
+        },
+        {
+          "id": "unanswerable-04/0",
+          "depth": 0,
+          "targets": 0
+        }
+      ],
+      "unique_procedural_query_templates": 17
+    },
+    "synthetic_test": {
+      "examples": 64,
+      "origins": {
+        "procedural-original-v1": 64
+      },
+      "candidate_count_histogram": {
+        "6": 64
+      },
+      "target_count_histogram": {
+        "0": 8,
+        "2": 8,
+        "1": 48
+      },
+      "public_depth_histogram": {},
+      "public_positive_documents": {},
+      "public_routes": [],
+      "unique_procedural_query_templates": 16
+    },
+    "train_validation_shared_query_templates": 17,
+    "template_overlap_definition": "Exact query after replacing procedural entity IDs"
+  },
+  "paired": {
+    "answerable": 36,
+    "unknown": 8,
+    "base": {
+      "outcomes": {
+        "full_recall": 21,
+        "miss_with_correct_document_in_results": 4,
+        "miss_with_other_documents_only": 5,
+        "root_rejection": 3,
+        "empty_after_deeper_calls": 1,
+        "partial_recall": 2
+      },
+      "empty_answerable": 4,
+      "unknown_abstentions": 8,
+      "selector_failure_queries": [
+        "fastapi-errors-04"
+      ],
+      "selector_failure_with_retained_evidence": [
+        "fastapi-errors-04"
+      ]
+    },
+    "tuned": {
+      "outcomes": {
+        "full_recall": 16,
+        "miss_with_correct_document_in_results": 2,
+        "root_rejection": 9,
+        "miss_with_other_documents_only": 3,
+        "empty_after_deeper_calls": 3,
+        "partial_recall": 2,
+        "selector_failure": 1
+      },
+      "empty_answerable": 12,
+      "unknown_abstentions": 8,
+      "selector_failure_queries": [
+        "httpx-clients-04"
+      ],
+      "selector_failure_with_retained_evidence": [
+        "httpx-clients-04"
+      ]
+    },
+    "lost": [
+      "fastapi-path-03",
+      "fastapi-body-04",
+      "httpx-quickstart-06",
+      "httpx-timeouts-05",
+      "httpx-clients-02",
+      "httpx-clients-05"
+    ],
+    "gained": [
+      "fastapi-errors-06"
+    ],
+    "dense_success_tuned_miss": [
+      "fastapi-path-03",
+      "fastapi-path-05",
+      "fastapi-body-01",
+      "fastapi-body-02",
+      "fastapi-body-04",
+      "fastapi-errors-02",
+      "httpx-quickstart-02",
+      "httpx-quickstart-03",
+      "httpx-quickstart-04",
+      "httpx-quickstart-05",
+      "httpx-quickstart-06",
+      "httpx-timeouts-01",
+      "httpx-timeouts-02",
+      "httpx-timeouts-05",
+      "httpx-clients-02",
+      "httpx-clients-04",
+      "httpx-clients-05",
+      "httpx-clients-06"
+    ],
+    "root_rejection_lost": [
+      "fastapi-path-03",
+      "httpx-timeouts-05",
+      "httpx-clients-02"
+    ],
+    "by_group": {
+      "fastapi-body": {
+        "questions": 6,
+        "base": 0.6666666666666666,
+        "tuned": 0.5,
+        "dense": 0.8333333333333334
+      },
+      "fastapi-errors": {
+        "questions": 6,
+        "base": 0.6666666666666666,
+        "tuned": 0.8333333333333334,
+        "dense": 1.0
+      },
+      "fastapi-path": {
+        "questions": 6,
+        "base": 0.5,
+        "tuned": 0.3333333333333333,
+        "dense": 0.6666666666666666
+      },
+      "httpx-clients": {
+        "questions": 6,
+        "base": 0.6666666666666666,
+        "tuned": 0.3333333333333333,
+        "dense": 1.0
+      },
+      "httpx-quickstart": {
+        "questions": 6,
+        "base": 0.3333333333333333,
+        "tuned": 0.16666666666666666,
+        "dense": 1.0
+      },
+      "httpx-timeouts": {
+        "questions": 6,
+        "base": 0.8333333333333334,
+        "tuned": 0.6666666666666666,
+        "dense": 1.0
+      }
+    },
+    "by_language": {
+      "en": {
+        "questions": 30,
+        "base": 0.6,
+        "tuned": 0.5,
+        "dense": 0.9
+      },
+      "it": {
+        "questions": 6,
+        "base": 0.6666666666666666,
+        "tuned": 0.3333333333333333,
+        "dense": 1.0
+      }
+    },
+    "queries": [
+      {
+        "id": "fastapi-path-01",
+        "question": "What Python annotation should a FastAPI path parameter use to require an integer?",
+        "gold": [
+          "fastapi-path:2"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 1.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "full_recall",
+        "base_predicted": [
+          "fastapi-path:1",
+          "fastapi-path:2"
+        ],
+        "tuned_predicted": [
+          "fastapi-path:1",
+          "fastapi-path:2"
+        ],
+        "base_calls": 3,
+        "tuned_calls": 3
+      },
+      {
+        "id": "fastapi-path-02",
+        "question": "What happens when text is supplied to a FastAPI path parameter declared as int?",
+        "gold": [
+          "fastapi-path:4"
+        ],
+        "base_recall": 0.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 0.0,
+        "base_outcome": "miss_with_correct_document_in_results",
+        "tuned_outcome": "miss_with_correct_document_in_results",
+        "base_predicted": [
+          "fastapi-path:1",
+          "fastapi-path:2"
+        ],
+        "tuned_predicted": [
+          "fastapi-path:1",
+          "fastapi-path:2"
+        ],
+        "base_calls": 3,
+        "tuned_calls": 3
+      },
+      {
+        "id": "fastapi-path-03",
+        "question": "Why must /users/me be declared before /users/{user_id} in FastAPI?",
+        "gold": [
+          "fastapi-path:8"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "root_rejection",
+        "base_predicted": [
+          "fastapi-path:8",
+          "fastapi-path:4",
+          "fastapi-path:1",
+          "fastapi-path:3"
+        ],
+        "tuned_predicted": [],
+        "base_calls": 3,
+        "tuned_calls": 1
+      },
+      {
+        "id": "fastapi-path-04",
+        "question": "How can I restrict a FastAPI URL parameter to a fixed set of named values?",
+        "gold": [
+          "fastapi-path:10"
+        ],
+        "base_recall": 0.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 0.0,
+        "base_outcome": "miss_with_other_documents_only",
+        "tuned_outcome": "miss_with_other_documents_only",
+        "base_predicted": [
+          "fastapi-query:1"
+        ],
+        "tuned_predicted": [
+          "fastapi-query:1"
+        ],
+        "base_calls": 3,
+        "tuned_calls": 3
+      },
+      {
+        "id": "fastapi-path-05",
+        "question": "Come recupero il valore stringa di un membro Enum usato in un parametro FastAPI?",
+        "gold": [
+          "fastapi-path:15"
+        ],
+        "base_recall": 0.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 1.0,
+        "base_outcome": "root_rejection",
+        "tuned_outcome": "root_rejection",
+        "base_predicted": [],
+        "tuned_predicted": [],
+        "base_calls": 1,
+        "tuned_calls": 1
+      },
+      {
+        "id": "fastapi-path-06",
+        "question": "How can a FastAPI route capture a file path containing slash characters?",
+        "gold": [
+          "fastapi-path:19"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 1.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "full_recall",
+        "base_predicted": [
+          "fastapi-path:19",
+          "fastapi-path:17",
+          "fastapi-path:1"
+        ],
+        "tuned_predicted": [
+          "fastapi-path:19",
+          "fastapi-path:17",
+          "fastapi-path:1"
+        ],
+        "base_calls": 4,
+        "tuned_calls": 4
+      },
+      {
+        "id": "fastapi-body-01",
+        "question": "Why can a GET request body be problematic in FastAPI Swagger UI and intermediate proxies?",
+        "gold": [
+          "fastapi-body:1"
+        ],
+        "base_recall": 0.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 1.0,
+        "base_outcome": "empty_after_deeper_calls",
+        "tuned_outcome": "empty_after_deeper_calls",
+        "base_predicted": [],
+        "tuned_predicted": [],
+        "base_calls": 2,
+        "tuned_calls": 2
+      },
+      {
+        "id": "fastapi-body-02",
+        "question": "How do default values affect whether FastAPI request-model attributes are required?",
+        "gold": [
+          "fastapi-body:3"
+        ],
+        "base_recall": 0.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 1.0,
+        "base_outcome": "miss_with_correct_document_in_results",
+        "tuned_outcome": "miss_with_other_documents_only",
+        "base_predicted": [
+          "fastapi-query:6",
+          "fastapi-query:2",
+          "fastapi-body:1",
+          "fastapi-query:1"
+        ],
+        "tuned_predicted": [
+          "fastapi-query:6",
+          "fastapi-query:1",
+          "fastapi-query:3"
+        ],
+        "base_calls": 3,
+        "tuned_calls": 3
+      },
+      {
+        "id": "fastapi-body-03",
+        "question": "What parsing and validation work does FastAPI perform for a declared request model?",
+        "gold": [
+          "fastapi-body:5"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 1.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "full_recall",
+        "base_predicted": [
+          "fastapi-body:5",
+          "fastapi-body:1"
+        ],
+        "tuned_predicted": [
+          "fastapi-body:5",
+          "fastapi-body:1"
+        ],
+        "base_calls": 3,
+        "tuned_calls": 3
+      },
+      {
+        "id": "fastapi-body-04",
+        "question": "Dove vengono mostrati gli schemi JSON dei modelli FastAPI?",
+        "gold": [
+          "fastapi-body:6"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "empty_after_deeper_calls",
+        "base_predicted": [
+          "fastapi-body:1",
+          "fastapi-body:6",
+          "fastapi-path:1",
+          "fastapi-path:5",
+          "fastapi-body:4"
+        ],
+        "tuned_predicted": [],
+        "base_calls": 3,
+        "tuned_calls": 2
+      },
+      {
+        "id": "fastapi-body-05",
+        "question": "Can a FastAPI handler receive a Pydantic request body alongside a path parameter?",
+        "gold": [
+          "fastapi-body:9"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 1.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "full_recall",
+        "base_predicted": [
+          "fastapi-body:10",
+          "fastapi-body:1",
+          "fastapi-body:9",
+          "fastapi-path:1",
+          "fastapi-path:7"
+        ],
+        "tuned_predicted": [
+          "fastapi-body:1",
+          "fastapi-body:9",
+          "fastapi-path:1"
+        ],
+        "base_calls": 3,
+        "tuned_calls": 3
+      },
+      {
+        "id": "fastapi-body-06",
+        "question": "How does FastAPI decide whether a handler argument comes from the path, query or body?",
+        "gold": [
+          "fastapi-body:10"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 1.0,
+        "dense_recall": 0.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "full_recall",
+        "base_predicted": [
+          "fastapi-body:10",
+          "fastapi-body:1",
+          "fastapi-query:1"
+        ],
+        "tuned_predicted": [
+          "fastapi-body:10",
+          "fastapi-body:1",
+          "fastapi-query:1"
+        ],
+        "base_calls": 4,
+        "tuned_calls": 3
+      },
+      {
+        "id": "fastapi-errors-01",
+        "question": "Should a FastAPI HTTPException be returned or raised, and does a utility function stop the request?",
+        "gold": [
+          "fastapi-errors:4"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 1.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "full_recall",
+        "base_predicted": [
+          "fastapi-errors:4",
+          "fastapi-errors:13",
+          "fastapi-errors:7",
+          "fastapi-errors:10"
+        ],
+        "tuned_predicted": [
+          "fastapi-errors:4",
+          "fastapi-errors:13",
+          "fastapi-errors:7",
+          "fastapi-errors:10"
+        ],
+        "base_calls": 5,
+        "tuned_calls": 5
+      },
+      {
+        "id": "fastapi-errors-02",
+        "question": "Can the detail of a FastAPI HTTPException contain a list or a dictionary?",
+        "gold": [
+          "fastapi-errors:5"
+        ],
+        "base_recall": 0.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 1.0,
+        "base_outcome": "miss_with_correct_document_in_results",
+        "tuned_outcome": "root_rejection",
+        "base_predicted": [
+          "fastapi-errors:7",
+          "fastapi-errors:4",
+          "fastapi-errors:11",
+          "fastapi-errors:9",
+          "fastapi-errors:1"
+        ],
+        "tuned_predicted": [],
+        "base_calls": 5,
+        "tuned_calls": 1
+      },
+      {
+        "id": "fastapi-errors-03",
+        "question": "Can I attach custom headers to a FastAPI error response?",
+        "gold": [
+          "fastapi-errors:6"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 1.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "full_recall",
+        "base_predicted": [
+          "fastapi-errors:6",
+          "fastapi-errors:7",
+          "fastapi-errors:1",
+          "fastapi-errors:2"
+        ],
+        "tuned_predicted": [
+          "fastapi-errors:6",
+          "fastapi-errors:1"
+        ],
+        "base_calls": 4,
+        "tuned_calls": 3
+      },
+      {
+        "id": "fastapi-errors-04",
+        "question": "How do I register a global handler for my custom exception in FastAPI?",
+        "gold": [
+          "fastapi-errors:7"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 1.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "full_recall",
+        "base_predicted": [
+          "fastapi-errors:7",
+          "fastapi-errors:1",
+          "fastapi-errors:8",
+          "fastapi-errors:2"
+        ],
+        "tuned_predicted": [
+          "fastapi-errors:7",
+          "fastapi-errors:1"
+        ],
+        "base_calls": 4,
+        "tuned_calls": 3
+      },
+      {
+        "id": "fastapi-errors-05",
+        "question": "Perché un ValidationError nella risposta FastAPI deve essere trattato come un bug del server?",
+        "gold": [
+          "fastapi-errors:10"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 1.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "full_recall",
+        "base_predicted": [
+          "fastapi-errors:10",
+          "fastapi-errors:7",
+          "fastapi-errors:11",
+          "fastapi-errors:13",
+          "fastapi-errors:8"
+        ],
+        "tuned_predicted": [
+          "fastapi-errors:10",
+          "fastapi-errors:7",
+          "fastapi-errors:14",
+          "fastapi-errors:8",
+          "fastapi-errors:9"
+        ],
+        "base_calls": 5,
+        "tuned_calls": 5
+      },
+      {
+        "id": "fastapi-errors-06",
+        "question": "How can I inspect the body that caused a FastAPI request validation error?",
+        "gold": [
+          "fastapi-errors:12"
+        ],
+        "base_recall": 0.0,
+        "tuned_recall": 1.0,
+        "dense_recall": 1.0,
+        "base_outcome": "miss_with_correct_document_in_results",
+        "tuned_outcome": "full_recall",
+        "base_predicted": [
+          "fastapi-errors:10",
+          "fastapi-errors:9",
+          "fastapi-body:1",
+          "fastapi-errors:1"
+        ],
+        "tuned_predicted": [
+          "fastapi-body:1",
+          "fastapi-errors:1",
+          "fastapi-errors:13",
+          "fastapi-errors:12"
+        ],
+        "base_calls": 5,
+        "tuned_calls": 5
+      },
+      {
+        "id": "httpx-quickstart-01",
+        "question": "How do I encode URL query parameters when sending an HTTPX request?",
+        "gold": [
+          "httpx-quickstart:2"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 1.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "full_recall",
+        "base_predicted": [
+          "httpx-quickstart:2",
+          "httpx-clients:10",
+          "httpx-clients:3",
+          "httpx-quickstart:1"
+        ],
+        "tuned_predicted": [
+          "httpx-quickstart:2",
+          "httpx-quickstart:1"
+        ],
+        "base_calls": 3,
+        "tuned_calls": 3
+      },
+      {
+        "id": "httpx-quickstart-02",
+        "question": "How can I decode JSON from an HTTPX response?",
+        "gold": [
+          "httpx-quickstart:5"
+        ],
+        "base_recall": 0.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 1.0,
+        "base_outcome": "miss_with_other_documents_only",
+        "tuned_outcome": "root_rejection",
+        "base_predicted": [
+          "httpx-clients:0"
+        ],
+        "tuned_predicted": [],
+        "base_calls": 2,
+        "tuned_calls": 1
+      },
+      {
+        "id": "httpx-quickstart-03",
+        "question": "How can I make HTTPX raise an error for an HTTP response outside the 2xx range?",
+        "gold": [
+          "httpx-quickstart:11"
+        ],
+        "base_recall": 0.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 1.0,
+        "base_outcome": "miss_with_other_documents_only",
+        "tuned_outcome": "miss_with_other_documents_only",
+        "base_predicted": [
+          "fastapi-errors:1",
+          "fastapi-errors:4",
+          "fastapi-errors:7",
+          "fastapi-errors:11"
+        ],
+        "tuned_predicted": [
+          "httpx-timeouts:0"
+        ],
+        "base_calls": 5,
+        "tuned_calls": 2
+      },
+      {
+        "id": "httpx-quickstart-04",
+        "question": "I nomi degli header di risposta HTTPX distinguono maiuscole e minuscole?",
+        "gold": [
+          "httpx-quickstart:12"
+        ],
+        "base_recall": 0.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 1.0,
+        "base_outcome": "root_rejection",
+        "tuned_outcome": "root_rejection",
+        "base_predicted": [],
+        "tuned_predicted": [],
+        "base_calls": 1,
+        "tuned_calls": 1
+      },
+      {
+        "id": "httpx-quickstart-05",
+        "question": "How can HTTPX read a large response without loading the whole body into memory?",
+        "gold": [
+          "httpx-quickstart:13"
+        ],
+        "base_recall": 0.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 1.0,
+        "base_outcome": "miss_with_other_documents_only",
+        "tuned_outcome": "root_rejection",
+        "base_predicted": [
+          "httpx-timeouts:0"
+        ],
+        "tuned_predicted": [],
+        "base_calls": 2,
+        "tuned_calls": 1
+      },
+      {
+        "id": "httpx-quickstart-06",
+        "question": "Does HTTPX follow redirects automatically, and where can I inspect followed redirects?",
+        "gold": [
+          "httpx-quickstart:15"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "empty_after_deeper_calls",
+        "base_predicted": [
+          "httpx-quickstart:15",
+          "httpx-quickstart:1",
+          "httpx-clients:0"
+        ],
+        "tuned_predicted": [],
+        "base_calls": 3,
+        "tuned_calls": 2
+      },
+      {
+        "id": "httpx-timeouts-01",
+        "question": "What is the default HTTPX timeout for network inactivity?",
+        "gold": [
+          "httpx-quickstart:16",
+          "httpx-timeouts:0"
+        ],
+        "base_recall": 0.5,
+        "tuned_recall": 0.5,
+        "dense_recall": 1.0,
+        "base_outcome": "partial_recall",
+        "tuned_outcome": "partial_recall",
+        "base_predicted": [
+          "httpx-timeouts:3",
+          "httpx-timeouts:2",
+          "httpx-timeouts:1",
+          "httpx-timeouts:0"
+        ],
+        "tuned_predicted": [
+          "httpx-timeouts:3",
+          "httpx-timeouts:2",
+          "httpx-timeouts:1",
+          "httpx-timeouts:0"
+        ],
+        "base_calls": 2,
+        "tuned_calls": 2
+      },
+      {
+        "id": "httpx-timeouts-02",
+        "question": "How can I disable HTTPX timeouts for just one request?",
+        "gold": [
+          "httpx-quickstart:16",
+          "httpx-timeouts:1"
+        ],
+        "base_recall": 0.5,
+        "tuned_recall": 0.5,
+        "dense_recall": 1.0,
+        "base_outcome": "partial_recall",
+        "tuned_outcome": "partial_recall",
+        "base_predicted": [
+          "httpx-timeouts:1",
+          "httpx-timeouts:3",
+          "httpx-timeouts:2",
+          "httpx-timeouts:0"
+        ],
+        "tuned_predicted": [
+          "httpx-timeouts:1",
+          "httpx-timeouts:0"
+        ],
+        "base_calls": 2,
+        "tuned_calls": 2
+      },
+      {
+        "id": "httpx-timeouts-03",
+        "question": "Come imposto un timeout predefinito per tutte le richieste di un client HTTPX?",
+        "gold": [
+          "httpx-timeouts:2"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 1.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "full_recall",
+        "base_predicted": [
+          "httpx-timeouts:1",
+          "httpx-timeouts:2",
+          "httpx-timeouts:3",
+          "httpx-timeouts:0"
+        ],
+        "tuned_predicted": [
+          "httpx-timeouts:1",
+          "httpx-timeouts:2",
+          "httpx-timeouts:3",
+          "httpx-timeouts:0"
+        ],
+        "base_calls": 2,
+        "tuned_calls": 2
+      },
+      {
+        "id": "httpx-timeouts-04",
+        "question": "What does an HTTPX pool timeout measure?",
+        "gold": [
+          "httpx-timeouts:3"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 1.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "full_recall",
+        "base_predicted": [
+          "httpx-timeouts:3",
+          "httpx-timeouts:1",
+          "httpx-timeouts:2",
+          "httpx-timeouts:0"
+        ],
+        "tuned_predicted": [
+          "httpx-timeouts:3",
+          "httpx-timeouts:1",
+          "httpx-timeouts:2",
+          "httpx-timeouts:0"
+        ],
+        "base_calls": 2,
+        "tuned_calls": 2
+      },
+      {
+        "id": "httpx-timeouts-05",
+        "question": "Is the HTTPX read timeout a limit for each received data chunk or the whole response?",
+        "gold": [
+          "httpx-timeouts:3"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "root_rejection",
+        "base_predicted": [
+          "httpx-timeouts:3",
+          "httpx-timeouts:1",
+          "httpx-timeouts:2",
+          "httpx-timeouts:0"
+        ],
+        "tuned_predicted": [],
+        "base_calls": 2,
+        "tuned_calls": 1
+      },
+      {
+        "id": "httpx-timeouts-06",
+        "question": "How can I give HTTPX a longer connection timeout than its other timeout types?",
+        "gold": [
+          "httpx-timeouts:3"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 1.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "full_recall",
+        "base_predicted": [
+          "httpx-timeouts:3",
+          "httpx-timeouts:2",
+          "httpx-timeouts:1",
+          "httpx-timeouts:0"
+        ],
+        "tuned_predicted": [
+          "httpx-timeouts:3",
+          "httpx-timeouts:0"
+        ],
+        "base_calls": 2,
+        "tuned_calls": 2
+      },
+      {
+        "id": "httpx-clients-01",
+        "question": "Why can an HTTPX Client be more efficient than repeated top-level requests?",
+        "gold": [
+          "httpx-clients:1"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 1.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "full_recall",
+        "base_predicted": [
+          "httpx-clients:1",
+          "httpx-clients:3",
+          "httpx-clients:2",
+          "httpx-clients:4",
+          "httpx-clients:0"
+        ],
+        "tuned_predicted": [
+          "httpx-clients:1",
+          "httpx-clients:4",
+          "httpx-clients:0"
+        ],
+        "base_calls": 2,
+        "tuned_calls": 2
+      },
+      {
+        "id": "httpx-clients-02",
+        "question": "How should an HTTPX client be closed when a with block is not used?",
+        "gold": [
+          "httpx-clients:2"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "root_rejection",
+        "base_predicted": [
+          "httpx-clients:2",
+          "httpx-clients:0"
+        ],
+        "tuned_predicted": [],
+        "base_calls": 2,
+        "tuned_calls": 1
+      },
+      {
+        "id": "httpx-clients-03",
+        "question": "How can I apply the same custom headers to all HTTPX client requests?",
+        "gold": [
+          "httpx-clients:4"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 1.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "full_recall",
+        "base_predicted": [
+          "httpx-clients:4",
+          "httpx-clients:0"
+        ],
+        "tuned_predicted": [
+          "httpx-clients:4",
+          "httpx-clients:0"
+        ],
+        "base_calls": 2,
+        "tuned_calls": 2
+      },
+      {
+        "id": "httpx-clients-04",
+        "question": "What happens when HTTPX headers or query parameters are configured on both client and request?",
+        "gold": [
+          "httpx-clients:5"
+        ],
+        "base_recall": 0.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 1.0,
+        "base_outcome": "miss_with_other_documents_only",
+        "tuned_outcome": "selector_failure",
+        "base_predicted": [
+          "fastapi-query:1",
+          "fastapi-query:4",
+          "fastapi-query:5",
+          "httpx-quickstart:2",
+          "httpx-quickstart:6"
+        ],
+        "tuned_predicted": [
+          "fastapi-query:1",
+          "httpx-quickstart:1",
+          "fastapi-path:1"
+        ],
+        "base_calls": 3,
+        "tuned_calls": 3
+      },
+      {
+        "id": "httpx-clients-05",
+        "question": "Come imposto un prefisso URL comune alle richieste di un client HTTPX?",
+        "gold": [
+          "httpx-clients:6"
+        ],
+        "base_recall": 1.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 1.0,
+        "base_outcome": "full_recall",
+        "tuned_outcome": "miss_with_correct_document_in_results",
+        "base_predicted": [
+          "httpx-clients:6",
+          "httpx-clients:4",
+          "httpx-clients:0"
+        ],
+        "tuned_predicted": [
+          "httpx-clients:4",
+          "httpx-clients:0"
+        ],
+        "base_calls": 2,
+        "tuned_calls": 2
+      },
+      {
+        "id": "httpx-clients-06",
+        "question": "Which HTTPX response property tracks downloaded bytes correctly with compressed responses?",
+        "gold": [
+          "httpx-clients:8"
+        ],
+        "base_recall": 0.0,
+        "tuned_recall": 0.0,
+        "dense_recall": 1.0,
+        "base_outcome": "root_rejection",
+        "tuned_outcome": "root_rejection",
+        "base_predicted": [],
+        "tuned_predicted": [],
+        "base_calls": 1,
+        "tuned_calls": 1
+      }
+    ]
+  },
+  "oracle": {
+    "definition": "Gold ancestor oracle with unchanged navigation ranking, k and word budget; in-memory traversal, no model calls",
+    "recall_at_k": 1.0,
+    "evidence_coverage": 1.0,
+    "gold_depth_histogram": {
+      "2": 18,
+      "3": 5,
+      "4": 2,
+      "1": 12,
+      "0": 1
+    },
+    "gold_titles_visible_in_root_excerpt": 6,
+    "queries": [
+      {
+        "id": "fastapi-path-01",
+        "predicted": [
+          "fastapi-path:1",
+          "fastapi-path:2"
+        ],
+        "gold": [
+          "fastapi-path:2"
+        ],
+        "recall": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "fastapi-path:2",
+            "title": "Path parameters with types",
+            "depth": 2,
+            "title_in_root_excerpt": true,
+            "root_excerpt": "fastapi-path  Path Parameters You can declare path \"parameters\" or \"variables\" with the same syntax used by Python format strings:\n\n```Python hl_lines=\"6-7\"\n{!../../../docs_src/path_params/t Path parameters with types You can declare the ty"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-path-02",
+        "predicted": [
+          "fastapi-path:4",
+          "fastapi-path:1"
+        ],
+        "gold": [
+          "fastapi-path:4"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "fastapi-path:4",
+            "title": "Data validation",
+            "depth": 2,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "fastapi-path  Path Parameters You can declare path \"parameters\" or \"variables\" with the same syntax used by Python format strings:\n\n```Python hl_lines=\"6-7\"\n{!../../../docs_src/path_params/t Path parameters with types You can declare the ty"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-path-03",
+        "predicted": [
+          "fastapi-path:8",
+          "fastapi-path:1"
+        ],
+        "gold": [
+          "fastapi-path:8"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "fastapi-path:8",
+            "title": "Order matters",
+            "depth": 2,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "fastapi-path  Path Parameters You can declare path \"parameters\" or \"variables\" with the same syntax used by Python format strings:\n\n```Python hl_lines=\"6-7\"\n{!../../../docs_src/path_params/t Path parameters with types You can declare the ty"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-path-04",
+        "predicted": [
+          "fastapi-path:10",
+          "fastapi-path:1",
+          "fastapi-path:9"
+        ],
+        "gold": [
+          "fastapi-path:10"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 4,
+        "gold_routes": [
+          {
+            "source": "fastapi-path:10",
+            "title": "Create an `Enum` class",
+            "depth": 3,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "fastapi-path  Path Parameters You can declare path \"parameters\" or \"variables\" with the same syntax used by Python format strings:\n\n```Python hl_lines=\"6-7\"\n{!../../../docs_src/path_params/t Path parameters with types You can declare the ty"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-path-05",
+        "predicted": [
+          "fastapi-path:15",
+          "fastapi-path:9",
+          "fastapi-path:1",
+          "fastapi-path:13"
+        ],
+        "gold": [
+          "fastapi-path:15"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 5,
+        "gold_routes": [
+          {
+            "source": "fastapi-path:15",
+            "title": "Get the *enumeration value*",
+            "depth": 4,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "fastapi-path  Path Parameters You can declare path \"parameters\" or \"variables\" with the same syntax used by Python format strings:\n\n```Python hl_lines=\"6-7\"\n{!../../../docs_src/path_params/t Path parameters with types You can declare the ty"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-path-06",
+        "predicted": [
+          "fastapi-path:19",
+          "fastapi-path:17",
+          "fastapi-path:1"
+        ],
+        "gold": [
+          "fastapi-path:19"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 4,
+        "gold_routes": [
+          {
+            "source": "fastapi-path:19",
+            "title": "Path convertor",
+            "depth": 3,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "fastapi-path  Path Parameters You can declare path \"parameters\" or \"variables\" with the same syntax used by Python format strings:\n\n```Python hl_lines=\"6-7\"\n{!../../../docs_src/path_params/t Path parameters with types You can declare the ty"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-body-01",
+        "predicted": [
+          "fastapi-body:1"
+        ],
+        "gold": [
+          "fastapi-body:1"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "fastapi-body:1",
+            "title": "Request Body",
+            "depth": 1,
+            "title_in_root_excerpt": true,
+            "root_excerpt": "fastapi-body  Request Body When you need to send data from a client (let's say, a browser) to your API, you send it as a **request body**.\n\nA **request** body is data sent by the client t Import Pydantic's `BaseModel` First, you need to imp"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-body-02",
+        "predicted": [
+          "fastapi-body:3",
+          "fastapi-body:1"
+        ],
+        "gold": [
+          "fastapi-body:3"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "fastapi-body:3",
+            "title": "Create your data model",
+            "depth": 2,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "fastapi-body  Request Body When you need to send data from a client (let's say, a browser) to your API, you send it as a **request body**.\n\nA **request** body is data sent by the client t Import Pydantic's `BaseModel` First, you need to imp"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-body-03",
+        "predicted": [
+          "fastapi-body:5",
+          "fastapi-body:1"
+        ],
+        "gold": [
+          "fastapi-body:5"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "fastapi-body:5",
+            "title": "Results",
+            "depth": 2,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "fastapi-body  Request Body When you need to send data from a client (let's say, a browser) to your API, you send it as a **request body**.\n\nA **request** body is data sent by the client t Import Pydantic's `BaseModel` First, you need to imp"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-body-04",
+        "predicted": [
+          "fastapi-body:1",
+          "fastapi-body:6"
+        ],
+        "gold": [
+          "fastapi-body:6"
+        ],
+        "recall": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "fastapi-body:6",
+            "title": "Automatic docs",
+            "depth": 2,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "fastapi-body  Request Body When you need to send data from a client (let's say, a browser) to your API, you send it as a **request body**.\n\nA **request** body is data sent by the client t Import Pydantic's `BaseModel` First, you need to imp"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-body-05",
+        "predicted": [
+          "fastapi-body:1",
+          "fastapi-body:9"
+        ],
+        "gold": [
+          "fastapi-body:9"
+        ],
+        "recall": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "fastapi-body:9",
+            "title": "Request body + path parameters",
+            "depth": 2,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "fastapi-body  Request Body When you need to send data from a client (let's say, a browser) to your API, you send it as a **request body**.\n\nA **request** body is data sent by the client t Import Pydantic's `BaseModel` First, you need to imp"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-body-06",
+        "predicted": [
+          "fastapi-body:10",
+          "fastapi-body:1"
+        ],
+        "gold": [
+          "fastapi-body:10"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "fastapi-body:10",
+            "title": "Request body + path + query parameters",
+            "depth": 2,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "fastapi-body  Request Body When you need to send data from a client (let's say, a browser) to your API, you send it as a **request body**.\n\nA **request** body is data sent by the client t Import Pydantic's `BaseModel` First, you need to imp"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-errors-01",
+        "predicted": [
+          "fastapi-errors:4",
+          "fastapi-errors:1",
+          "fastapi-errors:2"
+        ],
+        "gold": [
+          "fastapi-errors:4"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 4,
+        "gold_routes": [
+          {
+            "source": "fastapi-errors:4",
+            "title": "Raise an `HTTPException` in your code",
+            "depth": 3,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "fastapi-errors  Handling Errors There are many situations in which you need to notify an error to a client that is using your API.\n\nThis client could be a browser with a frontend, a code from  Use `HTTPException` To return HTTP responses wi"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-errors-02",
+        "predicted": [
+          "fastapi-errors:5",
+          "fastapi-errors:1",
+          "fastapi-errors:2"
+        ],
+        "gold": [
+          "fastapi-errors:5"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 4,
+        "gold_routes": [
+          {
+            "source": "fastapi-errors:5",
+            "title": "The resulting response",
+            "depth": 3,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "fastapi-errors  Handling Errors There are many situations in which you need to notify an error to a client that is using your API.\n\nThis client could be a browser with a frontend, a code from  Use `HTTPException` To return HTTP responses wi"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-errors-03",
+        "predicted": [
+          "fastapi-errors:6",
+          "fastapi-errors:1"
+        ],
+        "gold": [
+          "fastapi-errors:6"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "fastapi-errors:6",
+            "title": "Add custom headers",
+            "depth": 2,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "fastapi-errors  Handling Errors There are many situations in which you need to notify an error to a client that is using your API.\n\nThis client could be a browser with a frontend, a code from  Use `HTTPException` To return HTTP responses wi"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-errors-04",
+        "predicted": [
+          "fastapi-errors:7",
+          "fastapi-errors:1"
+        ],
+        "gold": [
+          "fastapi-errors:7"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "fastapi-errors:7",
+            "title": "Install custom exception handlers",
+            "depth": 2,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "fastapi-errors  Handling Errors There are many situations in which you need to notify an error to a client that is using your API.\n\nThis client could be a browser with a frontend, a code from  Use `HTTPException` To return HTTP responses wi"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-errors-05",
+        "predicted": [
+          "fastapi-errors:10",
+          "fastapi-errors:8",
+          "fastapi-errors:9",
+          "fastapi-errors:1"
+        ],
+        "gold": [
+          "fastapi-errors:10"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 5,
+        "gold_routes": [
+          {
+            "source": "fastapi-errors:10",
+            "title": "`RequestValidationError` vs `ValidationError`",
+            "depth": 4,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "fastapi-errors  Handling Errors There are many situations in which you need to notify an error to a client that is using your API.\n\nThis client could be a browser with a frontend, a code from  Use `HTTPException` To return HTTP responses wi"
+          }
+        ]
+      },
+      {
+        "id": "fastapi-errors-06",
+        "predicted": [
+          "fastapi-errors:1",
+          "fastapi-errors:12",
+          "fastapi-errors:8"
+        ],
+        "gold": [
+          "fastapi-errors:12"
+        ],
+        "recall": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 5,
+        "gold_routes": [
+          {
+            "source": "fastapi-errors:12",
+            "title": "Use the `RequestValidationError` body",
+            "depth": 3,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "fastapi-errors  Handling Errors There are many situations in which you need to notify an error to a client that is using your API.\n\nThis client could be a browser with a frontend, a code from  Use `HTTPException` To return HTTP responses wi"
+          }
+        ]
+      },
+      {
+        "id": "httpx-quickstart-01",
+        "predicted": [
+          "httpx-quickstart:2",
+          "httpx-quickstart:1"
+        ],
+        "gold": [
+          "httpx-quickstart:2"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "httpx-quickstart:2",
+            "title": "Passing Parameters in URLs",
+            "depth": 2,
+            "title_in_root_excerpt": true,
+            "root_excerpt": "httpx-quickstart  QuickStart First, start by importing HTTPX:\n\n```pycon\n>>> import httpx\n```\n\nNow, let’s try to get a webpage.\n\n```pycon\n>>> r = httpx.get('https://httpbin.org/get')\n>>> r\n< Passing Parameters in URLs To include URL query pa"
+          }
+        ]
+      },
+      {
+        "id": "httpx-quickstart-02",
+        "predicted": [
+          "httpx-quickstart:5",
+          "httpx-quickstart:1"
+        ],
+        "gold": [
+          "httpx-quickstart:5"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "httpx-quickstart:5",
+            "title": "JSON Response Content",
+            "depth": 2,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "httpx-quickstart  QuickStart First, start by importing HTTPX:\n\n```pycon\n>>> import httpx\n```\n\nNow, let’s try to get a webpage.\n\n```pycon\n>>> r = httpx.get('https://httpbin.org/get')\n>>> r\n< Passing Parameters in URLs To include URL query pa"
+          }
+        ]
+      },
+      {
+        "id": "httpx-quickstart-03",
+        "predicted": [
+          "httpx-quickstart:11",
+          "httpx-quickstart:1"
+        ],
+        "gold": [
+          "httpx-quickstart:11"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "httpx-quickstart:11",
+            "title": "Response Status Codes",
+            "depth": 2,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "httpx-quickstart  QuickStart First, start by importing HTTPX:\n\n```pycon\n>>> import httpx\n```\n\nNow, let’s try to get a webpage.\n\n```pycon\n>>> r = httpx.get('https://httpbin.org/get')\n>>> r\n< Passing Parameters in URLs To include URL query pa"
+          }
+        ]
+      },
+      {
+        "id": "httpx-quickstart-04",
+        "predicted": [
+          "httpx-quickstart:1",
+          "httpx-quickstart:12"
+        ],
+        "gold": [
+          "httpx-quickstart:12"
+        ],
+        "recall": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "httpx-quickstart:12",
+            "title": "Response Headers",
+            "depth": 2,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "httpx-quickstart  QuickStart First, start by importing HTTPX:\n\n```pycon\n>>> import httpx\n```\n\nNow, let’s try to get a webpage.\n\n```pycon\n>>> r = httpx.get('https://httpbin.org/get')\n>>> r\n< Passing Parameters in URLs To include URL query pa"
+          }
+        ]
+      },
+      {
+        "id": "httpx-quickstart-05",
+        "predicted": [
+          "httpx-quickstart:13",
+          "httpx-quickstart:1"
+        ],
+        "gold": [
+          "httpx-quickstart:13"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "httpx-quickstart:13",
+            "title": "Streaming Responses",
+            "depth": 2,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "httpx-quickstart  QuickStart First, start by importing HTTPX:\n\n```pycon\n>>> import httpx\n```\n\nNow, let’s try to get a webpage.\n\n```pycon\n>>> r = httpx.get('https://httpbin.org/get')\n>>> r\n< Passing Parameters in URLs To include URL query pa"
+          }
+        ]
+      },
+      {
+        "id": "httpx-quickstart-06",
+        "predicted": [
+          "httpx-quickstart:15",
+          "httpx-quickstart:1"
+        ],
+        "gold": [
+          "httpx-quickstart:15"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "httpx-quickstart:15",
+            "title": "Redirection and History",
+            "depth": 2,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "httpx-quickstart  QuickStart First, start by importing HTTPX:\n\n```pycon\n>>> import httpx\n```\n\nNow, let’s try to get a webpage.\n\n```pycon\n>>> r = httpx.get('https://httpbin.org/get')\n>>> r\n< Passing Parameters in URLs To include URL query pa"
+          }
+        ]
+      },
+      {
+        "id": "httpx-timeouts-01",
+        "predicted": [
+          "httpx-quickstart:16",
+          "httpx-timeouts:0",
+          "httpx-quickstart:1"
+        ],
+        "gold": [
+          "httpx-quickstart:16",
+          "httpx-timeouts:0"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "httpx-timeouts:0",
+            "title": "httpx-timeouts",
+            "depth": 0,
+            "title_in_root_excerpt": true,
+            "root_excerpt": "httpx-timeouts HTTPX is careful to enforce timeouts everywhere by default.\n\nThe default behavior is to raise a `TimeoutException` after 5 seconds of\nnetwork inactivity. Setting and disabling timeouts You can set timeouts for an individual r"
+          },
+          {
+            "source": "httpx-quickstart:16",
+            "title": "Timeouts",
+            "depth": 2,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "httpx-quickstart  QuickStart First, start by importing HTTPX:\n\n```pycon\n>>> import httpx\n```\n\nNow, let’s try to get a webpage.\n\n```pycon\n>>> r = httpx.get('https://httpbin.org/get')\n>>> r\n< Passing Parameters in URLs To include URL query pa"
+          }
+        ]
+      },
+      {
+        "id": "httpx-timeouts-02",
+        "predicted": [
+          "httpx-quickstart:16",
+          "httpx-timeouts:1",
+          "httpx-quickstart:1",
+          "httpx-timeouts:0"
+        ],
+        "gold": [
+          "httpx-quickstart:16",
+          "httpx-timeouts:1"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 3,
+        "gold_routes": [
+          {
+            "source": "httpx-quickstart:16",
+            "title": "Timeouts",
+            "depth": 2,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "httpx-quickstart  QuickStart First, start by importing HTTPX:\n\n```pycon\n>>> import httpx\n```\n\nNow, let’s try to get a webpage.\n\n```pycon\n>>> r = httpx.get('https://httpbin.org/get')\n>>> r\n< Passing Parameters in URLs To include URL query pa"
+          },
+          {
+            "source": "httpx-timeouts:1",
+            "title": "Setting and disabling timeouts",
+            "depth": 1,
+            "title_in_root_excerpt": true,
+            "root_excerpt": "httpx-timeouts HTTPX is careful to enforce timeouts everywhere by default.\n\nThe default behavior is to raise a `TimeoutException` after 5 seconds of\nnetwork inactivity. Setting and disabling timeouts You can set timeouts for an individual r"
+          }
+        ]
+      },
+      {
+        "id": "httpx-timeouts-03",
+        "predicted": [
+          "httpx-timeouts:2",
+          "httpx-timeouts:0"
+        ],
+        "gold": [
+          "httpx-timeouts:2"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 2,
+        "gold_routes": [
+          {
+            "source": "httpx-timeouts:2",
+            "title": "Setting a default timeout on a client",
+            "depth": 1,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "httpx-timeouts HTTPX is careful to enforce timeouts everywhere by default.\n\nThe default behavior is to raise a `TimeoutException` after 5 seconds of\nnetwork inactivity. Setting and disabling timeouts You can set timeouts for an individual r"
+          }
+        ]
+      },
+      {
+        "id": "httpx-timeouts-04",
+        "predicted": [
+          "httpx-timeouts:3",
+          "httpx-timeouts:0"
+        ],
+        "gold": [
+          "httpx-timeouts:3"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 2,
+        "gold_routes": [
+          {
+            "source": "httpx-timeouts:3",
+            "title": "Fine tuning the configuration",
+            "depth": 1,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "httpx-timeouts HTTPX is careful to enforce timeouts everywhere by default.\n\nThe default behavior is to raise a `TimeoutException` after 5 seconds of\nnetwork inactivity. Setting and disabling timeouts You can set timeouts for an individual r"
+          }
+        ]
+      },
+      {
+        "id": "httpx-timeouts-05",
+        "predicted": [
+          "httpx-timeouts:3",
+          "httpx-timeouts:0"
+        ],
+        "gold": [
+          "httpx-timeouts:3"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 2,
+        "gold_routes": [
+          {
+            "source": "httpx-timeouts:3",
+            "title": "Fine tuning the configuration",
+            "depth": 1,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "httpx-timeouts HTTPX is careful to enforce timeouts everywhere by default.\n\nThe default behavior is to raise a `TimeoutException` after 5 seconds of\nnetwork inactivity. Setting and disabling timeouts You can set timeouts for an individual r"
+          }
+        ]
+      },
+      {
+        "id": "httpx-timeouts-06",
+        "predicted": [
+          "httpx-timeouts:3",
+          "httpx-timeouts:0"
+        ],
+        "gold": [
+          "httpx-timeouts:3"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 2,
+        "gold_routes": [
+          {
+            "source": "httpx-timeouts:3",
+            "title": "Fine tuning the configuration",
+            "depth": 1,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "httpx-timeouts HTTPX is careful to enforce timeouts everywhere by default.\n\nThe default behavior is to raise a `TimeoutException` after 5 seconds of\nnetwork inactivity. Setting and disabling timeouts You can set timeouts for an individual r"
+          }
+        ]
+      },
+      {
+        "id": "httpx-clients-01",
+        "predicted": [
+          "httpx-clients:1",
+          "httpx-clients:0"
+        ],
+        "gold": [
+          "httpx-clients:1"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 2,
+        "gold_routes": [
+          {
+            "source": "httpx-clients:1",
+            "title": "Why use a Client?",
+            "depth": 1,
+            "title_in_root_excerpt": true,
+            "root_excerpt": "httpx-clients !!! hint\n    If you are coming from Requests, `httpx.Client()` is what you can use instead of `requests.Session()`. Why use a Client? !!! note \"TL;DR\"\n    If you do anything more than experimentation, one-off scripts, or proto"
+          }
+        ]
+      },
+      {
+        "id": "httpx-clients-02",
+        "predicted": [
+          "httpx-clients:2",
+          "httpx-clients:0"
+        ],
+        "gold": [
+          "httpx-clients:2"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 2,
+        "gold_routes": [
+          {
+            "source": "httpx-clients:2",
+            "title": "Usage",
+            "depth": 1,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "httpx-clients !!! hint\n    If you are coming from Requests, `httpx.Client()` is what you can use instead of `requests.Session()`. Why use a Client? !!! note \"TL;DR\"\n    If you do anything more than experimentation, one-off scripts, or proto"
+          }
+        ]
+      },
+      {
+        "id": "httpx-clients-03",
+        "predicted": [
+          "httpx-clients:4",
+          "httpx-clients:0"
+        ],
+        "gold": [
+          "httpx-clients:4"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 2,
+        "gold_routes": [
+          {
+            "source": "httpx-clients:4",
+            "title": "Sharing configuration across requests",
+            "depth": 1,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "httpx-clients !!! hint\n    If you are coming from Requests, `httpx.Client()` is what you can use instead of `requests.Session()`. Why use a Client? !!! note \"TL;DR\"\n    If you do anything more than experimentation, one-off scripts, or proto"
+          }
+        ]
+      },
+      {
+        "id": "httpx-clients-04",
+        "predicted": [
+          "httpx-clients:5",
+          "httpx-clients:0"
+        ],
+        "gold": [
+          "httpx-clients:5"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 2,
+        "gold_routes": [
+          {
+            "source": "httpx-clients:5",
+            "title": "Merging of configuration",
+            "depth": 1,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "httpx-clients !!! hint\n    If you are coming from Requests, `httpx.Client()` is what you can use instead of `requests.Session()`. Why use a Client? !!! note \"TL;DR\"\n    If you do anything more than experimentation, one-off scripts, or proto"
+          }
+        ]
+      },
+      {
+        "id": "httpx-clients-05",
+        "predicted": [
+          "httpx-clients:6",
+          "httpx-clients:0"
+        ],
+        "gold": [
+          "httpx-clients:6"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 2,
+        "gold_routes": [
+          {
+            "source": "httpx-clients:6",
+            "title": "Other Client-only configuration options",
+            "depth": 1,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "httpx-clients !!! hint\n    If you are coming from Requests, `httpx.Client()` is what you can use instead of `requests.Session()`. Why use a Client? !!! note \"TL;DR\"\n    If you do anything more than experimentation, one-off scripts, or proto"
+          }
+        ]
+      },
+      {
+        "id": "httpx-clients-06",
+        "predicted": [
+          "httpx-clients:8",
+          "httpx-clients:0"
+        ],
+        "gold": [
+          "httpx-clients:8"
+        ],
+        "recall": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "abstained": false,
+        "evidence_coverage": 1.0,
+        "calls": 2,
+        "gold_routes": [
+          {
+            "source": "httpx-clients:8",
+            "title": "Monitoring download progress",
+            "depth": 1,
+            "title_in_root_excerpt": false,
+            "root_excerpt": "httpx-clients !!! hint\n    If you are coming from Requests, `httpx.Client()` is what you can use instead of `requests.Session()`. Why use a Client? !!! note \"TL;DR\"\n    If you do anything more than experimentation, one-off scripts, or proto"
+          }
+        ]
+      }
+    ]
+  },
+  "limits": [
+    "No original candidate/selection trace or raw invalid output was retained.",
+    "Only first-call no_route proves root rejection; nonempty misses do not prove the exact failed depth.",
+    "Heading visibility is a literal diagnostic, not a semantic sufficiency test.",
+    "Oracle uses test labels and is diagnostic only; it is not a model measurement."
+  ]
+}

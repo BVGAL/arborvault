@@ -1,0 +1,395 @@
+{
+  "id": "abstention-v3",
+  "version": 1,
+  "retrieved_date": "2026-11-14",
+  "counts": {
+    "calibration": {
+      "documents": 4,
+      "answerable": 48,
+      "unknown": 48,
+      "unique_question_texts": 80
+    },
+    "test": {
+      "documents": 20,
+      "answerable": 240,
+      "unknown": 240,
+      "unique_question_texts": 400
+    }
+  },
+  "files": {
+    "documents.json": "54682043b1ad3057909accacaa5481c1ce84fb511b4269e336c6182aba3f3d14",
+    "negative-seeds.json": "3ffdd37d33124641cce95d1e72c992f7f37c409dcaba2d9c9fc2f390a3191555",
+    "novelty.json": "42961094b395a5a3103c30c86b2d1e5be6df1a28f52a44e7b0b715b4648090ab",
+    "positive.tsv": "88b1e4861d70d581f5aeab82a9d4fdd9d127e4bbbd991699d4fc20a9447cb35a",
+    "questions.json": "0b1b7a9e74bc195f6f09bab9d08c4cdb145ded712e96a90088aeb2a83297c215",
+    "sources/codecs.html": "0589f25c5b347787be0fe75cccd13dd8d8f6adc0db03595f78d83fd6c6d88f0a",
+    "sources/collections.html": "46c6079e40c5abcb8bad54bf7413ef2219cf2ad3390c4628a005daed4976d95c",
+    "sources/concurrent.futures.html": "8949f9fb3eba25add48e55dcd0ac6d7c4386f6f3d10a37e3f3288988c609be18",
+    "sources/configparser.html": "419029c8cb6af283149287bbdc531de8ba854aaa8307c53af18c4efed591ec2a",
+    "sources/contextlib.html": "394f95fd519209a225c1bfff3c6e6a272e4ae7c75154bc57b43a6218a5293ebd",
+    "sources/csv.html": "2254bd9a7ee1d0b801cd37a9d3879f2421532356c8c0c1be3c238c1931a76b91",
+    "sources/doctest.html": "937a1c396bbf4ed1b5a316fe433701bac0fb153811f46aeccd2a34d474e2ddb0",
+    "sources/enum.html": "9cf2eeb81b2232e3ce57613d483afa17897fed1ded27e86de9645ddf52c9878d",
+    "sources/functools.html": "5475d1ac7019d1209b8bba66987903328a6e721d2ab6e34c112bf30b92a8e366",
+    "sources/http.client.html": "61f3af3ab3245fb7a8460a10add2c085a5e136e5b5c283dc31627a51d3e4b888",
+    "sources/itertools.html": "4c856c973910c38c7e0f10180446ece00beccfe207d3aaaf67115c7846a36ddc",
+    "sources/json.html": "f2e17fb3ae2eb9c04261a84022b3a1f978c846043aa33edaab1effae6881da3b",
+    "sources/license.html": "ced1a5587f118ad9454a151b721292abe08379b6ce390c5f8b7c165720412ca0",
+    "sources/math.html": "74d6d23fc344a40d101957c671fa8f85e92747499d692c73ea4e884fb35b081f",
+    "sources/os.html": "8076540f6276f13e6cec22ea9e2d786a50de01f9b214dcd5f893839043b12b19",
+    "sources/pdb.html": "51b3f6ef86c5dc4ebce87858af67e03152db9c28f7c9adcca2d791e124355724",
+    "sources/queue.html": "956242ecd76ffea9a592ae4c4185f6c2b761ae58a44c10deb064578564dc182f",
+    "sources/random.html": "e4856e09fe1f75965af0400301fd6d14a0585b44c0fe69b234d341b95225ebdb",
+    "sources/shutil.html": "ad7af6d43eaab1727e01ddc23c766d428a0569e8919489b40f9a4581d194d813",
+    "sources/statistics.html": "95a915bafb5f0e5cb730f0ae9fc4dcbc29685d4aae701d4e3d1960aba085695e",
+    "sources/sys.html": "9f47b2b9fc4f886bdb41df7693a82c40de51dcaaeb1459ac83c38af301e5df8c",
+    "sources/tempfile.html": "446288dd137f16096280ca2c0d22c45280c60a511178b84a2d7f582c3a02769d",
+    "sources/threading.html": "fc9865ed16e734effa5c096a34f07d40dcbef6e6575d98414f1520613f08d7fa",
+    "sources/urllib.request.html": "827a77e91cc11fb9ac4c82e789038f5b7acb1798be2a54783c24bcd0622c364d",
+    "sources/weakref.html": "3d96284f2d96f02dd2ea9383271daf25685bad85a63b42d840855d3faabd3f60"
+  },
+  "source_license": "PSF-2.0; documentation examples additionally 0BSD; sources/license.html includes notices",
+  "annotation_license": "Apache-2.0",
+  "annotation_origin": "Assistant-authored; no independent human adjudication",
+  "scope": "Known-document retrieval in Python 3.13 documentation; varied lengths, one domain",
+  "frozen_before_inference": true,
+  "pretraining_exposure": "unknown",
+  "documents": [
+    {
+      "id": "os",
+      "title": "os \u2014 Miscellaneous operating system interfaces",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/os.html",
+      "source_sha256": "8076540f6276f13e6cec22ea9e2d786a50de01f9b214dcd5f893839043b12b19",
+      "stats": {
+        "nodes": 2359,
+        "passages": 1975,
+        "words": 28778,
+        "max_depth": 6,
+        "branches": 384
+      }
+    },
+    {
+      "id": "collections",
+      "title": "collections \u2014 Container datatypes",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/collections.html",
+      "source_sha256": "46c6079e40c5abcb8bad54bf7413ef2219cf2ad3390c4628a005daed4976d95c",
+      "stats": {
+        "nodes": 375,
+        "passages": 316,
+        "words": 8017,
+        "max_depth": 5,
+        "branches": 59
+      }
+    },
+    {
+      "id": "itertools",
+      "title": "itertools \u2014 Functions creating iterators for efficient looping",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/itertools.html",
+      "source_sha256": "4c856c973910c38c7e0f10180446ece00beccfe207d3aaaf67115c7846a36ddc",
+      "stats": {
+        "nodes": 214,
+        "passages": 190,
+        "words": 6716,
+        "max_depth": 4,
+        "branches": 24
+      }
+    },
+    {
+      "id": "csv",
+      "title": "csv \u2014 CSV File Reading and Writing",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/csv.html",
+      "source_sha256": "2254bd9a7ee1d0b801cd37a9d3879f2421532356c8c0c1be3c238c1931a76b91",
+      "stats": {
+        "nodes": 223,
+        "passages": 177,
+        "words": 3653,
+        "max_depth": 5,
+        "branches": 46
+      }
+    },
+    {
+      "id": "json",
+      "title": "json \u2014 JSON encoder and decoder",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/json.html",
+      "source_sha256": "f2e17fb3ae2eb9c04261a84022b3a1f978c846043aa33edaab1effae6881da3b",
+      "stats": {
+        "nodes": 231,
+        "passages": 202,
+        "words": 4187,
+        "max_depth": 5,
+        "branches": 29
+      }
+    },
+    {
+      "id": "math",
+      "title": "math \u2014 Mathematical functions",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/math.html",
+      "source_sha256": "74d6d23fc344a40d101957c671fa8f85e92747499d692c73ea4e884fb35b081f",
+      "stats": {
+        "nodes": 362,
+        "passages": 289,
+        "words": 4144,
+        "max_depth": 4,
+        "branches": 73
+      }
+    },
+    {
+      "id": "statistics",
+      "title": "statistics \u2014 Mathematical statistics functions",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/statistics.html",
+      "source_sha256": "95a915bafb5f0e5cb730f0ae9fc4dcbc29685d4aae701d4e3d1960aba085695e",
+      "stats": {
+        "nodes": 322,
+        "passages": 275,
+        "words": 6576,
+        "max_depth": 5,
+        "branches": 47
+      }
+    },
+    {
+      "id": "threading",
+      "title": "threading \u2014 Thread-based parallelism",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/threading.html",
+      "source_sha256": "fc9865ed16e734effa5c096a34f07d40dcbef6e6575d98414f1520613f08d7fa",
+      "stats": {
+        "nodes": 431,
+        "passages": 355,
+        "words": 7335,
+        "max_depth": 6,
+        "branches": 76
+      }
+    },
+    {
+      "id": "concurrent.futures",
+      "title": "concurrent.futures \u2014 Launching parallel tasks",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/concurrent.futures.html",
+      "source_sha256": "8949f9fb3eba25add48e55dcd0ac6d7c4386f6f3d10a37e3f3288988c609be18",
+      "stats": {
+        "nodes": 164,
+        "passages": 130,
+        "words": 3194,
+        "max_depth": 5,
+        "branches": 34
+      }
+    },
+    {
+      "id": "queue",
+      "title": "queue \u2014 A synchronized queue class",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/queue.html",
+      "source_sha256": "956242ecd76ffea9a592ae4c4185f6c2b761ae58a44c10deb064578564dc182f",
+      "stats": {
+        "nodes": 110,
+        "passages": 82,
+        "words": 1780,
+        "max_depth": 5,
+        "branches": 28
+      }
+    },
+    {
+      "id": "tempfile",
+      "title": "tempfile \u2014 Generate temporary files and directories",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/tempfile.html",
+      "source_sha256": "446288dd137f16096280ca2c0d22c45280c60a511178b84a2d7f582c3a02769d",
+      "stats": {
+        "nodes": 131,
+        "passages": 113,
+        "words": 3057,
+        "max_depth": 4,
+        "branches": 18
+      }
+    },
+    {
+      "id": "enum",
+      "title": "enum \u2014 Support for enumerations",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/enum.html",
+      "source_sha256": "9cf2eeb81b2232e3ce57613d483afa17897fed1ded27e86de9645ddf52c9878d",
+      "stats": {
+        "nodes": 428,
+        "passages": 360,
+        "words": 4886,
+        "max_depth": 5,
+        "branches": 68
+      }
+    },
+    {
+      "id": "weakref",
+      "title": "weakref \u2014 Weak references",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/weakref.html",
+      "source_sha256": "3d96284f2d96f02dd2ea9383271daf25685bad85a63b42d840855d3faabd3f60",
+      "stats": {
+        "nodes": 149,
+        "passages": 123,
+        "words": 3385,
+        "max_depth": 4,
+        "branches": 26
+      }
+    },
+    {
+      "id": "contextlib",
+      "title": "contextlib \u2014 Utilities for with -statement contexts",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/contextlib.html",
+      "source_sha256": "394f95fd519209a225c1bfff3c6e6a272e4ae7c75154bc57b43a6218a5293ebd",
+      "stats": {
+        "nodes": 241,
+        "passages": 206,
+        "words": 5087,
+        "max_depth": 5,
+        "branches": 35
+      }
+    },
+    {
+      "id": "urllib.request",
+      "title": "urllib.request \u2014 Extensible library for opening URLs",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/urllib.request.html",
+      "source_sha256": "827a77e91cc11fb9ac4c82e789038f5b7acb1798be2a54783c24bcd0622c364d",
+      "stats": {
+        "nodes": 542,
+        "passages": 409,
+        "words": 8601,
+        "max_depth": 5,
+        "branches": 133
+      }
+    },
+    {
+      "id": "http.client",
+      "title": "http.client \u2014 HTTP protocol client",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/http.client.html",
+      "source_sha256": "61f3af3ab3245fb7a8460a10add2c085a5e136e5b5c283dc31627a51d3e4b888",
+      "stats": {
+        "nodes": 232,
+        "passages": 177,
+        "words": 3308,
+        "max_depth": 4,
+        "branches": 55
+      }
+    },
+    {
+      "id": "codecs",
+      "title": "codecs \u2014 Codec registry and base classes",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/codecs.html",
+      "source_sha256": "0589f25c5b347787be0fe75cccd13dd8d8f6adc0db03595f78d83fd6c6d88f0a",
+      "stats": {
+        "nodes": 523,
+        "passages": 437,
+        "words": 7781,
+        "max_depth": 7,
+        "branches": 86
+      }
+    },
+    {
+      "id": "configparser",
+      "title": "configparser \u2014 Configuration file parser",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/configparser.html",
+      "source_sha256": "419029c8cb6af283149287bbdc531de8ba854aaa8307c53af18c4efed591ec2a",
+      "stats": {
+        "nodes": 320,
+        "passages": 264,
+        "words": 7513,
+        "max_depth": 5,
+        "branches": 56
+      }
+    },
+    {
+      "id": "doctest",
+      "title": "doctest \u2014 Test interactive Python examples",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/doctest.html",
+      "source_sha256": "937a1c396bbf4ed1b5a316fe433701bac0fb153811f46aeccd2a34d474e2ddb0",
+      "stats": {
+        "nodes": 524,
+        "passages": 430,
+        "words": 10559,
+        "max_depth": 6,
+        "branches": 94
+      }
+    },
+    {
+      "id": "pdb",
+      "title": "pdb \u2014 The Python Debugger",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/pdb.html",
+      "source_sha256": "51b3f6ef86c5dc4ebce87858af67e03152db9c28f7c9adcca2d791e124355724",
+      "stats": {
+        "nodes": 214,
+        "passages": 203,
+        "words": 3926,
+        "max_depth": 5,
+        "branches": 11
+      }
+    },
+    {
+      "id": "sys",
+      "title": "sys \u2014 System-specific parameters and functions",
+      "split": "calibration",
+      "url": "https://docs.python.org/3.13/library/sys.html",
+      "source_sha256": "9f47b2b9fc4f886bdb41df7693a82c40de51dcaaeb1459ac83c38af301e5df8c",
+      "stats": {
+        "nodes": 725,
+        "passages": 605,
+        "words": 10283,
+        "max_depth": 4,
+        "branches": 120
+      }
+    },
+    {
+      "id": "functools",
+      "title": "functools \u2014 Higher-order functions and operations on callable objects",
+      "split": "calibration",
+      "url": "https://docs.python.org/3.13/library/functools.html",
+      "source_sha256": "5475d1ac7019d1209b8bba66987903328a6e721d2ab6e34c112bf30b92a8e366",
+      "stats": {
+        "nodes": 163,
+        "passages": 146,
+        "words": 4385,
+        "max_depth": 4,
+        "branches": 17
+      }
+    },
+    {
+      "id": "shutil",
+      "title": "shutil \u2014 High-level file operations",
+      "split": "calibration",
+      "url": "https://docs.python.org/3.13/library/shutil.html",
+      "source_sha256": "ad7af6d43eaab1727e01ddc23c766d428a0569e8919489b40f9a4581d194d813",
+      "stats": {
+        "nodes": 264,
+        "passages": 229,
+        "words": 4957,
+        "max_depth": 5,
+        "branches": 35
+      }
+    },
+    {
+      "id": "random",
+      "title": "random \u2014 Generate pseudo-random numbers",
+      "split": "calibration",
+      "url": "https://docs.python.org/3.13/library/random.html",
+      "source_sha256": "e4856e09fe1f75965af0400301fd6d14a0585b44c0fe69b234d341b95225ebdb",
+      "stats": {
+        "nodes": 223,
+        "passages": 178,
+        "words": 4300,
+        "max_depth": 5,
+        "branches": 45
+      }
+    }
+  ]
+}

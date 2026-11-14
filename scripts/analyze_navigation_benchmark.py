@@ -31,6 +31,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--experiment", type=Path, required=True)
     parser.add_argument("--dataset", type=Path, default=Path("datasets/navigation-v2"))
+    parser.add_argument("--config", type=Path, default=Path("configs/navigation-v2.json"))
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     directory = args.experiment.resolve()
@@ -47,10 +48,8 @@ def main():
         if not path.is_relative_to(directory) or file_hash(path) != expected:
             raise ValueError("Artifact hash mismatch: " + name)
     plan = read(directory / "plan.json")
-    config = read(Path("configs/navigation-v2.json"))
-    if plan["config"] != config or plan["config_sha256"] != file_hash(
-        Path("configs/navigation-v2.json")
-    ):
+    config = read(args.config)
+    if plan["config"] != config or plan["config_sha256"] != file_hash(args.config):
         raise ValueError("Protocol mismatch")
     manifest, trees, queries = load_corpus(args.dataset)
     if plan["dataset_manifest_sha256"] != file_hash(args.dataset / "manifest.json"):
@@ -63,7 +62,8 @@ def main():
     indexes = {d: DocumentIndex(t) for d, t in trees.items()}
     lexical = {q["id"]: indexes[q["document"]].scores(q["question"]) for q in queries}
     policies, confidences, caches, lexical_ties = {}, {}, {}, []
-    for label in ("qwen-base", "cross-encoder-base", "tacit-4b"):
+    models = config.get("models", ["qwen-base", "cross-encoder-base", "tacit-4b"])
+    for label in models:
         cache = read(directory / "scores" / (label + ".json"))
         if set(cache) != {q["id"] for q in queries}:
             raise ValueError("Missing score queries")
@@ -256,8 +256,26 @@ def main():
                 "confidence_metrics": discriminative_metrics(test_rows, test_values),
             }
 
+    probe_output, extra_pairs = None, []
+    if config.get("answerability_history"):
+        from arborvault.answerability_analysis import analyze_probes
+
+        probe_output, extra_pairs = analyze_probes(
+            config,
+            directory,
+            trees,
+            queries,
+            policies,
+            confidences,
+            results,
+            rows_by_policy,
+            calibration,
+        )
+
     # Resample the same source families for every method and gate.
     def group_of(d):
+        if "family_groups" in config:
+            return config["family_groups"][d]
         return "archive-family" if d in {"zipfile", "tarfile"} else d
 
     groups = sorted({group_of(queries[i]["document"]) for i in test_positions})
@@ -286,7 +304,7 @@ def main():
             m: np.quantile(v, [0.025, 0.975]).tolist() for m, v in samples.items()
         }
     pairs = []
-    for model in ("qwen-base", "cross-encoder-base", "tacit-4b"):
+    for model in models:
         for budget in config["budgets"]:
             for left, right in [
                 ("tree_budgeted", "tree_scored"),
@@ -299,19 +317,18 @@ def main():
                 )
     for mode in config["modes"]:
         for budget in config["budgets"]:
-            pairs.append(
-                (f"tacit-4b/{mode}-{budget}/coverage", f"qwen-base/{mode}-{budget}/coverage")
-            )
+            if "tacit-4b" in models:
+                pairs.append(
+                    (f"tacit-4b/{mode}-{budget}/coverage", f"qwen-base/{mode}-{budget}/coverage")
+                )
             pairs.append(
                 (
                     f"cross-encoder-base/{mode}-{budget}/coverage",
                     f"qwen-base/{mode}-{budget}/coverage",
                 )
             )
-    pairs += [
-        (f"{model}/tree_guided-64/coverage", "e5-text/coverage")
-        for model in ("qwen-base", "cross-encoder-base", "tacit-4b")
-    ]
+    pairs += [(f"{model}/tree_guided-64/coverage", "e5-text/coverage") for model in models]
+    pairs += extra_pairs
     comparisons = [
         {
             "left": a,
@@ -320,6 +337,32 @@ def main():
             "paired_cluster_bootstrap_95ci": np.quantile(
                 bootstrap[a]["recall"] - bootstrap[b]["recall"], [0.025, 0.975]
             ).tolist(),
+            "abstention_differences": {
+                metric: {
+                    "difference": float(
+                        np.mean(
+                            [
+                                r["abstained"]
+                                for r in rows_by_policy[a]
+                                if r["answerable"] == (metric == "false_abstention_rate")
+                            ]
+                        )
+                    )
+                    - float(
+                        np.mean(
+                            [
+                                r["abstained"]
+                                for r in rows_by_policy[b]
+                                if r["answerable"] == (metric == "false_abstention_rate")
+                            ]
+                        )
+                    ),
+                    "paired_cluster_bootstrap_95ci": np.quantile(
+                        bootstrap[a][metric] - bootstrap[b][metric], [0.025, 0.975]
+                    ).tolist(),
+                }
+                for metric in ("unknown_abstention_rate", "false_abstention_rate")
+            },
         }
         for a, b in pairs
     ]
@@ -343,6 +386,7 @@ def main():
         },
         "usage": read(directory / "usage.json"),
         "runtime": read(directory / "runtime.json"),
+        "answerability_probe": probe_output,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(analysis, indent=2) + "\n", encoding="utf-8", newline="\n")
@@ -357,7 +401,6 @@ def main():
                     for k in [
                         "qwen-base/flat-64/coverage",
                         "cross-encoder-base/flat-64/coverage",
-                        "tacit-4b/flat-64/coverage",
                         "e5-text/coverage",
                     ]
                 },

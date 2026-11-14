@@ -1,0 +1,288 @@
+os-00115	Which environment does get_exec_path consult when no env mapping is supplied?	It uses os.environ.
+os-00355	What must the first argument of os.fdopen be, unlike the first argument of open?	An integer file descriptor.
+os-00696	On macOS and FreeBSD, when does sendfile write its headers and trailers?	Before and after the data read from in_fd.
+os-01045	When does os.mknod use its device argument?	For character or block device nodes; otherwise it is ignored.
+os-01138	When is a scandir iterator closed automatically?	On exhaustion, garbage collection, or an error during iteration.
+os-01205	Can os.stat take an open file descriptor instead of a pathname?	Yes; it accepts an open file descriptor as well as string, bytes, and PathLike paths.
+os-01447	How can code check whether a particular OS function accepts a file descriptor as its path?	Test membership of the function in os.supports_fd.
+os-01570	Is a new descriptor returned by os.eventfd inheritable by default?	No, it is non-inheritable by default.
+os-01761	How do the l and v variants of exec functions receive command-line arguments?	The l variants take separate arguments; v variants take a list or tuple.
+os-01938	What signal mask does a posix_spawn child inherit when setsigmask is omitted?	The parent's signal mask.
+os-02017	Do replacements of sys.stdin affect the subprocess launched by os.system?	No; such changes are not reflected in the executed command's environment.
+os-02143	May waitstatus_to_exitcode be called when WIFSTOPPED(status) is true?	No; the caller must check for that condition first.
+collections-00028	How does ChainMap.new_child isolate updates from parent mappings?	It puts a new mapping first while retaining the current mappings behind it.
+collections-00062	Are zero and negative values allowed as Counter counts?	Yes; counts may be any integer, including zero or negative.
+collections-00084	Does Counter.subtract replace existing counts or subtract from them?	It subtracts counts; both inputs and outputs can be zero or negative.
+collections-00116	Do Counter multiset operations retain zero and negative results?	No; only positive results are emitted.
+collections-00156	What happens to input order when deque.extendleft adds an iterable?	The repeated left appends reverse its order.
+collections-00204	How can deque.rotate help implement slicing?	Rotate the target to the left, remove and add entries, then reverse the rotation.
+collections-00217	How is defaultdict.default_factory called for a missing key?	Without arguments; the result is inserted for the key and returned.
+collections-00243	What string formats can specify namedtuple field names?	Names separated by whitespace, commas, or both.
+collections-00246	Which namedtuple parameters receive defaults when only some defaults are supplied?	The rightmost parameters.
+collections-00301	Since which Python version is insertion order guaranteed for ordinary dictionaries?	Python 3.7.
+collections-00348	Where does UserDict expose the regular dictionary holding its contents?	In its data attribute.
+collections-00358	Does UserList keep the supplied iterable itself as its initial contents?	It initializes its data with a copy, defaulting to an empty list.
+itertools-00045	Which function should accumulate use to compute a running product?	operator.mul.
+itertools-00055	Does itertools.batched consume the entire input before yielding a batch?	No; it consumes only enough to fill a batch and yields lazily.
+itertools-00088	When does itertools.compress stop if its two inputs have different lengths?	When either data or selectors is exhausted.
+itertools-00093	How are the values produced by itertools.count spaced?	They are evenly spaced by step, beginning at start.
+itertools-00109	What does filterfalse retain when its predicate argument is None?	Items whose own truth value is false.
+itertools-00114	Why can itertools.groupby split equal keys into separate groups?	It starts a new group whenever the key changes, unlike SQL aggregation.
+itertools-00132	What does pairwise produce for an input with fewer than two values?	An empty iterator.
+itertools-00140	How many permutations of length r are produced when r exceeds the number of inputs?	Zero.
+itertools-00150	Which input position advances fastest in itertools.product?	The rightmost position.
+itertools-00171	Can the first element failing takewhile's predicate be recovered from the remaining input?	No; takewhile has already consumed it.
+itertools-00183	When can list be faster than tee for splitting an iterator?	When one consumer uses most or all values before another begins.
+itertools-00198	How do the itertools recipes avoid bringing an entire iterable into memory?	They process elements one at a time.
+csv-00012	How should a file passed to csv.reader be opened to let the CSV module handle newlines?	With newline=''.
+csv-00028	Which takes precedence when register_dialect receives both a dialect and formatting keywords?	The formatting keywords override the dialect parameters.
+csv-00046	Does DictReader include the first input row when fieldnames are explicitly provided?	Yes; otherwise the first row supplies names and is omitted from results.
+csv-00058	What happens by default when DictWriter receives a key absent from fieldnames?	It raises ValueError; extrasaction='ignore' skips extra keys.
+csv-00078	What quoting policy is used by csv.unix_dialect?	All fields are quoted, with a newline line terminator.
+csv-00087	How does Sniffer choose between delimiters that fit a sample equally well?	By their order in the preferred attribute, regardless of frequency.
+csv-00108	Under QUOTE_MINIMAL, what kinds of fields are quoted?	Fields containing special delimiter, quote, or line-ending characters.
+csv-00114	Why are bool, Fraction, and IntEnum problematic in QUOTE_NONNUMERIC reader mode?	Their string representations cannot be converted to float.
+csv-00121	How does QUOTE_NOTNULL serialize None?	As an empty unquoted string; other fields are quoted.
+csv-00159	What is the default CSV quote character?	A double quote.
+csv-00202	What does DictWriter.writeheader write?	A row of the constructor's field names, formatted with the current dialect.
+csv-00222	What writing problem can occur on CRLF platforms when newline='' is omitted?	An extra carriage return can be added.
+json-00026	Can the default JSON serializer output also be used as YAML?	Yes; it is a subset of YAML 1.2 and, with default separators, YAML 1.0 and 1.1.
+json-00038	What does json.dump do with non-basic dictionary keys when skipkeys is true?	It skips them instead of raising TypeError.
+json-00041	What happens when allow_nan is false and a non-finite float is serialized?	A ValueError is raised.
+json-00045	What must the default callback for an otherwise unserializable object return?	A JSON-encodable version, or it must raise TypeError.
+json-00061	How is the return value of object_hook used during JSON decoding?	It replaces the decoded dictionary.
+json-00064	What argument is passed to the parse_int callback?	The string representation of each JSON integer.
+json-00078	Which input types can json.loads deserialize?	A str, bytes, or bytearray containing a JSON document.
+json-00111	What two values does JSONDecoder.raw_decode return?	The Python representation and the position where the JSON document ended.
+json-00128	Does ensure_ascii=False permit unescaped control characters in JSON output?	No; quotation marks, backslashes, and required control characters remain escaped.
+json-00131	Why might sort_keys be useful in JSON regression tests?	Sorting keys makes serialized dictionaries easier to compare consistently.
+json-00181	How does the JSON deserializer react to an initial byte order mark?	It raises ValueError.
+json-00188	Which value is retained for a repeated name in a decoded JSON object?	The last name-value pair.
+math-00002	Which module should be used when mathematical functions need complex-number support?	cmath.
+math-00095	Does math.isqrt round the exact square root up or down?	Down, to the greatest integer whose square does not exceed n.
+math-00100	What does math.lcm return when called with no arguments?	One.
+math-00118	Which special method handles math.floor for a non-float object?	__floor__, which should return an Integral value.
+math-00130	How does Python's math.modf return its two results?	As a pair, rather than through a C-style output parameter.
+math-00134	What sign does a zero result from math.remainder have?	The sign of x.
+math-00140	Why do sufficiently large Python floats have no fractional bits?	Their finite precision makes all values of that magnitude exact integers.
+math-00153	Which magnitude determines the relative tolerance used by math.isclose?	The larger absolute value of the two operands.
+math-00155	Does math.isclose consider NaN close to itself?	No.
+math-00210	Why is expm1 preferable to exp(x)-1 for small x?	It avoids the significant precision loss from the subtraction.
+math-00326	Why is erfc useful for large arguments?	It avoids loss of significance from subtracting erf(x) from one.
+math-00353	How should code check whether a value is NaN?	Use isnan instead of identity or equality comparisons.
+statistics-00044	Which measure of central tendency is suggested when outliers make the mean unrepresentative?	The median.
+statistics-00051	Can fmean assign unequal weights to observations?	Yes; it supports optional weights.
+statistics-00084	Does the rectangular KDE kernel give weight to points outside its bandwidth?	No; it only weights points within the bandwidth.
+statistics-00102	What happens when median receives an empty iterable?	It raises StatisticsError.
+statistics-00129	What distribution within an age bin does the grouped-median example assume?	An even distribution across the interval.
+statistics-00136	When several modes have equal frequency, which one does mode return?	The first encountered in the data.
+statistics-00155	What does pvariance calculate when mu is omitted?	It automatically calculates and uses the arithmetic mean.
+statistics-00173	What is the minimum number of observations required by variance?	Two real-valued observations.
+statistics-00191	Can quantiles operate without any data points?	No; it raises StatisticsError.
+statistics-00195	How does the inclusive quantile method treat the minimum and maximum observations?	As the zeroth and hundredth percentiles.
+statistics-00274	What probability does NormalDist.cdf(x) calculate?	The probability that the random variable is less than or equal to x.
+statistics-00293	Can independent normally distributed variables be added using NormalDist objects?	Yes; addition and subtraction of independent normal variables are supported.
+threading-00028	What does current_thread return for a thread created outside the threading module?	A dummy thread object with limited functionality.
+threading-00062	Does threading.enumerate include the main thread after it has terminated?	Yes; the main thread remains included.
+threading-00140	Which Thread methods should a subclass override to define its activity?	Only __init__ and run.
+threading-00195	What is Thread.native_id before the thread starts?	None.
+threading-00227	What does a nonblocking Lock.acquire return when the lock cannot be acquired immediately?	False.
+threading-00247	How many releases must match repeated acquisitions of an RLock?	One release for every acquisition, by the acquiring thread.
+threading-00275	Can several Condition objects share the same lock?	Yes; pass the same lock to them.
+threading-00282	Why must an application recheck its condition after a Condition.wait returns?	The condition that prompted notification may no longer hold.
+threading-00306	What argument does Condition.wait_for repeatedly evaluate?	A callable predicate interpreted as a boolean.
+threading-00324	What happens when Semaphore.acquire finds its counter at zero?	It blocks until another thread releases the semaphore.
+threading-00373	What does Event.wait return when its timeout expires without the flag being set?	False.
+threading-00426	What do lock-like context managers call when entering and leaving a with block?	acquire on entry and release on exit.
+concurrent.futures-00004	What common interface is implemented by the thread and process pool executors?	The abstract Executor interface.
+concurrent.futures-00021	From which moment is an Executor.map timeout measured?	From the original call to Executor.map.
+concurrent.futures-00027	What happens when submit is called after an executor has shut down?	It raises RuntimeError.
+concurrent.futures-00029	Does shutdown(cancel_futures=True) cancel futures that are already running?	No; it only cancels pending futures that have not started.
+concurrent.futures-00031	Does leaving an executor's with block wait for its work to finish?	Yes; shutdown behaves as if wait=True.
+concurrent.futures-00044	What happens to pending jobs when a ThreadPoolExecutor initializer raises an exception?	They raise BrokenThreadPool, as do subsequent submissions.
+concurrent.futures-00058	Should a lambda defined in a REPL be expected to work with ProcessPoolExecutor?	No; pickling restrictions apply.
+concurrent.futures-00062	Which exception follows failure of a ProcessPoolExecutor initializer?	BrokenProcessPool.
+concurrent.futures-00070	What should a multithreaded POSIX application change when fork-based process-pool creation raises a warning?	Use an mp_context configured with a different start method.
+concurrent.futures-00094	What happens if Future.result times out before completion?	It raises TimeoutError.
+concurrent.futures-00099	What does Future.exception return for a call that raised an exception?	The exception raised by the call.
+concurrent.futures-00111	What does a false result from set_running_or_notify_cancel indicate?	The Future was cancelled; waiting threads are notified.
+queue-00002	Does Queue provide the locking needed for safe exchange between threads?	Yes; the class implements the required locking semantics.
+queue-00003	Which kind of queue retrieves the most recently added entry first?	A LIFO queue.
+queue-00012	What does a nonpositive maxsize mean for LifoQueue capacity?	Its size is unbounded.
+queue-00016	Which priority-queue entries are retrieved first?	The lowest-valued entries.
+queue-00041	Does empty() returning false guarantee that the next get will not block?	No.
+queue-00044	Does full() returning false guarantee that the next put will not block?	No.
+queue-00047	What happens when nonblocking Queue.put finds no free slot?	It raises Full and ignores timeout.
+queue-00063	What should a consumer call after finishing a task fetched with get?	Queue.task_done.
+queue-00083	Why does immediate queue shutdown require caution when using join?	It can unblock join without work having been done, breaking the usual completion invariant.
+queue-00078	What happens to put calls after Queue.shutdown?	They raise ShutDown; blocked put callers are also awakened and raise it.
+queue-00096	Why is CPython's SimpleQueue.put appropriate in destructors or weakref callbacks?	Its C implementation is reentrant without deadlocking or corrupting state.
+queue-00102	What does a nonblocking SimpleQueue.get do when no item is available?	It raises Empty and ignores timeout.
+tempfile-00002	Which low-level temporary-file helpers require manual cleanup?	mkstemp and mkdtemp.
+tempfile-00007	May portable code rely on TemporaryFile having a visible filesystem name?	No; naming behavior differs across platforms.
+tempfile-00009	Why does TemporaryFile default to binary mode?	To behave consistently across platforms regardless of stored data.
+tempfile-00023	Does delete_on_close affect NamedTemporaryFile when delete=False?	No; it is ignored.
+tempfile-00030	Why can additional open handles cause NamedTemporaryFile cleanup to fail on Windows?	Handles without delete sharing must close before the context exits, or unlink may raise PermissionError.
+tempfile-00038	What causes SpooledTemporaryFile to move its contents to disk?	Exceeding max_size or calling fileno.
+tempfile-00048	What does TemporaryDirectory remove when its context completes?	The directory and all its contents.
+tempfile-00054	How does ignore_cleanup_errors affect TemporaryDirectory cleanup?	It suppresses cleanup errors and deletes removable items on a best-effort basis.
+tempfile-00055	How can TemporaryDirectory retain its tree after context exit for debugging?	Set delete=False.
+tempfile-00068	Does mkstemp automatically insert a dot before its suffix?	No; the caller must include it in the suffix.
+tempfile-00114	Can tempfile.tempdir be a path-like object?	No; it must be bytes or str when set.
+tempfile-00123	Why is generating a name with mktemp before creating the file insecure?	Another process can create that name during the gap; immediate creation avoids the race.
+enum-00033	Are IntFlag members also integer instances?	Yes.
+enum-00067	Which enum metaclass handles member creation and duplicate values?	EnumType.
+enum-00137	What performance penalty can mutable enum values cause during creation?	A quadratic cost relative to the number of mutable or unhashable values.
+enum-00147	What happens when _order_ disagrees with the actual enumeration order?	An error is raised.
+enum-00227	Does an integer operation preserve an IntEnum member's enumeration status?	No; the resulting value loses that status.
+enum-00234	Is the result of a string operation on StrEnum still an enumeration member?	No.
+enum-00237	How can a StrEnum member be passed to code requiring exact str type?	Convert it with str(member).
+enum-00245	Do bitwise operations on Flag members return members of the enumeration?	Yes; results are members or aliases of members.
+enum-00301	What does inversion of an IntFlag return?	A positive union of the flags absent from the operand.
+enum-00357	Is an enum's member-creating __new__ still used after all members have been created?	No.
+enum-00375	How does auto choose values for Flag and IntFlag?	The first power of two greater than the highest existing value.
+enum-00388	Can an enum property and a same-named member be defined in the same class?	No; they must be defined in separate classes.
+weakref-00004	Does a weak reference by itself keep its referent alive?	No; garbage collection may reclaim it once only weak references remain.
+weakref-00006	What happens to a WeakValueDictionary entry when its value is garbage collected?	The corresponding mapping entry is deleted.
+weakref-00008	Who ensures that a registered finalizer stays alive until its target is collected?	The weakref module manages that lifetime automatically.
+weakref-00010	Are functions written in C among the function objects supporting weak references?	No; Python-written functions are supported, but C functions are excluded from that category.
+weakref-00020	In what order do multiple weak-reference callbacks for the same object run?	Most recently registered first, then older callbacks.
+weakref-00022	What happens if a weak reference is hashed for the first time after its referent was deleted?	TypeError is raised.
+weakref-00028	What does ref.__callback__ return after the referent is no longer alive?	None.
+weakref-00043	When are entries removed from a WeakKeyDictionary?	When no strong reference to the key remains.
+weakref-00049	Why must the result of calling an exposed internal weak reference be checked?	The reference may no longer be live.
+weakref-00074	Can exceptions in finalizer callbacks during garbage collection propagate normally?	No; they are shown on standard error but cannot be propagated.
+weakref-00093	Why should a finalizer callback not be a bound method of its target object?	That would retain a reference to the target and prevent its collection.
+weakref-00148	Is finalizer execution guaranteed when created in a daemon thread as the program exits?	No; it may not run at exit.
+contextlib-00007	What does AbstractContextManager's default __enter__ return?	self.
+contextlib-00023	How can a contextmanager-decorated generator support repeated function calls as a decorator?	A new generator instance is created for every call.
+contextlib-00044	For which resource types is contextlib.closing especially useful?	Third-party types with close methods that lack context-manager support.
+contextlib-00055	What does nullcontext return from __enter__?	The supplied enter_result.
+contextlib-00072	How does suppress handle unsuppressed members of a BaseExceptionGroup?	It re-raises them in a new group produced with derive.
+contextlib-00095	Why is contextlib.chdir unsuitable for most threaded or asynchronous code?	It changes the process-wide working directory.
+contextlib-00132	Are ExitStack callbacks invoked automatically when the stack is garbage collected?	No; closing the stack or leaving its with block invokes them.
+contextlib-00146	What does ExitStack.push assume about an object that is not a context manager?	It is a callback with the signature of __exit__.
+contextlib-00185	What is the primary use of ExitStack with a variable number of resources?	Managing a variable number of context managers and cleanup operations in one with statement.
+contextlib-00206	Can ExitStack.callback be used as a decorator to declare cleanup in advance?	Yes.
+contextlib-00232	Does reentrancy imply thread safety for redirect_stdout?	No; it modifies the global sys.stdout binding.
+contextlib-00238	What happens when the same ExitStack is used in nested with statements?	The innermost exit clears the stack.
+urllib.request-00006	How can the macOS proxy-discovery problem in programs using fork be avoided?	Set the no_proxy environment variable to '*'.
+urllib.request-00023	How is proxy configuration supplied to modern urllib.request instead of the old urlopen dictionary argument?	Using ProxyHandler objects.
+urllib.request-00050	Which proxy environment variable wins if uppercase and lowercase forms disagree?	The lowercase form.
+urllib.request-00061	What Content-Type is added when Request has data but no Content-Type header?	application/x-www-form-urlencoded.
+urllib.request-00088	Where does ProxyHandler obtain Windows proxy settings when proxy environment variables are absent?	The registry's Internet Settings section.
+urllib.request-00112	What interface should ProxyBasicAuthHandler's password manager support?	The HTTPPasswordMgr interface.
+urllib.request-00177	How can a Request constructor override automatic HTTP method selection?	Pass an explicit method argument.
+urllib.request-00228	For which protocols does OpenerDirector.open's timeout feature work?	HTTP, HTTPS, and FTP.
+urllib.request-00269	Which BaseHandler method should a subclass override for otherwise unhandled HTTP errors?	http_error_default.
+urllib.request-00298	How does the default redirect handler handle a POST redirected by a 301 or 302 response?	It follows browser behavior and changes POST to GET.
+urllib.request-00466	Can urlretrieve verify download length when no Content-Length header is supplied?	No; it returns the data without checking its size.
+urllib.request-00480	Which URLopener method is called for an unrecognized scheme?	open_unknown.
+http.client-00002	Which higher-level standard-library module uses http.client for HTTP and HTTPS URLs?	urllib.request.
+http.client-00020	What port does HTTPSConnection use by default?	443.
+http.client-00025	Does HTTPSConnection perform certificate and hostname checks by default?	Yes.
+http.client-00037	Where is the file pointer positioned after parse_headers returns?	Ready to read the HTTP body.
+http.client-00082	What does RemoteDisconnected indicate when getresponse reads no data?	The remote endpoint has closed the connection.
+http.client-00100	What form should the request URL normally take in HTTPConnection.request?	An absolute path, with documented proxy, OPTIONS, and CONNECT exceptions.
+http.client-00104	What does encode_chunked=False assume when Transfer-Encoding is already specified?	The calling code handles the encoding.
+http.client-00108	What should a caller do if the server is not known to support HTTP/1.1 chunked transfer?	Specify Content-Length or supply a string or bytes-like non-file body.
+http.client-00120	Where does positive HTTPConnection debugging output go?	Standard output.
+http.client-00131	Does set_tunnel generate the mandatory Host header when none is provided?	Yes, for its HTTP/1.1 CONNECT request.
+http.client-00160	Why does endheaders ignore empty chunks yielded by an iterator body?	To avoid premature request termination from malformed chunk encoding.
+http.client-00167	Can an HTTPResponse be used in a with statement?	Yes.
+codecs-00002	Are Python codecs restricted to converting text to bytes?	No; text-to-text, bytes-to-bytes, and custom arbitrary-type transformations are supported.
+codecs-00029	Should CodecInfo's encode and decode functions retain state between calls?	No; they are expected to operate statelessly.
+codecs-00077	Does codecs.open automatically convert newline characters when encoding is specified?	No; the underlying file is opened in binary mode without newline conversion.
+codecs-00095	Why is rot_13 unsupported by iterdecode?	iterdecode requires bytes input, while rot_13 is text-to-text.
+codecs-00141	When is a callback registered by register_error invoked?	On an encoding or decoding error when its registered name is selected as the errors parameter.
+codecs-00182	What does Codec.encode return besides the output object?	The length of input consumed.
+codecs-00197	Which codec class supports encoding input across multiple steps?	IncrementalEncoder.
+codecs-00217	Which codec class supports decoding input across multiple steps?	IncrementalDecoder.
+codecs-00271	May StreamReader.read return more decoded data than requested by chars?	No; it may return less but never more.
+codecs-00302	Which side of StreamRecoder uses the Reader and Writer components?	The backend, operating on the underlying stream.
+codecs-00437	Are Python-specific codec names meaningful outside Python?	No; these predefined codec names are specific to Python.
+codecs-00522	How often does a stateful utf_8_sig encoder write a BOM?	Only once, on the first write.
+configparser-00002	What familiar configuration-file structure does ConfigParser resemble?	Windows INI files.
+configparser-00026	Does ConfigParser infer numeric or boolean value types automatically?	No; it stores values as strings.
+configparser-00041	Are INI section names and option keys equally case sensitive by default?	No; section names are case sensitive and option keys are not.
+configparser-00062	How does ExtendedInterpolation refer to an option in another section?	With ${section:option} syntax.
+configparser-00072	What case are option names normally yielded in during section iteration?	Lowercase, after optionxform processing.
+configparser-00101	Are inline comments enabled by default in ConfigParser?	No; whole-line comment prefixes are '#' and ';'.
+configparser-00112	What happens to blank lines when empty lines in values are disallowed?	They split keys instead of continuing multiline values.
+configparser-00139	Which access style is preferred over the legacy get/set API for new projects?	Mapping protocol access.
+configparser-00156	How can ConfigParser interpolation be disabled entirely?	Pass interpolation=None.
+configparser-00188	Which section does has_option assume when its section argument is None or empty?	DEFAULT.
+configparser-00210	How does read_dict handle non-string configuration values?	It automatically converts them to strings.
+configparser-00291	When does a strict parser raise DuplicateOptionError?	When an option occurs twice while reading a single file, string, or dictionary.
+doctest-00002	What does doctest do with text resembling interactive Python sessions?	It executes the sessions and checks their shown results.
+doctest-00036	What does testfile normally display when every example succeeds?	Nothing.
+doctest-00074	Does doctest expand tabs produced by the tested code itself?	No; source tabs are expanded but generated output tabs are not.
+doctest-00120	What does NORMALIZE_WHITESPACE change in output comparison?	Any sequence of whitespace can match any other sequence.
+doctest-00153	How many failing examples can be reported with FAIL_FAST enabled?	At most one; remaining examples are not run.
+doctest-00202	Can testfile's filename be absolute when module_relative=True?	No; it must be a module-relative path using forward slashes.
+doctest-00218	What additional test material can testmod find in a module's __test__ mapping?	Functions, classes, and strings whose docstrings or contents hold examples.
+doctest-00246	What object is passed to DocFileSuite's setUp function?	A DocTest object, with test globals available as globs.
+doctest-00331	What happens to an example option flag not specified in its options dictionary?	It retains the runner's default setting.
+doctest-00366	What does DocTestParser.parse return?	A list alternating Example objects and intervening strings.
+doctest-00478	Which exception does DebugRunner raise when actual output differs from expected output?	DocTestFailure.
+doctest-00523	Can a doctest example contain both expected output and an exception?	No; that combination is unsupported.
+pdb-00018	What facility provides pdb command and argument tab completion?	The readline module.
+pdb-00033	Do assignments made through pdb affect an active optimized scope in Python 3.13?	Yes; they take effect immediately.
+pdb-00043	What does pdb.runcall return after the invoked function finishes?	The function's own return value.
+pdb-00062	How can Pdb be prevented from installing its SIGINT handler?	Set nosigint=True.
+pdb-00082	How are multiple debugger commands separated on one input line?	With a double semicolon.
+pdb-00093	Which help command describes pdb's exclamation-mark command?	help exec.
+pdb-00109	What does the clear command do with a filename:lineno argument?	It clears all breakpoints at that line.
+pdb-00117	What happens when a breakpoint's condition command is given without a condition?	Its existing condition is removed.
+pdb-00125	What does the silent breakpoint command suppress?	The usual message announcing the breakpoint stop.
+pdb-00139	In which frame can the jump command change the next executed line?	Only the bottom-most frame.
+pdb-00179	Do variable assignments in pdb.interact modify the original namespace?	No; it uses a dedicated namespace, although mutations of shared objects still affect them.
+pdb-00206	How can post-mortem debugging switch between chained exceptions?	Use exceptions to list them and exceptions followed by a number to select one.
+sys-00001	Are sys module variables generally writable unless stated otherwise?	No; they are read-only unless explicitly documented otherwise.
+sys-00027	Are the number and types of arguments for a sys.audit event a stable API?	Yes; they should not change between releases.
+sys-00068	Does sys._current_frames require cooperation from deadlocked threads?	No.
+sys-00125	What happens to source-tree __pycache__ directories when pycache_prefix is set?	They are ignored in favor of a parallel cache tree under the prefix.
+sys-00153	Can changes to an exception instance be reflected by later exc_info calls while it is handled?	Yes; type and traceback are derived from the instance.
+sys-00199	Which C header's constants correspond to sys.float_info fields?	float.h.
+sys-00244	Which filename type is recommended for best compatibility?	str, though bytes filenames are supported.
+sys-00286	What does _getframemodulename return when the requested depth exceeds the call stack?	None.
+sys-00374	Does sys.implementation.version necessarily equal the supported Python language version?	No; it identifies the implementation version, which can differ.
+sys-00499	What is platlibdir typically set to on 64-bit Fedora and SuSE?	lib64.
+sys-00652	Does stdlib_module_names list submodules such as email.message?	No; only the main package is listed.
+sys-00712	Does changing sys.winver change the registry keys used by Python?	No; it is informational only.
+functools-00019	When does cached_property run again after caching its value as an attribute?	Only on a lookup when that same-named attribute no longer exists.
+functools-00023	Why does cached_property fail on slots-only instances without __dict__?	It needs a mutable instance __dict__ mapping.
+functools-00029	What conversion does cmp_to_key perform?	It turns an old-style comparison function into a key function.
+functools-00038	What repeated work can lru_cache avoid?	Recomputing expensive or I/O-bound calls with the same arguments.
+functools-00046	What does lru_cache(typed=True) do with arguments of different types?	It caches them separately.
+functools-00048	Does mutating the dictionary returned by cache_parameters change the cache settings?	No; it is informational only.
+functools-00055	Why should functions creating distinct mutable objects not generally be LRU-cached?	The cache reuses previous values rather than producing a new object on each call.
+functools-00071	What can improve performance if total_ordering's derived comparisons are a bottleneck?	Implement all six rich comparison methods directly.
+functools-00080	What does partial freeze to produce a simplified callable?	Some positional arguments or keyword arguments of a function.
+functools-00087	Where is self inserted when partialmethod wraps a non-descriptor callable?	As the first positional argument, before the supplied partial arguments.
+functools-00133	Where must singledispatchmethod appear when stacked with classmethod to allow register?	As the outermost decorator.
+functools-00140	Which attribute does update_wrapper add to expose the original function?	__wrapped__.
+shutil-00012	Does shutil.copyfile copy file metadata as well as contents?	No; it copies contents only.
+shutil-00030	Does copymode change file contents, owner, or group?	No; it copies permission bits only.
+shutil-00048	What name does shutil.copy use when the destination is a directory?	The source file's base filename.
+shutil-00058	Does copy2 raise an exception solely because some metadata cannot be preserved?	No; it preserves what the platform permits.
+shutil-00071	What does copytree do with symbolic links when symlinks=True?	It recreates them as links, preserving their metadata as supported.
+shutil-00075	What arguments are passed to a custom copytree copy_function?	The source and destination paths.
+shutil-00084	May rmtree's top-level path be a symbolic link to a directory?	No; it must point to a directory itself.
+shutil-00098	Does Python 3.13 rmtree ignore FileNotFoundError for a missing top-level path?	No; the exception is ignored only below the top level.
+shutil-00118	In what units are disk_usage's total, used, and free values returned?	Bytes.
+shutil-00140	Which Windows environment variable helps shutil.which find commands lacking an extension?	PATHEXT.
+shutil-00176	Relative to what must make_archive's base_dir be given?	root_dir.
+shutil-00259	What terminal-size fallback is used by default when querying fails?	80 columns and 24 lines.
+random-00005	Is the default Mersenne Twister generator suitable for cryptographic purposes?	No; it is deterministic and unsuitable for cryptography.
+random-00015	How can free-threaded programs avoid contention on a shared Random instance?	Use a separate Random instance per thread.
+random-00031	Where should the state argument for random.setstate come from?	A prior call to getstate.
+random-00062	Why can supplying cum_weights to choices save work?	It avoids converting relative weights to cumulative weights.
+random-00064	What happens when every weight passed to choices is zero?	ValueError is raised.
+random-00072	Can every permutation of an arbitrarily long sequence be generated by Mersenne Twister?	No; the permutation count can exceed the generator's period.
+random-00079	How can sample represent repeated population elements without expanding them explicitly?	Use its counts keyword argument.
+random-00110	How is expovariate's lambd related to the desired mean?	It is the reciprocal of the mean and must be nonzero.
+random-00120	Can simultaneous gauss calls from two threads produce the same value?	Yes; use separate generators, locks, or normalvariate to avoid that issue.
+random-00131	What distribution does vonmisesvariate produce when kappa is zero?	A uniform random angle from zero to two pi.
+random-00165	Does calling SystemRandom.seed make its sequence reproducible?	No; seed is ignored and sequences are not reproducible.
+random-00192	Can random() produce every representable float between zero and one?	No; it returns only evenly spaced multiples of two to the power minus 53.

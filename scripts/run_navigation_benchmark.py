@@ -30,6 +30,13 @@ def main():
     config = json.loads(args.config.read_text(encoding="utf-8"))
     manifest, trees, queries = load_corpus(Path(config["dataset"]))
     source = json.loads(Path(config["scorer_config"]).read_text(encoding="utf-8"))
+    if config.get("answerability_history"):
+        from arborvault.answerability import historical_examples, validate_partitions
+
+        history, locks = historical_examples(config["answerability_history"])
+        validate_partitions(history, queries)
+        if locks != config["history_locks"]:
+            raise ValueError("Historical inputs changed before inference")
     args.output.mkdir(parents=True, exist_ok=False)
     save(
         args.output / "plan.json",
@@ -75,8 +82,13 @@ def main():
     qt = AutoTokenizer.from_pretrained(
         recipe["base_model"], revision=recipe["base_revision"], trust_remote_code=False
     )
-    tt = AutoTokenizer.from_pretrained(
-        config["tacit_model"], revision=config["tacit_revision"], trust_remote_code=False
+    models = config.get("models", ["qwen-base", "tacit-4b", "cross-encoder-base"])
+    tt = (
+        AutoTokenizer.from_pretrained(
+            config["tacit_model"], revision=config["tacit_revision"], trust_remote_code=False
+        )
+        if "tacit-4b" in models
+        else qt
     )
     ct = AutoTokenizer.from_pretrained(
         source["cross_encoder"], revision=source["cross_encoder_revision"]
@@ -155,17 +167,19 @@ def main():
         }
         save(args.output / "usage.json", usage)
 
-    for label, current in [
-        ("qwen-base", recipe),
-        (
-            "tacit-4b",
-            {
-                **recipe,
-                "base_model": config["tacit_model"],
-                "base_revision": config["tacit_revision"],
-            },
-        ),
-    ]:
+    recipes = [("qwen-base", recipe)]
+    if "tacit-4b" in models:
+        recipes.append(
+            (
+                "tacit-4b",
+                {
+                    **recipe,
+                    "base_model": config["tacit_model"],
+                    "base_revision": config["tacit_revision"],
+                },
+            )
+        )
+    for label, current in recipes:
         log(stage="load_model", variant=label)
         model, tokenizer = load_model(current)
         infer(DecisionScorer(model, tokenizer, config["qwen_batch_size"]), label)
@@ -233,6 +247,23 @@ def main():
         "indexed_passages": sum(len(i.leaves) for i in indexes.values()),
     }
     save(args.output / "usage.json", usage)
+    if config.get("answerability_history"):
+        from arborvault.answerability import extract_probe_features
+
+        del encoder
+        gc.collect()
+        torch.cuda.empty_cache()
+        log(stage="probe_features")
+        begin = time.monotonic()
+        model = AutoModelForSequenceClassification.from_pretrained(
+            source["cross_encoder"], revision=source["cross_encoder_revision"]
+        ).to("cuda")
+        usage["answerability_probe"] = {
+            **extract_probe_features(config, args.output, trees, queries, model, ct, deadline),
+            "seconds": time.monotonic() - begin,
+            "extra_forwards_per_deployed_gate": 1,
+        }
+        save(args.output / "usage.json", usage)
     save(args.output / "runtime.json", {"complete": True, "seconds": time.monotonic() - started})
     log(stage="complete")
     save(

@@ -1,0 +1,12 @@
+{
+  "previous_corpora": [
+    "long-manuals-v1",
+    "navigation-v2"
+  ],
+  "documents_disjoint": true,
+  "exact_question_overlap": 0,
+  "exact_target_overlap_prior_passages_at_least_30_words": 0,
+  "pretraining_exposure": "unknown",
+  "selection": "Twelve source-grounded questions authored from sixteen uniformly spaced eligible paragraphs inspected per document. No test model outputs used.",
+  "label_quality": "Assistant-authored synthetic; no independent human adjudication. Cross-document negatives repeat positive questions within their split, and are not independent texts."
+}

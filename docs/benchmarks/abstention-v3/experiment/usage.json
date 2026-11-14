@@ -1,0 +1,26 @@
+{
+  "qwen-base": {
+    "seconds": 2464.847297709901,
+    "unique_pairs": 84755,
+    "tokens": 21255588,
+    "shortened_pairs": 681,
+    "timing_scope": "All policies with shared score caches; not isolated per-policy latency"
+  },
+  "cross-encoder-base": {
+    "seconds": 138.80590983992442,
+    "unique_pairs": 83101,
+    "tokens": 14630634,
+    "shortened_pairs": 682,
+    "timing_scope": "All policies with shared score caches; not isolated per-policy latency"
+  },
+  "e5-text": {
+    "seconds": 11.799031340051442,
+    "indexed_passages": 7871
+  },
+  "answerability_probe": {
+    "unique_forwards": 4546,
+    "tokens": 1031891,
+    "seconds": 14.645588750950992,
+    "extra_forwards_per_deployed_gate": 1
+  }
+}

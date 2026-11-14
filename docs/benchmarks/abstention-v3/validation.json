@@ -1,0 +1,23 @@
+{
+  "inference_source_revision": "db5bb7362149d1511f8d67c4033d9292f30d3253",
+  "local_full_suite": {"passed": 129, "optional_skipped": 6, "seconds": 44.96},
+  "gpu_setup": {
+    "pip_check_passed": true,
+    "tests": ["test_answerability.py", "test_budget_navigation.py", "test_long_benchmark.py", "test_candidate_scoring.py"],
+    "passed": 37,
+    "seconds": 11.14,
+    "source_files_verified_against_git_blobs": 186
+  },
+  "inference_source_ci": {
+    "conclusion": "success",
+    "url": "https://github.com/BVGAL/arborvault/actions/runs/43601778264"
+  },
+  "feature_compatibility_repair": {
+    "revision": "dfd52f62b3a6bf030c08a2fe18e09f68d96de5a6",
+    "passed": 39,
+    "seconds": 13.71,
+    "real_cached_tokenizer_cases": ["long context preserves the question and exact retained prefix", "empty context uses native question-only encoding", "padding produces the expected tensors"],
+    "retrieval_rerun": false
+  },
+  "scope": "Original full suite and CI precede retrieval; 39 GPU tests verify the feature compatibility repair. Final publication CI is available in GitHub Actions."
+}

@@ -1,5 +1,20 @@
 # Evaluation protocol
 
+## Expanded validation and abstention
+
+The [abstention v3 report](abstention-v3-results.md) evaluates the frozen
+navigation policies on 20 new Python manuals: 240 answerable and 240 unknown
+cases (400 distinct texts), with four new calibration manuals. A small linear
+probe uses a frozen cross-encoder representation; fitting and regularization
+selection use disjoint historical documents. A raw-plus-question-only control checks
+whether improvements primarily exploit synthetic question style. Both false
+rejections and unknown rejection are reported, with nine-family paired
+bootstrap intervals. See the [protocol](abstention-v3-protocol.md) and
+[dataset card](../datasets/abstention-v3/README.md). This remains known-document,
+single-domain retrieval with synthetic labels and unknown pretraining exposure.
+The test is now observed; subsequent tuning needs a fresh evaluation.
+
+
 ## Navigation v2: retained alternatives and an open decision model
 
 The [navigation report](navigation-v2-results.md) compares Qwen3-4B, pretrained

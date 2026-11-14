@@ -1,0 +1,314 @@
+{
+  "lowest_positive_probe_scores": [
+    {
+      "id": "a-shutil-00048",
+      "question": "In shutil, what name does shutil.copy use when the destination is a directory?",
+      "answerable": true,
+      "context_probe": 0.44141377312375885,
+      "raw_score": 5.402863502502441,
+      "raw_accepts": true,
+      "truncated": false,
+      "retrieval_recall": 0.0,
+      "returned_context": [
+        "If copy_function is given, it must be a callable that takes two arguments, src and the destination, and will be used to copy src to the destination if os.rename() cannot be used. If the source is a directory, copytree() is called, passing it the copy_function . The default copy_function is copy2() . Using copy() as the copy_function allows the move to succeed when it is not possible to also copy the metadata, at the expense of not copying any of the metadata.",
+        "os.rename() is preferably used internally when src and the destination are on the same filesystem. In case os.rename() fails due to OSError (e.g. the user has write permission to the destination file but not to its parent directory), this method falls back to using copy_function , in which case src is copied to the destination using copy_function and then removed.",
+        "Recursively copy an entire directory tree rooted at src to a directory named dst and return the destination directory. All intermediate directories needed to contain dst will also be created by default.",
+        "If copy_function is given, it must be a callable that will be used to copy each file. It will be called with the source path and the destination path as arguments. By default, copy2() is used, but any function that supports the same signature (like copy() ) can be used.",
+        "This exception is raised if source and destination in copyfile() are the same file."
+      ],
+      "gold_passages": [
+        [
+          "Copies the file src to the file or directory dst . src and dst should be path-like objects or strings. If dst specifies a directory, the file will be copied into dst using the base filename from src . If dst specifies a file that already exists, it will be replaced. Returns the path to the newly created file."
+        ]
+      ]
+    },
+    {
+      "id": "a-sys-00001",
+      "question": "In sys, are sys module variables generally writable unless stated otherwise?",
+      "answerable": true,
+      "context_probe": 0.6071670067155102,
+      "raw_score": 3.588934898376465,
+      "raw_accepts": true,
+      "truncated": false,
+      "retrieval_recall": 1.0,
+      "returned_context": [
+        "This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter. It is always available. Unless explicitly noted otherwise, all variables are read-only.",
+        "It is the same on all platforms. Modules which are not available on some platforms and modules disabled at Python build are also listed. All module kinds are listed: pure Python, built-in, frozen and extension modules. Test modules are excluded.",
+        "Return True if the given string is \u201cinterned\u201d, False otherwise.",
+        "A frozenset of strings containing the names of standard library modules.",
+        "Return the name of a module from the call stack. If optional integer depth is given, return the module that many calls below the top of the stack. If that is deeper than the call stack, or if the module is unidentifiable, None is returned. The default for depth is zero, returning the module at the top of the call stack."
+      ],
+      "gold_passages": [
+        [
+          "This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter. It is always available. Unless explicitly noted otherwise, all variables are read-only."
+        ]
+      ]
+    },
+    {
+      "id": "a-functools-00038",
+      "question": "In functools, what repeated work can lru_cache avoid?",
+      "answerable": true,
+      "context_probe": 0.7623455573139403,
+      "raw_score": 1.778898000717163,
+      "raw_accepts": true,
+      "truncated": false,
+      "retrieval_recall": 0.0,
+      "returned_context": [
+        "An LRU (least recently used) cache works best when the most recent calls are the best predictors of upcoming calls (for example, the most popular articles on a news server tend to change each day). The cache\u2019s size limit assures that the cache does not grow without bound on long-running processes such as web servers.",
+        "If maxsize is set to None , the LRU feature is disabled and the cache can grow without bound.",
+        "In general, the LRU cache should only be used when you want to reuse previously computed values. Accordingly, it doesn\u2019t make sense to cache functions with side-effects, functions that need to create distinct mutable objects on each call (such as generators and async functions), or impure functions such as time() or random().",
+        "The cache is threadsafe so that the wrapped function can be used in multiple threads. This means that the underlying data structure will remain coherent during concurrent updates.",
+        "Returns the same as lru_cache(maxsize=None) , creating a thin wrapper around a dictionary lookup for the function arguments. Because it never needs to evict old values, this is smaller and faster than @lru_cache with a size limit."
+      ],
+      "gold_passages": [
+        [
+          "Decorator to wrap a function with a memoizing callable that saves up to the maxsize most recent calls. It can save time when an expensive or I/O bound function is periodically called with the same arguments."
+        ]
+      ]
+    },
+    {
+      "id": "a-random-00064",
+      "question": "In random, what happens when every weight passed to choices is zero?",
+      "answerable": true,
+      "context_probe": 0.837078771209393,
+      "raw_score": 3.105154514312744,
+      "raw_accepts": true,
+      "truncated": false,
+      "retrieval_recall": 1.0,
+      "returned_context": [
+        "Changed in version 3.9: Raises a ValueError if all weights are zero.",
+        "The weights or cum_weights can use any numeric type that interoperates with the float values returned by random() (that includes integers, floats, and fractions but excludes decimals). Weights are assumed to be non-negative and finite. A ValueError is raised if all weights are zero.",
+        "If neither weights nor cum_weights are specified, selections are made with equal probability. If a weights sequence is supplied, it must be the same length as the population sequence. It is a TypeError to specify both weights and cum_weights .",
+        "For a given seed, the choices() function with equal weighting typically produces a different sequence than repeated calls to choice() . The algorithm used by choices() uses floating-point arithmetic for internal consistency and speed. The algorithm used by choice() defaults to integer arithmetic with repeated selections to avoid small biases from round-off error.",
+        "If a weights sequence is specified, selections are made according to the relative weights. Alternatively, if a cum_weights sequence is given, the selections are made according to the cumulative weights (perhaps computed using itertools.accumulate() ). For example, the relative weights [10, 5, 30, 5] are equivalent to the cumulative weights [10, 15, 45, 50] . Internally, the relative weights are converted to cumulative weights before making selections, so supplying the cumulative weights saves work."
+      ],
+      "gold_passages": [
+        [
+          "The weights or cum_weights can use any numeric type that interoperates with the float values returned by random() (that includes integers, floats, and fractions but excludes decimals). Weights are assumed to be non-negative and finite. A ValueError is raised if all weights are zero."
+        ]
+      ]
+    },
+    {
+      "id": "a-sys-00499",
+      "question": "In sys, what is platlibdir typically set to on 64-bit Fedora and SuSE?",
+      "answerable": true,
+      "context_probe": 0.8684122420341815,
+      "raw_score": 3.6461362838745117,
+      "raw_accepts": true,
+      "truncated": false,
+      "retrieval_recall": 1.0,
+      "returned_context": [
+        "It is equal to \"lib\" on most platforms. On Fedora and SuSE, it is equal to \"lib64\" on 64-bit platforms which gives the following sys.path paths (where X.Y is the Python major.minor version):",
+        "/usr/lib/pythonX.Y/site-packages/ (always use lib , not sys.platlibdir ): Third-party modules",
+        "sys. platlibdir",
+        "Added in version 3.9.",
+        "Name of the platform-specific library directory. It is used to build the path of standard library and the paths of installed extension modules."
+      ],
+      "gold_passages": [
+        [
+          "It is equal to \"lib\" on most platforms. On Fedora and SuSE, it is equal to \"lib64\" on 64-bit platforms which gives the following sys.path paths (where X.Y is the Python major.minor version):"
+        ]
+      ]
+    }
+  ],
+  "unknowns_remaining_after_raw": [
+    {
+      "id": "u-functools-02",
+      "question": "In functools, which types are registered on the service's dispatch function?",
+      "answerable": false,
+      "context_probe": 0.49836416218228885,
+      "raw_score": 3.28246808052063,
+      "raw_accepts": true,
+      "truncated": false,
+      "retrieval_recall": null,
+      "returned_context": [
+        "To check which implementation the generic function will choose for a given type, use the dispatch() attribute:",
+        "At runtime the function will dispatch on an instance of a list regardless of the type contained within the list i.e. [1,2,3] will be dispatched the same as [\"foo\", \"bar\", \"baz\"] . The annotation provided in this example is for static type checkers only and has no runtime impact.",
+        "For code that dispatches on a collections type (e.g., list ), but wants to typehint the items of the collection (e.g., list[int] ), the dispatch type should be passed explicitly to the decorator itself with the typehint going into the function definition:",
+        "Transform a method into a single-dispatch generic function .",
+        "Where there is no registered implementation for a specific type, its method resolution order is used to find a more generic implementation. The original function decorated with @singledispatch is registered for the base object type, which means it is used if no better implementation is found."
+      ],
+      "gold_passages": []
+    },
+    {
+      "id": "u-sys-02",
+      "question": "In sys, which arguments were passed to the currently running application?",
+      "answerable": false,
+      "context_probe": 0.5450103375576314,
+      "raw_score": 2.8272480964660645,
+      "raw_accepts": true,
+      "truncated": false,
+      "retrieval_recall": null,
+      "returned_context": [
+        "The list of the original command line arguments passed to the Python executable.",
+        "On Unix, command line arguments are passed by bytes from OS. Python decodes them with filesystem encoding and \u201csurrogateescape\u201d error handler. When you need original bytes, you can get it by [os.fsencode(arg) for arg in sys.argv] .",
+        "The list of command line arguments passed to a Python script. argv[0] is the script name (it is operating system dependent whether this is a full pathname or not). If the command was executed using the -c command line option to the interpreter, argv[0] is set to the string '-c' . If no script name was passed to the Python interpreter, argv[0] is the empty string.",
+        "Raises an auditing event sys._current_exceptions with no arguments.",
+        "An object containing information about the implementation of the currently running Python interpreter. The following attributes are required to exist in all Python implementations."
+      ],
+      "gold_passages": []
+    },
+    {
+      "id": "u-sys-03",
+      "question": "In sys, what trace function is installed in the active process?",
+      "answerable": false,
+      "context_probe": 0.5617668934087113,
+      "raw_score": 2.657742977142334,
+      "raw_accepts": true,
+      "truncated": false,
+      "retrieval_recall": null,
+      "returned_context": [
+        "For more fine-grained usage, it\u2019s possible to set a trace function by assigning frame.f_trace = tracefunc explicitly, rather than relying on it being set indirectly via the return value from an already installed trace function. This is also required for activating the trace function on the current frame, which settrace() doesn\u2019t do. Note that in order for this to work, a global tracing function must have been installed with settrace() in order to enable the runtime tracing machinery, but it doesn\u2019t need to be the same tracing function (e.g. it could be a low overhead tracing function that simply returns None to disable itself immediately on each frame).",
+        "The trace function is invoked (with event set to 'call' ) whenever a new local scope is entered; it should return a reference to a local trace function to be used for the new scope, or None if the scope shouldn\u2019t be traced.",
+        "Set the system\u2019s trace function, which allows you to implement a Python source code debugger in Python. The function is thread-specific; for a debugger to support multiple threads, it must register a trace function using settrace() for each thread being debugged or use threading.settrace() .",
+        "Tracing is disabled while calling the trace function (e.g. a function set by settrace() ). For recursive tracing see call_tracing() .",
+        "An exception has occurred. The local trace function is called; arg is a tuple (exception, value, traceback) ; the return value specifies the new local trace function."
+      ],
+      "gold_passages": []
+    },
+    {
+      "id": "n-functools-03",
+      "question": "In functools, how is functools.debounce configured before its first use?",
+      "answerable": false,
+      "context_probe": 0.5739741437321725,
+      "raw_score": 2.367135524749756,
+      "raw_accepts": true,
+      "truncated": false,
+      "retrieval_recall": null,
+      "returned_context": [
+        "When func is a non-descriptor callable, an appropriate bound method is created dynamically. This behaves like a normal Python function when used as a method: the self argument will be inserted as the first positional argument, even before the args and keywords supplied to the partialmethod constructor.",
+        "When called, the generic function dispatches on the type of the first argument:",
+        "To add overloaded implementations to the function, use the register() attribute of the generic function, which can be used as a decorator. For functions annotated with types, the decorator will infer the type of the first argument automatically:",
+        "It is possible for the wrapped function to be called more than once if another thread makes an additional call before the initial call has been completed and cached.",
+        "It is possible for the wrapped function to be called more than once if another thread makes an additional call before the initial call has been completed and cached."
+      ],
+      "gold_passages": []
+    },
+    {
+      "id": "u-shutil-03",
+      "question": "In shutil, which files were excluded by the project's copytree ignore callback?",
+      "answerable": false,
+      "context_probe": 0.6000194094834317,
+      "raw_score": 3.477799892425537,
+      "raw_accepts": true,
+      "truncated": false,
+      "retrieval_recall": null,
+      "returned_context": [
+        "If ignore is given, it must be a callable that will receive as its arguments the directory being visited by copytree() , and a list of its contents, as returned by os.listdir() . Since copytree() is called recursively, the ignore callable will be called once for each directory that is copied. The callable must return a sequence of directory and file names relative to the current directory (i.e. a subset of the items in its second argument); these names will then be ignored in the copy process. ignore_patterns() can be used to create such a callable that ignores names based on glob-style patterns.",
+        "This factory function creates a function that can be used as a callable for copytree() 's ignore argument, ignoring files and directories that match one of the glob-style patterns provided. See the example below.",
+        "When symlinks is false, if the file pointed to by the symlink doesn\u2019t exist, an exception will be added in the list of errors raised in an Error exception at the end of the copy process. You can set the optional ignore_dangling_symlinks flag to true if you want to silence this exception. Notice that this option has no effect on platforms that don\u2019t support os.symlink() .",
+        "If copy_function is given, it must be a callable that will be used to copy each file. It will be called with the source path and the destination path as arguments. By default, copy2() is used, but any function that supports the same signature (like copy() ) can be used.",
+        "Raises an auditing event shutil.copytree with arguments src , dst ."
+      ],
+      "gold_passages": []
+    },
+    {
+      "id": "n-functools-01",
+      "question": "In functools, which arguments and return value does functools.async_lru_cache provide?",
+      "answerable": false,
+      "context_probe": 0.7341692394014571,
+      "raw_score": 5.316746234893799,
+      "raw_accepts": true,
+      "truncated": false,
+      "retrieval_recall": null,
+      "returned_context": [
+        "The cache keeps references to the arguments and return values until they age out of the cache or until the cache is cleared.",
+        "Returns the same as lru_cache(maxsize=None) , creating a thin wrapper around a dictionary lookup for the function arguments. Because it never needs to evict old values, this is smaller and faster than @lru_cache with a size limit.",
+        "In general, the LRU cache should only be used when you want to reuse previously computed values. Accordingly, it doesn\u2019t make sense to cache functions with side-effects, functions that need to create distinct mutable objects on each call (such as generators and async functions), or impure functions such as time() or random().",
+        "@lru_cache ( maxsize = None ) def fib ( n ): if n < 2 : return n return fib ( n - 1 ) + fib ( n - 2 ) >>> [ fib ( n ) for n in range ( 16 )] [ 0 , 1 , 1 , 2 , 3 , 5 , 8 , 13 , 21 , 34 , 55 , 89 , 144 , 233 , 377 , 610 ] >>> fib . cache_info () CacheInfo ( hits = 28 , misses = 16 , maxsize = None , currsize = 16 )",
+        "Note, type specificity applies only to the function\u2019s immediate arguments rather than their contents. The scalar arguments, Decimal(42) and Fraction(42) are treated as distinct calls with distinct results. In contrast, the tuple arguments ('answer', Decimal(42)) and ('answer', Fraction(42)) are treated as equivalent."
+      ],
+      "gold_passages": []
+    },
+    {
+      "id": "n-shutil-02",
+      "question": "In shutil, what exceptions does shutil.atomic_copytree raise when an operation fails?",
+      "answerable": false,
+      "context_probe": 0.7467753281148157,
+      "raw_score": 4.71903657913208,
+      "raw_accepts": true,
+      "truncated": false,
+      "retrieval_recall": null,
+      "returned_context": [
+        "This exception is raised when copyfile() or copytree() attempt to copy a named pipe.",
+        "This exception collects exceptions that are raised during a multi-file operation. For copytree() , the exception argument is a list of 3-tuples ( srcname , dstname , exception ).",
+        "The first parameter, function , is the function which raised the exception; it depends on the platform and implementation. The second parameter, path , will be the path name passed to function . The third parameter, excinfo , is the exception that was raised. Exceptions raised by onexc will not be caught.",
+        "When symlinks is false, if the file pointed to by the symlink doesn\u2019t exist, an exception will be added in the list of errors raised in an Error exception at the end of the copy process. You can set the optional ignore_dangling_symlinks flag to true if you want to silence this exception. Notice that this option has no effect on platforms that don\u2019t support os.symlink() .",
+        "If exception(s) occur, an Error is raised with a list of reasons."
+      ],
+      "gold_passages": []
+    },
+    {
+      "id": "u-shutil-02",
+      "question": "In shutil, what destination did the last application copy operation use?",
+      "answerable": false,
+      "context_probe": 0.7780514038005236,
+      "raw_score": 2.874375820159912,
+      "raw_accepts": true,
+      "truncated": false,
+      "retrieval_recall": null,
+      "returned_context": [
+        "If the fast-copy operation fails and no data was written in the destination file then shutil will silently fall back to less efficient copyfileobj() function internally.",
+        "If copy_function is given, it must be a callable that takes two arguments, src and the destination, and will be used to copy src to the destination if os.rename() cannot be used. If the source is a directory, copytree() is called, passing it the copy_function . The default copy_function is copy2() . Using copy() as the copy_function allows the move to succeed when it is not possible to also copy the metadata, at the expense of not copying any of the metadata.",
+        "os.rename() is preferably used internally when src and the destination are on the same filesystem. In case os.rename() fails due to OSError (e.g. the user has write permission to the destination file but not to its parent directory), this method falls back to using copy_function , in which case src is copied to the destination using copy_function and then removed.",
+        "If copy_function is given, it must be a callable that will be used to copy each file. It will be called with the source path and the destination path as arguments. By default, copy2() is used, but any function that supports the same signature (like copy() ) can be used.",
+        "Copy the permission bits, last access time, last modification time, and flags from src to dst . On Linux, copystat() also copies the \u201cextended attributes\u201d where possible. The file contents, owner, and group are unaffected. src and dst are path-like objects or path names given as strings."
+      ],
+      "gold_passages": []
+    },
+    {
+      "id": "u-functools-04",
+      "question": "In functools, what maxsize was selected for the application's lookup cache?",
+      "answerable": false,
+      "context_probe": 0.8031637861766362,
+      "raw_score": 4.467983245849609,
+      "raw_accepts": true,
+      "truncated": false,
+      "retrieval_recall": null,
+      "returned_context": [
+        "Returns the same as lru_cache(maxsize=None) , creating a thin wrapper around a dictionary lookup for the function arguments. Because it never needs to evict old values, this is smaller and faster than @lru_cache with a size limit.",
+        "If user_function is specified, it must be a callable. This allows the lru_cache decorator to be applied directly to a user function, leaving the maxsize at its default value of 128:",
+        "If maxsize is set to None , the LRU feature is disabled and the cache can grow without bound.",
+        "@ functools. lru_cache ( user_function )",
+        "Added in version 3.2."
+      ],
+      "gold_passages": []
+    },
+    {
+      "id": "u-functools-03",
+      "question": "In functools, what arguments are frozen in the worker's current partial object?",
+      "answerable": false,
+      "context_probe": 0.8285232311152524,
+      "raw_score": 3.533398151397705,
+      "raw_accepts": true,
+      "truncated": false,
+      "retrieval_recall": null,
+      "returned_context": [
+        "The partial() is used for partial function application which \u201cfreezes\u201d some portion of a function\u2019s arguments and/or keywords resulting in a new object with a simplified signature. For example, partial() can be used to create a callable that behaves like the int() function where the base argument defaults to two:",
+        "The keyword arguments that will be supplied when the partial object is called.",
+        "Return a new partial object which when called will behave like func called with the positional arguments args and keyword arguments keywords . If more arguments are supplied to the call, they are appended to args . If additional keyword arguments are supplied, they extend and override keywords . Roughly equivalent to:",
+        "The leftmost positional arguments that will be prepended to the positional arguments provided to a partial object call.",
+        "A callable object or function. Calls to the partial object will be forwarded to func with new arguments and keywords."
+      ],
+      "gold_passages": []
+    },
+    {
+      "id": "n-sys-02",
+      "question": "In sys, what exceptions does sys.set_memory_limit raise when an operation fails?",
+      "answerable": false,
+      "context_probe": 0.934250661137807,
+      "raw_score": 3.207658290863037,
+      "raw_accepts": true,
+      "truncated": false,
+      "retrieval_recall": null,
+      "returned_context": [
+        "If the new limit is too low at the current recursion depth, a RecursionError exception is raised.",
+        "Changed in version 3.5.1: A RecursionError exception is now raised if the new limit is too low at the current recursion depth.",
+        "sys.audit() will call the existing auditing hooks, passing the event name and arguments, and will re-raise the first exception from any hook. In general, if an exception is raised, it should not be handled and the process should be terminated as quickly as possible. This allows hook implementations to decide how to respond to particular events: they can merely log the event or abort the operation by raising an exception.",
+        "Raises an auditing event sys._current_exceptions with no arguments.",
+        "Raise an auditing event sys.excepthook with arguments hook , type , value , traceback when an uncaught exception occurs. If no hook has been set, hook may be None . If any hook raises an exception derived from RuntimeError the call to the hook will be suppressed. Otherwise, the audit hook exception will be reported as unraisable and sys.excepthook will be called."
+      ],
+      "gold_passages": []
+    }
+  ]
+}

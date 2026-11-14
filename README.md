@@ -8,7 +8,24 @@ ArborVault stores document hierarchies in PostgreSQL and returns source-backed s
 through a small HTTP API. Use it as an experimental retrieval component in an agent or
 RAG pipeline. The framework-neutral API supports reusable integrations with any AI agent.
 
-**Latest: budgeted navigation and Tacit comparison.** A frozen test on six new
+**Latest: expanded navigation and abstention validation.** A frozen test on 20
+new Python manuals contains 240 answerable and 240 unknown cases, with four
+separate new calibration manuals. Historical documents fit and select a small
+acceptance probe over a frozen MiniLM cross-encoder. For guided cross-encoder
+retrieval, ungated evidence recall is **95.42%**, matching its flat baseline;
+Qwen guided reaches **89.58%** and full-leaf E5 **90.83%**. For cross-encoder
+retrieval, the conservative raw gate rejects **157/240** unknowns and
+**7/240** answerable cases; the joint context probe rejects
+**157/240** and **7/240**, respectively. A raw-plus-question-only control
+rejects **186/240** unknowns and **27/240** answerable cases.
+The new conservative context gate is inactive after calibration: the primary
+abstention result is null. The balanced setting shows an uncertain tradeoff.
+All tradeoffs, Qwen/E5 controls and uncertainty are in the
+[full report](docs/abstention-v3-results.md) and
+[frozen protocol](docs/abstention-v3-protocol.md). Annotations are synthetic;
+this remains a single-domain study with no production-default change.
+
+**Previous: budgeted navigation and Tacit comparison.** A frozen test on six new
 Python manuals compares Qwen3-4B, a pretrained cross-encoder and Tacit-4B with the
 same 64/128 candidate-evaluation limits. At 64 pairs, lexical-assisted tree recall
 is **0.9375**, **0.9583** and **0.9167**, respectively;

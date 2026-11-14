@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+- Fix verifier pair tokenization for Transformers 5. Add pinned real-tokenizer
+  regression checks and a feature-only recovery command with source and artifact
+  provenance. All 39 targeted GPU-environment tests pass; retrieval outputs remain
+  byte-identical across the compatibility repair.
+
+- Validate the frozen 64-pair navigation policies on 20 unseen manuals with 480
+  test cases, plus four disjoint calibration manuals; compare Qwen base, MiniLM
+  cross-encoder and full-leaf E5 with paired family-bootstrap intervals.
+- Add a frozen-encoder linear acceptance probe, historical document-separated
+  fitting/selection, joint conservative gating and a question-only shortcut
+  control. Publish every operating point and model without test-selected tuning.
+- Verify all artifact and corpus hashes, exact traversals and verifier input
+  contexts. Complete 129 local tests (six optional skips) and delete the Runpod
+  allocation. Cumulative estimated spend: USD 7.94877/10.
+  See the [expanded validation report](docs/abstention-v3-results.md).
+
 - Add experimental incremental navigation with retained alternatives, an explicit
   branch allowance, and a separately identified lexical-assisted variant.
 - Compare Qwen base, pretrained cross-encoder and Tacit-4B using matched 64/128

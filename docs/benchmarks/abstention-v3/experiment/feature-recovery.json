@@ -1,0 +1,24 @@
+{
+  "reason": "Transformers 5 removed prepare_for_model; use the public pair-tokenization API",
+  "original_retrieval_revision": "db5bb7362149d1511f8d67c4033d9292f30d3253",
+  "repair_revision": "dfd52f62b3a6bf030c08a2fe18e09f68d96de5a6",
+  "repair_files": {
+    "src/arborvault/answerability.py": "f65a06c210ece85a8b3094efe7e7468688a5bd3960f701d007b9e5a80252f97f",
+    "scripts/resume_answerability_features.py": "98ec749c4970cfef53a7a72864b900f51dd80aca5918966e74b2479adf5e6b8a",
+    "tests/test_answerability.py": "a0108df0a006385dd9b97a1ce211093a43e46971e414e5bb1405750b46d59f16"
+  },
+  "retrieval_hashes_before": {
+    "scores/qwen-base.json": "65d330cec65f5eb047402d0bde77a425b8554fb2b89f20f9419f16335a1f444b",
+    "scores/cross-encoder-base.json": "ecf53506e7ea54e45cc78d5ce53b9c90368df0308fd24cc7fbcdeac5844c5f75",
+    "scores/e5-text.json": "e41b6538b69286da18e89dee22fbecf68b48080f9fc148836edc96f626153eb9"
+  },
+  "retrieval_hashes_after": {
+    "scores/qwen-base.json": "65d330cec65f5eb047402d0bde77a425b8554fb2b89f20f9419f16335a1f444b",
+    "scores/cross-encoder-base.json": "ecf53506e7ea54e45cc78d5ce53b9c90368df0308fd24cc7fbcdeac5844c5f75",
+    "scores/e5-text.json": "e41b6538b69286da18e89dee22fbecf68b48080f9fc148836edc96f626153eb9"
+  },
+  "protocol_or_test_labels_changed": false,
+  "test_metrics_inspected_before_repair": false,
+  "pair_prefix_regression_checked_with_pinned_real_tokenizer": true,
+  "empty_context_encoding": "Native question-only sequence; no synthetic second separator"
+}

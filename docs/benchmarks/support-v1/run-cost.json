@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "completed_at_utc": "2026-11-14T16:34:14.266697+00:00",
+  "execution": "Local CPU only; frozen encoder and new linear classifier heads",
+  "new_cloud_resource_allocations": 0,
+  "incremental_cloud_cost_usd": 0.0,
+  "previous_cumulative_estimated_usd": 7.94877,
+  "cumulative_estimated_usd": 7.94877,
+  "cumulative_cap_usd": 10.0,
+  "remaining_estimated_usd": 2.05123,
+  "previous_ledger": "docs/benchmarks/abstention-v3/run-cost.json",
+  "previous_ledger_sha256": "aaee32c692430c77d06f20f5775d36486543837bfb7c791b4ecac973764a368d",
+  "final_extraction_seconds": 501.3002665620006,
+  "final_feature_forwards": 16795,
+  "analysis_docker_command_wall_seconds": 4.1972395,
+  "initial_aborted_cpu_run": "Stopped during selection-feature extraction; no calibration/test features or classifier fitting. All features regenerated with updated environment.",
+  "local_electricity_and_hardware_cost": "Not measured; excluded from cloud ledger"
+}

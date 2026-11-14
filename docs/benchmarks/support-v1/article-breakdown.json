@@ -1,0 +1,1090 @@
+{
+  "description": "Post-hoc descriptive breakdown of fixed balanced operating points; no selection or tuning",
+  "articles": [
+    {
+      "document": "1973_oil_crisis",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 10,
+          "supported_rejected": 4,
+          "accuracy": 0.5625
+        },
+        "previous": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 7,
+          "accuracy": 0.53125
+        },
+        "raw": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 8,
+          "accuracy": 0.5
+        },
+        "question_only": {
+          "unsupported_accepted": 5,
+          "supported_rejected": 9,
+          "accuracy": 0.5625
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Amazon_rainforest",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 1,
+          "accuracy": 0.78125
+        },
+        "previous": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 2,
+          "accuracy": 0.71875
+        },
+        "raw": {
+          "unsupported_accepted": 3,
+          "supported_rejected": 5,
+          "accuracy": 0.75
+        },
+        "question_only": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 4,
+          "accuracy": 0.65625
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Black_Death",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 5,
+          "accuracy": 0.625
+        },
+        "previous": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 6,
+          "accuracy": 0.59375
+        },
+        "raw": {
+          "unsupported_accepted": 5,
+          "supported_rejected": 8,
+          "accuracy": 0.59375
+        },
+        "question_only": {
+          "unsupported_accepted": 9,
+          "supported_rejected": 6,
+          "accuracy": 0.53125
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Civil_disobedience",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 7,
+          "accuracy": 0.5625
+        },
+        "previous": {
+          "unsupported_accepted": 4,
+          "supported_rejected": 11,
+          "accuracy": 0.53125
+        },
+        "raw": {
+          "unsupported_accepted": 1,
+          "supported_rejected": 13,
+          "accuracy": 0.5625
+        },
+        "question_only": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 7,
+          "accuracy": 0.59375
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Computational_complexity_theory",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 4,
+          "accuracy": 0.625
+        },
+        "previous": {
+          "unsupported_accepted": 10,
+          "supported_rejected": 4,
+          "accuracy": 0.5625
+        },
+        "raw": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 7,
+          "accuracy": 0.59375
+        },
+        "question_only": {
+          "unsupported_accepted": 4,
+          "supported_rejected": 7,
+          "accuracy": 0.65625
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Construction",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 10,
+          "supported_rejected": 2,
+          "accuracy": 0.625
+        },
+        "previous": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 6,
+          "accuracy": 0.59375
+        },
+        "raw": {
+          "unsupported_accepted": 4,
+          "supported_rejected": 6,
+          "accuracy": 0.6875
+        },
+        "question_only": {
+          "unsupported_accepted": 5,
+          "supported_rejected": 8,
+          "accuracy": 0.59375
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Ctenophora",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 4,
+          "accuracy": 0.65625
+        },
+        "previous": {
+          "unsupported_accepted": 4,
+          "supported_rejected": 5,
+          "accuracy": 0.71875
+        },
+        "raw": {
+          "unsupported_accepted": 3,
+          "supported_rejected": 8,
+          "accuracy": 0.65625
+        },
+        "question_only": {
+          "unsupported_accepted": 11,
+          "supported_rejected": 6,
+          "accuracy": 0.46875
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Economic_inequality",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 2,
+          "accuracy": 0.6875
+        },
+        "previous": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 5,
+          "accuracy": 0.65625
+        },
+        "raw": {
+          "unsupported_accepted": 4,
+          "supported_rejected": 6,
+          "accuracy": 0.6875
+        },
+        "question_only": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 6,
+          "accuracy": 0.59375
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "European_Union_law",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 1,
+          "accuracy": 0.78125
+        },
+        "previous": {
+          "unsupported_accepted": 9,
+          "supported_rejected": 6,
+          "accuracy": 0.53125
+        },
+        "raw": {
+          "unsupported_accepted": 3,
+          "supported_rejected": 9,
+          "accuracy": 0.625
+        },
+        "question_only": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 7,
+          "accuracy": 0.59375
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Force",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 5,
+          "accuracy": 0.625
+        },
+        "previous": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 5,
+          "accuracy": 0.625
+        },
+        "raw": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 11,
+          "accuracy": 0.4375
+        },
+        "question_only": {
+          "unsupported_accepted": 5,
+          "supported_rejected": 9,
+          "accuracy": 0.5625
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "French_and_Indian_War",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 3,
+          "accuracy": 0.65625
+        },
+        "previous": {
+          "unsupported_accepted": 10,
+          "supported_rejected": 5,
+          "accuracy": 0.53125
+        },
+        "raw": {
+          "unsupported_accepted": 5,
+          "supported_rejected": 8,
+          "accuracy": 0.59375
+        },
+        "question_only": {
+          "unsupported_accepted": 4,
+          "supported_rejected": 8,
+          "accuracy": 0.625
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Fresno,_California",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 4,
+          "accuracy": 0.65625
+        },
+        "previous": {
+          "unsupported_accepted": 5,
+          "supported_rejected": 4,
+          "accuracy": 0.71875
+        },
+        "raw": {
+          "unsupported_accepted": 3,
+          "supported_rejected": 5,
+          "accuracy": 0.75
+        },
+        "question_only": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 6,
+          "accuracy": 0.625
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Geology",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 0,
+          "accuracy": 0.8125
+        },
+        "previous": {
+          "unsupported_accepted": 3,
+          "supported_rejected": 0,
+          "accuracy": 0.90625
+        },
+        "raw": {
+          "unsupported_accepted": 3,
+          "supported_rejected": 2,
+          "accuracy": 0.84375
+        },
+        "question_only": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 5,
+          "accuracy": 0.59375
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Harvard_University",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 4,
+          "supported_rejected": 2,
+          "accuracy": 0.8125
+        },
+        "previous": {
+          "unsupported_accepted": 4,
+          "supported_rejected": 5,
+          "accuracy": 0.71875
+        },
+        "raw": {
+          "unsupported_accepted": 2,
+          "supported_rejected": 4,
+          "accuracy": 0.8125
+        },
+        "question_only": {
+          "unsupported_accepted": 3,
+          "supported_rejected": 12,
+          "accuracy": 0.53125
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Huguenot",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 1,
+          "accuracy": 0.75
+        },
+        "previous": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 5,
+          "accuracy": 0.65625
+        },
+        "raw": {
+          "unsupported_accepted": 5,
+          "supported_rejected": 9,
+          "accuracy": 0.5625
+        },
+        "question_only": {
+          "unsupported_accepted": 4,
+          "supported_rejected": 3,
+          "accuracy": 0.78125
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Immune_system",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 1,
+          "accuracy": 0.71875
+        },
+        "previous": {
+          "unsupported_accepted": 5,
+          "supported_rejected": 2,
+          "accuracy": 0.78125
+        },
+        "raw": {
+          "unsupported_accepted": 2,
+          "supported_rejected": 5,
+          "accuracy": 0.78125
+        },
+        "question_only": {
+          "unsupported_accepted": 5,
+          "supported_rejected": 5,
+          "accuracy": 0.6875
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Imperialism",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 9,
+          "supported_rejected": 8,
+          "accuracy": 0.46875
+        },
+        "previous": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 8,
+          "accuracy": 0.53125
+        },
+        "raw": {
+          "unsupported_accepted": 4,
+          "supported_rejected": 12,
+          "accuracy": 0.5
+        },
+        "question_only": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 8,
+          "accuracy": 0.53125
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Intergovernmental_Panel_on_Climate_Change",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 10,
+          "supported_rejected": 4,
+          "accuracy": 0.5625
+        },
+        "previous": {
+          "unsupported_accepted": 9,
+          "supported_rejected": 4,
+          "accuracy": 0.59375
+        },
+        "raw": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 6,
+          "accuracy": 0.59375
+        },
+        "question_only": {
+          "unsupported_accepted": 5,
+          "supported_rejected": 12,
+          "accuracy": 0.46875
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Islamism",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 10,
+          "supported_rejected": 3,
+          "accuracy": 0.59375
+        },
+        "previous": {
+          "unsupported_accepted": 9,
+          "supported_rejected": 4,
+          "accuracy": 0.59375
+        },
+        "raw": {
+          "unsupported_accepted": 4,
+          "supported_rejected": 5,
+          "accuracy": 0.71875
+        },
+        "question_only": {
+          "unsupported_accepted": 4,
+          "supported_rejected": 6,
+          "accuracy": 0.6875
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Jacksonville,_Florida",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 10,
+          "supported_rejected": 1,
+          "accuracy": 0.65625
+        },
+        "previous": {
+          "unsupported_accepted": 9,
+          "supported_rejected": 7,
+          "accuracy": 0.5
+        },
+        "raw": {
+          "unsupported_accepted": 5,
+          "supported_rejected": 11,
+          "accuracy": 0.5
+        },
+        "question_only": {
+          "unsupported_accepted": 5,
+          "supported_rejected": 7,
+          "accuracy": 0.625
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Normans",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 9,
+          "supported_rejected": 2,
+          "accuracy": 0.65625
+        },
+        "previous": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 7,
+          "accuracy": 0.53125
+        },
+        "raw": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 8,
+          "accuracy": 0.53125
+        },
+        "question_only": {
+          "unsupported_accepted": 3,
+          "supported_rejected": 11,
+          "accuracy": 0.5625
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Oxygen",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 2,
+          "accuracy": 0.6875
+        },
+        "previous": {
+          "unsupported_accepted": 9,
+          "supported_rejected": 10,
+          "accuracy": 0.40625
+        },
+        "raw": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 11,
+          "accuracy": 0.46875
+        },
+        "question_only": {
+          "unsupported_accepted": 4,
+          "supported_rejected": 11,
+          "accuracy": 0.53125
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Packet_switching",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 4,
+          "accuracy": 0.625
+        },
+        "previous": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 5,
+          "accuracy": 0.59375
+        },
+        "raw": {
+          "unsupported_accepted": 4,
+          "supported_rejected": 6,
+          "accuracy": 0.6875
+        },
+        "question_only": {
+          "unsupported_accepted": 4,
+          "supported_rejected": 9,
+          "accuracy": 0.59375
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Pharmacy",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 1,
+          "accuracy": 0.71875
+        },
+        "previous": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 3,
+          "accuracy": 0.6875
+        },
+        "raw": {
+          "unsupported_accepted": 3,
+          "supported_rejected": 8,
+          "accuracy": 0.65625
+        },
+        "question_only": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 5,
+          "accuracy": 0.625
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Prime_number",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 4,
+          "accuracy": 0.65625
+        },
+        "previous": {
+          "unsupported_accepted": 13,
+          "supported_rejected": 3,
+          "accuracy": 0.5
+        },
+        "raw": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 4,
+          "accuracy": 0.625
+        },
+        "question_only": {
+          "unsupported_accepted": 10,
+          "supported_rejected": 8,
+          "accuracy": 0.4375
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Private_school",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 11,
+          "supported_rejected": 2,
+          "accuracy": 0.59375
+        },
+        "previous": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 8,
+          "accuracy": 0.53125
+        },
+        "raw": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 10,
+          "accuracy": 0.46875
+        },
+        "question_only": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 6,
+          "accuracy": 0.5625
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Rhine",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 9,
+          "supported_rejected": 0,
+          "accuracy": 0.71875
+        },
+        "previous": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 1,
+          "accuracy": 0.71875
+        },
+        "raw": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 5,
+          "accuracy": 0.625
+        },
+        "question_only": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 8,
+          "accuracy": 0.53125
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Scottish_Parliament",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 2,
+          "accuracy": 0.71875
+        },
+        "previous": {
+          "unsupported_accepted": 11,
+          "supported_rejected": 3,
+          "accuracy": 0.5625
+        },
+        "raw": {
+          "unsupported_accepted": 9,
+          "supported_rejected": 8,
+          "accuracy": 0.46875
+        },
+        "question_only": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 10,
+          "accuracy": 0.5
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Sky_(United_Kingdom)",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 2,
+          "accuracy": 0.6875
+        },
+        "previous": {
+          "unsupported_accepted": 10,
+          "supported_rejected": 3,
+          "accuracy": 0.59375
+        },
+        "raw": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 5,
+          "accuracy": 0.625
+        },
+        "question_only": {
+          "unsupported_accepted": 3,
+          "supported_rejected": 9,
+          "accuracy": 0.625
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Southern_California",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 3,
+          "accuracy": 0.6875
+        },
+        "previous": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 7,
+          "accuracy": 0.5625
+        },
+        "raw": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 7,
+          "accuracy": 0.59375
+        },
+        "question_only": {
+          "unsupported_accepted": 5,
+          "supported_rejected": 9,
+          "accuracy": 0.5625
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Steam_engine",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 3,
+          "accuracy": 0.6875
+        },
+        "previous": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 6,
+          "accuracy": 0.59375
+        },
+        "raw": {
+          "unsupported_accepted": 3,
+          "supported_rejected": 10,
+          "accuracy": 0.59375
+        },
+        "question_only": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 7,
+          "accuracy": 0.53125
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "University_of_Chicago",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 2,
+          "accuracy": 0.75
+        },
+        "previous": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 7,
+          "accuracy": 0.5625
+        },
+        "raw": {
+          "unsupported_accepted": 4,
+          "supported_rejected": 11,
+          "accuracy": 0.53125
+        },
+        "question_only": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 5,
+          "accuracy": 0.625
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Victoria_(Australia)",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 4,
+          "accuracy": 0.6875
+        },
+        "previous": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 4,
+          "accuracy": 0.6875
+        },
+        "raw": {
+          "unsupported_accepted": 3,
+          "supported_rejected": 5,
+          "accuracy": 0.75
+        },
+        "question_only": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 6,
+          "accuracy": 0.5625
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Warsaw",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 9,
+          "supported_rejected": 2,
+          "accuracy": 0.65625
+        },
+        "previous": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 2,
+          "accuracy": 0.6875
+        },
+        "raw": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 3,
+          "accuracy": 0.71875
+        },
+        "question_only": {
+          "unsupported_accepted": 8,
+          "supported_rejected": 6,
+          "accuracy": 0.5625
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    },
+    {
+      "document": "Yuan_dynasty",
+      "examples": 32,
+      "methods": {
+        "context": {
+          "unsupported_accepted": 7,
+          "supported_rejected": 3,
+          "accuracy": 0.6875
+        },
+        "previous": {
+          "unsupported_accepted": 5,
+          "supported_rejected": 6,
+          "accuracy": 0.65625
+        },
+        "raw": {
+          "unsupported_accepted": 0,
+          "supported_rejected": 10,
+          "accuracy": 0.6875
+        },
+        "question_only": {
+          "unsupported_accepted": 6,
+          "supported_rejected": 9,
+          "accuracy": 0.53125
+        },
+        "context_only": {
+          "unsupported_accepted": 16,
+          "supported_rejected": 0,
+          "accuracy": 0.5
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "reviewer": "AI-assisted, not independent human adjudication",
+  "purpose": "Post-hoc description only; no relabeling, threshold changes or retraining",
+  "sampling": "First six balanced-mode false accepts and six false rejects by SHA256(support-v1/error-audit/ + id)",
+  "items": [
+    {
+      "id": "5a552252134fea001a0e1962",
+      "document": "Packet_switching",
+      "source_supported_label": false,
+      "question": "What was confusing within KPN?",
+      "new_score": 0.5197800112452647,
+      "category": "annotation_review",
+      "note": "The source explicitly describes confusion from applying Datanet 1 to several services. This broad negative question may admit a valid summary; retain official label pending independent review."
+    },
+    {
+      "id": "5a6cef5a4eec6b001a80a700",
+      "document": "Pharmacy",
+      "source_supported_label": false,
+      "question": "What degree is no longer mandatory in the U.S. in order to be a licensed pharmacist?",
+      "new_score": 0.5966757874583113,
+      "category": "polarity",
+      "note": "The question asks no longer mandatory while the source says the degree is now required. The classifier accepts the contradicted premise."
+    },
+    {
+      "id": "5ad03cd377cf76001a686ec7",
+      "document": "Scottish_Parliament",
+      "source_supported_label": false,
+      "question": "Subjects that are inside the legislative competence of the Scotland Parliament are called what?",
+      "new_score": 0.7221496596284785,
+      "category": "relation_polarity",
+      "note": "Inside legislative competence is substituted for outside. The classifier misses the polarity reversal."
+    },
+    {
+      "id": "5ad039be77cf76001a686e60",
+      "document": "Scottish_Parliament",
+      "source_supported_label": false,
+      "question": "What type of committees exist in the fifth Session?",
+      "new_score": 0.48231417262109666,
+      "category": "temporal_scope",
+      "note": "Question asks fifth Session; the paragraph names fourth Session. Same topic does not establish the requested period."
+    },
+    {
+      "id": "5a3e488b378766001a00253b",
+      "document": "Intergovernmental_Panel_on_Climate_Change",
+      "source_supported_label": false,
+      "question": "What is the one lead author responsible for?",
+      "new_score": 0.7234664232021223,
+      "category": "annotation_review",
+      "note": "One lead author can refer to an individual member of the plural group whose responsibility is given. Negative depends on interpreting one as exactly one; ambiguous."
+    },
+    {
+      "id": "5a2c0fb8bfd06b001a5ae9ba",
+      "document": "Sky_(United_Kingdom)",
+      "source_supported_label": false,
+      "question": "What company supported BSkyB the most?",
+      "new_score": 0.4667352646887129,
+      "category": "entity_relation",
+      "note": "The named company is a competitor, not a supporter. Requested support relationship is absent."
+    },
+    {
+      "id": "5726472bdd62a815002e8046",
+      "document": "Packet_switching",
+      "source_supported_label": true,
+      "question": "ableine was retired and the new platform is called ",
+      "new_score": 0.16640074418404965,
+      "category": "supported_paraphrase_typo",
+      "note": "Abilene is misspelled in a fragmentary question; the source explicitly names the replacement Internet2 Network."
+    },
+    {
+      "id": "5705fd8475f01819005e7843",
+      "document": "Southern_California",
+      "source_supported_label": true,
+      "question": "The region spans which mountains other than the Transverse ranges?",
+      "new_score": 0.21252452144440137,
+      "category": "supported_alternative",
+      "note": "The paragraph explicitly names Peninsular Ranges alongside Transverse Ranges; the alternative is present."
+    },
+    {
+      "id": "5727cff1ff5b5019007d95c7",
+      "document": "Harvard_University",
+      "source_supported_label": true,
+      "question": "What are Harvard's Pell grant reserves?",
+      "new_score": 0.27502097485594534,
+      "category": "supported_late_detail",
+      "note": "The exact reserve amount is in the final sentence and the whole paragraph is encoded. Rejection is not truncation."
+    },
+    {
+      "id": "57293d6d1d046914007791b9",
+      "document": "Intergovernmental_Panel_on_Climate_Change",
+      "source_supported_label": true,
+      "question": "How many contributing authors does an IPCC report chapter have?",
+      "new_score": 0.21748080010584558,
+      "category": "annotation_review",
+      "note": "Source provides a relative quantity, somewhat larger, rather than an exact number. Original positive annotation accepts that phrase; question specificity is debatable."
+    },
+    {
+      "id": "5726241189a1e219009ac2e2",
+      "document": "1973_oil_crisis",
+      "source_supported_label": true,
+      "question": "How long does it take for new areas to have significant oil production?",
+      "new_score": 0.4024399064645929,
+      "category": "supported_paraphrase",
+      "note": "New areas paraphrases new fields, and the stated five-to-ten-year interval answers the question."
+    },
+    {
+      "id": "57114b1a2419e31400955576",
+      "document": "Steam_engine",
+      "source_supported_label": true,
+      "question": "What is another term for the pivot mounting?",
+      "new_score": 0.2865904252965969,
+      "category": "supported_alias",
+      "note": "The parenthetical trunnion directly gives the synonym of pivot mounting; the classifier rejects explicit support."
+    }
+  ]
+}

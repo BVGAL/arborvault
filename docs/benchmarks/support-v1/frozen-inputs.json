@@ -1,0 +1,20 @@
+{
+  "frozen_commit": "2295d63cf1342cb3b2268e4c4ccba095b0c4d4b2",
+  "repository": "https://github.com/BVGAL/arborvault",
+  "sha256": {
+    "configs/support-v1.json": "601f532c75edcdee361ef5619e148b56a5a3a3bf25e5de9902c8eef9b21b0994",
+    "datasets/support-v1/manifest.json": "924135a05cbad74ab83d875fc81dfbdf8dfd76baf6ee9d7f841e7d62540f3ca4",
+    "datasets/support-v1/examples.jsonl": "7e366c4d99c6748cfce68b48bce9f6902fd57fef3891186d42c649e0afd15167",
+    "datasets/support-v1/source-audit.json": "897c97a1dcbd9d3b23eb631d8520b7d03b16e817de3e31c9fcfb612fc40d8527",
+    "docs/support-v1-protocol.md": "9a4b4d28fc2a3964fe22f9d928b04564bcb4dfa7819c85de3136b083e5a8bfc2",
+    "src/arborvault/support_probe.py": "744db48659eb6a7db87206ccae34192488948df24ada02092d55ece23262817f",
+    "src/arborvault/support_data.py": "a9f4d756f372aa14ed7103da7aab984e90b8b863e344d2b291bb8f7c3f7d0b9b",
+    "src/arborvault/answerability.py": "f65a06c210ece85a8b3094efe7e7468688a5bd3960f701d007b9e5a80252f97f",
+    "scripts/run_support_probe.py": "f58ea7beedd6c38e3607b54427aab876e1a594a94a0276d21aca2e89ee339580",
+    "requirements.probe-cpu.txt": "deeaa383ed52c2bc50935ee13ed1b5b56999044f2e4a5ebfc5706fc344c414f3"
+  },
+  "test_features_read_for_selection": false,
+  "new_cloud_resource_allocations": 0,
+  "initial_registration_commit": "7120fc1c0b82600ae5a9b06775fb713d2ca0ae2c",
+  "pre_test_environment_amendment": "Initial torch2.10.0 extraction stopped during selection. No classifier fitted; calibration/test extraction not started. Upgraded to2.13.0+cpu and restarted all extraction."
+}

@@ -1,0 +1,46 @@
+{
+  "initial_torch_2_10_0": {
+    "dependencies": [
+      {
+        "name": "torch",
+        "version": "2.10.0",
+        "vulns": [
+          {
+            "id": "PYSEC-2026-139",
+            "fix_versions": [],
+            "aliases": [
+              "CVE-2026-4538",
+              "BIT-pytorch-2026-4538"
+            ],
+            "description": "A vulnerability was identified in PyTorch 2.10.0. The affected element is an unknown function of the component pt2 Loading Handler. The manipulation leads to deserialization. The attack can only be performed from a local environment. The exploit is publicly available and might be used. The project was informed of the problem early through a pull request but has not reacted yet."
+          },
+          {
+            "id": "PYSEC-2025-194",
+            "fix_versions": [
+              "2.13.0"
+            ],
+            "aliases": [
+              "GHSA-rrmf-rvhw-rf47",
+              "CVE-2025-3000",
+              "BIT-pytorch-2025-3000"
+            ],
+            "description": "A vulnerability classified as critical has been found in PyTorch 2.6.0. This affects the function torch.jit.script. The manipulation leads to memory corruption. It is possible to launch the attack on the local host. The exploit has been disclosed to the public and may be used."
+          }
+        ]
+      }
+    ],
+    "fixes": []
+  },
+  "final_upstream_torch_2_13_0": {
+    "dependencies": [
+      {
+        "name": "torch",
+        "version": "2.13.0",
+        "vulns": []
+      }
+    ],
+    "fixes": []
+  },
+  "installed_environment_audit": "No known vulnerabilities among auditable installed packages; local project and torch2.13.0+cpu skipped by audit service. Matching upstream torch2.13.0 audited separately.",
+  "loading_policy": "Pinned safetensors only; remote code disabled; no pt2/export/TorchScript/pickle checkpoints."
+}

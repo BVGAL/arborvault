@@ -1,0 +1,40 @@
+{
+  "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+  "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+  "representation": "Frozen last-layer CLS, 384 dimensions; float32 CPU eager attention",
+  "torch": "2.13.0+cpu",
+  "transformers": "5.22.2",
+  "numpy": "2.5.4",
+  "device": "cpu",
+  "threads": 4,
+  "config_sha256": "601f532c75edcdee361ef5619e148b56a5a3a3bf25e5de9902c8eef9b21b0994",
+  "dataset_manifest_sha256": "924135a05cbad74ab83d875fc81dfbdf8dfd76baf6ee9d7f841e7d62540f3ca4",
+  "examples_sha256": "7e366c4d99c6748cfce68b48bce9f6902fd57fef3891186d42c649e0afd15167",
+  "feature_decimals": 7,
+  "roles": {
+    "fit": {
+      "sha256": "38ba7bccf1f272bcd53f3c5df5c4207cd3598cb54084faa68f5a43cb64b2810b",
+      "examples": 4062,
+      "forwards": 10155,
+      "seconds": 309.43852124099794
+    },
+    "selection": {
+      "sha256": "85b1d3e5dd0f1d37b41a2ff1edae115a2c97fbdc686e9478393182242a7d37fd",
+      "examples": 768,
+      "forwards": 1920,
+      "seconds": 54.89121260600223
+    },
+    "calibration": {
+      "sha256": "19c2a5521e2365fe0e0d5c5c38ce1d69d4d5236ab3029c91107bfd2816008e39",
+      "examples": 768,
+      "forwards": 1920,
+      "seconds": 53.17879348399583
+    },
+    "test": {
+      "sha256": "5fb01d7443fb465982ac7ab4c7cc588d0995cbd44cb1b69b983cad6090a21583",
+      "examples": 1120,
+      "forwards": 2800,
+      "seconds": 83.79173923100461
+    }
+  }
+}

@@ -8,15 +8,22 @@ ArborVault stores document hierarchies in PostgreSQL and returns source-backed s
 through a small HTTP API. Use it as an experimental retrieval component in an agent or
 RAG pipeline. The framework-neutral API supports reusable integrations with any AI agent.
 
-**Registered experiment: human-labeled context support.** A new
-[SQuAD 2.0 subset](datasets/support-v1/README.md) pairs every paragraph with an
-answerable and an adversarial unanswerable question. A frozen
-[protocol](docs/support-v1-protocol.md) specifies retraining the small acceptance
-head locally and comparing it with the previous head, raw relevance scores and
-question/context-only controls on 1,120 held-out questions. This is paragraph
-support classification, separate from the retrieval benchmarks below.
+**Latest: human hard negatives for the support classifier.** On 1,120 held-out
+[SQuAD 2.0 questions](datasets/support-v1/README.md), the retrained acceptance
+head reaches **66.96% accuracy**, versus **61.34%** for the previous head and
+**62.23%** for raw relevance. The primary gain is **+5.63 points**, paired
+article-bootstrap 95% interval **[+2.77, +8.57]**. It mainly preserves more useful
+paragraphs: at the balanced setting, false useful rejections fall from 176 to
+98, while unsupported cases accepted rise from 257 to 272. At the conservative
+setting it rejects only **46/560 unsupported cases**, with **12/560 useful cases
+lost**. Abstention remains weak. This tests supplied-paragraph support, not
+retrieval recall or generated-answer correctness. Only a 385-coefficient head
+was trained, entirely on local CPU; no production default changes. Read the
+[full results and errors](docs/support-v1-results.md),
+[frozen protocol](docs/support-v1-protocol.md) and
+[reproducible artifacts](docs/benchmarks/support-v1/README.md).
 
-**Latest: expanded navigation and abstention validation.** A frozen test on 20
+**Previous: expanded navigation and abstention validation.** A frozen test on 20
 new Python manuals contains 240 answerable and 240 unknown cases, with four
 separate new calibration manuals. Historical documents fit and select a small
 acceptance probe over a frozen MiniLM cross-encoder. For guided cross-encoder

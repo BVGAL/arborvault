@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "completed_at_utc": "2026-11-14T17:16:00.182032+00:00",
+  "execution": "Local CPU; frozen MiniLM encoder; linear and 32-unit tanh classifier heads",
+  "new_cloud_resource_allocations": 0,
+  "incremental_cloud_cost_usd": 0.0,
+  "previous_cumulative_estimated_usd": 7.94877,
+  "cumulative_estimated_usd": 7.94877,
+  "cumulative_cap_usd": 10.0,
+  "remaining_estimated_usd": 2.05123,
+  "previous_ledger": "docs/benchmarks/support-v1/run-cost.json",
+  "previous_ledger_sha256": "b8da1a50d3ef26c03bca24218875fead19946b97a2c0dee1ed0b5cbed2aa3bb5",
+  "feature_extraction_seconds": 165.47320584600675,
+  "new_forward_passes": 16607,
+  "reused_forward_passes": 12075,
+  "fit_selection_calibration_analysis_command_seconds": 9.4465206,
+  "local_electricity_and_hardware_cost": "Not measured; excluded from cloud ledger"
+}

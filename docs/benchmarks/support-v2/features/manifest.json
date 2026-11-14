@@ -1,0 +1,54 @@
+{
+  "config_sha256": "2723ac550e5c75092f27212b55779f06d809932e9f5b0aa4a78e11796e16f4dd",
+  "dataset_manifest_sha256": "dfa34cf926776207143d962be33404e54378980699fdf31f660e9855d4b2e5b1",
+  "examples_sha256": "f24166edd7ebbcc63ef0c127ce44461a7cc7a4b7bc4b6d4393446447a334fa6e",
+  "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+  "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+  "torch": "2.13.0+cpu",
+  "transformers": "5.22.2",
+  "numpy": "2.5.4",
+  "device": "cpu",
+  "cpu_threads": 4,
+  "feature_decimals": 7,
+  "representation": "Frozen last-layer CLS, float32 eager attention, whole question/context; 384 dimensions",
+  "sources": {
+    "fit": {
+      "path": "docs/benchmarks/support-v1/features/fit.json",
+      "sha256": "38ba7bccf1f272bcd53f3c5df5c4207cd3598cb54084faa68f5a43cb64b2810b"
+    },
+    "selection": {
+      "path": "docs/benchmarks/support-v1/features/selection.json",
+      "sha256": "85b1d3e5dd0f1d37b41a2ff1edae115a2c97fbdc686e9478393182242a7d37fd"
+    }
+  },
+  "roles": {
+    "fit": {
+      "sha256": "ec0108086c291e88161ad3751c5b3a8f58bc2884e989290858a6b04ceb34bbaa",
+      "examples": 7902,
+      "new_forwards": 7044,
+      "reused": 10155,
+      "seconds": 27.564361433003796
+    },
+    "selection": {
+      "sha256": "14ec66e6857d98526814abecf3fbec07a33f5446650a7f72e97fa38c96524e43",
+      "examples": 1536,
+      "new_forwards": 1452,
+      "reused": 1920,
+      "seconds": 5.891377788997488
+    },
+    "calibration": {
+      "sha256": "5b2516ed53a44ccab2eb857bddc561a68bcf4262c2e73d7c496fde20c37403a9",
+      "examples": 1536,
+      "new_forwards": 3381,
+      "reused": 0,
+      "seconds": 55.25030091799272
+    },
+    "test": {
+      "sha256": "ebab9dda0bacfe1273dd68127368eb9ab922c97fa35345fad30df0eea749cf37",
+      "examples": 2176,
+      "new_forwards": 4730,
+      "reused": 0,
+      "seconds": 76.76716570601275
+    }
+  }
+}

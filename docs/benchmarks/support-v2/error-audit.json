@@ -1,0 +1,97 @@
+{
+  "reviewer": "AI-assisted post-hoc interpretation, not independent human adjudication",
+  "selection": "First two by SHA256(support-v2/audit/ + id) within each predefined diagnostic category; five categories, ten illustrations",
+  "scope": "Includes temporal successes and errors; not representative error-rate sampling. No relabeling or tuning.",
+  "items": [
+    {
+      "id": "contrast/negation/09/011/c0q0",
+      "category": "negation_correct_rejected",
+      "question": "Which unit has clearance to release the release notes?",
+      "supported": true,
+      "selected_score": 0.06619307103582528,
+      "previous_score": 0.579596577292788,
+      "note": "The source explicitly clears the named unit; the low score rejects valid affirmative permission."
+    },
+    {
+      "id": "contrast/negation/09/026/c1q1",
+      "category": "negation_correct_rejected",
+      "question": "Which unit has no clearance to export the audit records?",
+      "supported": true,
+      "selected_score": 0.07302443591293027,
+      "previous_score": 0.4377932931089242,
+      "note": "The source explicitly denies clearance, matching the negative question; rejection is wrong despite visible negation."
+    },
+    {
+      "id": "contrast/relation/09/005/c1q0",
+      "category": "relation_wrong_accepted",
+      "question": "Which tracking key identifies test fixtures dispatched by Unit 7DDA2009 for Unit 559BA12B?",
+      "supported": false,
+      "selected_score": 0.441143644965482,
+      "previous_score": 0.6256219491254018,
+      "note": "The source sends from the requested recipient to the requested sender. The model accepts the reversed direction."
+    },
+    {
+      "id": "contrast/relation/10/015/c1q0",
+      "category": "relation_wrong_accepted",
+      "question": "What is the docket number for the delivery of storage drives by Unit F8759C1E to Unit 1D7034D0?",
+      "supported": false,
+      "selected_score": 0.4925532750788053,
+      "previous_score": 0.6937181710596603,
+      "note": "The source recipient becomes the sender in the question. The available docket does not support that directed transfer."
+    },
+    {
+      "id": "contrast/temporal/11/030/c0q1",
+      "category": "temporal_wrong_rejected",
+      "question": "Which unit is accountable for inspecting test fixtures in 2019?",
+      "supported": false,
+      "selected_score": 0.04553894969160773,
+      "previous_score": 0.5314509821031475,
+      "note": "The requested year is the reference-sheet revision year, not the inspection year; the new head correctly rejects."
+    },
+    {
+      "id": "contrast/temporal/09/001/c1q0",
+      "category": "temporal_wrong_rejected",
+      "question": "Which unit holds the appointment to examine test fixtures during 2001?",
+      "supported": false,
+      "selected_score": 0.025976998989575444,
+      "previous_score": 0.2209242627890934,
+      "note": "The requested year belongs to publication of instructions, not the appointment year; both dates are present."
+    },
+    {
+      "id": "human/5a7e153670df9f001a875492",
+      "category": "human_wrong_accepted",
+      "question": "Where does the future appear flattened and slowed according to the crew?",
+      "supported": false,
+      "selected_score": 0.5779289319337209,
+      "previous_score": 0.6300546975015439,
+      "note": "The source describes an observer or outside universe, not the future, as flattened. The altered subject is accepted."
+    },
+    {
+      "id": "human/5a83705de60761001a2eb701",
+      "category": "human_wrong_accepted",
+      "question": "What is used to implode structures for dry rot?",
+      "supported": false,
+      "selected_score": 0.2612734033370445,
+      "previous_score": 0.2087087210609713,
+      "note": "The source describes preserving/restoring wood, not imploding structures; the altered action is accepted."
+    },
+    {
+      "id": "human/570971cb200fba1400368005",
+      "category": "human_correct_rejected",
+      "question": "How much of mined cooper has been extracted in the last 24 years?",
+      "supported": true,
+      "selected_score": 0.034356850037486675,
+      "previous_score": 0.09809852510949295,
+      "note": "The source explicitly supplies more than half; the question contains the original cooper typo. The model rejects intact evidence."
+    },
+    {
+      "id": "human/572a3acf6aef0514001553b4",
+      "category": "human_correct_rejected",
+      "question": "Which stations break convention and begin with \"CF\" instead of \"CB\"?",
+      "supported": true,
+      "selected_score": 0.1104260761399509,
+      "previous_score": 0.23400546996111438,
+      "note": "The source explicitly names CBC North as the prefix exception; the complete paragraph is encoded but rejected."
+    }
+  ]
+}

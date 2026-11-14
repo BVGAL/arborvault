@@ -8,14 +8,20 @@ ArborVault stores document hierarchies in PostgreSQL and returns source-backed s
 through a small HTTP API. Use it as an experimental retrieval component in an agent or
 RAG pipeline. The framework-neutral API supports reusable integrations with any AI agent.
 
-**Registered next experiment: semantic abstention.** The
-[support-v2 protocol](docs/support-v2-protocol.md) adds balanced negation,
-reversed-relation and temporal contrasts, compares linear and small nonlinear
-heads, and evaluates new human articles separately from held-out wording families.
-One common conservative gate must meet a calibration error budget in each stratum.
-The [dataset](datasets/support-v2/README.md) and protocol are fixed before test scoring.
+**Latest: semantic abstention v2 is not promoted.** New negation, direction and
+date contrasts improve conservative wrong-year rejection from **22/192 to
+126/192**, with no useful temporal cases lost. However, the selected small
+nonlinear head rejects **50/192 useful negation cases**, and reversed relations
+remain at chance. On **1,024 new human questions**, it rejects **33/512** unsupported
+cases versus **48/512** for the previous head, with 6 versus 9 useful rejections.
+These are separate human and synthetic tests, not a pooled success score.
+The new heads remain research artifacts; no production defaults change.
+Read the [results and diagnosis](docs/support-v2-results.md),
+[frozen protocol](docs/support-v2-protocol.md),
+[dataset](datasets/support-v2/README.md) and
+[reproducible artifacts](docs/benchmarks/support-v2/README.md).
 
-**Latest: human hard negatives for the support classifier.** On 1,120 held-out
+**Previous: human hard negatives for the support classifier.** On 1,120 held-out
 [SQuAD 2.0 questions](datasets/support-v1/README.md), the retrained acceptance
 head reaches **66.96% accuracy**, versus **61.34%** for the previous head and
 **62.23%** for raw relevance. The primary gain is **+5.63 points**, paired

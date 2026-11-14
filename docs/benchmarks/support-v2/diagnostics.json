@@ -1,0 +1,833 @@
+{
+  "scope": "Post-hoc diagnosis only; no head, epoch, threshold, label or ranking changed",
+  "by_partition": {
+    "fit": {
+      "human": {
+        "selected": {
+          "auroc": 0.8045600915984418,
+          "unsupported_rejected": 231,
+          "supported_rejected": 15,
+          "unsupported": 2031,
+          "supported": 2031
+        },
+        "previous": {
+          "auroc": 0.7503840642372134,
+          "unsupported_rejected": 245,
+          "supported_rejected": 27,
+          "unsupported": 2031,
+          "supported": 2031
+        },
+        "linear": {
+          "auroc": 0.718935282054788,
+          "unsupported_rejected": 145,
+          "supported_rejected": 17,
+          "unsupported": 2031,
+          "supported": 2031
+        },
+        "raw": {
+          "auroc": 0.6465707190928593,
+          "unsupported_rejected": 101,
+          "supported_rejected": 31,
+          "unsupported": 2031,
+          "supported": 2031
+        }
+      },
+      "negation": {
+        "selected": {
+          "auroc": 0.999921875,
+          "unsupported_rejected": 452,
+          "supported_rejected": 0,
+          "unsupported": 640,
+          "supported": 640
+        },
+        "previous": {
+          "auroc": 0.81008544921875,
+          "unsupported_rejected": 18,
+          "supported_rejected": 0,
+          "unsupported": 640,
+          "supported": 640
+        },
+        "linear": {
+          "auroc": 0.96325439453125,
+          "unsupported_rejected": 125,
+          "supported_rejected": 0,
+          "unsupported": 640,
+          "supported": 640
+        },
+        "raw": {
+          "auroc": 0.93667236328125,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 640,
+          "supported": 640
+        }
+      },
+      "relation": {
+        "selected": {
+          "auroc": 0.5881787109375,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 640,
+          "supported": 640
+        },
+        "previous": {
+          "auroc": 0.49201416015625,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 640,
+          "supported": 640
+        },
+        "linear": {
+          "auroc": 0.49182373046875,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 640,
+          "supported": 640
+        },
+        "raw": {
+          "auroc": 0.5005322265625,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 640,
+          "supported": 640
+        }
+      },
+      "temporal": {
+        "selected": {
+          "auroc": 0.99947021484375,
+          "unsupported_rejected": 541,
+          "supported_rejected": 0,
+          "unsupported": 640,
+          "supported": 640
+        },
+        "previous": {
+          "auroc": 0.9568212890625,
+          "unsupported_rejected": 23,
+          "supported_rejected": 0,
+          "unsupported": 640,
+          "supported": 640
+        },
+        "linear": {
+          "auroc": 0.98588134765625,
+          "unsupported_rejected": 261,
+          "supported_rejected": 0,
+          "unsupported": 640,
+          "supported": 640
+        },
+        "raw": {
+          "auroc": 0.76905517578125,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 640,
+          "supported": 640
+        }
+      }
+    },
+    "selection": {
+      "human": {
+        "selected": {
+          "auroc": 0.7193467881944444,
+          "unsupported_rejected": 46,
+          "supported_rejected": 6,
+          "unsupported": 384,
+          "supported": 384
+        },
+        "previous": {
+          "auroc": 0.7159288194444444,
+          "unsupported_rejected": 45,
+          "supported_rejected": 12,
+          "unsupported": 384,
+          "supported": 384
+        },
+        "linear": {
+          "auroc": 0.6884901258680556,
+          "unsupported_rejected": 23,
+          "supported_rejected": 6,
+          "unsupported": 384,
+          "supported": 384
+        },
+        "raw": {
+          "auroc": 0.6117011176215278,
+          "unsupported_rejected": 17,
+          "supported_rejected": 12,
+          "unsupported": 384,
+          "supported": 384
+        }
+      },
+      "negation": {
+        "selected": {
+          "auroc": 0.77801513671875,
+          "unsupported_rejected": 77,
+          "supported_rejected": 31,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "previous": {
+          "auroc": 0.63922119140625,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "linear": {
+          "auroc": 0.73040771484375,
+          "unsupported_rejected": 21,
+          "supported_rejected": 3,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "raw": {
+          "auroc": 0.74951171875,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        }
+      },
+      "relation": {
+        "selected": {
+          "auroc": 0.50439453125,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "previous": {
+          "auroc": 0.4852294921875,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "linear": {
+          "auroc": 0.51165771484375,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "raw": {
+          "auroc": 0.46929931640625,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        }
+      },
+      "temporal": {
+        "selected": {
+          "auroc": 0.9759521484375,
+          "unsupported_rejected": 58,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "previous": {
+          "auroc": 0.98394775390625,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "linear": {
+          "auroc": 0.97967529296875,
+          "unsupported_rejected": 3,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "raw": {
+          "auroc": 0.96038818359375,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        }
+      }
+    },
+    "calibration": {
+      "human": {
+        "selected": {
+          "auroc": 0.7284817165798612,
+          "unsupported_rejected": 27,
+          "supported_rejected": 7,
+          "unsupported": 384,
+          "supported": 384
+        },
+        "previous": {
+          "auroc": 0.7216932508680556,
+          "unsupported_rejected": 42,
+          "supported_rejected": 6,
+          "unsupported": 384,
+          "supported": 384
+        },
+        "linear": {
+          "auroc": 0.7054375542534722,
+          "unsupported_rejected": 28,
+          "supported_rejected": 6,
+          "unsupported": 384,
+          "supported": 384
+        },
+        "raw": {
+          "auroc": 0.6198459201388888,
+          "unsupported_rejected": 19,
+          "supported_rejected": 7,
+          "unsupported": 384,
+          "supported": 384
+        }
+      },
+      "negation": {
+        "selected": {
+          "auroc": 1.0,
+          "unsupported_rejected": 64,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "previous": {
+          "auroc": 0.91107177734375,
+          "unsupported_rejected": 2,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "linear": {
+          "auroc": 1.0,
+          "unsupported_rejected": 55,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "raw": {
+          "auroc": 0.998779296875,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        }
+      },
+      "relation": {
+        "selected": {
+          "auroc": 0.45489501953125,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "previous": {
+          "auroc": 0.48724365234375,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "linear": {
+          "auroc": 0.49530029296875,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "raw": {
+          "auroc": 0.4737548828125,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        }
+      },
+      "temporal": {
+        "selected": {
+          "auroc": 0.98822021484375,
+          "unsupported_rejected": 76,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "previous": {
+          "auroc": 0.9947509765625,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "linear": {
+          "auroc": 0.99871826171875,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        },
+        "raw": {
+          "auroc": 0.871826171875,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 128,
+          "supported": 128
+        }
+      }
+    },
+    "test": {
+      "human": {
+        "selected": {
+          "auroc": 0.7331085205078125,
+          "unsupported_rejected": 33,
+          "supported_rejected": 6,
+          "unsupported": 512,
+          "supported": 512
+        },
+        "previous": {
+          "auroc": 0.74267578125,
+          "unsupported_rejected": 48,
+          "supported_rejected": 9,
+          "unsupported": 512,
+          "supported": 512
+        },
+        "linear": {
+          "auroc": 0.719268798828125,
+          "unsupported_rejected": 23,
+          "supported_rejected": 4,
+          "unsupported": 512,
+          "supported": 512
+        },
+        "raw": {
+          "auroc": 0.7084579467773438,
+          "unsupported_rejected": 17,
+          "supported_rejected": 6,
+          "unsupported": 512,
+          "supported": 512
+        }
+      },
+      "negation": {
+        "selected": {
+          "auroc": 0.7098253038194444,
+          "unsupported_rejected": 97,
+          "supported_rejected": 50,
+          "unsupported": 192,
+          "supported": 192
+        },
+        "previous": {
+          "auroc": 0.6796061197916666,
+          "unsupported_rejected": 1,
+          "supported_rejected": 0,
+          "unsupported": 192,
+          "supported": 192
+        },
+        "linear": {
+          "auroc": 0.7371148003472222,
+          "unsupported_rejected": 73,
+          "supported_rejected": 4,
+          "unsupported": 192,
+          "supported": 192
+        },
+        "raw": {
+          "auroc": 0.842529296875,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 192,
+          "supported": 192
+        }
+      },
+      "relation": {
+        "selected": {
+          "auroc": 0.4891221788194444,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 192,
+          "supported": 192
+        },
+        "previous": {
+          "auroc": 0.4878200954861111,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 192,
+          "supported": 192
+        },
+        "linear": {
+          "auroc": 0.4904242621527778,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 192,
+          "supported": 192
+        },
+        "raw": {
+          "auroc": 0.4956325954861111,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 192,
+          "supported": 192
+        }
+      },
+      "temporal": {
+        "selected": {
+          "auroc": 0.9945475260416666,
+          "unsupported_rejected": 126,
+          "supported_rejected": 0,
+          "unsupported": 192,
+          "supported": 192
+        },
+        "previous": {
+          "auroc": 0.9117567274305556,
+          "unsupported_rejected": 22,
+          "supported_rejected": 0,
+          "unsupported": 192,
+          "supported": 192
+        },
+        "linear": {
+          "auroc": 0.9748263888888888,
+          "unsupported_rejected": 64,
+          "supported_rejected": 0,
+          "unsupported": 192,
+          "supported": 192
+        },
+        "raw": {
+          "auroc": 0.8924153645833334,
+          "unsupported_rejected": 0,
+          "supported_rejected": 0,
+          "unsupported": 192,
+          "supported": 192
+        }
+      }
+    }
+  },
+  "test_template_families": {
+    "negation/09": {
+      "selected": {
+        "auroc": 0.91943359375,
+        "unsupported_rejected": 64,
+        "supported_rejected": 47,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "previous": {
+        "auroc": 0.977294921875,
+        "unsupported_rejected": 1,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "linear": {
+        "auroc": 0.979736328125,
+        "unsupported_rejected": 58,
+        "supported_rejected": 4,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "raw": {
+        "auroc": 0.9638671875,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      }
+    },
+    "negation/10": {
+      "selected": {
+        "auroc": 0.993408203125,
+        "unsupported_rejected": 1,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "previous": {
+        "auroc": 0.765380859375,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "linear": {
+        "auroc": 0.9638671875,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "raw": {
+        "auroc": 0.9970703125,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      }
+    },
+    "negation/11": {
+      "selected": {
+        "auroc": 0.68017578125,
+        "unsupported_rejected": 32,
+        "supported_rejected": 3,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "previous": {
+        "auroc": 0.67822265625,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "linear": {
+        "auroc": 0.737548828125,
+        "unsupported_rejected": 15,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "raw": {
+        "auroc": 0.659912109375,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      }
+    },
+    "relation/09": {
+      "selected": {
+        "auroc": 0.50146484375,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "previous": {
+        "auroc": 0.488525390625,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "linear": {
+        "auroc": 0.477294921875,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "raw": {
+        "auroc": 0.49755859375,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      }
+    },
+    "relation/10": {
+      "selected": {
+        "auroc": 0.405517578125,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "previous": {
+        "auroc": 0.428955078125,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "linear": {
+        "auroc": 0.43310546875,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "raw": {
+        "auroc": 0.390869140625,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      }
+    },
+    "relation/11": {
+      "selected": {
+        "auroc": 0.538330078125,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "previous": {
+        "auroc": 0.553955078125,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "linear": {
+        "auroc": 0.52734375,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "raw": {
+        "auroc": 0.572265625,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      }
+    },
+    "temporal/09": {
+      "selected": {
+        "auroc": 0.995849609375,
+        "unsupported_rejected": 51,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "previous": {
+        "auroc": 0.99169921875,
+        "unsupported_rejected": 22,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "linear": {
+        "auroc": 0.99951171875,
+        "unsupported_rejected": 46,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "raw": {
+        "auroc": 0.99951171875,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      }
+    },
+    "temporal/10": {
+      "selected": {
+        "auroc": 1.0,
+        "unsupported_rejected": 26,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "previous": {
+        "auroc": 0.999755859375,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "linear": {
+        "auroc": 1.0,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "raw": {
+        "auroc": 0.998779296875,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      }
+    },
+    "temporal/11": {
+      "selected": {
+        "auroc": 1.0,
+        "unsupported_rejected": 49,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "previous": {
+        "auroc": 0.998291015625,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "linear": {
+        "auroc": 1.0,
+        "unsupported_rejected": 18,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      },
+      "raw": {
+        "auroc": 0.99853515625,
+        "unsupported_rejected": 0,
+        "supported_rejected": 0,
+        "unsupported": 64,
+        "supported": 64
+      }
+    }
+  },
+  "same_question_counterfactual_ordering": {
+    "negation": {
+      "selected": {
+        "questions": 192,
+        "correct_ordering_fraction": 0.9322916666666666,
+        "mean_score_margin": 0.19843083253923618
+      },
+      "previous": {
+        "questions": 192,
+        "correct_ordering_fraction": 0.9427083333333334,
+        "mean_score_margin": 0.1099422712717676
+      },
+      "linear": {
+        "questions": 192,
+        "correct_ordering_fraction": 0.9010416666666666,
+        "mean_score_margin": 0.14637793310145678
+      },
+      "raw": {
+        "questions": 192,
+        "correct_ordering_fraction": 0.9270833333333334,
+        "mean_score_margin": 0.7521236510416666
+      }
+    },
+    "relation": {
+      "selected": {
+        "questions": 192,
+        "correct_ordering_fraction": 0.5,
+        "mean_score_margin": -0.005350470825611724
+      },
+      "previous": {
+        "questions": 192,
+        "correct_ordering_fraction": 0.484375,
+        "mean_score_margin": -0.0017216990746685885
+      },
+      "linear": {
+        "questions": 192,
+        "correct_ordering_fraction": 0.4947916666666667,
+        "mean_score_margin": -0.00381330166191443
+      },
+      "raw": {
+        "questions": 192,
+        "correct_ordering_fraction": 0.4895833333333333,
+        "mean_score_margin": -0.01406190156250002
+      }
+    },
+    "temporal": {
+      "selected": {
+        "questions": 192,
+        "correct_ordering_fraction": 1.0,
+        "mean_score_margin": 0.7656181082592329
+      },
+      "previous": {
+        "questions": 192,
+        "correct_ordering_fraction": 1.0,
+        "mean_score_margin": 0.25311370291220037
+      },
+      "linear": {
+        "questions": 192,
+        "correct_ordering_fraction": 1.0,
+        "mean_score_margin": 0.5491567816213042
+      },
+      "raw": {
+        "questions": 192,
+        "correct_ordering_fraction": 1.0,
+        "mean_score_margin": 0.8117124057291667
+      }
+    }
+  }
+}

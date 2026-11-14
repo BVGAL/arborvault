@@ -1,0 +1,22 @@
+{
+  "frozen_commit": "3a725b49651cd7b41d37cd34da0bdc8195f02ea1",
+  "repository": "https://github.com/BVGAL/arborvault",
+  "sha256": {
+    "configs/support-v2.json": "2723ac550e5c75092f27212b55779f06d809932e9f5b0aa4a78e11796e16f4dd",
+    "datasets/support-v2/examples.jsonl": "f24166edd7ebbcc63ef0c127ce44461a7cc7a4b7bc4b6d4393446447a334fa6e",
+    "datasets/support-v2/manifest.json": "dfa34cf926776207143d962be33404e54378980699fdf31f660e9855d4b2e5b1",
+    "datasets/support-v2/template-audit.json": "8dd70be965caea7d10fd78f486de731b4e7cfd4b566587c64cb4ab14d0a4083c",
+    "src/arborvault/support_contrasts.py": "1be0b047dc69ce9b29e04dc2b12cb17a737c31844e35d3fdcc1f7187b53f2fef",
+    "src/arborvault/support_v2_data.py": "99ab93c40a90e267eb1e4ab27e5623b7a8eb8f3318df09e47532fed028d7c5f8",
+    "src/arborvault/support_v2_models.py": "c49768f40eb19acaf37cfc94b470966a2376188157582ab881400cbe9950ba8b",
+    "src/arborvault/support_v2_features.py": "c84abba0605d3fb3f74fd2915ecdbfe998626c7389a7d6ec900a2d9493e10db3",
+    "src/arborvault/support_v2_eval.py": "7e0d5061edc911f0d14f6580f09982347e1eec8222affd401fc39f1950e19ac6",
+    "src/arborvault/support_probe.py": "744db48659eb6a7db87206ccae34192488948df24ada02092d55ece23262817f",
+    "src/arborvault/answerability.py": "f65a06c210ece85a8b3094efe7e7468688a5bd3960f701d007b9e5a80252f97f",
+    "scripts/run_support_v2.py": "8e95b8e8ea5a206536f4b1b67c00708d5a479a08340ed8104fa1c6890207395a",
+    "docs/support-v2-protocol.md": "655cfa12eee413e9eccab5f1be629a4428eb166f210fc17dbde51b11225d49d0",
+    "requirements.probe-cpu.txt": "deeaa383ed52c2bc50935ee13ed1b5b56999044f2e4a5ebfc5706fc344c414f3"
+  },
+  "new_cloud_resource_allocations": 0,
+  "test_used_for_model_selection": false
+}

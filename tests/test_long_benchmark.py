@@ -31,7 +31,10 @@ def test_html_hierarchy_and_nonduplicating_blocks():
         "f(x)",
     ]
     assert not any(n["title"] == "Empty" for n in nodes)
-    Tree([Node(**n) for n in nodes])
+    tree = Tree([Node(**n) for n in nodes])
+    api = next(n for n in tree.nodes.values() if n.locator["kind"] == "api")
+    assert "Return a result." in tree.views([api])[0].content
+    assert "Nested item." in tree.views([api])[0].content
 
 
 def fixture_tree():

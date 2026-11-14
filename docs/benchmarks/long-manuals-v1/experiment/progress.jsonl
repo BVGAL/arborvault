@@ -1,0 +1,85 @@
+{"variant": "qwen-base", "questions": 16, "total": 384, "unique_pairs": 3486, "elapsed_seconds": 103.308}
+{"variant": "qwen-base", "questions": 32, "total": 384, "unique_pairs": 6916, "elapsed_seconds": 178.614}
+{"variant": "qwen-base", "questions": 48, "total": 384, "unique_pairs": 10422, "elapsed_seconds": 256.181}
+{"variant": "qwen-base", "questions": 64, "total": 384, "unique_pairs": 14027, "elapsed_seconds": 336.279}
+{"variant": "qwen-base", "questions": 80, "total": 384, "unique_pairs": 17650, "elapsed_seconds": 417.452}
+{"variant": "qwen-base", "questions": 96, "total": 384, "unique_pairs": 21398, "elapsed_seconds": 503.915}
+{"variant": "qwen-base", "questions": 112, "total": 384, "unique_pairs": 24758, "elapsed_seconds": 579.528}
+{"variant": "qwen-base", "questions": 128, "total": 384, "unique_pairs": 28403, "elapsed_seconds": 662.246}
+{"variant": "qwen-base", "questions": 144, "total": 384, "unique_pairs": 31662, "elapsed_seconds": 737.513}
+{"variant": "qwen-base", "questions": 160, "total": 384, "unique_pairs": 34862, "elapsed_seconds": 823.417}
+{"variant": "qwen-base", "questions": 176, "total": 384, "unique_pairs": 38039, "elapsed_seconds": 894.392}
+{"variant": "qwen-base", "questions": 192, "total": 384, "unique_pairs": 41346, "elapsed_seconds": 966.393}
+{"variant": "qwen-base", "questions": 208, "total": 384, "unique_pairs": 44835, "elapsed_seconds": 1045.516}
+{"variant": "qwen-base", "questions": 224, "total": 384, "unique_pairs": 48341, "elapsed_seconds": 1122.686}
+{"variant": "qwen-base", "questions": 240, "total": 384, "unique_pairs": 51726, "elapsed_seconds": 1196.901}
+{"variant": "qwen-base", "questions": 256, "total": 384, "unique_pairs": 55193, "elapsed_seconds": 1274.923}
+{"variant": "qwen-base", "questions": 272, "total": 384, "unique_pairs": 58295, "elapsed_seconds": 1354.766}
+{"variant": "qwen-base", "questions": 288, "total": 384, "unique_pairs": 61364, "elapsed_seconds": 1422.761}
+{"variant": "qwen-base", "questions": 304, "total": 384, "unique_pairs": 64569, "elapsed_seconds": 1489.379}
+{"variant": "qwen-base", "questions": 320, "total": 384, "unique_pairs": 67857, "elapsed_seconds": 1562.651}
+{"variant": "qwen-base", "questions": 336, "total": 384, "unique_pairs": 71200, "elapsed_seconds": 1641.909}
+{"variant": "qwen-base", "questions": 352, "total": 384, "unique_pairs": 74652, "elapsed_seconds": 1717.835}
+{"variant": "qwen-base", "questions": 368, "total": 384, "unique_pairs": 77818, "elapsed_seconds": 1792.515}
+{"variant": "qwen-base", "questions": 384, "total": 384, "unique_pairs": 80898, "elapsed_seconds": 1863.468}
+{"variant": "cross-encoder-base", "questions": 16, "total": 384, "unique_pairs": 3365, "elapsed_seconds": 1874.159}
+{"variant": "cross-encoder-base", "questions": 32, "total": 384, "unique_pairs": 6740, "elapsed_seconds": 1880.828}
+{"variant": "cross-encoder-base", "questions": 48, "total": 384, "unique_pairs": 10389, "elapsed_seconds": 1887.956}
+{"variant": "cross-encoder-base", "questions": 64, "total": 384, "unique_pairs": 13920, "elapsed_seconds": 1894.792}
+{"variant": "cross-encoder-base", "questions": 80, "total": 384, "unique_pairs": 17478, "elapsed_seconds": 1901.926}
+{"variant": "cross-encoder-base", "questions": 96, "total": 384, "unique_pairs": 20976, "elapsed_seconds": 1908.651}
+{"variant": "cross-encoder-base", "questions": 112, "total": 384, "unique_pairs": 24338, "elapsed_seconds": 1915.198}
+{"variant": "cross-encoder-base", "questions": 128, "total": 384, "unique_pairs": 27975, "elapsed_seconds": 1922.647}
+{"variant": "cross-encoder-base", "questions": 144, "total": 384, "unique_pairs": 31221, "elapsed_seconds": 1929.279}
+{"variant": "cross-encoder-base", "questions": 160, "total": 384, "unique_pairs": 34517, "elapsed_seconds": 1936.982}
+{"variant": "cross-encoder-base", "questions": 176, "total": 384, "unique_pairs": 37901, "elapsed_seconds": 1943.622}
+{"variant": "cross-encoder-base", "questions": 192, "total": 384, "unique_pairs": 41339, "elapsed_seconds": 1950.25}
+{"variant": "cross-encoder-base", "questions": 208, "total": 384, "unique_pairs": 44876, "elapsed_seconds": 1957.264}
+{"variant": "cross-encoder-base", "questions": 224, "total": 384, "unique_pairs": 48389, "elapsed_seconds": 1964.105}
+{"variant": "cross-encoder-base", "questions": 240, "total": 384, "unique_pairs": 51885, "elapsed_seconds": 1970.839}
+{"variant": "cross-encoder-base", "questions": 256, "total": 384, "unique_pairs": 55315, "elapsed_seconds": 1977.918}
+{"variant": "cross-encoder-base", "questions": 272, "total": 384, "unique_pairs": 58652, "elapsed_seconds": 1985.343}
+{"variant": "cross-encoder-base", "questions": 288, "total": 384, "unique_pairs": 62189, "elapsed_seconds": 1992.458}
+{"variant": "cross-encoder-base", "questions": 304, "total": 384, "unique_pairs": 65676, "elapsed_seconds": 1999.269}
+{"variant": "cross-encoder-base", "questions": 320, "total": 384, "unique_pairs": 69277, "elapsed_seconds": 2006.439}
+{"variant": "cross-encoder-base", "questions": 336, "total": 384, "unique_pairs": 72988, "elapsed_seconds": 2014.555}
+{"variant": "cross-encoder-base", "questions": 352, "total": 384, "unique_pairs": 76611, "elapsed_seconds": 2021.999}
+{"variant": "cross-encoder-base", "questions": 368, "total": 384, "unique_pairs": 80113, "elapsed_seconds": 2029.053}
+{"variant": "cross-encoder-base", "questions": 384, "total": 384, "unique_pairs": 83618, "elapsed_seconds": 2035.987}
+{"variant": "cross-encoder-tuned", "questions": 16, "total": 384, "unique_pairs": 3628, "elapsed_seconds": 2044.915}
+{"variant": "cross-encoder-tuned", "questions": 32, "total": 384, "unique_pairs": 7144, "elapsed_seconds": 2051.784}
+{"variant": "cross-encoder-tuned", "questions": 48, "total": 384, "unique_pairs": 10778, "elapsed_seconds": 2059.002}
+{"variant": "cross-encoder-tuned", "questions": 64, "total": 384, "unique_pairs": 14477, "elapsed_seconds": 2066.225}
+{"variant": "cross-encoder-tuned", "questions": 80, "total": 384, "unique_pairs": 18070, "elapsed_seconds": 2073.325}
+{"variant": "cross-encoder-tuned", "questions": 96, "total": 384, "unique_pairs": 21827, "elapsed_seconds": 2080.896}
+{"variant": "cross-encoder-tuned", "questions": 112, "total": 384, "unique_pairs": 25345, "elapsed_seconds": 2087.773}
+{"variant": "cross-encoder-tuned", "questions": 128, "total": 384, "unique_pairs": 29013, "elapsed_seconds": 2095.565}
+{"variant": "cross-encoder-tuned", "questions": 144, "total": 384, "unique_pairs": 32420, "elapsed_seconds": 2102.674}
+{"variant": "cross-encoder-tuned", "questions": 160, "total": 384, "unique_pairs": 35881, "elapsed_seconds": 2110.915}
+{"variant": "cross-encoder-tuned", "questions": 176, "total": 384, "unique_pairs": 39491, "elapsed_seconds": 2118.188}
+{"variant": "cross-encoder-tuned", "questions": 192, "total": 384, "unique_pairs": 43043, "elapsed_seconds": 2125.122}
+{"variant": "cross-encoder-tuned", "questions": 208, "total": 384, "unique_pairs": 46752, "elapsed_seconds": 2132.472}
+{"variant": "cross-encoder-tuned", "questions": 224, "total": 384, "unique_pairs": 50515, "elapsed_seconds": 2140.077}
+{"variant": "cross-encoder-tuned", "questions": 240, "total": 384, "unique_pairs": 54198, "elapsed_seconds": 2147.202}
+{"variant": "cross-encoder-tuned", "questions": 256, "total": 384, "unique_pairs": 57803, "elapsed_seconds": 2154.551}
+{"variant": "cross-encoder-tuned", "questions": 272, "total": 384, "unique_pairs": 61390, "elapsed_seconds": 2162.612}
+{"variant": "cross-encoder-tuned", "questions": 288, "total": 384, "unique_pairs": 64968, "elapsed_seconds": 2169.886}
+{"variant": "cross-encoder-tuned", "questions": 304, "total": 384, "unique_pairs": 68496, "elapsed_seconds": 2176.732}
+{"variant": "cross-encoder-tuned", "questions": 320, "total": 384, "unique_pairs": 72127, "elapsed_seconds": 2183.922}
+{"variant": "cross-encoder-tuned", "questions": 336, "total": 384, "unique_pairs": 75874, "elapsed_seconds": 2192.071}
+{"variant": "cross-encoder-tuned", "questions": 352, "total": 384, "unique_pairs": 79597, "elapsed_seconds": 2199.739}
+{"variant": "cross-encoder-tuned", "questions": 368, "total": 384, "unique_pairs": 83242, "elapsed_seconds": 2207.024}
+{"variant": "cross-encoder-tuned", "questions": 384, "total": 384, "unique_pairs": 86872, "elapsed_seconds": 2214.428}
+{"variant": "e5-text", "questions": 32, "total": 384, "elapsed_seconds": 2223.512}
+{"variant": "e5-text", "questions": 64, "total": 384, "elapsed_seconds": 2225.782}
+{"variant": "e5-text", "questions": 96, "total": 384, "elapsed_seconds": 2228.563}
+{"variant": "e5-text", "questions": 128, "total": 384, "elapsed_seconds": 2230.84}
+{"variant": "e5-text", "questions": 160, "total": 384, "elapsed_seconds": 2233.423}
+{"variant": "e5-text", "questions": 192, "total": 384, "elapsed_seconds": 2233.635}
+{"variant": "e5-text", "questions": 224, "total": 384, "elapsed_seconds": 2233.843}
+{"variant": "e5-text", "questions": 256, "total": 384, "elapsed_seconds": 2234.05}
+{"variant": "e5-text", "questions": 288, "total": 384, "elapsed_seconds": 2234.263}
+{"variant": "e5-text", "questions": 320, "total": 384, "elapsed_seconds": 2234.479}
+{"variant": "e5-text", "questions": 352, "total": 384, "elapsed_seconds": 2234.688}
+{"variant": "e5-text", "questions": 384, "total": 384, "elapsed_seconds": 2234.895}
+{"stage": "complete", "elapsed_seconds": 2235.392}

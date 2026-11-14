@@ -1,5 +1,23 @@
 # Evaluation protocol
 
+## Long manuals v1: new domain and more scoped negatives
+
+The [long-manual results](long-manuals-v1-results.md) compare fixed Qwen base,
+cross-encoder base/adapted and E5 on 12 new technical manuals (120 answerable,
+168 unanswerable query-document cases), with four separate calibration manuals.
+Median document length across the 16 manuals is 12,923.5 words versus 3,416 in the
+historical QASPER pool. Questions are assistant-authored, not independently
+human-adjudicated; transfers share question text across documents within a split.
+The report includes tree/flat ablations, candidate-access ceilings, abstention
+tradeoffs, source-family intervals and every replayable score/trace.
+
+Read the [frozen protocol](long-manuals-v1-protocol.md) and
+[dataset card](../datasets/long-manuals-v1/README.md) before comparing its scores
+with older experiments. Domain, granularity and label construction also changed;
+this does not isolate document length or measure generated-answer quality.
+The test is now observed and must not become a model-selection set while still
+being described as untouched.
+
 ## Cross-encoder CV v1: five document folds and abstention
 
 The [CV report](cross-encoder-cv-v1-results.md) pools the existing 840 questions into

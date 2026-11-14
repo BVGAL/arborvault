@@ -1,0 +1,179 @@
+{
+  "manifest_sha256": "20198cd3e3e75be4d432c1437f66719a050991e541b97ccb0933d4764eaef44b",
+  "annotation_review": "Assistant source checks, not independent human adjudication",
+  "partitions": {
+    "calibration": {
+      "categories": {
+        "source_grounded": 40,
+        "unspecified_performance": 8,
+        "unspecified_configuration_or_guarantee": 20,
+        "cross_document_transfer": 28
+      },
+      "evidence_depth_histogram": {
+        "2": 4,
+        "3": 7,
+        "4": 12,
+        "5": 13,
+        "6": 4
+      },
+      "evidence_words": {
+        "min": 25,
+        "median": 37.5,
+        "mean": 41.575,
+        "max": 86
+      },
+      "question_words": {
+        "min": 7,
+        "median": 12.0,
+        "mean": 12.28125,
+        "max": 18
+      },
+      "unique_question_texts": 68,
+      "documents": {
+        "argparse": {
+          "nodes": 463,
+          "passages": 386,
+          "words": 12676,
+          "max_depth": 6,
+          "branches": 77
+        },
+        "decimal": {
+          "nodes": 730,
+          "passages": 563,
+          "words": 11959,
+          "max_depth": 5,
+          "branches": 167
+        },
+        "pathlib": {
+          "nodes": 595,
+          "passages": 502,
+          "words": 8295,
+          "max_depth": 5,
+          "branches": 93
+        },
+        "unittest": {
+          "nodes": 829,
+          "passages": 692,
+          "words": 13171,
+          "max_depth": 7,
+          "branches": 137
+        }
+      }
+    },
+    "test": {
+      "categories": {
+        "source_grounded": 120,
+        "unspecified_performance": 24,
+        "unspecified_configuration_or_guarantee": 60,
+        "cross_document_transfer": 84
+      },
+      "evidence_depth_histogram": {
+        "2": 8,
+        "3": 21,
+        "4": 39,
+        "5": 33,
+        "6": 16,
+        "7": 3
+      },
+      "evidence_words": {
+        "min": 25,
+        "median": 38.0,
+        "mean": 46.6,
+        "max": 116
+      },
+      "question_words": {
+        "min": 6,
+        "median": 12.0,
+        "mean": 12.336805555555555,
+        "max": 18
+      },
+      "unique_question_texts": 204,
+      "documents": {
+        "logging": {
+          "nodes": 508,
+          "passages": 410,
+          "words": 9259,
+          "max_depth": 5,
+          "branches": 98
+        },
+        "sqlite3": {
+          "nodes": 745,
+          "passages": 628,
+          "words": 11961,
+          "max_depth": 6,
+          "branches": 117
+        },
+        "ctypes": {
+          "nodes": 778,
+          "passages": 630,
+          "words": 14196,
+          "max_depth": 7,
+          "branches": 148
+        },
+        "multiprocessing": {
+          "nodes": 948,
+          "passages": 782,
+          "words": 19113,
+          "max_depth": 6,
+          "branches": 166
+        },
+        "typing": {
+          "nodes": 1150,
+          "passages": 990,
+          "words": 19686,
+          "max_depth": 7,
+          "branches": 160
+        },
+        "datetime": {
+          "nodes": 873,
+          "passages": 741,
+          "words": 15653,
+          "max_depth": 4,
+          "branches": 132
+        },
+        "re": {
+          "nodes": 533,
+          "passages": 461,
+          "words": 11428,
+          "max_depth": 6,
+          "branches": 72
+        },
+        "ssl": {
+          "nodes": 996,
+          "passages": 807,
+          "words": 14061,
+          "max_depth": 6,
+          "branches": 189
+        },
+        "socket": {
+          "nodes": 790,
+          "passages": 669,
+          "words": 12358,
+          "max_depth": 6,
+          "branches": 121
+        },
+        "subprocess": {
+          "nodes": 540,
+          "passages": 450,
+          "words": 8991,
+          "max_depth": 5,
+          "branches": 90
+        },
+        "datamodel": {
+          "nodes": 905,
+          "passages": 743,
+          "words": 18840,
+          "max_depth": 7,
+          "branches": 162
+        },
+        "logging-cookbook": {
+          "nodes": 483,
+          "passages": 428,
+          "words": 25094,
+          "max_depth": 5,
+          "branches": 55
+        }
+      }
+    }
+  }
+}

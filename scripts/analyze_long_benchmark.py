@@ -13,7 +13,7 @@ from arborvault.cross_validation import (
     operating_metrics,
     tune_threshold,
 )
-from arborvault.long_benchmark import DocumentIndex, result_row, traverse
+from arborvault.long_benchmark import DocumentIndex, result_row, verify_recorded_traversal
 from arborvault.long_documents import load_corpus
 from arborvault.qwen3 import file_hash
 
@@ -61,7 +61,7 @@ def main():
         raise ValueError("Incomplete inference")
     indexes = {d: DocumentIndex(t) for d, t in trees.items()}
     lexical = {q["id"]: indexes[q["document"]].scores(q["question"]) for q in queries}
-    policies, confidences, caches = {}, {}, {}
+    policies, confidences, caches, lexical_ties = {}, {}, {}, []
     for label in ("qwen-base", "cross-encoder-base", "cross-encoder-tuned"):
         cache = read(directory / "scores" / (label + ".json"))
         if set(cache) != {q["id"] for q in queries}:
@@ -77,16 +77,25 @@ def main():
             for budget in config["budgets"]:
                 for mode in ("flat", "tree_scored"):
                     name = f"{mode}-{budget}"
-                    replay = traverse(
+                    replay = entry["policies"][name]
+                    roundoff = verify_recorded_traversal(
                         index,
                         lexical[q["id"]],
-                        lambda ids, entry=entry: {i: entry["scores"][i] for i in ids},
+                        entry["scores"],
+                        replay,
                         mode=mode,
                         budget=budget,
                         width=config["width"],
                     )
-                    if replay != entry["policies"][name]:
-                        raise ValueError("Traversal replay mismatch")
+                    if roundoff:
+                        lexical_ties.append(
+                            {
+                                "model": label,
+                                "question": q["id"],
+                                "policy": name,
+                                "frontiers": roundoff,
+                            }
+                        )
                     union.update(replay["scored_ids"])
                     key = label + "/" + name
                     policies.setdefault(key, []).append(result_row(index.tree, q, replay))
@@ -240,6 +249,8 @@ def main():
     ]
     analysis = {
         "verified": True,
+        "analysis_script_sha256": file_hash(Path(__file__)),
+        "analysis_numpy_version": np.__version__,
         "verified_artifact_files": len(hashes),
         "source_revision": plan["source_revision"],
         "dataset_counts": manifest["counts"],
@@ -249,6 +260,11 @@ def main():
         "paired_comparisons": comparisons,
         "queries": rows_by_policy,
         "candidate_diagnostics": candidate_diagnostics,
+        "lexical_roundoff_replay": {
+            "absolute_tolerance": 0.0,
+            "affected_policies": lexical_ties,
+            "neural_scores_and_recorded_selections_changed": False,
+        },
         "usage": read(directory / "usage.json"),
         "runtime": read(directory / "runtime.json"),
     }

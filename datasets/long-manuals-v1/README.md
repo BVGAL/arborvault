@@ -87,3 +87,9 @@ The manifest lists each source URL and hash. `tests/test_long_benchmark.py`
 reconstructs every tree from the frozen HTML and checks evidence, partitions,
 counts and hashes. The inference protocol is in
 [`docs/long-manuals-v1-protocol.md`](../../docs/long-manuals-v1-protocol.md).
+
+## Run status
+
+The [completed comparison](../../docs/long-manuals-v1-results.md) is public. This
+test is now observed; future tuning informed by its results must reserve a new
+evaluation set. The frozen corpus and labels remain unchanged after scoring.

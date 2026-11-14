@@ -1,11 +1,14 @@
 import json
+import os
+import subprocess
+import sys
 from pathlib import Path
 
 import pytest
 
 from arborvault.candidate_scoring import retrieve
 from arborvault.domain import Node
-from arborvault.long_benchmark import DocumentIndex, traverse
+from arborvault.long_benchmark import DocumentIndex, traverse, verify_recorded_traversal
 from arborvault.long_documents import load_corpus, parse_manual
 from arborvault.routing_v2 import Tree
 
@@ -75,6 +78,56 @@ def test_missing_or_nan_scores_fail():
     for fn in [lambda ids: {}, lambda ids: dict.fromkeys(ids, float("nan"))]:
         with pytest.raises(ValueError):
             traverse(index, index.scores("evidence"), fn, mode="flat", budget=3)
+
+
+def test_recorded_replay_allows_only_roundoff_and_preserves_model_choices():
+    index = DocumentIndex(fixture_tree())
+    lexical = {i: 1.0 for i in index.ids}
+    values = {i: float(index.tree.nodes[i].ordinal) for i in index.ids}
+    original = traverse(
+        index, lexical, lambda ids: {i: values[i] for i in ids}, mode="flat", budget=3
+    )
+    perturbed = {**lexical, "3": 1.0 + 1e-14}
+    with pytest.raises(ValueError, match="Exact lexical"):
+        verify_recorded_traversal(index, perturbed, values, original, mode="flat", budget=3)
+    ties = verify_recorded_traversal(
+        index, perturbed, values, original, mode="flat", budget=3, lexical_tolerance=1e-12
+    )
+    assert len(ties) == 1 and ties[0]["candidate_set_changed_vs_canonical"]
+    with pytest.raises(ValueError, match="Substantive lexical"):
+        verify_recorded_traversal(
+            index,
+            {**lexical, "3": 1.1},
+            values,
+            original,
+            mode="flat",
+            budget=3,
+            lexical_tolerance=1e-12,
+        )
+    wrong = {**original, "reached_ids": original["reached_ids"][::-1]}
+    with pytest.raises(ValueError, match="Final ranking"):
+        verify_recorded_traversal(index, lexical, values, wrong, mode="flat", budget=3)
+
+
+def test_bm25_scores_are_reproducible_across_python_hash_seeds():
+    code = """
+import hashlib,json
+from arborvault.long_documents import load_corpus
+from arborvault.long_benchmark import DocumentIndex
+_,trees,queries=load_corpus('datasets/long-manuals-v1')
+question=next(q for q in queries if q['id']=='u-ctypes-02')
+scores=DocumentIndex(trees['ctypes']).scores(question['question'])
+print(hashlib.sha256(json.dumps(scores,sort_keys=True).encode()).hexdigest())
+"""
+    outputs = [
+        subprocess.check_output(
+            [sys.executable, "-c", code],
+            cwd=Path(__file__).resolve().parents[1],
+            env={**os.environ, "PYTHONHASHSEED": str(seed)},
+        )
+        for seed in (0, 2)
+    ]
+    assert outputs[0] == outputs[1]
 
 
 def test_frozen_corpus_and_split_integrity():

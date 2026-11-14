@@ -112,12 +112,12 @@ def load_corpus(directory):
     from .routing_v2 import Tree
 
     directory = Path(directory)
-    manifest = json.loads((directory / "manifest.json").read_text())
+    manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8"))
     for relative, expected in manifest["files"].items():
         if hashlib.sha256((directory / relative).read_bytes()).hexdigest() != expected:
             raise ValueError(f"Corpus hash mismatch: {relative}")
-    docs = json.loads((directory / "documents.json").read_text())
-    queries = json.loads((directory / "questions.json").read_text())
+    docs = json.loads((directory / "documents.json").read_text(encoding="utf-8"))
+    queries = json.loads((directory / "questions.json").read_text(encoding="utf-8"))
     trees = {d["id"]: Tree([Node(**n) for n in d["nodes"]]) for d in docs}
     roles = {q["document"]: q["split"] for q in queries}
     if any(roles[q["document"]] != q["split"] for q in queries):

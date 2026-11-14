@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+- Add a separately frozen 16-manual corpus: 12 test documents with 120 answerable
+  and 168 scoped-unanswerable cases; four document-disjoint calibration manuals.
+  Preserve licensed source snapshots, annotation rationales and explicit synthetic-data limits.
+- Compare Qwen base, a fixed prior adapted cross-encoder, its pretrained base and E5.
+  Primary flat recall: 0.9167, 0.9250, 0.9417, 0.9500, respectively. Publish matched
+  tree/flat runs at 64/128 pairs, calibrated abstention, all traces and descriptive uncertainty.
+- Restore meaningful paragraph previews before inspecting outcomes; disclose the interrupted
+  attempt, rerun every system and include all allocated time in cost. Add a regression check.
+- Verify all artifact hashes and replay calculations, delete the GPU allocation, and report
+  cumulative estimated spend of USD 5.79872 within the USD 10 budget.
+  Full local suite: 112 passed, six optional skips; GPU checks: 26 passed.
+- Make BM25 summation deterministic across Python hash seeds after detecting machine-precision
+  tie-order drift in offline replay. Reproduce every original neural traversal exactly;
+  preserve all scores and annotations and publish the numerical audit.
+
 - Complete five-fold document CV over all 840 existing QASPER questions, with separate
   inner roles for weight updates, checkpoint choice, gate fitting and threshold tuning.
   Explicitly disclose retrospective reuse of historical test questions; retain old reports.

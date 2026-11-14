@@ -8,7 +8,19 @@ ArborVault stores document hierarchies in PostgreSQL and returns source-backed s
 through a small HTTP API. Use it as an experimental retrieval component in an agent or
 RAG pipeline. The framework-neutral API supports reusable integrations with any AI agent.
 
-**Latest: five-fold document cross-validation.** On 840 previously collected QASPER
+**Latest: new long-manual test.** On 12 previously unused ArborVault manuals,
+coverage-first Recall@5 is **0.9167** for Qwen base, **0.9250** for the previously
+adapted cross-encoder, **0.9417** for its base and **0.9500** for E5. The test has
+120 answerable and 168 unanswerable query-document cases; four separate manuals
+calibrate abstention. The adapted cross-encoder's conservative gate rejects
+130/168 unknown cases and 5/120 answerable cases, with recall **0.8833**.
+Documents are longer and more hierarchical, but questions are assistant-authored
+synthetic data without independent human adjudication. This is evidence retrieval
+inside a known document, not an end-to-end RAG or STAIR reproduction result.
+Read the [full results, tree/flat ablation and limitations](docs/long-manuals-v1-results.md)
+and [dataset card](datasets/long-manuals-v1/README.md). No production model is promoted.
+
+**Previous: five-fold document cross-validation.** On 840 previously collected QASPER
 questions (700 answerable, 140 unknown), pooled out-of-fold Recall@5 is **0.7144**
 for Qwen base, **0.6708** for the adapted cross-encoder, **0.6580** for its base and
 **0.5851** for E5. The cross-encoder's training gain is only **+1.29 points**, with

@@ -1,0 +1,24 @@
+{
+  "qwen-base": {
+    "seconds": 1838.6822933331132,
+    "unique_pairs": 80898,
+    "tokens": 17935378,
+    "shortened_pairs": 893
+  },
+  "cross-encoder-base": {
+    "seconds": 169.69270190503448,
+    "unique_pairs": 83618,
+    "tokens": 14270910,
+    "shortened_pairs": 943
+  },
+  "cross-encoder-tuned": {
+    "seconds": 177.59872198989615,
+    "unique_pairs": 86872,
+    "tokens": 14881614,
+    "shortened_pairs": 976
+  },
+  "e5-text": {
+    "seconds": 14.145080682821572,
+    "indexed_passages": 9882
+  }
+}

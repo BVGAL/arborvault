@@ -82,17 +82,18 @@ class BM25:
 
     def scores(self, query):
         result = []
+        query_terms = sorted(set(tokens(query)))
         for row, length in zip(self.terms, self.lengths, strict=True):
-            value = 0.0
-            for term in set(tokens(query)):
+            contributions = []
+            for term in query_terms:
                 tf = row[term]
                 if tf:
                     idf = math.log(
                         1 + (len(self.terms) - self.df[term] + 0.5) / (self.df[term] + 0.5)
                     )
                     norm = 1.2 * (0.25 + 0.75 * length / max(self.average, 1))
-                    value += idf * tf * 2.2 / (tf + norm)
-            result.append(value)
+                    contributions.append(idf * tf * 2.2 / (tf + norm))
+            result.append(math.fsum(contributions))
         return result
 
 

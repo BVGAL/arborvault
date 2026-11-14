@@ -115,3 +115,16 @@ python scripts/analyze_long_benchmark.py --experiment /path/to/long-v1 --output 
 Checkpoint binaries are not bundled in Git; the published score caches permit
 offline replay without them. The prior training runner and checkpoint hashes
 document provenance, but exact GPU retraining reproducibility is not promised.
+
+### Post-run numerical reproducibility fix
+
+The first offline replay revealed hash-order-dependent floating-point addition
+in the existing BM25 implementation. A separate numerical audit found differences
+up to 7.11e-15 and one query with a permutation among mathematically tied scores.
+Terms now use deterministic ordering and accurate summation. With this fix,
+**every original recorded candidate sequence, branch expansion and final neural
+ranking reproduces exactly**, without tolerance or changed selections. Neural
+scores and dataset annotations remain untouched. The published summary explicitly
+records zero replay tolerance; the numerical audit and regression test document
+the fix. This changes neither the frozen retrieval objective nor the budget or
+threshold-selection rules.

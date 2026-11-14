@@ -1,0 +1,17 @@
+{
+  "corpus-profile.json": "76cd82f9df24e056e6a86211a34e28582929b73d7ea656d5e18e7a806f087848",
+  "experiment/artifact-hashes.json": "aefa59d7c5bd0406d7a68f82c1230c73a4e1d7bf3c8f7bd7c1c0c17c156a4c98",
+  "experiment/environment.json": "fb2131f63af30f3ccdb888da257b8af14d271dd5811959a1029cac326df50e5d",
+  "experiment/plan.json": "877862f211386a2543acfb1ec7c0e14f33a55c4aec963a25b5d36eef412fb6cb",
+  "experiment/progress.jsonl": "1443e1e04e5838ade9494d1b04c4041999b18c5cfc924c7eba72c61d5142adc5",
+  "experiment/runtime.json": "dc579df416d16069d815077534c556299f8723d8fa9adf4b9eef37a153913433",
+  "experiment/scores/cross-encoder-base.json": "0d267bd34a922b2ff0ab675ada590a53934599b6693c18d5ffa81707cbb45b3d",
+  "experiment/scores/cross-encoder-tuned.json": "c7ebc1f4fd13cc856f7734ac151de9923672a62c82d34d815f79657eb468a6c0",
+  "experiment/scores/e5-text.json": "2038b650c842453be2d8462456d0d5bb08fadf16b11925d1eb25ed0831f8f80e",
+  "experiment/scores/qwen-base.json": "2e4039ab17d41ef4e9ae513c098e260bcd9e4f4feecd770a09319265a351dadb",
+  "experiment/usage.json": "4724e5e317115228609ab727c2058641f4c7eb7b8ca40d5f4e25dd08f90f0f80",
+  "export-check.json": "2ee1db8b2115aa687e9298a06b130046bf5f2156ae0d29b3812b4587786f0446",
+  "numerical-audit.json": "7a43b20ee79aeac7e780682a167ab1675c886956c326771e4199f99f56156ae9",
+  "run-cost.json": "e09d35a43b292d711055cb5dcdf7b3ad1591a4e9db5e2bcbaeefae00e780eb6d",
+  "verified-summary.json": "4bf78e4577f5b9a7596e710e0232aa0e16c4b8dae24037a5f4bb5c55ad70a483"
+}

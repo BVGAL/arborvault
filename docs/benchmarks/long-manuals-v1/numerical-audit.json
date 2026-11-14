@@ -1,0 +1,13 @@
+{
+  "python_hash_seed": "2",
+  "legacy_query_rankings_changed_vs_canonical": 1,
+  "max_legacy_vs_canonical_score_difference": 7.105427357601002e-15,
+  "affected": [
+    {
+      "query": "u-ctypes-02",
+      "changed_rank_positions": 3,
+      "maximum_score_difference_at_changed_ranks": 0.0
+    }
+  ],
+  "note": "Independent numerical audit, not new neural inference. Original recorded neural selections remain unchanged."
+}

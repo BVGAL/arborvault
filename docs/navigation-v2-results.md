@@ -70,7 +70,7 @@ help: the models here score candidates, while code manages the search actions.
 
 ## Frozen data and comparison
 
-Six new Python 3.13 manuals provide 48 answerable and 48 scoped-unanswerable test cases (72 distinct question texts). Four separate, reused calibration manuals provide 40 answerable and 56 unknown cases. Test documents contain 4,778Ã¢â‚¬â€œ9,214 words, with maximum depth 5Ã¢â‚¬â€œ6: hierarchical, but shorter than the previous long-manual distribution.
+Six new Python 3.13 manuals provide 48 answerable and 48 scoped-unanswerable test cases (72 distinct question texts). Four separate, reused calibration manuals provide 40 answerable and 56 unknown cases. Test documents contain 4,778 to 9,214 words, with maximum depth 5 to 6: hierarchical, but shorter than the previous long-manual distribution.
 
 Annotations are assistant-authored and source-checked, without independent human adjudication. Evidence may have unannotated semantic alternatives. Half the negatives concern missing runtime/configuration information; half transfer questions from another test document. The correct document is supplied. Pretraining exposure is unknown. Five source-family groups support only exploratory uncertainty estimates.
 
@@ -158,21 +158,21 @@ Percentage-point differences with 95% paired bootstrap intervals, resampling fiv
 
 | Left minus right | Difference | 95% interval |
 |---|---:|---:|
-| qwen-base/tree_guided-64/coverage Ã¢Ë†â€™ qwen-base/tree_scored-64/coverage | +50.00 | [+25.00, +77.08] |
-| qwen-base/tree_guided-64/coverage Ã¢Ë†â€™ qwen-base/tree_budgeted-64/coverage | +8.33 | [+0.00, +18.75] |
-| qwen-base/tree_guided-64/coverage Ã¢Ë†â€™ qwen-base/flat-64/coverage | +0.00 | [+0.00, +0.00] |
-| cross-encoder-base/tree_guided-64/coverage Ã¢Ë†â€™ cross-encoder-base/tree_scored-64/coverage | +54.17 | [+40.00, +66.67] |
-| cross-encoder-base/tree_guided-64/coverage Ã¢Ë†â€™ cross-encoder-base/tree_budgeted-64/coverage | +6.25 | [+2.08, +10.42] |
-| cross-encoder-base/tree_guided-64/coverage Ã¢Ë†â€™ cross-encoder-base/flat-64/coverage | -2.08 | [-4.69, +0.00] |
-| tacit-4b/tree_guided-64/coverage Ã¢Ë†â€™ tacit-4b/tree_scored-64/coverage | +54.17 | [+35.00, +70.83] |
-| tacit-4b/tree_guided-64/coverage Ã¢Ë†â€™ tacit-4b/tree_budgeted-64/coverage | +10.42 | [+2.50, +16.07] |
-| tacit-4b/tree_guided-64/coverage Ã¢Ë†â€™ tacit-4b/flat-64/coverage | +0.00 | [+0.00, +0.00] |
-| tacit-4b/flat-64/coverage Ã¢Ë†â€™ qwen-base/flat-64/coverage | -2.08 | [-10.00, +5.00] |
-| tacit-4b/tree_guided-64/coverage Ã¢Ë†â€™ qwen-base/tree_guided-64/coverage | -2.08 | [-10.00, +5.00] |
-| cross-encoder-base/tree_guided-64/coverage Ã¢Ë†â€™ qwen-base/tree_guided-64/coverage | +2.08 | [-7.81, +15.00] |
-| qwen-base/tree_guided-64/coverage Ã¢Ë†â€™ e5-text/coverage | +0.00 | [-15.00, +9.38] |
-| cross-encoder-base/tree_guided-64/coverage Ã¢Ë†â€™ e5-text/coverage | +2.08 | [+0.00, +7.50] |
-| tacit-4b/tree_guided-64/coverage Ã¢Ë†â€™ e5-text/coverage | -2.08 | [-12.50, +7.81] |
+| qwen-base/tree_guided-64/coverage minus qwen-base/tree_scored-64/coverage | +50.00 | [+25.00, +77.08] |
+| qwen-base/tree_guided-64/coverage minus qwen-base/tree_budgeted-64/coverage | +8.33 | [+0.00, +18.75] |
+| qwen-base/tree_guided-64/coverage minus qwen-base/flat-64/coverage | +0.00 | [+0.00, +0.00] |
+| cross-encoder-base/tree_guided-64/coverage minus cross-encoder-base/tree_scored-64/coverage | +54.17 | [+40.00, +66.67] |
+| cross-encoder-base/tree_guided-64/coverage minus cross-encoder-base/tree_budgeted-64/coverage | +6.25 | [+2.08, +10.42] |
+| cross-encoder-base/tree_guided-64/coverage minus cross-encoder-base/flat-64/coverage | -2.08 | [-4.69, +0.00] |
+| tacit-4b/tree_guided-64/coverage minus tacit-4b/tree_scored-64/coverage | +54.17 | [+35.00, +70.83] |
+| tacit-4b/tree_guided-64/coverage minus tacit-4b/tree_budgeted-64/coverage | +10.42 | [+2.50, +16.07] |
+| tacit-4b/tree_guided-64/coverage minus tacit-4b/flat-64/coverage | +0.00 | [+0.00, +0.00] |
+| tacit-4b/flat-64/coverage minus qwen-base/flat-64/coverage | -2.08 | [-10.00, +5.00] |
+| tacit-4b/tree_guided-64/coverage minus qwen-base/tree_guided-64/coverage | -2.08 | [-10.00, +5.00] |
+| cross-encoder-base/tree_guided-64/coverage minus qwen-base/tree_guided-64/coverage | +2.08 | [-7.81, +15.00] |
+| qwen-base/tree_guided-64/coverage minus e5-text/coverage | +0.00 | [-15.00, +9.38] |
+| cross-encoder-base/tree_guided-64/coverage minus e5-text/coverage | +2.08 | [+0.00, +7.50] |
+| tacit-4b/tree_guided-64/coverage minus e5-text/coverage | -2.08 | [-12.50, +7.81] |
 
 ## Compute, verification and reproducibility
 

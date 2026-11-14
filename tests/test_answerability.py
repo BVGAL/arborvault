@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 
 import numpy as np
@@ -34,7 +35,10 @@ class WordTokenizer:
     def num_special_tokens_to_add(self, pair):
         return 3
 
-    def prepare_for_model(self, ids, pair_ids, **kwargs):
+    def __call__(self, question, text, *, truncation, max_length, **kwargs):
+        assert truncation == "only_second"
+        ids = question.split()
+        pair_ids = text.split()[: max_length - len(ids) - 3]
         return {"input_ids": ["CLS", *ids, "SEP", *pair_ids, "SEP"]}
 
 
@@ -44,6 +48,34 @@ def test_verifier_preserves_question_and_never_sees_unreturned_text():
     assert shortened
     with pytest.raises(ValueError, match="Question exceeds"):
         fit_evidence(WordTokenizer(), "one two three four five", "context", 8)
+
+
+@pytest.mark.skipif(
+    os.getenv("RUN_CACHED_TOKENIZER_TEST") != "1", reason="Requires pinned tokenizer in local cache"
+)
+@pytest.mark.parametrize("text", ["one " * 1000, ""])
+def test_verifier_real_tokenizer_preserves_exact_pair_prefix(text):
+    from transformers import AutoTokenizer
+
+    tokenizer = AutoTokenizer.from_pretrained(
+        "cross-encoder/ms-marco-MiniLM-L6-v2",
+        revision="233902d25c440f23af6f7d6e94d2946bac0bee0a",
+        local_files_only=True,
+    )
+    question = "which value"
+    fitted, shortened = fit_evidence(tokenizer, question, text, max_length=12)
+    qids = tokenizer.encode(question, add_special_tokens=False)
+    tids = tokenizer.encode(text, add_special_tokens=False)
+    kept = tids[: 12 - len(qids) - 3]
+    expected = [tokenizer.cls_token_id, *qids, tokenizer.sep_token_id]
+    if text:
+        expected += [*kept, tokenizer.sep_token_id]
+    # The pinned tokenizer represents an empty second input as a single sequence.
+    assert fitted["input_ids"] == expected
+    assert fitted["attention_mask"] == [1] * len(fitted["input_ids"])
+    assert shortened == (len(kept) < len(tids))
+    batch = tokenizer.pad([fitted], padding=True, return_tensors="pt")
+    assert batch["input_ids"].tolist() == [expected]
 
 
 def test_joint_calibration_bounds_total_false_rejections():

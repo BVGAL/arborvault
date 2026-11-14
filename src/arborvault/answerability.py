@@ -21,14 +21,17 @@ def fit_evidence(tokenizer, question, text, max_length=512):
     if allowance < 1:
         raise ValueError("Question exceeds verifier allowance")
     ids = tokenizer.encode(text, add_special_tokens=False)
-    # Build directly from tokens so decoding/re-encoding cannot exceed the limit.
-    result = tokenizer.prepare_for_model(
-        question_ids,
-        pair_ids=ids[:allowance],
+    # The public pair API works with Transformers 5 and preserves the first input.
+    result = tokenizer(
+        question,
+        text,
         add_special_tokens=True,
         return_attention_mask=True,
-        truncation=False,
+        truncation="only_second",
+        max_length=max_length,
     )
+    if len(result["input_ids"]) > max_length:
+        raise ValueError("Verifier tokenizer exceeded its allowance")
     return result, len(ids) > allowance
 
 

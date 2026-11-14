@@ -1,0 +1,63 @@
+{
+  "id": "support-v2",
+  "config_path": "configs/support-v2.json",
+  "dataset": "datasets/support-v2",
+  "old_dataset": "datasets/support-v1",
+  "old_examples_sha256": "7e366c4d99c6748cfce68b48bce9f6902fd57fef3891186d42c649e0afd15167",
+  "human_source_sha256": "68dcfbb971bd3e96d5b46c7177b16c1a4e7d4bdef19fb204502738552dede002",
+  "human_source_url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v2.0.json",
+  "human_calibration_articles": 24,
+  "human_test_articles": 32,
+  "human_pairs_per_article": 16,
+  "contrast_groups_per_family": {
+    "fit": 64,
+    "selection": 32,
+    "calibration": 32,
+    "test": 32
+  },
+  "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+  "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+  "max_length": 512,
+  "cpu_threads": 4,
+  "batch_size": 16,
+  "feature_decimals": 7,
+  "seed": 42,
+  "linear_l2_candidates": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "mlp_hidden": 32,
+  "mlp_learning_rate": 0.005,
+  "mlp_l2": 0.001,
+  "mlp_checkpoints": [
+    25,
+    50,
+    100
+  ],
+  "selection_low_fpr_limit": 0.05,
+  "selection_rule": "Mean normalized partial ROC area for rejecting unsupported contexts at useful rejection<=5%, equally across human, negation, relation, temporal; ties prefer fewer parameters then stronger regularization or earlier epoch",
+  "strata": [
+    "human",
+    "negation",
+    "relation",
+    "temporal"
+  ],
+  "conservative_max_false_rejection_rate": 0.02,
+  "calibration_rule": "One common threshold per method, constrained to<=2% useful rejection in every stratum; balanced threshold maximizes equal-stratum balanced accuracy",
+  "primary_comparison": "Selected new classifier versus frozen support-v1 head at conservative operating point; unsupported rejection AND supported rejection, human transfer and contrasts reported separately",
+  "previous_probe": "docs/benchmarks/support-v1/results/fitted-probes.json",
+  "previous_probe_sha256": "1aa1208ffe54fd2a3be802ee17dacdda9249081fce859ad881162e0f76a360d7",
+  "cached_features": "docs/benchmarks/support-v1/features",
+  "cached_feature_manifest_sha256": "ecd0658a38b56e211891cfcf80020f4b96a57c3786f1a05db5891e97d42651c6",
+  "bootstrap_replicates": 5000,
+  "bootstrap_seed": 42,
+  "bootstrap_units": {
+    "human": "article",
+    "contrast": "template family; only nine test families, exploratory uncertainty"
+  },
+  "maximum_local_seconds": 7200,
+  "maximum_new_cloud_spend_usd": 0,
+  "previous_cumulative_estimated_usd": 7.94877,
+  "cumulative_budget_usd": 10
+}

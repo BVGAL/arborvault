@@ -1,0 +1,442 @@
+{
+  "reviewer": "AI-assisted author review before model outcomes; same author designed all templates",
+  "families_reviewed": 36,
+  "rendered_examples_reviewed": 144,
+  "test_templates_known_to_author": true,
+  "labels_changed_after_model_outcomes": false,
+  "task_caveat": "False premises can be refuted with text, but do not supply a non-null named answer under this benchmark definition",
+  "items": [
+    {
+      "family": "negation/00",
+      "role": "fit",
+      "sample_group": "contrast/negation/00/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "negation/01",
+      "role": "fit",
+      "sample_group": "contrast/negation/01/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "negation/02",
+      "role": "fit",
+      "sample_group": "contrast/negation/02/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "negation/03",
+      "role": "fit",
+      "sample_group": "contrast/negation/03/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "negation/04",
+      "role": "fit",
+      "sample_group": "contrast/negation/04/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "relation/00",
+      "role": "fit",
+      "sample_group": "contrast/relation/00/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "relation/01",
+      "role": "fit",
+      "sample_group": "contrast/relation/01/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "relation/02",
+      "role": "fit",
+      "sample_group": "contrast/relation/02/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "relation/03",
+      "role": "fit",
+      "sample_group": "contrast/relation/03/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "relation/04",
+      "role": "fit",
+      "sample_group": "contrast/relation/04/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "temporal/00",
+      "role": "fit",
+      "sample_group": "contrast/temporal/00/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "temporal/01",
+      "role": "fit",
+      "sample_group": "contrast/temporal/01/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "temporal/02",
+      "role": "fit",
+      "sample_group": "contrast/temporal/02/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "temporal/03",
+      "role": "fit",
+      "sample_group": "contrast/temporal/03/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "temporal/04",
+      "role": "fit",
+      "sample_group": "contrast/temporal/04/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "negation/05",
+      "role": "selection",
+      "sample_group": "contrast/negation/05/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "negation/06",
+      "role": "selection",
+      "sample_group": "contrast/negation/06/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "relation/05",
+      "role": "selection",
+      "sample_group": "contrast/relation/05/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "relation/06",
+      "role": "selection",
+      "sample_group": "contrast/relation/06/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "temporal/05",
+      "role": "selection",
+      "sample_group": "contrast/temporal/05/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "temporal/06",
+      "role": "selection",
+      "sample_group": "contrast/temporal/06/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "negation/07",
+      "role": "calibration",
+      "sample_group": "contrast/negation/07/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "negation/08",
+      "role": "calibration",
+      "sample_group": "contrast/negation/08/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "relation/07",
+      "role": "calibration",
+      "sample_group": "contrast/relation/07/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "relation/08",
+      "role": "calibration",
+      "sample_group": "contrast/relation/08/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "temporal/07",
+      "role": "calibration",
+      "sample_group": "contrast/temporal/07/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "temporal/08",
+      "role": "calibration",
+      "sample_group": "contrast/temporal/08/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "negation/09",
+      "role": "test",
+      "sample_group": "contrast/negation/09/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "negation/10",
+      "role": "test",
+      "sample_group": "contrast/negation/10/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "negation/11",
+      "role": "test",
+      "sample_group": "contrast/negation/11/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "relation/09",
+      "role": "test",
+      "sample_group": "contrast/relation/09/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "relation/10",
+      "role": "test",
+      "sample_group": "contrast/relation/10/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "relation/11",
+      "role": "test",
+      "sample_group": "contrast/relation/11/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "temporal/09",
+      "role": "test",
+      "sample_group": "contrast/temporal/09/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "temporal/10",
+      "role": "test",
+      "sample_group": "contrast/temporal/10/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    },
+    {
+      "family": "temporal/11",
+      "role": "test",
+      "sample_group": "contrast/temporal/11/000",
+      "decision": "retain",
+      "checks": [
+        "both diagonal question/context combinations supply the named requested answer",
+        "off-diagonal combinations lack the requested state/direction/event-year",
+        "question-only and context-only labels are exactly balanced"
+      ],
+      "scope": "Sampled rendering plus shared family pattern; no independent adjudication"
+    }
+  ]
+}

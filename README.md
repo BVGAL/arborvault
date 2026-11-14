@@ -8,6 +8,13 @@ ArborVault stores document hierarchies in PostgreSQL and returns source-backed s
 through a small HTTP API. Use it as an experimental retrieval component in an agent or
 RAG pipeline. The framework-neutral API supports reusable integrations with any AI agent.
 
+**Registered next experiment: semantic abstention.** The
+[support-v2 protocol](docs/support-v2-protocol.md) adds balanced negation,
+reversed-relation and temporal contrasts, compares linear and small nonlinear
+heads, and evaluates new human articles separately from held-out wording families.
+One common conservative gate must meet a calibration error budget in each stratum.
+The [dataset](datasets/support-v2/README.md) and protocol are fixed before test scoring.
+
 **Latest: human hard negatives for the support classifier.** On 1,120 held-out
 [SQuAD 2.0 questions](datasets/support-v1/README.md), the retrained acceptance
 head reaches **66.96% accuracy**, versus **61.34%** for the previous head and

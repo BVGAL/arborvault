@@ -1,0 +1,139 @@
+{
+  "id": "support-v2",
+  "examples_sha256": "f24166edd7ebbcc63ef0c127ce44461a7cc7a4b7bc4b6d4393446447a334fa6e",
+  "source_sha256": "68dcfbb971bd3e96d5b46c7177b16c1a4e7d4bdef19fb204502738552dede002",
+  "old_examples_sha256": "7e366c4d99c6748cfce68b48bce9f6902fd57fef3891186d42c649e0afd15167",
+  "config_sha256": "2723ac550e5c75092f27212b55779f06d809932e9f5b0aa4a78e11796e16f4dd",
+  "previous_question_files": {
+    "abstention-v3/questions.json": "0b1b7a9e74bc195f6f09bab9d08c4cdb145ded712e96a90088aeb2a83297c215",
+    "long-manuals-v1/questions.json": "a283a24d77467898d4c8563c4150f9d01739663487fe6e821d509eb5a017f507",
+    "navigation-v2/questions.json": "7d86635b72c8226f8c4ccd8d5a8f4395e9e990ca95896fd75d8bfa0f0ae93f11",
+    "public-docs-v1/queries.jsonl": "ef60c1543e025e0d310cc2086dbbccd9c8791cf20e9e1911f98255c31efd0fc6",
+    "qasper-routing-v2/dev-questions.jsonl": "af6d80869b9a70f4b1fe1609df7421da7d708607c50c360e8335b29165031ec9",
+    "qasper-routing-v2/test-questions.jsonl": "e36fbc38531558ccd5c354e3432cb1762a4af97750003aef1479baa6bc366a50",
+    "qasper-routing-v2/train-questions.jsonl": "d11ffcd894867f54f9c27de1f90deb04813fb1e001751dbb0c3d39d4d0cd3b23"
+  },
+  "licenses": {
+    "human": "CC-BY-SA-4.0",
+    "contrast": "Apache-2.0"
+  },
+  "counts": {
+    "fit": {
+      "human": {
+        "examples": 4062,
+        "supported": 2031,
+        "documents": 128,
+        "template_families": 0
+      },
+      "contrast": {
+        "examples": 3840,
+        "supported": 1920,
+        "documents": 960,
+        "template_families": 15
+      }
+    },
+    "selection": {
+      "human": {
+        "examples": 768,
+        "supported": 384,
+        "documents": 32,
+        "template_families": 0
+      },
+      "contrast": {
+        "examples": 768,
+        "supported": 384,
+        "documents": 192,
+        "template_families": 6
+      }
+    },
+    "calibration": {
+      "human": {
+        "examples": 768,
+        "supported": 384,
+        "documents": 24,
+        "template_families": 0
+      },
+      "contrast": {
+        "examples": 768,
+        "supported": 384,
+        "documents": 192,
+        "template_families": 6
+      }
+    },
+    "test": {
+      "human": {
+        "examples": 1024,
+        "supported": 512,
+        "documents": 32,
+        "template_families": 0
+      },
+      "contrast": {
+        "examples": 1152,
+        "supported": 576,
+        "documents": 288,
+        "template_families": 9
+      }
+    }
+  },
+  "novel_human_articles": [
+    "Biodiversity",
+    "Alloy",
+    "Culture",
+    "Elizabeth_II",
+    "Tuberculosis",
+    "High-definition_television",
+    "Houston",
+    "Serbo-Croatian",
+    "Pharmaceutical_industry",
+    "Cubism",
+    "FA_Cup",
+    "Poultry",
+    "Affirmative_action_in_the_United_States",
+    "Samoa",
+    "National_Archives_and_Records_Administration",
+    "Marvel_Comics",
+    "United_States_presidential_election,_2004",
+    "Transistor",
+    "Canadian_Armed_Forces",
+    "Pesticide",
+    "Idealism",
+    "Literature",
+    "Circadian_rhythm",
+    "Emotion",
+    "Miami",
+    "Labour_Party_(UK)",
+    "Green",
+    "Avicenna",
+    "Paper",
+    "Computer_security",
+    "Russian_language",
+    "Geography_of_the_United_States",
+    "Punjab,_Pakistan",
+    "Sahara",
+    "Tibet",
+    "United_States_dollar",
+    "Hindu_philosophy",
+    "Dell",
+    "General_Electric",
+    "Nonprofit_organization",
+    "Federal_Bureau_of_Investigation",
+    "Edmund_Burke",
+    "Everton_F.C.",
+    "Sanskrit",
+    "Economy_of_Greece",
+    "Santa_Monica,_California",
+    "Comprehensive_school",
+    "Party_leaders_of_the_United_States_House_of_Representatives",
+    "Time",
+    "Himachal_Pradesh",
+    "CBC_Television",
+    "Mary_(mother_of_Jesus)",
+    "Phonology",
+    "Internet_service_provider",
+    "Infection",
+    "Copper"
+  ],
+  "excluded": {},
+  "novelty_scope": "New human calibration/test articles absent from all support-v1 roles; original public source/pretraining exposure is not excluded",
+  "synthetic_scope": "Fictional records with role-disjoint template families and scenario entities; oracle is not independent human adjudication"
+}

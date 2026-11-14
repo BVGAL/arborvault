@@ -1,0 +1,18 @@
+{
+  "previous_corpus": "long-manuals-v1",
+  "new_test_documents": [
+    "io",
+    "pickle",
+    "inspect",
+    "asyncio-eventloop",
+    "zipfile",
+    "tarfile"
+  ],
+  "earlier_test_failures_informed_design": true,
+  "policy_parameter_search_on_test": false,
+  "exact_test_question_overlap_previous": 0,
+  "exact_target_overlap_previous_passages_at_least_30_words": 0,
+  "test_unique_question_texts": 72,
+  "pretraining_exposure": "unknown",
+  "selection": "12 uniformly positioned eligible paragraphs per document inspected; eight source-grounded cases authored before inference."
+}

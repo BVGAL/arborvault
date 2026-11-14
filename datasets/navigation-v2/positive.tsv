@@ -1,0 +1,48 @@
+io-00008	What object type does text I/O expose, and how does it handle a byte-based backing store?	It exposes str objects and transparently encodes or decodes bytes, with optional newline translation.
+io-00041	How can an API forwarding encoding=None make its callers receive EncodingWarning when they omit an encoding?	It can use text_encoding(); the documentation recommends considering UTF-8 defaults for new APIs.
+io-00104	What happens if IOBase.close is called twice, and what happens to later reads?	Closing an already closed stream has no effect; subsequent operations such as reading raise ValueError.
+io-00153	Will IOBase.writelines insert line endings between the supplied strings?	No; the supplied lines normally need to include their own separators.
+io-00175	How does RawIOBase.readinto distinguish end of file from temporarily unavailable nonblocking input?	For a nonempty buffer, zero means EOF; None means no bytes currently available in nonblocking mode.
+io-00228	Does FileIO guarantee complete writes and reads of the requested size?	No; writes and reads may be short. Buffered binary I/O provides write-all and read-at-least behavior.
+io-00341	What does TextIOBase.read return when size is negative or None?	A single string containing characters read through EOF.
+io-00423	Why can text I/O be slower than binary I/O, and why are text tell and seek costly?	Character-codec conversions add overhead; tell and seek also require a reconstruction algorithm.
+pickle-00016	How do JSON and pickle differ in whether their serialization format is textual or binary?	JSON is a Unicode text format, often encoded as UTF-8; pickle is binary.
+pickle-00032	Which pickle protocol became the default in Python 3.8, and what improvements did it introduce?	Protocol 4; support for very large objects, more object kinds, and data-format optimizations.
+pickle-00067	Must callers specify a protocol when using pickle.loads, and are trailing bytes consumed as another object?	The protocol is detected automatically; bytes after the object's representation are ignored.
+pickle-00105	How can pickling dispatch be customized for one Pickler without replacing the global table?	Assign a dict-like dispatch_table to the instance; a subclass-level table can instead supply the default for that subclass.
+pickle-00163	Does pickling a class preserve the class's code and class attributes?	No; classes are recorded by fully qualified name, rather than serializing their code or data.
+pickle-00214	If a class defines both __reduce__ and __reduce_ex__, which does pickle prefer and what extra argument does it receive?	It prefers __reduce_ex__, which receives the integer protocol version.
+pickle-00259	What must the sender provide to keep PickleBuffer data out of the main pickle stream?	A buffer_callback to the Pickler or dump/dumps; collected buffers are represented by cheap markers instead of copied data.
+pickle-00277	Which Unpickler method can be customized to restrict loading global classes and functions?	Unpickler.find_class, called whenever a global class or function is requested.
+inspect-00098	How can object members be listed without invoking descriptors, __getattr__, or __getattribute__?	Use inspect.getmembers_static, which returns name-sorted pairs and accepts an optional predicate.
+inspect-00212	Where does inspect.getdoc look when a class or method has no documentation string of its own?	It looks through the inheritance hierarchy; an invalid or missing result yields None.
+inspect-00257	What ordering and uniqueness constraints does inspect.Signature validate in its parameters argument?	Names must be unique, positional-only parameters precede positional-or-keyword ones, and defaulted parameters follow nondefaulted ones.
+inspect-00382	What information does inspect.getargvalues return for a frame?	An ArgInfo tuple containing argument names, the varargs and keyword-argument names or None, and the frame's locals dictionary.
+inspect-00416	How does inspect.get_annotations process string values when eval_str is true?	It evaluates string values using eval to undo stringized annotations.
+inspect-00479	Why can retaining references to interpreter frame objects delay destruction and increase memory consumption?	The references can create cycles that keep reachable objects alive longer, so cycles should be explicitly broken.
+inspect-00504	In what order are frames returned by inspect.stack?	The caller's frame is first and the outermost frame is last.
+inspect-00595	What capability does the CO_ITERABLE_COROUTINE flag give a generator?	It makes it a generator-based coroutine usable in await expressions and able to yield from coroutine objects.
+asyncio-eventloop-00047	If loop.stop is invoked during run_forever, when do callbacks newly scheduled by the current callbacks run?	The current batch completes, but newly scheduled callbacks wait until the next run_forever or run_until_complete call.
+asyncio-eventloop-00106	Which context does loop.call_later use when no context argument is supplied?	The current context is used; callers may instead provide a custom contextvars.Context.
+asyncio-eventloop-00147	What must a custom event-loop task factory accept and return, and how is the default restored?	It accepts loop, coro and all keyword arguments, forwards those keywords and returns a Task-compatible object; setting the factory to None restores the default.
+asyncio-eventloop-00175	When loop.create_connection receives an existing connected socket, may host and port also be supplied?	No; host, port, family, proto, flags, happy_eyeballs_delay, interleave and local_addr must not be specified with sock.
+asyncio-eventloop-00205	What are family, proto and flags used for in loop.create_datagram_endpoint?	They are integer socket-module constants passed to getaddrinfo for host resolution.
+asyncio-eventloop-00239	What happens when loop.create_server gets port=0 or None and the host resolves to multiple interfaces?	An unused random port is selected, potentially a different one for each interface.
+asyncio-eventloop-00545	Does asyncio's subprocess API directly decode output streams into text?	No; the returned bytes can be converted to text with bytes.decode.
+asyncio-eventloop-00634	What does Server.wait_closed wait for starting with Python 3.12?	Both server closure and completion of all active connections.
+zipfile-00032	What does zipfile.is_zipfile use to recognize a ZIP archive, and can it accept a file-like object?	It checks the magic number and accepts a filename or file-like object.
+zipfile-00062	Which compression methods ignore ZipFile's compresslevel, and what ranges apply to DEFLATED and BZIP2?	STORED and LZMA ignore it; DEFLATED accepts 0 through 9 and BZIP2 accepts 1 through 9.
+zipfile-00070	If ZIP header metadata flags conflict with metadata_encoding, which encoding instruction wins?	The archive header flag takes precedence over the Python-specific metadata_encoding setting.
+zipfile-00098	Can other archive members be read or written while a writable ZipFile.open handle remains open?	No; attempting it raises ValueError.
+zipfile-00130	What happens if ZipFile.read encounters an unsupported compression method?	It raises NotImplementedError; a missing corresponding compression module also causes an error.
+zipfile-00144	How does ZipFile.write handle a null byte in the chosen archive member name?	The archive member name is truncated at the null byte.
+zipfile-00177	Does zipfile.Path sanitize member filenames to prevent path traversal?	No; the caller must validate or sanitize them, for example using resolved paths and commonpath.
+zipfile-00258	What name does ZipInfo.from_file use when arcname is omitted?	The original filename with its drive letter and leading path separators removed.
+tarfile-00031	At what position should a file object passed to tarfile.open initially be?	Position zero.
+tarfile-00160	If an exception occurs inside a writing TarFile context manager, is the archive finalized?	No; only the internally used file object is closed.
+tarfile-00172	How does TarFile's dereference option change the treatment of symbolic and hard links?	False stores links; True stores their targets' contents, with no effect on systems without symbolic links.
+tarfile-00206	Why does TarFile.extractall apply directory metadata after extracting the members?	Creating files resets directory modification times, and restrictive directory permissions could otherwise prevent extraction.
+tarfile-00235	How does TarFile.errorlevel=2 differ from the default level 1 during extraction?	Level 1 raises fatal errors; level 2 also raises nonfatal errors as TarError exceptions.
+tarfile-00310	What base path is used for symbolic-link versus hard-link targets in TarInfo.linkname?	Symbolic targets are relative to the containing directory; hard-link targets are relative to the archive root.
+tarfile-00447	What happens when a tar archive contains several versions of the same file?	Later versions are expected to overwrite earlier ones, which enables updates but can be abused.
+tarfile-00516	What file-size and linkname limits does the POSIX ustar format impose?	An 8 GiB maximum file size and linknames up to 100 characters.

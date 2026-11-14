@@ -1,0 +1,183 @@
+{
+  "id": "navigation-v2",
+  "version": 1,
+  "retrieved_date": "2026-11-14",
+  "counts": {
+    "calibration": {
+      "documents": 4,
+      "answerable": 40,
+      "unknown": 56
+    },
+    "test": {
+      "documents": 6,
+      "answerable": 48,
+      "unknown": 48
+    }
+  },
+  "files": {
+    "documents.json": "cd29fd029866d5cafb2832e16aa8c1f8f99228d5c900efd04d4dfa84f68f1b81",
+    "novelty.json": "8a14e42f2782707f52eba508b57ed3f0113016130827c836512aaea8920365a6",
+    "positive.tsv": "f9f0877c1129f2f6eda7e9a4997f1b80c5d1b6ab40dfad0cd93432a0a1a6d2ef",
+    "questions.json": "7d86635b72c8226f8c4ccd8d5a8f4395e9e990ca95896fd75d8bfa0f0ae93f11",
+    "sources/argparse.html": "e5ca8e2e417694c776b22b250468c18427357cab0a3b1754e85534d270e04634",
+    "sources/asyncio-eventloop.html": "3db9e44d59b51a7b615c0ae6c638d564a896139504b6d9635e913d5f37ae996d",
+    "sources/decimal.html": "7ab86bebd751eae4ea53927653f5222d3bb24f39848b095ef5b2cb8c49b5c4cf",
+    "sources/inspect.html": "f01bbcdcef0a38ffcff1a6636d9528f7e1a23709c9404f27b02b8a2702078671",
+    "sources/io.html": "4bc83c3c403816c0da04b773d162262d7cbc4c95911dfa010e1e8c0c35e1f089",
+    "sources/license.html": "ced1a5587f118ad9454a151b721292abe08379b6ce390c5f8b7c165720412ca0",
+    "sources/pathlib.html": "da02a59913db792408c91079876305d6568566844e19631f1b6d657947848267",
+    "sources/pickle.html": "9f24353b6161eca71875bf69e1efba6f052ae2836842447e516b2025cbd85cac",
+    "sources/tarfile.html": "dcf9066a08e6859c1b6342c3b8d0038e93b1b39cb2eb513e8dcb68dea56bda55",
+    "sources/unittest.html": "ef6676bea8013193b1c80571b5a5ae0c3085a86da9d235e5f4abde1193b950d8",
+    "sources/zipfile.html": "2651b0dd4191f3d610b58993bcf91723fbdccdfc7ca10f2340c9311daa696ca2",
+    "unknown.tsv": "cee104ffb70013cffec702b60c85ef207902f7213b84bcbb8c6ab69d3b9612b2"
+  },
+  "source_license": "PSF-2.0; documentation examples additionally 0BSD; sources/license.html contains notices",
+  "annotation_license": "Apache-2.0",
+  "annotation_origin": "Assistant-authored synthetic benchmark; no independent human adjudication",
+  "scope": "Known-document evidence retrieval. Six unseen-by-experiment Python manuals; four reused calibration manuals.",
+  "frozen_before_inference": true,
+  "pretraining_exposure": "unknown",
+  "documents": [
+    {
+      "id": "argparse",
+      "title": "argparse — Parser for command-line options, arguments and subcommands",
+      "split": "calibration",
+      "url": "https://docs.python.org/3.13/library/argparse.html",
+      "source_sha256": "e5ca8e2e417694c776b22b250468c18427357cab0a3b1754e85534d270e04634",
+      "stats": {
+        "nodes": 463,
+        "passages": 386,
+        "words": 12676,
+        "max_depth": 6,
+        "branches": 77
+      }
+    },
+    {
+      "id": "decimal",
+      "title": "decimal — Decimal fixed-point and floating-point arithmetic",
+      "split": "calibration",
+      "url": "https://docs.python.org/3.13/library/decimal.html",
+      "source_sha256": "7ab86bebd751eae4ea53927653f5222d3bb24f39848b095ef5b2cb8c49b5c4cf",
+      "stats": {
+        "nodes": 730,
+        "passages": 563,
+        "words": 11959,
+        "max_depth": 5,
+        "branches": 167
+      }
+    },
+    {
+      "id": "pathlib",
+      "title": "pathlib — Object-oriented filesystem paths",
+      "split": "calibration",
+      "url": "https://docs.python.org/3.13/library/pathlib.html",
+      "source_sha256": "da02a59913db792408c91079876305d6568566844e19631f1b6d657947848267",
+      "stats": {
+        "nodes": 595,
+        "passages": 502,
+        "words": 8295,
+        "max_depth": 5,
+        "branches": 93
+      }
+    },
+    {
+      "id": "unittest",
+      "title": "unittest — Unit testing framework",
+      "split": "calibration",
+      "url": "https://docs.python.org/3.13/library/unittest.html",
+      "source_sha256": "ef6676bea8013193b1c80571b5a5ae0c3085a86da9d235e5f4abde1193b950d8",
+      "stats": {
+        "nodes": 829,
+        "passages": 692,
+        "words": 13171,
+        "max_depth": 7,
+        "branches": 137
+      }
+    },
+    {
+      "id": "io",
+      "title": "io — Core tools for working with streams",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/io.html",
+      "source_sha256": "4bc83c3c403816c0da04b773d162262d7cbc4c95911dfa010e1e8c0c35e1f089",
+      "stats": {
+        "nodes": 432,
+        "passages": 342,
+        "words": 6593,
+        "max_depth": 6,
+        "branches": 90
+      }
+    },
+    {
+      "id": "pickle",
+      "title": "pickle — Python object serialization",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/pickle.html",
+      "source_sha256": "9f24353b6161eca71875bf69e1efba6f052ae2836842447e516b2025cbd85cac",
+      "stats": {
+        "nodes": 307,
+        "passages": 260,
+        "words": 7261,
+        "max_depth": 5,
+        "branches": 47
+      }
+    },
+    {
+      "id": "inspect",
+      "title": "inspect — Inspect live objects",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/inspect.html",
+      "source_sha256": "f01bbcdcef0a38ffcff1a6636d9528f7e1a23709c9404f27b02b8a2702078671",
+      "stats": {
+        "nodes": 652,
+        "passages": 517,
+        "words": 7896,
+        "max_depth": 5,
+        "branches": 135
+      }
+    },
+    {
+      "id": "asyncio-eventloop",
+      "title": "Event loop",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/asyncio-eventloop.html",
+      "source_sha256": "3db9e44d59b51a7b615c0ae6c638d564a896139504b6d9635e913d5f37ae996d",
+      "stats": {
+        "nodes": 685,
+        "passages": 579,
+        "words": 9214,
+        "max_depth": 5,
+        "branches": 106
+      }
+    },
+    {
+      "id": "zipfile",
+      "title": "zipfile — Work with ZIP archives",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/zipfile.html",
+      "source_sha256": "2651b0dd4191f3d610b58993bcf91723fbdccdfc7ca10f2340c9311daa696ca2",
+      "stats": {
+        "nodes": 369,
+        "passages": 291,
+        "words": 4778,
+        "max_depth": 5,
+        "branches": 78
+      }
+    },
+    {
+      "id": "tarfile",
+      "title": "tarfile — Read and write tar archive files",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/tarfile.html",
+      "source_sha256": "dcf9066a08e6859c1b6342c3b8d0038e93b1b39cb2eb513e8dcb68dea56bda55",
+      "stats": {
+        "nodes": 529,
+        "passages": 429,
+        "words": 6760,
+        "max_depth": 5,
+        "branches": 100
+      }
+    }
+  ]
+}

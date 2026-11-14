@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import re
 from pathlib import Path
 
 from bs4 import BeautifulSoup, Tag
@@ -44,10 +45,11 @@ def parse_manual(html, identity, url, max_words=160):
         text = " ".join(element.get_text(" ", strip=True).split())
         words = text.split()
         for offset in range(0, len(words), max_words):
+            excerpt = " ".join(words[offset : offset + max_words])
             add(
                 parent,
-                f"Passage {len(nodes)}",
-                " ".join(words[offset : offset + max_words]),
+                re.split(r"(?<=[.!?])\s", excerpt, maxsplit=1)[0][:110],
+                excerpt,
                 element.get("id", anchor),
                 element.name,
             )

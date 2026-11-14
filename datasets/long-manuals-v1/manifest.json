@@ -8,7 +8,8 @@
   "annotation_origin": "Assistant-authored synthetic research benchmark, not independently human-adjudicated",
   "scope": "Known-document evidence retrieval; no model pretraining novelty claim",
   "files": {
-    "documents.json": "e496b061b2a7fed2ba495dfe98ef07a774eefa7d2aafbbcbac2dff349d086aa1",
+    "documents.json": "c298f115c73657eb26c10a79ed87da1727e921fa1e23f1c0de7d6aff137e760a",
+    "novelty-audit.json": "d6889b3db598f4233558497c6ad03730bcac1d4e2d3dc45a1d8f71ca25d2f773",
     "positive.tsv": "5e40e504687ded86db6b5564c5bb6e3de4b3fcaff8990523ad0f2a3686ff7fd8",
     "questions.json": "a283a24d77467898d4c8563c4150f9d01739663487fe6e821d509eb5a017f507",
     "sources/argparse.html": "e5ca8e2e417694c776b22b250468c18427357cab0a3b1754e85534d270e04634",
@@ -28,8 +29,7 @@
     "sources/subprocess.html": "f9b933fe20c3e520909fdd00ff0ffd45c5f5d8a9ebf65e6f8c1c174e0fad4167",
     "sources/typing.html": "2968cdd4f6221142f4e733642937a3f8875a4ae438b68c27925f509ff9219cf2",
     "sources/unittest.html": "ef6676bea8013193b1c80571b5a5ae0c3085a86da9d235e5f4abde1193b950d8",
-    "unknown.tsv": "60f2831b0c627abd2b50fb31d20efe1e04931d4fd16208a4a166da9bcc65fde7",
-    "novelty-audit.json": "d6889b3db598f4233558497c6ad03730bcac1d4e2d3dc45a1d8f71ca25d2f773"
+    "unknown.tsv": "60f2831b0c627abd2b50fb31d20efe1e04931d4fd16208a4a166da9bcc65fde7"
   },
   "documents": [
     {

@@ -34,6 +34,13 @@ def main():
     args = parser.parse_args()
     directory = args.experiment.resolve()
     hashes = read(directory / "artifact-hashes.json")
+    actual_files = {
+        p.relative_to(directory).as_posix()
+        for p in directory.rglob("*")
+        if p.is_file() and p.name != "artifact-hashes.json"
+    }
+    if set(hashes) != actual_files:
+        raise ValueError("Artifact manifest does not cover the complete experiment")
     for name, expected in hashes.items():
         path = (directory / name).resolve()
         if not path.is_relative_to(directory) or file_hash(path) != expected:
@@ -114,7 +121,39 @@ def main():
 
     calibration_positions = [i for i, q in enumerate(queries) if q["split"] == "calibration"]
     test_positions = [i for i, q in enumerate(queries) if q["split"] == "test"]
-    calibration, results, rows_by_policy = {}, {}, {}
+    calibration, results, rows_by_policy, candidate_diagnostics = {}, {}, {}, {}
+    for label, cache in caches.items():
+        for budget in config["budgets"]:
+            for mode in ("flat", "tree_scored"):
+                key = f"{label}/{mode}-{budget}"
+                inspected = []
+                for q in queries:
+                    if q["split"] != "test" or not q["answerable"]:
+                        continue
+                    policy = cache[q["id"]]["policies"][f"{mode}-{budget}"]
+                    used = set(policy["scored_ids"])
+                    ceiling = max(len(used & set(g)) / len(g) for g in q["gold_sets"])
+                    inspected.append(
+                        {
+                            "id": q["id"],
+                            "candidate_recall_ceiling": ceiling,
+                            "charged_pairs": len(used),
+                            "branch_pairs": sum(
+                                bool(trees[q["document"]].children[i]) for i in used
+                            ),
+                            "reached_passages": len(policy["reached_ids"]),
+                        }
+                    )
+                candidate_diagnostics[key] = {
+                    "candidate_recall_ceiling": sum(
+                        r["candidate_recall_ceiling"] for r in inspected
+                    )
+                    / len(inspected),
+                    "mean_charged_pairs": sum(r["charged_pairs"] for r in inspected)
+                    / len(inspected),
+                    "mean_branch_pairs": sum(r["branch_pairs"] for r in inspected) / len(inspected),
+                    "queries": inspected,
+                }
     for key, rows in policies.items():
         cal_rows, test_rows = [
             [rows[i] for i in ids] for ids in (calibration_positions, test_positions)
@@ -209,6 +248,7 @@ def main():
         "results": results,
         "paired_comparisons": comparisons,
         "queries": rows_by_policy,
+        "candidate_diagnostics": candidate_diagnostics,
         "usage": read(directory / "usage.json"),
         "runtime": read(directory / "runtime.json"),
     }

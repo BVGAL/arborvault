@@ -8,6 +8,15 @@ hierarchical technical manuals, and can they abstain on more unsupported
 queries? This is an inference-only, known-document comparison. No new training,
 test-based checkpoint selection or production promotion is performed.
 
+**Pre-results implementation correction:** a partial Qwen inference attempt was
+stopped before inspecting score caches or metrics because the new parser used
+generic leaf titles. Existing tree outlines expect paragraph previews. Leaf
+titles were changed to the first sentence up to 110 characters, exactly as in
+the QASPER parser; all systems rerun from scratch. Question text, evidence IDs,
+partitions, weights, policy and thresholds rules remained fixed. Both source
+locks remain in Git history and the discarded attempt's time is included in
+cost. The corrected representation is the operative freeze.
+
 ## Fixed systems
 
 - Qwen3-4B base, the existing pinned revision, non-thinking NF4/BF16; yes/no

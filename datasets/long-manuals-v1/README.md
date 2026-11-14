@@ -10,6 +10,10 @@ pretraining**. See [novelty audit](novelty-audit.json).
 | Calibration | 4 | 40 | 56 |
 | Test | 12 | 120 | 168 |
 
+Counts are query-document cases. Transfers reuse question wording with another
+document: the test has **204 distinct question texts** among 288 cases; calibration
+has 68 among 96. These are not 288 independent question texts.
+
 Calibration uses argparse, decimal, pathlib and unittest. All other manuals are
 test-only. No weights are trained on this corpus. Questions, evidence, corpus,
 checkpoint choice and threshold-selection rules are frozen before inference.
@@ -61,6 +65,15 @@ top-five / 512-word context budget; answer generation is not evaluated.
 HTML navigation and scripts are removed during normalization, text whitespace
 is normalized, headings and API signatures become paths, and long blocks are
 split. Source HTML remains unchanged.
+
+Before inspecting any score or metric, a partial inference attempt was stopped:
+generic leaf labels were found to remove the paragraph previews used by the
+existing tree-outline implementation. Leaf titles now use the first sentence,
+up to 110 characters, matching the QASPER parser. Source text, question wording,
+labels, partitions, checkpoints and retrieval policies were unchanged. All
+systems were rerun on the corrected representation; the interrupted attempt is
+included in the cost record. Git history preserves the initial and corrected
+locks. This was an implementation correction before results, not test-based tuning.
 
 Python documentation is copyright Python Software Foundation and the other
 holders identified in the sources. Its PSF-2.0 terms and historical notices are

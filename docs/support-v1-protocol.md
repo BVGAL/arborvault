@@ -1,5 +1,28 @@
 # Support classifier v1: frozen protocol
 
+## Pre-test environment amendment
+
+The initial CPU extraction under PyTorch 2.10.0 was stopped during selection-feature
+extraction, before calibration or test features or any classifier fitting. A
+dependency audit identified `PYSEC-2025-194`, with 2.13.0 listed as the fix. The
+CPU environment is upgraded to **2.13.0+cpu** and all features are regenerated.
+Loading is explicitly restricted to the pinned safetensors model, with remote
+code disabled. Dataset, model weights, feature representation, fitting rules,
+thresholds and statistical analysis are unchanged. This amendment is published
+before the restarted extraction; no outcome-based tuning is introduced.
+
+The initial 2.10.0 audit also listed `PYSEC-2026-139` for `.pt2` deserialization,
+without a fixed version in that advisory. A separate upstream-version audit of
+2.13.0 returned no known advisories. This experiment does not load `.pt2`,
+pickle checkpoints, TorchScript or user-uploaded models. It uses eager inference
+on pinned safetensors. The CPU wheel's local version suffix is not recognized by
+the audit service, so the matching upstream version is audited separately and
+the limitation is retained in the audit record.
+
+References: [official CPU builds](https://pytorch.org/get-started/previous-versions/),
+[TorchScript advisory](https://github.com/advisories/GHSA-rrmf-rvhw-rf47),
+[pt2 upstream issue](https://github.com/pytorch/pytorch/pull/176791).
+
 ## Question and scope
 
 Does training on human-labeled, topically relevant but unsupported question/paragraph

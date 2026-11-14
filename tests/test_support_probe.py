@@ -130,6 +130,8 @@ def test_real_encoder_whole_pair_and_same_cls_as_previous_probe():
             revision=config["revision"],
             local_files_only=True,
             attn_implementation="eager",
+            use_safetensors=True,
+            trust_remote_code=False,
         )
         .cpu()
         .eval()

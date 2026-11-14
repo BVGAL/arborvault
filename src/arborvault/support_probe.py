@@ -65,7 +65,11 @@ def extract(config, output, config_path, *, deadline):
     tokenizer.padding_side = "right"
     model = (
         AutoModelForSequenceClassification.from_pretrained(
-            config["model"], revision=config["revision"], attn_implementation="eager"
+            config["model"],
+            revision=config["revision"],
+            attn_implementation="eager",
+            use_safetensors=True,
+            trust_remote_code=False,
         )
         .cpu()
         .eval()

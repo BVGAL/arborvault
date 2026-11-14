@@ -1,0 +1,11 @@
+{
+  "environment.json": "fb2131f63af30f3ccdb888da257b8af14d271dd5811959a1029cac326df50e5d",
+  "plan.json": "5525bb18475f53556b71575528931bf41163c4dd4b8d2bd548cc9a627873b3f8",
+  "progress.jsonl": "e33dabcd92dc9a2d4fc9833321ffc7520e4ae172d9f829e21fedeb29a0073518",
+  "runtime.json": "6027ef894bb2eaaa8b95047848f68ec496cb44874335d2ecc683167b5d9aabe5",
+  "scores/cross-encoder-base.json": "8b96baeb4de9e7ea676284be4c924adecd2abb4f3c7399bfeb9ca7b988a7fdbe",
+  "scores/e5-text.json": "3433dfa378d1c19403d24c8637f3ec0eca01ae56bd89bb76a336b3f98fc5cf65",
+  "scores/qwen-base.json": "6cdd68f34dd4260f02032de6242079a76ee167eba2bb6809dadaa3d99ecaccf9",
+  "scores/tacit-4b.json": "adbeccf27b40bb742030575dffb763050e734a2e353eb57d22a9735fa21f7049",
+  "usage.json": "dc6be6684dfbe0efaec0449f7b903a62bf7f48a482786ce4869446d7e4448cec"
+}

@@ -1,0 +1,24 @@
+{
+  "rendered_prompt_equal": true,
+  "example_prompt_token_ids_equal": true,
+  "chat_template_equal": true,
+  "qwen_template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+  "tacit_template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+  "qwen_labels": [
+    [
+      2753
+    ],
+    [
+      9454
+    ]
+  ],
+  "tacit_labels": [
+    [
+      2753
+    ],
+    [
+      9454
+    ]
+  ],
+  "check_scope": "Same pinned tokenizers; full chat-template equality and one synthetic example rendering/tokenization; no model inference."
+}

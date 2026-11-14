@@ -1,0 +1,11 @@
+{
+  "packages": {
+    "torch": "2.10.0+cu128",
+    "transformers": "5.22.2",
+    "peft": "0.21.3",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.15.0",
+    "safetensors": "0.8.0"
+  },
+  "gpu": "NVIDIA GeForce RTX 4090"
+}

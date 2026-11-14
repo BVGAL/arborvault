@@ -1,0 +1,16 @@
+{
+  "experiment/artifact-hashes.json": "0c32644ef029789c78565152d592fd10e42c70b7710ea3f2cf0a448c7a07255d",
+  "experiment/environment.json": "fb2131f63af30f3ccdb888da257b8af14d271dd5811959a1029cac326df50e5d",
+  "experiment/plan.json": "5525bb18475f53556b71575528931bf41163c4dd4b8d2bd548cc9a627873b3f8",
+  "experiment/progress.jsonl": "e33dabcd92dc9a2d4fc9833321ffc7520e4ae172d9f829e21fedeb29a0073518",
+  "experiment/runtime.json": "6027ef894bb2eaaa8b95047848f68ec496cb44874335d2ecc683167b5d9aabe5",
+  "experiment/scores/cross-encoder-base.json": "8b96baeb4de9e7ea676284be4c924adecd2abb4f3c7399bfeb9ca7b988a7fdbe",
+  "experiment/scores/e5-text.json": "3433dfa378d1c19403d24c8637f3ec0eca01ae56bd89bb76a336b3f98fc5cf65",
+  "experiment/scores/qwen-base.json": "6cdd68f34dd4260f02032de6242079a76ee167eba2bb6809dadaa3d99ecaccf9",
+  "experiment/scores/tacit-4b.json": "adbeccf27b40bb742030575dffb763050e734a2e353eb57d22a9735fa21f7049",
+  "experiment/usage.json": "dc6be6684dfbe0efaec0449f7b903a62bf7f48a482786ce4869446d7e4448cec",
+  "failure-audit.json": "3540ec5dec7809d4e71842aa5a77db6dc2fe2ec0dfc9b09067fc33c0dd8ae3a4",
+  "prompt-check.json": "15a50ad56706bbcbf9ef910cd3f89cdbeca10aae0be9658ce8fe4de1d1955a45",
+  "run-cost.json": "21790f3505cb2b7e06820b52ba76fc3e90d186bc512005de8e345ac2e531a7ad",
+  "verified-summary.json": "fd82958a590b3309cebe2ec7998fbdae18fce3105cf38c8c5e25b752d702fe84"
+}

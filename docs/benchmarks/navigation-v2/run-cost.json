@@ -1,0 +1,21 @@
+{
+  "provider": "Runpod",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_count": 1,
+  "allocation_requested_utc": "2026-11-14T12:10:53.672324+00:00",
+  "deletion_verified_utc": "2026-11-14T13:11:17.248856+00:00",
+  "elapsed_minutes": 60.393,
+  "gpu_rate_usd_per_hour": 0.89,
+  "estimated_gpu_usd": 0.89583,
+  "estimated_storage_usd": 0.01103,
+  "estimated_total_usd": 0.90686,
+  "previous_estimated_usd": 5.79872,
+  "cumulative_estimated_usd": 6.70558,
+  "authorized_budget_usd": 10,
+  "within_budget": true,
+  "pod_deletion_verified": true,
+  "experiment_pods_remaining": 0,
+  "independent_allocation_stop_hours": 3,
+  "cost_note": "Allocation-to-deletion runtime/rate estimate including installation, waiting and artifact transfer; not a final provider invoice.",
+  "storage_pricing_source": "https://docs.runpod.io/pods/pricing"
+}

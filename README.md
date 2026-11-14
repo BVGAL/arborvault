@@ -8,7 +8,19 @@ ArborVault stores document hierarchies in PostgreSQL and returns source-backed s
 through a small HTTP API. Use it as an experimental retrieval component in an agent or
 RAG pipeline. The framework-neutral API supports reusable integrations with any AI agent.
 
-**Latest: new long-manual test.** On 12 previously unused ArborVault manuals,
+**Latest: budgeted navigation and Tacit comparison.** A frozen test on six new
+Python manuals compares Qwen3-4B, a pretrained cross-encoder and Tacit-4B with the
+same 64/128 candidate-evaluation limits. At 64 pairs, lexical-assisted tree recall
+is **0.9375**, **0.9583** and **0.9167**, respectively;
+their previous-policy tree controls score **0.4375**, **0.4167** and **0.3750**.
+The new policy retains alternatives and limits branch spending; its guided variant
+also uses global lexical evidence and is explicitly a hybrid. The test has only
+48 answerable and 48 unanswerable synthetic cases, with separate calibration,
+so model differences remain exploratory. No new training or production promotion.
+Read the [full policy ablations, abstention and costs](docs/navigation-v2-results.md)
+and [frozen protocol](docs/navigation-v2-protocol.md).
+
+**Previous: new long-manual test.** On 12 previously unused ArborVault manuals,
 coverage-first Recall@5 is **0.9167** for Qwen base, **0.9250** for the previously
 adapted cross-encoder, **0.9417** for its base and **0.9500** for E5. The test has
 120 answerable and 168 unanswerable query-document cases; four separate manuals

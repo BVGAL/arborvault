@@ -1,0 +1,27 @@
+{
+  "qwen-base": {
+    "seconds": 1591.9923654800004,
+    "unique_pairs": 55700,
+    "tokens": 13642341,
+    "shortened_pairs": 483,
+    "timing_scope": "All policies with shared score caches; not isolated per-policy latency"
+  },
+  "tacit-4b": {
+    "seconds": 1490.0128228390022,
+    "unique_pairs": 55314,
+    "tokens": 13614281,
+    "shortened_pairs": 518,
+    "timing_scope": "All policies with shared score caches; not isolated per-policy latency"
+  },
+  "cross-encoder-base": {
+    "seconds": 97.03074075699988,
+    "unique_pairs": 54393,
+    "tokens": 9439412,
+    "shortened_pairs": 531,
+    "timing_scope": "All policies with shared score caches; not isolated per-policy latency"
+  },
+  "e5-text": {
+    "seconds": 5.970877443996869,
+    "indexed_passages": 4561
+  }
+}

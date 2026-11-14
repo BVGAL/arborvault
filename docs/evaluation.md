@@ -1,5 +1,20 @@
 # Evaluation protocol
 
+## Navigation v2: retained alternatives and an open decision model
+
+The [navigation report](navigation-v2-results.md) compares Qwen3-4B, pretrained
+MiniLM and Tacit-4B under identical 64/128-pair policies. It separates the previous
+tree, incremental tree, lexical-assisted tree and flat reranking. Six new manuals
+provide 48 answerable and 48 unknown cases; four reused calibration documents
+provide 96 cases. See the [frozen protocol](navigation-v2-protocol.md) and
+[dataset card](../datasets/navigation-v2/README.md). These manuals are shorter
+than the prior long-manual distribution. Annotations remain synthetic and lack
+independent human adjudication. This evaluates candidate scorers, not a learned
+multi-action controller. Native Tacit prompts are shared by Qwen and Tacit;
+older Qwen results used a different prompt and cannot serve as a direct control.
+All metrics, failure traces, resource accounting and paired exploratory intervals
+are published. The test is now observed; further tuning requires fresh evaluation.
+
 ## Long manuals v1: new domain and more scoped negatives
 
 The [long-manual results](long-manuals-v1-results.md) compare fixed Qwen base,

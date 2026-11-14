@@ -1,0 +1,71 @@
+{
+  "scope": "All three strict Qwen tree_guided-64 misses on the new test; qualitative review only, not a cross-model error-rate estimate.",
+  "reviewer": "Assistant; no independent human adjudication",
+  "frozen_labels_changed": false,
+  "primary_metrics_changed": false,
+  "model": "Qwen/Qwen3-4B",
+  "policy": "tree_guided-64",
+  "observed_strict_misses": 3,
+  "cases": [
+    {
+      "id": "a-io-00228",
+      "question": "Does FileIO guarantee complete writes and reads of the requested size?",
+      "gold": [
+        [
+          "io-00228"
+        ]
+      ],
+      "predicted": [
+        "io-00308",
+        "io-00340",
+        "io-00341",
+        "io-00184",
+        "io-00186"
+      ],
+      "access": 0.0,
+      "stop": "pair_budget",
+      "classification": "wrong_api_context",
+      "rationale": "The correct Raw File I/O branch was scored but remained unexpanded. Returned evidence concerns buffered/text I/O rather than the requested FileIO guarantees. The flat policy also misses the annotated passage."
+    },
+    {
+      "id": "a-pickle-00105",
+      "question": "How can pickling dispatch be customized for one Pickler without replacing the global table?",
+      "gold": [
+        [
+          "pickle-00105"
+        ]
+      ],
+      "predicted": [
+        "pickle-00226",
+        "pickle-00227",
+        "pickle-00244",
+        "pickle-00236",
+        "pickle-00277"
+      ],
+      "access": 0.0,
+      "stop": "pair_budget",
+      "classification": "plausible_unannotated_alternative",
+      "rationale": "Returned paragraphs pickle-00226 and pickle-00227 discuss private dispatch tables and copying the global table. They plausibly support the requested mechanism, although the frozen gold names the dispatch_table attribute paragraph. This is an annotation-review candidate, not an independently adjudicated success."
+    },
+    {
+      "id": "a-pickle-00163",
+      "question": "Does pickling a class preserve the class's code and class attributes?",
+      "gold": [
+        [
+          "pickle-00163"
+        ]
+      ],
+      "predicted": [
+        "pickle-00236",
+        "pickle-00174",
+        "pickle-00192",
+        "pickle-00207",
+        "pickle-00214"
+      ],
+      "access": 0.0,
+      "stop": "pair_budget",
+      "classification": "class_instance_confusion",
+      "rationale": "The correct branch about what can be pickled was scored but remained unexpanded. The retrieved context describes instance state rather than preservation of a class definition. The flat policy also misses the annotated passage."
+    }
+  ]
+}

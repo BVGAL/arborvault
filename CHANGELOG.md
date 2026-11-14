@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+- Add experimental incremental navigation with retained alternatives, an explicit
+  branch allowance, and a separately identified lexical-assisted variant.
+- Compare Qwen base, pretrained cross-encoder and Tacit-4B using matched 64/128
+  pair budgets, shared candidate text and identical Qwen/Tacit decision prompts.
+  Freeze six new manuals with 48 answerable and 48 unknown test cases, plus four
+  separate calibration manuals. Publish all four policy ablations and E5/BM25 controls.
+- Verify raw hashes, exact traversals, ancestor access, candidate coverage,
+  calibration-only abstention and five-family paired bootstrap intervals.
+  Report synthetic-label and small-sample limitations without production promotion.
+- Complete 123 local tests (six optional skips), 31 GPU-environment tests and
+  delete the single Runpod allocation. Cumulative estimated cost:
+  USD 6.70558 / 10. See [results](docs/navigation-v2-results.md).
+
 - Add a separately frozen 16-manual corpus: 12 test documents with 120 answerable
   and 168 scoped-unanswerable cases; four document-disjoint calibration manuals.
   Preserve licensed source snapshots, annotation rationales and explicit synthetic-data limits.

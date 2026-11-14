@@ -1,0 +1,35 @@
+{
+  "id": "long-manuals-v1",
+  "seed": 42,
+  "dataset": "datasets/long-manuals-v1",
+  "scorer_config": "configs/candidate-scoring-v1.json",
+  "budgets": [
+    64,
+    128
+  ],
+  "primary_policy": "flat-64",
+  "structural_policy": "tree_scored-64",
+  "width": 4,
+  "max_length": 512,
+  "k": 5,
+  "context_words": 512,
+  "cross_encoder_checkpoint": "candidate-scoring-v1/cross-encoder-step-100",
+  "checkpoint_selection": "Previously fixed on QASPER calibration before new manual data; not the best CV fold",
+  "checkpoint_files": {
+    "config.json": "fdf3f6b522524f692f6a4eb6399b3dae36408a218c53772c9c118937ea98c27d",
+    "model.safetensors": "c531b0d755a2400890285f1e5074b119c257545622ea69267122a022319da374",
+    "tokenizer.json": "f17212c38517cfedc9306b57eeffbaf58c4976fcb42e5a87b405f36a7b9a9eb2",
+    "tokenizer_config.json": "649e41f8cf1cb1b67acc193795ccaef07bcaa3c4e0fc7d286ba8255fab79cffa"
+  },
+  "training_on_this_corpus": false,
+  "max_seconds": 7200,
+  "abstention": "Query-level raw maximum reached passage score; calibration documents only; conservative 2pp guards and balanced accuracy",
+  "empty_reached_confidence": -1000000.0,
+  "bootstrap_seed": 42,
+  "bootstrap_replicates": 5000,
+  "bootstrap_grouping": "Document, with logging and logging-cookbook joined as one source family",
+  "prior_estimated_usd": 4.99259,
+  "cumulative_budget_usd": 10,
+  "maximum_gpu_rate_usd_per_hour": 1.2,
+  "allocation_stop_hours": 3
+}

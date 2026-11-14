@@ -1,0 +1,274 @@
+{
+  "id": "long-manuals-v1",
+  "version": 1,
+  "retrieved_date": "2026-11-14",
+  "source_base": "https://docs.python.org/3.13/",
+  "source_license": "PSF-2.0; documentation examples additionally 0BSD; full notices in sources/license.html",
+  "annotation_license": "Apache-2.0",
+  "annotation_origin": "Assistant-authored synthetic research benchmark, not independently human-adjudicated",
+  "scope": "Known-document evidence retrieval; no model pretraining novelty claim",
+  "files": {
+    "documents.json": "e496b061b2a7fed2ba495dfe98ef07a774eefa7d2aafbbcbac2dff349d086aa1",
+    "positive.tsv": "5e40e504687ded86db6b5564c5bb6e3de4b3fcaff8990523ad0f2a3686ff7fd8",
+    "questions.json": "a283a24d77467898d4c8563c4150f9d01739663487fe6e821d509eb5a017f507",
+    "sources/argparse.html": "e5ca8e2e417694c776b22b250468c18427357cab0a3b1754e85534d270e04634",
+    "sources/ctypes.html": "a49fad6584d01a91396b276677c7b6baf11c83b9fa12e6558c91d154c8c67a60",
+    "sources/datamodel.html": "7c08f1ef603a25874b559147694453fad429779cff0ae2bfcd3b5b0f1b41678f",
+    "sources/datetime.html": "dd5b4d691548b4dfd2d18029f447bce75f105e25baf3c4b861c5892eefc8bd76",
+    "sources/decimal.html": "7ab86bebd751eae4ea53927653f5222d3bb24f39848b095ef5b2cb8c49b5c4cf",
+    "sources/license.html": "ced1a5587f118ad9454a151b721292abe08379b6ce390c5f8b7c165720412ca0",
+    "sources/logging-cookbook.html": "4b71644ddbd059c001150097739fc57092217faeaed13d9b2987bf57ef45aae0",
+    "sources/logging.html": "094f0e4b64483914d7dac6e1a268d7962abf9f3d7bdd6c9537aecee1e50efc71",
+    "sources/multiprocessing.html": "731bb57a8e4fcc057f51fa8474b0965db136f0a1d84019c1ee8030cb6ba8aaa4",
+    "sources/pathlib.html": "da02a59913db792408c91079876305d6568566844e19631f1b6d657947848267",
+    "sources/re.html": "d6411e60b3a16957f1ea91e83b892e81e0e819f2f069334fa4f35b68e6193876",
+    "sources/socket.html": "7748e9a1f2f329c0d002f6ab73b59636c6a55626266222225be1c2d586684ea8",
+    "sources/sqlite3.html": "cfcee0bff5727af9f123aee0faacae443a46d360a68fe1af663b15350567ffdc",
+    "sources/ssl.html": "9335962fc0c9b51627a3df54652d1024c5e84b6958e11068392c24d6aaa4a000",
+    "sources/subprocess.html": "f9b933fe20c3e520909fdd00ff0ffd45c5f5d8a9ebf65e6f8c1c174e0fad4167",
+    "sources/typing.html": "2968cdd4f6221142f4e733642937a3f8875a4ae438b68c27925f509ff9219cf2",
+    "sources/unittest.html": "ef6676bea8013193b1c80571b5a5ae0c3085a86da9d235e5f4abde1193b950d8",
+    "unknown.tsv": "60f2831b0c627abd2b50fb31d20efe1e04931d4fd16208a4a166da9bcc65fde7",
+    "novelty-audit.json": "d6889b3db598f4233558497c6ad03730bcac1d4e2d3dc45a1d8f71ca25d2f773"
+  },
+  "documents": [
+    {
+      "id": "argparse",
+      "title": "argparse — Parser for command-line options, arguments and subcommands",
+      "split": "calibration",
+      "url": "https://docs.python.org/3.13/library/argparse.html",
+      "source_sha256": "e5ca8e2e417694c776b22b250468c18427357cab0a3b1754e85534d270e04634",
+      "stats": {
+        "nodes": 463,
+        "passages": 386,
+        "words": 12676,
+        "max_depth": 6,
+        "branches": 77
+      }
+    },
+    {
+      "id": "logging",
+      "title": "logging — Logging facility for Python",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/logging.html",
+      "source_sha256": "094f0e4b64483914d7dac6e1a268d7962abf9f3d7bdd6c9537aecee1e50efc71",
+      "stats": {
+        "nodes": 508,
+        "passages": 410,
+        "words": 9259,
+        "max_depth": 5,
+        "branches": 98
+      }
+    },
+    {
+      "id": "decimal",
+      "title": "decimal — Decimal fixed-point and floating-point arithmetic",
+      "split": "calibration",
+      "url": "https://docs.python.org/3.13/library/decimal.html",
+      "source_sha256": "7ab86bebd751eae4ea53927653f5222d3bb24f39848b095ef5b2cb8c49b5c4cf",
+      "stats": {
+        "nodes": 730,
+        "passages": 563,
+        "words": 11959,
+        "max_depth": 5,
+        "branches": 167
+      }
+    },
+    {
+      "id": "pathlib",
+      "title": "pathlib — Object-oriented filesystem paths",
+      "split": "calibration",
+      "url": "https://docs.python.org/3.13/library/pathlib.html",
+      "source_sha256": "da02a59913db792408c91079876305d6568566844e19631f1b6d657947848267",
+      "stats": {
+        "nodes": 595,
+        "passages": 502,
+        "words": 8295,
+        "max_depth": 5,
+        "branches": 93
+      }
+    },
+    {
+      "id": "sqlite3",
+      "title": "sqlite3 — DB-API 2.0 interface for SQLite databases",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/sqlite3.html",
+      "source_sha256": "cfcee0bff5727af9f123aee0faacae443a46d360a68fe1af663b15350567ffdc",
+      "stats": {
+        "nodes": 745,
+        "passages": 628,
+        "words": 11961,
+        "max_depth": 6,
+        "branches": 117
+      }
+    },
+    {
+      "id": "ctypes",
+      "title": "ctypes — A foreign function library for Python",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/ctypes.html",
+      "source_sha256": "a49fad6584d01a91396b276677c7b6baf11c83b9fa12e6558c91d154c8c67a60",
+      "stats": {
+        "nodes": 778,
+        "passages": 630,
+        "words": 14196,
+        "max_depth": 7,
+        "branches": 148
+      }
+    },
+    {
+      "id": "multiprocessing",
+      "title": "multiprocessing — Process-based parallelism",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/multiprocessing.html",
+      "source_sha256": "731bb57a8e4fcc057f51fa8474b0965db136f0a1d84019c1ee8030cb6ba8aaa4",
+      "stats": {
+        "nodes": 948,
+        "passages": 782,
+        "words": 19113,
+        "max_depth": 6,
+        "branches": 166
+      }
+    },
+    {
+      "id": "unittest",
+      "title": "unittest — Unit testing framework",
+      "split": "calibration",
+      "url": "https://docs.python.org/3.13/library/unittest.html",
+      "source_sha256": "ef6676bea8013193b1c80571b5a5ae0c3085a86da9d235e5f4abde1193b950d8",
+      "stats": {
+        "nodes": 829,
+        "passages": 692,
+        "words": 13171,
+        "max_depth": 7,
+        "branches": 137
+      }
+    },
+    {
+      "id": "typing",
+      "title": "typing — Support for type hints",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/typing.html",
+      "source_sha256": "2968cdd4f6221142f4e733642937a3f8875a4ae438b68c27925f509ff9219cf2",
+      "stats": {
+        "nodes": 1150,
+        "passages": 990,
+        "words": 19686,
+        "max_depth": 7,
+        "branches": 160
+      }
+    },
+    {
+      "id": "datetime",
+      "title": "datetime — Basic date and time types",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/datetime.html",
+      "source_sha256": "dd5b4d691548b4dfd2d18029f447bce75f105e25baf3c4b861c5892eefc8bd76",
+      "stats": {
+        "nodes": 873,
+        "passages": 741,
+        "words": 15653,
+        "max_depth": 4,
+        "branches": 132
+      }
+    },
+    {
+      "id": "re",
+      "title": "re — Regular expression operations",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/re.html",
+      "source_sha256": "d6411e60b3a16957f1ea91e83b892e81e0e819f2f069334fa4f35b68e6193876",
+      "stats": {
+        "nodes": 533,
+        "passages": 461,
+        "words": 11428,
+        "max_depth": 6,
+        "branches": 72
+      }
+    },
+    {
+      "id": "ssl",
+      "title": "ssl — TLS/SSL wrapper for socket objects",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/ssl.html",
+      "source_sha256": "9335962fc0c9b51627a3df54652d1024c5e84b6958e11068392c24d6aaa4a000",
+      "stats": {
+        "nodes": 996,
+        "passages": 807,
+        "words": 14061,
+        "max_depth": 6,
+        "branches": 189
+      }
+    },
+    {
+      "id": "socket",
+      "title": "socket — Low-level networking interface",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/socket.html",
+      "source_sha256": "7748e9a1f2f329c0d002f6ab73b59636c6a55626266222225be1c2d586684ea8",
+      "stats": {
+        "nodes": 790,
+        "passages": 669,
+        "words": 12358,
+        "max_depth": 6,
+        "branches": 121
+      }
+    },
+    {
+      "id": "subprocess",
+      "title": "subprocess — Subprocess management",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/library/subprocess.html",
+      "source_sha256": "f9b933fe20c3e520909fdd00ff0ffd45c5f5d8a9ebf65e6f8c1c174e0fad4167",
+      "stats": {
+        "nodes": 540,
+        "passages": 450,
+        "words": 8991,
+        "max_depth": 5,
+        "branches": 90
+      }
+    },
+    {
+      "id": "datamodel",
+      "title": "3. Data model",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/reference/datamodel.html",
+      "source_sha256": "7c08f1ef603a25874b559147694453fad429779cff0ae2bfcd3b5b0f1b41678f",
+      "stats": {
+        "nodes": 905,
+        "passages": 743,
+        "words": 18840,
+        "max_depth": 7,
+        "branches": 162
+      }
+    },
+    {
+      "id": "logging-cookbook",
+      "title": "Logging Cookbook",
+      "split": "test",
+      "url": "https://docs.python.org/3.13/howto/logging-cookbook.html",
+      "source_sha256": "4b71644ddbd059c001150097739fc57092217faeaed13d9b2987bf57ef45aae0",
+      "stats": {
+        "nodes": 483,
+        "passages": 428,
+        "words": 25094,
+        "max_depth": 5,
+        "branches": 55
+      }
+    }
+  ],
+  "counts": {
+    "calibration": {
+      "documents": 4,
+      "answerable": 40,
+      "unknown": 56
+    },
+    "test": {
+      "documents": 12,
+      "answerable": 120,
+      "unknown": 168
+    }
+  },
+  "frozen_before_inference": true,
+  "pretraining_exposure": "unknown"
+}

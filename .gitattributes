@@ -2,3 +2,4 @@
 datasets/public-docs-v1/corpus/** -text
 datasets/public-docs-v1/licenses/** -text
 datasets/routing-bootstrap-v1/licenses/** -text
+datasets/long-manuals-v1/sources/** -text

@@ -1,0 +1,29 @@
+{
+  "old_qasper_documents": 624,
+  "old_qasper_words": {
+    "min": 614,
+    "median": 3416.0,
+    "max": 25645
+  },
+  "new_words": {
+    "min": 8295,
+    "median": 12923.5,
+    "max": 25094
+  },
+  "exact_normalized_passage_overlap_at_least_30_words_vs_qasper": 0,
+  "exact_normalized_question_overlap_vs_qasper": 0,
+  "calibration_test_exact_passage_overlap_at_least_30_words": 0,
+  "calibration_test_overlap_passage_hashes": [],
+  "other_prior_public_sources": [
+    "FastAPI path/query/body/errors tutorials",
+    "HTTPX quickstart/timeouts/clients/limits"
+  ],
+  "source_url_reuse_from_prior_arborvault_benchmarks": false,
+  "limitations": [
+    "Exact-content screening is not a semantic overlap detector.",
+    "All manuals share a Python ecosystem; section and API topics can overlap.",
+    "Model pretraining exposure is unknown.",
+    "Cross-document negative questions intentionally repeat positive questions within the same split.",
+    "Logging reference and cookbook are one family for bootstrap intervals."
+  ]
+}

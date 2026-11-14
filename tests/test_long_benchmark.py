@@ -1,0 +1,98 @@
+import json
+from pathlib import Path
+
+import pytest
+
+from arborvault.candidate_scoring import retrieve
+from arborvault.domain import Node
+from arborvault.long_benchmark import DocumentIndex, traverse
+from arborvault.long_documents import load_corpus, parse_manual
+from arborvault.routing_v2 import Tree
+
+
+def test_html_hierarchy_and_nonduplicating_blocks():
+    html = """<div class="body" role="main"><section id="root"><h1>Manual</h1>
+    <section id="s"><h2>Methods<a class="headerlink">link</a></h2>
+    <p>One two three four five six seven.</p><dl class="py method">
+    <dt id="api">f(x)</dt><dd><p>Return a result.</p><ul><li><p>Nested item.</p></li></ul></dd>
+    </dl><section id="empty"><h3>Empty</h3></section></section></section></div>"""
+    doc = parse_manual(html, "manual", "https://example.org/manual", max_words=4)
+    nodes = doc["nodes"]
+    assert [n["content"] for n in nodes if n["content"]] == [
+        "One two three four",
+        "five six seven.",
+        "f(x)",
+        "Return a result.",
+        "Nested item.",
+    ]
+    assert next(n for n in nodes if n["content"] == "Return a result.")["path"][:-1] == [
+        "Manual",
+        "Methods",
+        "f(x)",
+    ]
+    assert not any(n["title"] == "Empty" for n in nodes)
+    Tree([Node(**n) for n in nodes])
+
+
+def fixture_tree():
+    return Tree(
+        [
+            Node("r", None, "Root", "", ["Root"], 0),
+            Node("b", "r", "Branch", "", ["Root", "Branch"], 1),
+            *[
+                Node(str(i), "b", str(i), f"evidence item {i}", ["Root", "Branch", str(i)], i + 2)
+                for i in range(8)
+            ],
+        ]
+    )
+
+
+@pytest.mark.parametrize("mode", ["flat", "tree_scored"])
+@pytest.mark.parametrize("budget", [1, 4, 64])
+def test_lazy_traversal_matches_exhaustive_policy(mode, budget):
+    tree = fixture_tree()
+    index = DocumentIndex(tree)
+    values = {i: float(n.ordinal % 3) for i, n in tree.nodes.items() if i != "r"}
+    calls = []
+
+    def get_scores(ids):
+        calls.extend(ids)
+        return {i: values[i] for i in ids}
+
+    lazy = traverse(index, index.scores("evidence"), get_scores, mode=mode, budget=budget, width=1)
+    _, old = retrieve(tree, "evidence", values, mode=mode, budget=budget, width=1)
+    assert lazy["scored_ids"] == old["scored_ids"]
+    assert lazy["reached_ids"] == old["reached_ids"]
+    assert len(calls) <= budget
+    assert len(set(calls)) == len(calls)
+
+
+def test_missing_or_nan_scores_fail():
+    index = DocumentIndex(fixture_tree())
+    for fn in [lambda ids: {}, lambda ids: dict.fromkeys(ids, float("nan"))]:
+        with pytest.raises(ValueError):
+            traverse(index, index.scores("evidence"), fn, mode="flat", budget=3)
+
+
+def test_frozen_corpus_and_split_integrity():
+    directory = Path(__file__).resolve().parents[1] / "datasets/long-manuals-v1"
+    manifest, trees, queries = load_corpus(directory)
+    assert len(queries) == 384 and len(trees) == 16
+    roles = {
+        role: {q["document"] for q in queries if q["split"] == role}
+        for role in ["test", "calibration"]
+    }
+    assert not roles["test"] & roles["calibration"]
+    assert manifest["counts"]["test"] == {"documents": 12, "answerable": 120, "unknown": 168}
+    assert len({q["id"] for q in queries}) == 384
+    by_id = {q["id"]: q for q in queries}
+    for q in queries:
+        if q["category"] == "cross_document_transfer":
+            origin = by_id[q["audit"]["answer_elsewhere_question"]]
+            assert q["split"] == origin["split"]
+            assert q["document"] != origin["document"]
+    assert min(d["stats"]["words"] for d in manifest["documents"]) >= 8000
+    docs = json.loads((directory / "documents.json").read_text(encoding="utf-8"))
+    for doc in docs:
+        html = (directory / "sources" / (doc["id"] + ".html")).read_text(encoding="utf-8")
+        assert parse_manual(html, doc["id"], doc["url"])["nodes"] == doc["nodes"]

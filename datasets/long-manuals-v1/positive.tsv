@@ -1,0 +1,160 @@
+argparse-00004	What kinds of command-line requirements can exceed argparse's control over parsing?	Disabling interspersed options completely or accepting option-looking parameter values can require a different library.
+argparse-00056	How can the wrapping of the help epilog be customized?	Supply a formatter_class to ArgumentParser.
+argparse-00105	When resolving conflicts, is an old action removed if only one of its option aliases is overridden?	Only overriding all option strings removes the action; remaining aliases keep it alive.
+argparse-00148	Which defaults do store_true and store_false use before the flag is supplied?	False for store_true, True for store_false.
+argparse-00184	What constant is used by store_const if no const value is specified?	None is the default constant.
+argparse-00224	How can a flag-style command-line option be made mandatory?	Pass required=True to add_argument.
+argparse-00242	How can multiple values of one command-line argument have different names in help output?	Provide a tuple for metavar.
+argparse-00298	Under what conditions can a positional argument begin with a minus sign?	It must resemble a negative number and there must be no negative-number-like options.
+argparse-00357	How can command-line filename arguments be opened with a chosen encoding and mode during parsing?	Use a configured FileType object as the argument type.
+argparse-00421	How can file-based command-line arguments be parsed with more than one argument per line?	Override convert_arg_line_to_args; the default reads one per line.
+logging-00008	Why is a shared standard-library logging interface useful when an application uses third-party modules?	It lets application and dependency messages appear in the same logging system.
+logging-00046	At which logger does upward propagation stop when an ancestor disables propagate?	That ancestor still receives the event in its handlers, then propagation stops.
+logging-00089	Can a log call include the current stack even if no exception has been raised?	Yes; stack_info is independent of exc_info.
+logging-00123	Where should Logger.exception be called, and what severity does it use?	Inside an exception handler; it logs at ERROR with exception information.
+logging-00214	What happens if the base Handler.emit implementation is used without overriding it?	It raises NotImplementedError.
+logging-00255	How can BufferingFormatter put a record count before a batch of formatted records?	Override formatHeader, whose default result is empty.
+logging-00272	Does a logging filter need to be an instance of a specialized Filter class?	No; a callable taking a record can also serve as a filter.
+logging-00300	What placeholder forms refer to LogRecord attributes in brace-style and dollar-style formatting?	Use {attrname} and ${attrname}, respectively.
+logging-00377	Which logging function should replace calls to the deprecated warn function?	Use warning.
+logging-00450	Must applications normally register logging.shutdown themselves as an exit handler?	No; importing logging registers it automatically.
+decimal-00005	Why can decimal arithmetic suit accounting equality checks better than binary floating point?	Decimal operations such as 0.1+0.1+0.1-0.3 can be exactly zero, avoiding accumulated binary approximation errors.
+decimal-00019	How is the current decimal arithmetic context obtained before changing its precision or traps?	Call getcontext.
+decimal-00075	What does Decimal.adjusted reveal about a number's leading digit?	It gives its adjusted exponent, locating the most significant digit relative to the decimal point.
+decimal-00090	What type does Decimal.compare return, and what if an operand is NaN?	It returns a Decimal; a NaN operand makes the result NaN.
+decimal-00188	How does Decimal.max differ from applying the built-in max function to two values?	Context rounding is applied and NaNs are handled according to signaling and context rules.
+decimal-00284	Which Decimal values qualify as operands for the logical operations?	Sign and exponent must be zero and every coefficient digit must be zero or one.
+decimal-00312	Why might ExtendedContext be useful for calculations that should continue after exceptional arithmetic conditions?	Its disabled traps allow NaN or Infinity results instead of stopping with exceptions.
+decimal-00512	For the two-argument Context.power operation, when is a negative base permitted?	The exponent must be integral.
+decimal-00657	Does the decimal number system distinguish two zeros and two kinds of NaN?	It includes positive and negative zero, NaN and signaling NaN, plus infinities.
+decimal-00707	Can conversion from a binary floating-point value to Decimal preserve the exact value?	Yes, though representing it exactly can require unexpectedly many digits.
+pathlib-00003	What separates pure path classes from concrete path classes?	Pure paths perform computations without filesystem I/O; concrete paths add I/O operations.
+pathlib-00031	Do operations on a PurePath access the underlying filesystem?	No, they manipulate paths without accessing a filesystem.
+pathlib-00163	Which additional Windows path-name forms became reserved in Python 3.13?	Names containing a colon or ending in a dot or space; UNC paths may also be reserved.
+pathlib-00207	What does with_suffix do when the original path has no suffix, or when the new suffix is empty?	It appends a suffix when absent and removes an existing suffix for an empty argument.
+pathlib-00290	How do filesystem predicate methods handle paths containing characters the operating system cannot represent?	Since Python 3.8 they return False instead of raising an exception.
+pathlib-00398	How can Path.glob override the platform's default case sensitivity?	Set its case_sensitive keyword explicitly to True or False.
+pathlib-00424	What are dirnames and filenames in a Path.walk result, and how can a complete child path be formed?	They are lists of names; combine a name with dirpath using the slash operator.
+pathlib-00448	How is a requested directory mode combined with the process settings when Path.mkdir creates a directory?	The requested mode is combined with the process umask.
+pathlib-00507	How can permissions be changed on a symbolic link itself rather than its target where supported?	Use follow_symlinks=False with chmod or call lchmod.
+pathlib-00553	Why can removing a trailing separator during Path normalization change a path's meaning to other tools?	Without it the path may refer to a file or directory instead of requiring a directory.
+sqlite3-00002	Does using SQLite require running a separate database server process?	No; it is a lightweight disk-based database library.
+sqlite3-00027	What does fetchone return when a sqlite_master query finds no table with the requested name?	None.
+sqlite3-00086	How can errors inside user-defined SQLite callbacks be made to produce debugging tracebacks?	Enable callback tracebacks with True; they are written to stderr.
+sqlite3-00149	Why is the sqlite3.version constant deprecated?	It reflected the old pysqlite package version and no longer has practical meaning.
+sqlite3-00281	How can a GUI receive periodic notifications during a long-running SQLite operation?	Register a progress handler to run after every chosen number of virtual-machine instructions.
+sqlite3-00429	Does changing a connection's row_factory change cursors that already exist?	No; it affects new cursors only.
+sqlite3-00471	What warning does executemany emit in Python 3.13 if named placeholders receive sequence rows instead of dictionaries?	DeprecationWarning; Python 3.14 will raise ProgrammingError.
+sqlite3-00550	What happens when Blob.read is called without a length or with a negative length?	It reads from the current offset to the end of the blob.
+sqlite3-00634	How can the sqlite3 module be launched as a simple database shell?	Invoke it using the interpreter's -m switch.
+sqlite3-00704	What does SQLite return for a SELECT statement with expression columns but no FROM clause?	A single row containing the expression results, with any specified aliases.
+ctypes-00002	What does ctypes provide for wrapping existing native libraries in Python?	C-compatible data types and calls to functions in DLLs or shared libraries.
+ctypes-00025	How can a DLL export whose name is not a valid Python identifier be accessed?	Retrieve it using getattr.
+ctypes-00120	How does WinError choose an error code when no explicit code is passed?	It calls GetLastError, formats the message and returns an exception.
+ctypes-00173	Which ctypes operation constructs a pointer type from another ctypes type?	POINTER constructs the type; pointer constructs pointer instances.
+ctypes-00244	Why can swapping nested structure members through temporary ctypes objects produce unexpected results?	The temporaries still share the parent's buffer, so the first assignment can change the second temporary.
+ctypes-00306	How does use_last_error expose the Windows error code maintained privately by ctypes?	It enables the mechanism accessed through get_last_error and set_last_error.
+ctypes-00370	What is the recommended alternative to assigning a Python callable directly to a foreign function's restype?	Use a ctypes return type and put the post-processing callable in errcheck.
+ctypes-00466	How large is create_string_buffer relative to its initializer if no size is supplied?	One element larger, to add a NUL terminator.
+ctypes-00582	How can a ctypes instance identify the root object that owns its shared memory block?	Read its _b_base_ member.
+ctypes-00731	What happens if a Structure's _fields_ is assigned after the type has already been used?	The assignment raises AttributeError.
+multiprocessing-00005	How does multiprocessing avoid the Global Interpreter Lock bottleneck for parallel execution?	It uses subprocesses rather than threads.
+multiprocessing-00036	What cleans up leaked named resources after POSIX processes started through spawn or forkserver exit?	The resource tracker unlinks remaining tracked named resources.
+multiprocessing-00126	How is a Process named when the constructor receives no explicit name?	An automatically generated Process-N1:N2:... name records child positions in the process ancestry.
+multiprocessing-00196	Where should the Empty and Full exceptions used by multiprocessing queues be imported from?	The queue module, not multiprocessing.
+multiprocessing-00335	Why is spawn the default process start method on macOS instead of fork?	Fork is considered unsafe there and can crash subprocesses.
+multiprocessing-00474	What does multiprocessing.Value return by default, and how is its underlying value accessed?	A synchronized wrapper around a shared ctypes object, accessed via its value attribute.
+multiprocessing-00506	How does sharedctypes.Array differ from RawArray?	Depending on lock, it may wrap the raw array in process-safe synchronization.
+multiprocessing-00644	Can a multiprocessing manager serve clients running on a different machine?	Yes, provided the intervening firewalls permit the connection.
+multiprocessing-00784	What authentication and polling facilities does multiprocessing.connection add to its message API?	HMAC digest authentication and polling of multiple connections.
+multiprocessing-00874	Why can ThreadPool asynchronous job objects be awkward to integrate with other libraries?	ThreadPool inherits the older Pool interface and returns its own AsyncResult type, which other libraries do not understand.
+unittest-00003	Which testing facilities does unittest provide beyond running one test function?	Shared setup and teardown, automated tests, collections of tests and reporting independent of test execution.
+unittest-00044	How does the unittest command line convert a test file path to a module name?	It removes .py and replaces path separators with dots; the file must be importable.
+unittest-00117	Does unittest reuse a single TestCase fixture instance across all test methods?	No; each test method gets a new instance with initialization, setup and teardown once per test.
+unittest-00171	Are setup and teardown hooks run for skipped tests, classes or modules?	No; the corresponding hooks are not run.
+unittest-00310	How can assertWarns accept any one of several warning classes?	Pass a tuple of warning classes.
+unittest-00418	Which specialized comparison does assertEqual use for sets and frozensets?	assertSetEqual, which reports set differences.
+unittest-00470	How can cleanup functions registered with addCleanup be executed before tearDown?	Call doCleanups explicitly.
+unittest-00574	Can loadTestsFromName target one method and import a module that has not yet been imported?	Yes; a dotted method specifier selects one test and importing the referenced module is a side effect.
+unittest-00726	How can code avoid repeatedly constructing an uncustomized TestLoader?	Reuse unittest.defaultTestLoader.
+unittest-00788	Are base-class setUpClass and tearDownClass hooks called automatically by overriding subclasses?	No; subclasses must call them explicitly.
+typing-00004	Does Python itself enforce variable and function type annotations while a program runs?	No; annotations are available to external tools such as type checkers and IDEs.
+typing-00048	What change to NewType in Python 3.10 introduced additional call overhead?	It became a class instead of a function.
+typing-00141	Does assigning an Any-typed value to a more precise type trigger type checking of that value?	No; the assignment is allowed without checking that value's actual type.
+typing-00182	Which string constructions can satisfy a LiteralString annotation?	String literals, LiteralString values and compositions of them qualify; an arbitrary str does not.
+typing-00362	What runtime behavior is expected of a function whose return annotation is TypeIs?	It takes at least one positional argument and returns a boolean.
+typing-00464	How can a TypeVar be checked for a default without forcing evaluation of a lazy default?	Call its has_default method.
+typing-00521	How are the positional and keyword components of a ParamSpec used in annotations?	P.args annotates *args and P.kwargs annotates **kwargs, with the parameter in scope.
+typing-00682	How can a TypedDict combine required and optional keys in a way compatible with Python 3.10 and older?	Use inheritance between TypedDict classes with different total settings.
+typing-00824	What does applying final to a method versus a class tell a type checker?	The method must not be overridden; the class must not be subclassed.
+typing-00938	Which kind of type is recommended instead of dict for annotating mapping arguments?	An abstract collection type such as Mapping.
+datetime-00019	What distinguishes an aware date-time value's interpretation from a naive one?	It can locate a specific moment relative to other aware objects using timezone and adjustment information.
+datetime-00092	What import style is suggested to avoid confusing the datetime module with the datetime class?	Use import datetime as dt.
+datetime-00285	What values do hour, minute and second format codes receive when formatting a date object?	Zero.
+datetime-00337	What timezone and awareness does datetime.fromtimestamp use if tz is omitted?	Platform local time, returned as a naive datetime.
+datetime-00438	How is subtraction handled between aware datetimes with different tzinfo attributes?	As if both were converted to naive UTC values, without overflowing.
+datetime-00495	When can utctimetuple raise OverflowError for an aware datetime?	When UTC normalization crosses a year boundary outside MINYEAR or MAXYEAR.
+datetime-00569	Which UTC offsets does the documented Kabul timezone example use before and after 1945?	Plus four hours before 1945 and plus four hours thirty minutes thereafter.
+datetime-00694	What must tzinfo.utcoffset return when the offset is unknown, and how large may a known offset be?	None if unknown; otherwise a timedelta with magnitude strictly less than one day.
+datetime-00766	How is a timezone's display name generated when its constructor receives no name?	UTC for zero offset, otherwise UTC followed by a signed HH:MM offset.
+datetime-00038	Which calendar assumption does the date class make about past and future dates?	It uses the current Gregorian calendar indefinitely in both directions.
+re-00003	May a bytes pattern be used to match a Unicode string, or a differently typed replacement be substituted?	No; pattern, input and replacement string types must agree.
+re-00014	What roles can special characters such as the alternation bar and parentheses have in a regular expression?	They can represent character classes or alter how surrounding expressions are interpreted.
+re-00181	What effect does the ASCII flag have on character-class escapes in Unicode and bytes patterns?	It restricts the relevant escapes to ASCII for str patterns and is ignored for bytes patterns.
+re-00192	Does IGNORECASE support Unicode case pairs, and what restricts that behavior?	Yes; ASCII disables non-ASCII matching, and locale matters only with LOCALE.
+re-00207	How does MULTILINE change the positions matched by the start and end anchors?	They also match at line boundaries around newlines, not just string boundaries.
+re-00227	When is whitespace significant even though VERBOSE mode is enabled?	Inside character classes, when escaped, or within tokens that cannot be split.
+re-00255	What does fullmatch return when only part of the input satisfies the pattern?	None, because the entire string must match.
+re-00298	Since Python 3.12, which characters may appear in group identifiers used in substitutions?	Group IDs use ASCII digits; group names in bytes replacement strings are ASCII bytes.
+re-00404	What happens when Match.group is called with a name not defined in the pattern?	IndexError is raised.
+re-00505	Why does the phonebook example limit the number of splits when separating a contact entry?	The address itself contains spaces and must remain together.
+ssl-00002	Which native library does Python's ssl module use to provide encryption and peer authentication?	OpenSSL.
+ssl-00035	Can create_default_context adopt stricter security settings without first issuing a deprecation warning?	Yes; its defaults may become more restrictive at any time.
+ssl-00166	In server mode with CERT_OPTIONAL, what happens if a client supplies an invalid certificate?	The supplied certificate is verified and any verification error aborts the handshake.
+ssl-00268	What is the effect of OP_NO_TLSv1_1 when used with PROTOCOL_TLS?	It prevents negotiation of TLS 1.1.
+ssl-00494	What does getpeercert return in dictionary mode when a received certificate has not been validated?	An empty dictionary.
+ssl-00612	Where is the private key loaded from by load_cert_chain if keyfile is omitted?	From the certfile itself, which is in PEM format.
+ssl-00653	How should protocols be ordered when configuring ALPN, and how can the negotiated choice be read?	Supply ASCII protocol strings in preference order, then call selected_alpn_protocol after the handshake.
+ssl-00720	How can SSLContext.wrap_bio return a custom SSLObject subclass?	Override the context's sslobject_class attribute.
+ssl-00830	What trust-distribution drawback is described for a self-signed certificate?	Other parties do not already have its self-issued root in their trusted certificate caches.
+ssl-00932	What operations are permitted after MemoryBIO.write_eof, and when does eof become true?	Further writes are illegal; eof becomes true after the buffered data has been read.
+socket-00007	How does Python simplify receive buffers compared with the C socket interface?	Receive buffer allocation is automatic, and send buffer lengths are implicit.
+socket-00032	What fields and integer widths are required in a CAN_J1939 address tuple?	Interface, a 64-bit ECU name, a 32-bit PGN and an 8-bit address.
+socket-00149	Why might socket option constants differ between platforms?	Most are exposed only if their symbols are defined in the platform's Unix headers.
+socket-00324	How does create_connection handle a non-numeric hostname for IPv4 and IPv6 compatibility?	It resolves both families and tries candidate addresses until one connects.
+socket-00383	Which name-resolution function should replace gethostbyname for IPv4 and IPv6 dual-stack support?	getaddrinfo.
+socket-00463	Why should portable recvmsg buffer calculations use CMSG_SPACE rather than just CMSG_LEN?	Space must include padding, even for the last ancillary item.
+socket-00540	Does socket.type retain SOCK_NONBLOCK and SOCK_CLOEXEC flags passed to the constructor?	Since Python 3.7 it does not, though they are passed to the system call.
+socket-00628	What socket mode does makefile require, and what can a timeout do to its buffer?	Blocking mode is required; a timeout may leave the file object's internal buffer inconsistent.
+socket-00671	How does socket.send handle an interrupted system call if the signal handler returns normally?	It retries the call instead of raising InterruptedError.
+socket-00755	Are blocking and timeout modes independent for multiple socket wrappers around one endpoint?	No; the modes are shared, and timeout mode uses non-blocking mode internally.
+subprocess-00002	Which process interactions does the subprocess module provide?	Starting processes, connecting their standard streams and obtaining return codes.
+subprocess-00019	Which run arguments enable text-mode standard streams?	Specifying encoding or errors, or setting text true; universal_newlines is its compatibility alias.
+subprocess-00107	Are encodings or line endings converted when subprocess streams remain in binary mode?	No.
+subprocess-00128	On POSIX, when can Popen receive a program name as a single args string without a shell?	When no arguments are being passed to the program.
+subprocess-00228	Who must quote metacharacters if shell=True is used?	The application is responsible for quoting them appropriately.
+subprocess-00246	What type must communicate input have for text streams versus binary streams?	A string for text mode, bytes for binary mode.
+subprocess-00261	What creation flag allows Windows child processes to receive CTRL_C_EVENT or CTRL_BREAK_EVENT?	CREATE_NEW_PROCESS_GROUP.
+subprocess-00309	When is STARTUPINFO.hStdOutput used rather than the default console buffer?	When dwFlags includes STARTF_USESTDHANDLES.
+subprocess-00425	What Windows shell-search change prevents a cmd.exe in the current directory from being selected?	Since Python 3.12 shell lookup uses COMSPEC and the system cmd.exe instead of the current directory and PATH.
+subprocess-00521	Which runtime's rules govern converting an argument sequence to a command string on Windows?	The Microsoft C runtime parsing rules.
+datamodel-00002	How is program code represented in Python's data model?	As objects, like other program data.
+datamodel-00024	What is the truth value of Ellipsis and how can its singleton be written?	True; it can be written as ... or Ellipsis.
+datamodel-00126	Does storing a user-defined function directly on an instance automatically turn it into a bound method?	No; binding occurs when the function is an attribute of the class.
+datamodel-00174	What is the planned status of module.__package__ in Python 3.15?	The import system and standard library will stop setting or considering it.
+datamodel-00350	Where is a traceback sent if no exception handler is suitable?	Standard error; an interactive interpreter also exposes sys.last_traceback.
+datamodel-00430	Must a rich comparison method return a boolean, and how is a non-boolean result used in a condition?	It may return another value; bool is applied when that value is used in a boolean context.
+datamodel-00455	How is truth determined if a class defines neither __bool__ nor __len__?	All instances are considered true.
+datamodel-00548	What restriction applies to multiple inheritance from classes with nonempty slots?	Only one parent may supply slot-created attributes; violations raise TypeError.
+datamodel-00671	Which arithmetic operations should a custom sequence type implement, and which should it avoid?	Addition for concatenation and multiplication for repetition, but no other numerical operators.
+datamodel-00833	Where must special methods be defined for implicit operations to find them reliably?	On the object's type rather than in its instance dictionary.
+logging-cookbook-00041	How can a stdout logging handler exclude ERROR and higher messages while keeping INFO and WARNING?	Attach a filter excluding the high-severity messages, configured alongside handlers and formatters.
+logging-cookbook-00104	What transport and port does the production logging-listener recipe use by default?	A TCP socket on port 9020.
+logging-cookbook-00122	How can a custom logging filter inject contextual fields into output records?	It can add attributes to LogRecord objects for a formatter to display.
+logging-cookbook-00186	Why can't brace-format or Template syntax be passed directly with message arguments to ordinary logger calls?	The internal message merge uses percent-formatting for compatibility with existing calls.
+logging-cookbook-00237	How is the cookbook's example logging configuration dictionary activated?	Pass it to dictConfig.
+logging-cookbook-00266	What encoding does SysLogHandler use for the formatted message in the BOM recipe?	UTF-8.
+logging-cookbook-00317	How can dictConfig pass configuration data to a callable that constructs a filter?	It passes keyword parameters to the callable.
+logging-cookbook-00371	What happens to the logger level after the selective-logging context manager exits in the example?	The original INFO level is restored.
+logging-cookbook-00451	How can a logging formatter reduce the risk from embedded newlines used for log injection?	Escape newline characters.
+logging-cookbook-00072	How can QueueListener respect each destination handler's minimum level?	Construct it with respect_handler_level=True.

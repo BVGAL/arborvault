@@ -1,0 +1,259 @@
+{
+  "scope": "25 hash-selected fit paragraph pairs from 25 distinct articles (50 questions), before encoder outcomes; no test questions inspected",
+  "reviewer": "AI-assisted semantic audit; not independent human adjudication",
+  "selection": "SHA256(support-v1/audit/ + pair_id), one pair per article, first 25",
+  "source_labels_preserved": true,
+  "action": "Exclude entire fit pair where wording or source support is ambiguous; do not relabel or replenish the pair",
+  "pairs": [
+    {
+      "pair_id": "24c9b8aabf392da45bc18365ac58e77e8607325d2ce78daa7cb06f51b8b24cce",
+      "document": "University_of_Kansas",
+      "question_ids": [
+        "56e799f200c9c71400d77368",
+        "5acf619577cf76001a684cf7"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "4862c4ca32caa8082af7d312fd329209eb9def2b671e672e542fa6a7d58e2664",
+      "document": "Royal_assent",
+      "question_ids": [
+        "572a992cf75d5e190021fb7d",
+        "5acfb4ef77cf76001a6859b4"
+      ],
+      "decision": "exclude_fit_pair",
+      "reason": "Positive question says use royal assent while the paragraph says withhold assent; polarity is imprecise."
+    },
+    {
+      "pair_id": "2f2b994cad353bbc91fe3f0408fc350b17962835ffef844e0c825b5870f96b06",
+      "document": "Cardinal_(Catholicism)",
+      "question_ids": [
+        "56df0244c65bf219000b3ecc",
+        "5ad30ab4604f3c001a3fdaf7"
+      ],
+      "decision": "exclude_fit_pair",
+      "reason": "Negative asks recognition at Masses; the paragraph explicitly lists some Papal Masses and supplies the clothing. Likely alternative valid answer."
+    },
+    {
+      "pair_id": "0df5b3c5285e45e9dfa3e478a79156230455e501f5d43237b56e7b746bebf3bb",
+      "document": "Clothing",
+      "question_ids": [
+        "57261e08271a42140099d497",
+        "5a0d08a3f5590b0018dab718"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "514072e5481dd3a6e95a869006c4a383b5fb2be871375e695945608a124d2850",
+      "document": "Heian_period",
+      "question_ids": [
+        "572781abf1498d1400e8fa26",
+        "5a3c071dcc5d22001a521d4c"
+      ],
+      "decision": "exclude_fit_pair",
+      "reason": "Ancient anthem versus modern anthem with ancient lyrics has ambiguous referent and time wording."
+    },
+    {
+      "pair_id": "df41dcde6940351723ac2f28322a840d98de948c060bf621ee51797e35df8c4d",
+      "document": "House_music",
+      "question_ids": [
+        "5706ab2075f01819005e7cec",
+        "5ad27edad7d075001a42972e"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "0af98ac1d87ccc4b539c308fe6e05aba16f1668fd533ae3dc0f48a154407ffa9",
+      "document": "Mesozoic",
+      "question_ids": [
+        "570ad9e64103511400d59a9c",
+        "5a2f4e01a83784001a7d26ef"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "d494020818086a2c37c1be4713c6dd0e877a99e091d37136dd277779da54c181",
+      "document": "IBM",
+      "question_ids": [
+        "5729cdaa3f37b31900478575",
+        "5a68f8198476ee001a58a948"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "3b757509c38c25d8a390d011b555ee5dd4db2f4164e81ef4a838502f64cb7b21",
+      "document": "European_Central_Bank",
+      "question_ids": [
+        "572834212ca10214002da0ab",
+        "5a7a7f5521c2de001afe9c92"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "ad49181a7d4631317950e923fd76e015b4dac415546caed65c6001ddf3af2d37",
+      "document": "Eritrea",
+      "question_ids": [
+        "570e3e440dc6ce1900204ed9",
+        "5ad0d4dc645df0001a2d0616"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "a07e742f217b39f9e38d7455bfbf7f3168ac1756e24ed198246163578b4a13ca",
+      "document": "Iranian_languages",
+      "question_ids": [
+        "56ddef9d9a695914005b96eb",
+        "5a18c7099aa02b0018605ec1"
+      ],
+      "decision": "exclude_fit_pair",
+      "reason": "Negative asks what scholars revived the term; primarily in German can plausibly answer German scholarship. Ambiguous level of specificity."
+    },
+    {
+      "pair_id": "b0f94d575ed7860f89f23bc071960c613ce0e1064aeb61b6e56069e69f744101",
+      "document": "Flowering_plant",
+      "question_ids": [
+        "572f50f8b2c2fd140056800e",
+        "5a3b08053ff257001ab843a5"
+      ],
+      "decision": "exclude_fit_pair",
+      "reason": "Negative attributes fertilization to the pollen tube rather than sperm; loose biological wording can plausibly refer to double fertilization."
+    },
+    {
+      "pair_id": "3cf348a0de965ba98ff354adae07a2d16b67c2ee01d3d247af42c39a3b22d4c7",
+      "document": "Dominican_Order",
+      "question_ids": [
+        "5727fe574b864d19001641a3",
+        "5ad26b41d7d075001a429348"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "c7ed7aec531911123154e81d281e7e9dd2164d39260ccef5d6c1c6160842ec02",
+      "document": "Thuringia",
+      "question_ids": [
+        "57265912dd62a815002e8252",
+        "5a7ccaf7e8bc7e001a9e202d"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "008ece0297345dbf6b2ad794863e606c912112d9c7f4ce9869e0cc8038c87162",
+      "document": "Arsenal_F.C.",
+      "question_ids": [
+        "57260512271a42140099d3d1",
+        "5acd16c507355d001abf3425"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "e7c9fd0effd2ab07ae396286755ede00465b8bdadc83af39afce1dfa3a4e0308",
+      "document": "Quran",
+      "question_ids": [
+        "572ebc97dfa6aa1500f8d336",
+        "5ad229fcd7d075001a4285af"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "1fc290bb4b95b613fbedfa03b5ce5525c4c0afc9205fead580f38d12d842764c",
+      "document": "Presbyterianism",
+      "question_ids": [
+        "57265eaf708984140094c3cf",
+        "5acfc0ce77cf76001a685cb1"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "45b9f5a2c13f08bb1e997c6c00bf553962a76dddd6980c59ddd6cdd2bda279f9",
+      "document": "Hunting",
+      "question_ids": [
+        "5734449aacc1501500babd4a",
+        "5ace4f4a32bba1001ae4a255"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "1e60d359669f6d2b67277281ccf1a478cb1f67bb56ad4bce117bee4fa77a6ecd",
+      "document": "Unicode",
+      "question_ids": [
+        "5727dfedff5b5019007d9740",
+        "5acd126d07355d001abf334d"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "8d4d8069020130f40a86e87d438b989b500155977ea98a06198f459b69c749d2",
+      "document": "Political_party",
+      "question_ids": [
+        "572798635951b619008f8e52",
+        "5a73aeab42eae6001a389968"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "621844751914a6870ed74f843d8835a974c0ac857cadbd8aa751259d451633bd",
+      "document": "Web_browser",
+      "question_ids": [
+        "56e0ccb3231d4119001ac3b8",
+        "5a4d38437a6c4c001a2bbc5d"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "75e484c415cc902a8f926a37af2747e54b38cf8b4df510fc7c297b0872eb906c",
+      "document": "Capital_punishment_in_the_United_States",
+      "question_ids": [
+        "57102438b654c5140001f851",
+        "5ad3fd67604f3c001a3ffbdf"
+      ],
+      "decision": "exclude_fit_pair",
+      "reason": "Negative asks about executions outside jail; the source explicitly permits an enclosure near jail when needed. Conditional wording makes the negative questionable."
+    },
+    {
+      "pair_id": "ebbaf6dc5322855bd25aed143255662542a4fbe9f87c0cef4effc15eacdb1d52",
+      "document": "Mammal",
+      "question_ids": [
+        "5726365038643c19005ad307",
+        "5a39fedc2f14dd001ac726a0"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "e04decf70ac05b586cd0abba38281ebd10b5ad00853d5e64ab1e51c22a211fe4",
+      "document": "Super_Nintendo_Entertainment_System",
+      "question_ids": [
+        "5730ad472461fd1900a9cf7e",
+        "5a42b1214a4859001aac72ab"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    },
+    {
+      "pair_id": "f1cfd175cb1d73cadc8b2dbd9808720238e135326f7e2e9d96bcccdf7d26d687",
+      "document": "Florida",
+      "question_ids": [
+        "572671dd708984140094c650",
+        "5acd9c7b07355d001abf480f"
+      ],
+      "decision": "retain_original_labels",
+      "reason": "Positive span answers the question; the negative changes the entity, relation, polarity or asks for an absent detail."
+    }
+  ]
+}

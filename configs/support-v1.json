@@ -1,0 +1,64 @@
+{
+  "id": "support-v1",
+  "dataset": "datasets/support-v1",
+  "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+  "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+  "max_length": 512,
+  "seed": 42,
+  "cpu_threads": 4,
+  "batch_size": 16,
+  "training_articles": 128,
+  "selection_articles": 32,
+  "calibration_articles": 32,
+  "pairs_per_article": {
+    "fit": 16,
+    "selection": 12,
+    "calibration": 12,
+    "test": 16
+  },
+  "minimum_training_article_pairs": 12,
+  "probe_l2_candidates": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "probe_selection": "Document-macro AUROC on selection articles; ties prefer larger L2",
+  "conservative_max_false_rejection_rate": 0.02,
+  "primary_comparison": "Retrained context probe versus previous published probe at the balanced calibration operating point",
+  "primary_task": "Answerability of the supplied complete paragraph; not document retrieval or generated-answer correctness",
+  "bootstrap_seed": 42,
+  "bootstrap_replicates": 5000,
+  "bootstrap_unit": "SQuAD article; keep both questions for each paragraph together",
+  "previous_probe": "docs/benchmarks/abstention-v3/fitted-probes.json",
+  "maximum_local_seconds": 7200,
+  "maximum_new_cloud_spend_usd": 0,
+  "previous_cumulative_estimated_usd": 7.94877,
+  "cumulative_budget_usd": 10,
+  "sources": {
+    "train-v2.0.json": {
+      "url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v2.0.json",
+      "sha256": "68dcfbb971bd3e96d5b46c7177b16c1a4e7d4bdef19fb204502738552dede002"
+    },
+    "dev-v2.0.json": {
+      "url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v2.0.json",
+      "sha256": "80a5225e94905956a6446d296ca1093975c4d3b3260f1d6c8f68bc2ab77182d8"
+    },
+    "cc-by-sa-4.0.txt": {
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt",
+      "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+    }
+  },
+  "feature_decimals": 7,
+  "previous_probe_sha256": "3432d46b0c8de9a9315e2139d13c842471a897140ae61c7362d3a803e93ac531",
+  "feature_attention_implementation": "eager",
+  "tie_rule": "Selection AUROC rounded to 12 decimals; prefer larger L2. Calibration ties: fewer supported rejections, then lower threshold.",
+  "baseline_calibration": "All methods, including the frozen previous probe, recalibrate thresholds on the same new calibration articles.",
+  "excluded_fit_pair_ids": [
+    "4862c4ca32caa8082af7d312fd329209eb9def2b671e672e542fa6a7d58e2664",
+    "2f2b994cad353bbc91fe3f0408fc350b17962835ffef844e0c825b5870f96b06",
+    "514072e5481dd3a6e95a869006c4a383b5fb2be871375e695945608a124d2850",
+    "a07e742f217b39f9e38d7455bfbf7f3168ac1756e24ed198246163578b4a13ca",
+    "b0f94d575ed7860f89f23bc071960c613ce0e1064aeb61b6e56069e69f744101",
+    "75e484c415cc902a8f926a37af2747e54b38cf8b4df510fc7c297b0872eb906c"
+  ]
+}

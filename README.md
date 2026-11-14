@@ -8,6 +8,14 @@ ArborVault stores document hierarchies in PostgreSQL and returns source-backed s
 through a small HTTP API. Use it as an experimental retrieval component in an agent or
 RAG pipeline. The framework-neutral API supports reusable integrations with any AI agent.
 
+**Registered experiment: human-labeled context support.** A new
+[SQuAD 2.0 subset](datasets/support-v1/README.md) pairs every paragraph with an
+answerable and an adversarial unanswerable question. A frozen
+[protocol](docs/support-v1-protocol.md) specifies retraining the small acceptance
+head locally and comparing it with the previous head, raw relevance scores and
+question/context-only controls on 1,120 held-out questions. This is paragraph
+support classification, separate from the retrieval benchmarks below.
+
 **Latest: expanded navigation and abstention validation.** A frozen test on 20
 new Python manuals contains 240 answerable and 240 unknown cases, with four
 separate new calibration manuals. Historical documents fit and select a small
@@ -277,4 +285,6 @@ revisions. Use a gateway with TLS and shared quotas for a multi-instance deploym
 5. Explore a separately versioned learned ToC selector and SearchTome evaluation after
    checking dataset rights. Any reproduction claim requires its own evidence.
 
-Contributions: see [CONTRIBUTING.md](CONTRIBUTING.md). License: [Apache-2.0](LICENSE).
+Contributions: see [CONTRIBUTING.md](CONTRIBUTING.md). Original code license: [Apache-2.0](LICENSE).
+Third-party datasets retain their own licenses; the selected
+[SQuAD 2.0 data and annotations](datasets/support-v1/README.md) use CC BY-SA 4.0.

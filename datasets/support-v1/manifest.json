@@ -1,0 +1,80 @@
+{
+  "id": "support-v1",
+  "license": "CC-BY-SA-4.0",
+  "sources": {
+    "train-v2.0.json": {
+      "url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v2.0.json",
+      "sha256": "68dcfbb971bd3e96d5b46c7177b16c1a4e7d4bdef19fb204502738552dede002"
+    },
+    "dev-v2.0.json": {
+      "url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v2.0.json",
+      "sha256": "80a5225e94905956a6446d296ca1093975c4d3b3260f1d6c8f68bc2ab77182d8"
+    },
+    "cc-by-sa-4.0.txt": {
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt",
+      "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+    }
+  },
+  "selection": "Hash-order articles and paragraphs; one human-positive and one human-negative question per identical paragraph; no model scores used",
+  "tokenizer": {
+    "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "max_length": 512,
+    "truncation": false
+  },
+  "counts": {
+    "fit": {
+      "articles": 128,
+      "paragraphs": 2031,
+      "answerable": 2031,
+      "unanswerable": 2031
+    },
+    "selection": {
+      "articles": 32,
+      "paragraphs": 384,
+      "answerable": 384,
+      "unanswerable": 384
+    },
+    "calibration": {
+      "articles": 32,
+      "paragraphs": 384,
+      "answerable": 384,
+      "unanswerable": 384
+    },
+    "test": {
+      "articles": 35,
+      "paragraphs": 560,
+      "answerable": 560,
+      "unanswerable": 560
+    }
+  },
+  "excluded_or_ineligible": {
+    "paragraph_without_both_labels": 10327,
+    "question_context_too_long": 39,
+    "paragraph_too_long": 27,
+    "duplicate_selected_context_or_question": 1,
+    "pre_outcome_audit_excluded_fit_examples": 12
+  },
+  "pre_outcome_audit_excluded_fit_pairs": [
+    "2f2b994cad353bbc91fe3f0408fc350b17962835ffef844e0c825b5870f96b06",
+    "4862c4ca32caa8082af7d312fd329209eb9def2b671e672e542fa6a7d58e2664",
+    "514072e5481dd3a6e95a869006c4a383b5fb2be871375e695945608a124d2850",
+    "75e484c415cc902a8f926a37af2747e54b38cf8b4df510fc7c297b0872eb906c",
+    "a07e742f217b39f9e38d7455bfbf7f3168ac1756e24ed198246163578b4a13ca",
+    "b0f94d575ed7860f89f23bc071960c613ce0e1064aeb61b6e56069e69f744101"
+  ],
+  "previous_question_files": {
+    "abstention-v3/questions.json": "0b1b7a9e74bc195f6f09bab9d08c4cdb145ded712e96a90088aeb2a83297c215",
+    "long-manuals-v1/questions.json": "a283a24d77467898d4c8563c4150f9d01739663487fe6e821d509eb5a017f507",
+    "navigation-v2/questions.json": "7d86635b72c8226f8c4ccd8d5a8f4395e9e990ca95896fd75d8bfa0f0ae93f11",
+    "public-docs-v1/queries.jsonl": "ef60c1543e025e0d310cc2086dbbccd9c8791cf20e9e1911f98255c31efd0fc6",
+    "qasper-routing-v2/dev-questions.jsonl": "af6d80869b9a70f4b1fe1609df7421da7d708607c50c360e8335b29165031ec9",
+    "qasper-routing-v2/test-questions.jsonl": "e36fbc38531558ccd5c354e3432cb1762a4af97750003aef1479baa6bc366a50",
+    "qasper-routing-v2/train-questions.jsonl": "d11ffcd894867f54f9c27de1f90deb04813fb1e001751dbb0c3d39d4d0cd3b23"
+  },
+  "novelty_scope": "No exact normalized question reuse or repeated normalized paragraph across roles/articles; pretraining and semantic overlap are unknown",
+  "files": {
+    "examples.jsonl": "7e366c4d99c6748cfce68b48bce9f6902fd57fef3891186d42c649e0afd15167",
+    "LICENSE-DATA.txt": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+  }
+}

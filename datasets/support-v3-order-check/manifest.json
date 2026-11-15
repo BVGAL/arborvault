@@ -1,0 +1,14 @@
+{
+  "examples_sha256": "fb7c2357c1f7cd8e651ba5729e2cee132232b17a1f3d2f9dd931aaa3d0728562",
+  "original_examples_sha256": "9171cc118ee2b73c81833be662e7c4e3dbee28a4ab5ba23cb5fb52865a4c5e5b",
+  "examples": 640,
+  "original_examples": 640,
+  "combined_order_only_accuracy": 0.5,
+  "added_before_primary_test_scoring": true,
+  "development_checkpoints_already_observed": [
+    300,
+    600
+  ],
+  "license": "Apache-2.0",
+  "independent_adjudication": false
+}

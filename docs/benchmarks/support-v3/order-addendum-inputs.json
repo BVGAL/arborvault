@@ -1,0 +1,17 @@
+{
+  "sha256": {
+    "docs/support-v3-order-addendum.md": "40030a481fe5f58c360c8f3667b6bdeca4d711b742d2cc7cabe76507793fe74e",
+    "datasets/support-v3-order-check/README.md": "7088348eb615cb94c87c4fb9e137321421a4ec82fea0579eefe5de0ab481782f",
+    "datasets/support-v3-order-check/examples.jsonl": "fb7c2357c1f7cd8e651ba5729e2cee132232b17a1f3d2f9dd931aaa3d0728562",
+    "datasets/support-v3-order-check/manifest.json": "e4dee265f8d83cdf38b6af9207bbfa7bed4ac0baeb3e295452fc88c71f909b5e",
+    "scripts/support_v3_order_check.py": "44ee28f29de6659eda9ca2e6a115a7e1c04660fb745860d0ed55bca6738771fa",
+    "tests/test_support_v3_order_check.py": "6fcf61b9bc679ab98e5c44c391ee9dbf19d2ae053ae6eefc4e48cb829319de4c"
+  },
+  "phase": "During training, before any primary or supplemental test scores",
+  "development_checkpoints_seen": [
+    300,
+    600
+  ],
+  "initial_protocol_commit": "55f7c99ed207e845473d74db6a91d5aacf9796b3",
+  "initial_frozen_inputs_unchanged": true
+}

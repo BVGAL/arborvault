@@ -1,0 +1,86 @@
+{
+  "id": "support-v3",
+  "examples_sha256": "9171cc118ee2b73c81833be662e7c4e3dbee28a4ab5ba23cb5fb52865a4c5e5b",
+  "source_sha256": "68dcfbb971bd3e96d5b46c7177b16c1a4e7d4bdef19fb204502738552dede002",
+  "config_sha256": "8b6d9c054df2475782a4795ed384eca06e4502a4e469188da05336f3aca80dba",
+  "prior_datasets": {
+    "datasets/support-v1/examples.jsonl": "7e366c4d99c6748cfce68b48bce9f6902fd57fef3891186d42c649e0afd15167",
+    "datasets/support-v2/examples.jsonl": "f24166edd7ebbcc63ef0c127ce44461a7cc7a4b7bc4b6d4393446447a334fa6e"
+  },
+  "previous_question_files": {
+    "abstention-v3/questions.json": "0b1b7a9e74bc195f6f09bab9d08c4cdb145ded712e96a90088aeb2a83297c215",
+    "long-manuals-v1/questions.json": "a283a24d77467898d4c8563c4150f9d01739663487fe6e821d509eb5a017f507",
+    "navigation-v2/questions.json": "7d86635b72c8226f8c4ccd8d5a8f4395e9e990ca95896fd75d8bfa0f0ae93f11",
+    "public-docs-v1/queries.jsonl": "ef60c1543e025e0d310cc2086dbbccd9c8791cf20e9e1911f98255c31efd0fc6",
+    "qasper-routing-v2/dev-questions.jsonl": "af6d80869b9a70f4b1fe1609df7421da7d708607c50c360e8335b29165031ec9",
+    "qasper-routing-v2/test-questions.jsonl": "e36fbc38531558ccd5c354e3432cb1762a4af97750003aef1479baa6bc366a50",
+    "qasper-routing-v2/train-questions.jsonl": "d11ffcd894867f54f9c27de1f90deb04813fb1e001751dbb0c3d39d4d0cd3b23"
+  },
+  "novel_human_articles": [
+    "YouTube",
+    "Athanasius_of_Alexandria",
+    "Vacuum",
+    "Political_philosophy",
+    "Renewable_energy_commercialization",
+    "Hunter-gatherer",
+    "Diarrhea",
+    "Sony_Music_Entertainment",
+    "Digimon",
+    "Heresy",
+    "Antibiotics",
+    "Anthropology",
+    "Hokkien",
+    "Law_of_the_United_States",
+    "Norfolk_Island",
+    "Raleigh,_North_Carolina",
+    "Old_English",
+    "Planck_constant",
+    "Freemasonry",
+    "George_VI",
+    "Endangered_Species_Act",
+    "Materialism",
+    "Mali",
+    "Immaculate_Conception",
+    "Warsaw_Pact",
+    "Prime_minister",
+    "Asphalt",
+    "Royal_Institute_of_British_Architects",
+    "Bras%C3%ADlia",
+    "Northwestern_University",
+    "Aspirated_consonant",
+    "Infrared"
+  ],
+  "eligible_unused_articles": 35,
+  "counts": {
+    "fit": {
+      "human": 4062,
+      "negation": 1792,
+      "relation": 2048,
+      "temporal": 1664
+    },
+    "selection": {
+      "human": 768,
+      "negation": 288,
+      "relation": 288,
+      "temporal": 288
+    },
+    "calibration": {
+      "human": 256,
+      "negation": 288,
+      "relation": 288,
+      "temporal": 288
+    },
+    "test": {
+      "human": 768,
+      "negation": 640,
+      "relation": 640,
+      "temporal": 640
+    }
+  },
+  "licenses": {
+    "human": "CC-BY-SA-4.0",
+    "contrast": "Apache-2.0"
+  },
+  "novelty": "New calibration/test human articles excluded from every v1/v2 role; new contrast families/entities excluded from training. Public source may occur in model pretraining.",
+  "synthetic_scope": "Authored and reviewed by the same AI-assisted author; no independent adjudication; 15 test families, 5 per phenomenon."
+}

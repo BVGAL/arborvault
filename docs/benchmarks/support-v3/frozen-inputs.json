@@ -1,0 +1,28 @@
+{
+  "sha256": {
+    "configs/support-v3.json": "8b6d9c054df2475782a4795ed384eca06e4502a4e469188da05336f3aca80dba",
+    "datasets/support-v3/examples.jsonl": "9171cc118ee2b73c81833be662e7c4e3dbee28a4ab5ba23cb5fb52865a4c5e5b",
+    "datasets/support-v3/manifest.json": "5d8c31015a2d6d09fb9f2dfa0ae868a5bc1cdf4e930b243237bedc6d9d14c976",
+    "datasets/support-v3/README.md": "a5d6c00a8bf012d8eb211887636ff6aa44841a04477a611645bc11cacb264a95",
+    "Dockerfile.probe": "c82f0504e4bc5df319ffac83c1f19ead18b3afb6aeb224fcce6c0eff24cbb8f1",
+    "docs/support-v3-protocol.md": "272347d03c403bda6ef16172711d0d8a65c353a45b8d1d0741c87f72997c016d",
+    "requirements.probe-cpu.txt": "deeaa383ed52c2bc50935ee13ed1b5b56999044f2e4a5ebfc5706fc344c414f3",
+    "scripts/build_support_v3.py": "1f19381e0d5e70b0b31c59bc51b53baae641ff00ac3cf02652e538edfe9cbc12",
+    "scripts/run_support_v3.py": "74c5417c81710790fc720d4803f7f143c96067de1f3a5a02c1aa1563cbff3428",
+    "scripts/verify_support_v3.py": "5ef1c6eac8557a693da7312bf3bc5f90fc3ab54cc5d6b090eda68240fce45b70",
+    "src/arborvault/answerability.py": "f65a06c210ece85a8b3094efe7e7468688a5bd3960f701d007b9e5a80252f97f",
+    "src/arborvault/support_contrasts.py": "1be0b047dc69ce9b29e04dc2b12cb17a737c31844e35d3fdcc1f7187b53f2fef",
+    "src/arborvault/support_data.py": "a9f4d756f372aa14ed7103da7aab984e90b8b863e344d2b291bb8f7c3f7d0b9b",
+    "src/arborvault/support_probe.py": "744db48659eb6a7db87206ccae34192488948df24ada02092d55ece23262817f",
+    "src/arborvault/support_v2_data.py": "99ab93c40a90e267eb1e4ab27e5623b7a8eb8f3318df09e47532fed028d7c5f8",
+    "src/arborvault/support_v2_models.py": "c49768f40eb19acaf37cfc94b470966a2376188157582ab881400cbe9950ba8b",
+    "src/arborvault/support_v3_adapter.py": "e27a8c2f7b25f23f16fbf05070be8e605e53eaf099260edfb65d7b2f694a8a02",
+    "src/arborvault/support_v3_contrasts.py": "53454a31e18b685f7b7179185acd335cb772bc5d41c0ff89a9b20bace84b1038",
+    "src/arborvault/support_v3_data.py": "1b1864e70016ad512b232364557d1e483bec619536edab41b7695e59967043d9",
+    "src/arborvault/support_v3_eval.py": "1ae6e21776ffcb67d101e4ccb20e41bcf8e1d1bf1fd4feb9e520f38f1a6c3bc1",
+    "src/arborvault/support_v3_training.py": "94f166fae9b35531855a60a307c2c40d59a3b369369d2edc9db971283c28847b",
+    "tests/test_support_v3.py": "2854a700ba7318cd67f73524eb3a1cececba3c07afbb7468a36b095951a7c157"
+  },
+  "phase": "before training and scoring new test",
+  "prior_commit": "fc188b037616a07b6bcb91d221b88f851c3ae5e4"
+}

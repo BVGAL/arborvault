@@ -1,0 +1,23 @@
+{
+  "sha256": {
+    "docs/benchmarks/support-v3/diagnostics.json": "a4b6c6a81d39de5fd6479816930d54d930c171c8fdc39f3e736b746ba4b4edb1",
+    "docs/benchmarks/support-v3/error-audit.json": "404e30046e408c99f26a6e8fdf3294575b2933abae0ca5e0336704740b6e45c9",
+    "docs/benchmarks/support-v3/frozen-inputs.json": "45387abbf0da269d0f66851de6f1023acf7c9916a80e0af99ed79ca3246da7c3",
+    "docs/benchmarks/support-v3/order-addendum-inputs.json": "48c2618c12a8d1b2c59777934533626c63f24896b64df70d3b21b9e8309b5f79",
+    "docs/benchmarks/support-v3/order-check-results.json": "7a8a08d7710f94a7758e642bda928ee650d16149198bbd4b6ff796c6574bca54",
+    "docs/benchmarks/support-v3/results/calibration.json": "ed4e98bd1d43508b0855f78b36b1ff1919045375514138481af1a1b394b9ed2a",
+    "docs/benchmarks/support-v3/results/decisions.json": "85a58ce5a1408a3646b0124b081a297247de8c82ce671a9f1816cc68812fa4b5",
+    "docs/benchmarks/support-v3/results/input-controls.json": "e4188313c2be1bf1fe3e2a76ded36c4c2942dd5dcc18d81b04f316259b1a4c87",
+    "docs/benchmarks/support-v3/results/runtime.json": "00232726cd72e5851defd747ea9bc26f14b6d596e007f5de7015dfd27fc1d5e8",
+    "docs/benchmarks/support-v3/results/summary.json": "16536a39431d37722b6ac3130f011f6efaf850bac2915df40b491c2c83017298",
+    "docs/benchmarks/support-v3/run-cost.json": "c1020c321fbd9793a82b802e47313d218339d6af08c74a9a53c3cfb95a407658",
+    "docs/benchmarks/support-v3/training/adapter.json": "d2671441167127612594e863a7c24216358883e1e2d05c30dafdbb9cd4391bbb",
+    "docs/benchmarks/support-v3/training/baselines.json": "8cb82e3e7b70bd80cbeb874a719e1e7d1d14a8bae55b02f167a44389cf4c8c4b",
+    "docs/benchmarks/support-v3/training/selection-baselines.json": "9365d1cad7e1037021cb1174f08ad4ae71fd1aa60ee37a59d5a9e21fd9f0b1b3",
+    "docs/benchmarks/support-v3/training/selection.json": "7023225bb91dc8596c3d296b81b1685206dc67e2aafa0b3c421aeb8170d8365f",
+    "docs/benchmarks/support-v3/training/training-history.json": "107da69979c3c25de55abe2cb6291e78d31a7cdfa551fd21903a95e8f7eac359",
+    "docs/benchmarks/support-v3/training/training.json": "32316096020bde1c301d5ef128cfabac5a565187b5a08b1350b22c6a3c2f61e4"
+  },
+  "original_inputs_unchanged": true,
+  "model_promoted": false
+}

@@ -8,7 +8,22 @@ ArborVault stores document hierarchies in PostgreSQL and returns source-backed s
 through a small HTTP API. Use it as an experimental retrieval component in an agent or
 RAG pipeline. The framework-neutral API supports reusable integrations with any AI agent.
 
-**Latest: semantic abstention v2 is not promoted.** New negation, direction and
+**Latest: reader adaptation v3 is not promoted.** A small MiniLM LoRA experiment
+improves controlled temporal rejection to **318/320**, with no useful temporal
+cases lost. However, it rejects **34/320 useful negation cases**. Apparent relation
+progress (**204/320** unsupported rejections) collapses to **2/320**, with 6 useful
+losses, when equivalent questions change the order of actor names. That extra
+stress test was published during training, before any test scoring, after a
+static review found a shortcut in the original relation test. On 768 new human
+questions, conservative rejection remains weak: **5/384** unsupported versus
+**40/384** for v1, with 0 versus 6 useful losses. No production default changes.
+Read the [results and failure analysis](docs/support-v3-results.md),
+[initial protocol](docs/support-v3-protocol.md),
+[explicit pre-test addendum](docs/support-v3-order-addendum.md),
+[dataset](datasets/support-v3/README.md) and
+[weights and reproduction guide](docs/benchmarks/support-v3/README.md).
+
+**Previous: semantic abstention v2 is not promoted.** New negation, direction and
 date contrasts improve conservative wrong-year rejection from **22/192 to
 126/192**, with no useful temporal cases lost. However, the selected small
 nonlinear head rejects **50/192 useful negation cases**, and reversed relations

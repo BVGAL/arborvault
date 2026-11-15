@@ -1,0 +1,1200 @@
+{
+  "selection": "Two hash-selected illustrations per phenomenon x support label x error/success cell when available; not a prevalence sample or independent human adjudication",
+  "labels_changed": false,
+  "examples": [
+    {
+      "id": "human/5726c86bf1498d1400e8eb1e",
+      "phenomenon": "human",
+      "error": false,
+      "question": "How many main telephone lines were being used on Norfolk Island, as of 2004?",
+      "context": "As of 2004[update], 2532 telephone main lines are in use, a mix of analog (2500) and digital (32) circuits. Satellite communications services are planned.[citation needed] There is one locally based radio station (Radio Norfolk 89.9FM), broadcasting on both AM and FM frequencies. There is also one TV station, Norfolk TV, featuring local programming, plus transmitters for Australian channels ABC, SBS, Imparja Television and Southern Cross Television. The Internet country code top-level domain (ccTLD) is .nf.",
+      "supported": true,
+      "answers": [
+        {
+          "text": "2532",
+          "answer_start": 20
+        }
+      ],
+      "template_family": null,
+      "scores": {
+        "v1": 0.6664641037176638,
+        "v2": 0.6217818485074267,
+        "frozen_v3": 0.6668620401492436,
+        "raw": 7.644627094268799,
+        "selected": 0.24186363816261292,
+        "v2_original_gate": 0.6217818485074267
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": true
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": true
+        }
+      }
+    },
+    {
+      "id": "human/571b51299499d21900609c65",
+      "phenomenon": "human",
+      "error": false,
+      "question": "What is the synthetic crude additive to bitumen called?",
+      "context": "Because of the difficulty of moving crude bitumen through pipelines, non-upgraded bitumen is usually diluted with natural-gas condensate in a form called dilbit or with synthetic crude oil, called synbit. However, to meet international competition, much non-upgraded bitumen is now sold as a blend of multiple grades of bitumen, conventional crude oil, synthetic crude oil, and condensate in a standardized benchmark product such as Western Canadian Select. This sour, heavy crude oil blend is designed to have uniform refining characteristics to compete with internationally marketed heavy oils such as Mexican Mayan or Arabian Dubai Crude.",
+      "supported": true,
+      "answers": [
+        {
+          "text": "synbit",
+          "answer_start": 197
+        }
+      ],
+      "template_family": null,
+      "scores": {
+        "v1": 0.568222180956239,
+        "v2": 0.48510054634494126,
+        "frozen_v3": 0.5713196901214562,
+        "raw": 5.826922416687012,
+        "selected": -0.6836660504341125,
+        "v2_original_gate": 0.48510054634494126
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": true
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "human/5acd198007355d001abf34cd",
+      "phenomenon": "human",
+      "error": true,
+      "question": "Who disagrees with the quantum theory? ",
+      "context": "Davies' and Gribbin's objections are shared by proponents of digital physics who view information rather than matter to be fundamental. Their objections were also shared by some founders of quantum theory, such as Max Planck, who wrote:",
+      "supported": false,
+      "answers": [],
+      "template_family": null,
+      "scores": {
+        "v1": 0.6334055537738611,
+        "v2": 0.40413210767207763,
+        "frozen_v3": 0.4645149990849135,
+        "raw": 5.148881912231445,
+        "selected": 0.8134241104125977,
+        "v2_original_gate": 0.40413210767207763
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": true
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "human/5acfc61077cf76001a685e6e",
+      "phenomenon": "human",
+      "error": true,
+      "question": "What needs the support of the upper house of parliment?",
+      "context": "In parliamentary systems, governments are generally required to have the confidence of the lower house of parliament (though a small minority of parliaments, by giving a right to block supply to upper houses, in effect make the cabinet responsible to both houses, though in reality upper houses, even when they have the power, rarely exercise it). Where they lose a vote of confidence, have a motion of no confidence passed against them, or where they lose supply, most constitutional systems require either:",
+      "supported": false,
+      "answers": [],
+      "template_family": null,
+      "scores": {
+        "v1": 0.39635610267625027,
+        "v2": 0.6253040740075749,
+        "frozen_v3": 0.632853168755671,
+        "raw": -4.813268184661865,
+        "selected": -1.3852744102478027,
+        "v2_original_gate": 0.6253040740075749
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": true
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": true
+        }
+      }
+    },
+    {
+      "id": "human/5a81ca8131013a001a334ed4",
+      "phenomenon": "human",
+      "error": false,
+      "question": "Where can you find the rarely-used jetty on Norfolk Island?",
+      "context": "There are no railways, waterways, ports or harbours on the island. Loading jetties are located at Kingston and Cascade, but ships cannot get close to either of them. When a supply ship arrives, it is emptied by whaleboats towed by launches, five tonnes at a time. Which jetty is used depends on the prevailing weather on the day. The jetty on the leeward side of the island is often used. If the wind changes significantly during unloading/loading, the ship will move around to the other side. Visitors often gather to watch the activity when a supply ship arrives.",
+      "supported": false,
+      "answers": [],
+      "template_family": null,
+      "scores": {
+        "v1": 0.320255883014787,
+        "v2": 0.25180670549452866,
+        "frozen_v3": 0.3384168878940392,
+        "raw": 2.074978828430176,
+        "selected": -7.093263149261475,
+        "v2_original_gate": 0.25180670549452866
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": false
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": false,
+          "balanced": false
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "human/5a78bfa3b73996001af5b043",
+      "phenomenon": "human",
+      "error": false,
+      "question": "What are three divisions not involved with RIBA Enterprises?",
+      "context": "Its services include RIBA Insight, RIBA Appointments, and RIBA Publishing. It publishes the RIBA Product Selector and RIBA Journal. In Newcastle is the NBS, the National Building Specification, which has 130 staff and deals with the building regulations and the Construction Information Service. RIBA Bookshops, which operates online and at 66 Portland Place, is also part of RIBA Enterprises.",
+      "supported": false,
+      "answers": [],
+      "template_family": null,
+      "scores": {
+        "v1": 0.34883069099396063,
+        "v2": 0.19486516111832622,
+        "frozen_v3": 0.12050674992910534,
+        "raw": -0.9702737331390381,
+        "selected": -7.413922309875488,
+        "v2_original_gate": 0.19486516111832622
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": false
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": false
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": false,
+          "balanced": false
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "v3/negation/test/02/026/c0q0",
+      "phenomenon": "negation",
+      "error": true,
+      "question": "Which unit is no longer restricted from archiving the audit records?",
+      "context": "The restriction on Maple unit be96ce43 archiving the audit records has been lifted. This record is a complete description of this assignment.",
+      "supported": true,
+      "answers": [
+        {
+          "text": "Maple unit be96ce43",
+          "answer_start": 19
+        }
+      ],
+      "template_family": "v3/negation/test/02",
+      "scores": {
+        "v1": 0.43493927517701014,
+        "v2": 0.04771037538508279,
+        "frozen_v3": 0.3156289090410602,
+        "raw": 7.107918739318848,
+        "selected": -8.275033950805664,
+        "v2_original_gate": 0.04771037538508279
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": false
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": false,
+          "balanced": false
+        },
+        "v2_original_gate": {
+          "conservative": false,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "v3/negation/test/02/027/c0q0",
+      "phenomenon": "negation",
+      "error": true,
+      "question": "Which unit is no longer restricted from publishing the configuration bundles?",
+      "context": "The restriction on Copper unit 2a4d9928 publishing the configuration bundles has been lifted. This record is a complete description of this assignment.",
+      "supported": true,
+      "answers": [
+        {
+          "text": "Copper unit 2a4d9928",
+          "answer_start": 19
+        }
+      ],
+      "template_family": "v3/negation/test/02",
+      "scores": {
+        "v1": 0.30734330543149174,
+        "v2": 0.03596011304362497,
+        "frozen_v3": 0.2073434035372998,
+        "raw": 7.3320112228393555,
+        "selected": -8.435633659362793,
+        "v2_original_gate": 0.03596011304362497
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": false
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": false
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": false,
+          "balanced": false
+        },
+        "v2_original_gate": {
+          "conservative": false,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "v3/negation/test/01/000/c1q1",
+      "phenomenon": "negation",
+      "error": false,
+      "question": "Which unit is absent from the approved list for exporting the audit records?",
+      "context": "Coral unit c010dc6c is not on the list of units allowed to export the audit records. This record is a complete description of this assignment.",
+      "supported": true,
+      "answers": [
+        {
+          "text": "Coral unit c010dc6c",
+          "answer_start": 0
+        }
+      ],
+      "template_family": "v3/negation/test/01",
+      "scores": {
+        "v1": 0.3536247061947774,
+        "v2": 0.03984165750645565,
+        "frozen_v3": 0.2878196992574966,
+        "raw": 7.636995315551758,
+        "selected": 5.353555679321289,
+        "v2_original_gate": 0.03984165750645565
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": false
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": false
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2_original_gate": {
+          "conservative": false,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "v3/negation/test/04/025/c1q1",
+      "phenomenon": "negation",
+      "error": false,
+      "question": "Which unit is not excepted from the prohibition against exporting the diagnostic logs?",
+      "context": "This record is a complete description of this assignment. The policy does not exempt Copper unit 76cec462 from the prohibition against exporting the diagnostic logs.",
+      "supported": true,
+      "answers": [
+        {
+          "text": "Copper unit 76cec462",
+          "answer_start": 85
+        }
+      ],
+      "template_family": "v3/negation/test/04",
+      "scores": {
+        "v1": 0.49947661977883906,
+        "v2": 0.1250449046720049,
+        "frozen_v3": 0.3832903886315546,
+        "raw": 8.859319686889648,
+        "selected": 8.352911949157715,
+        "v2_original_gate": 0.1250449046720049
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": false
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "v3/negation/test/04/012/c0q1",
+      "phenomenon": "negation",
+      "error": true,
+      "question": "Which unit is not excepted from the prohibition against publishing the test summaries?",
+      "context": "This record is a complete description of this assignment. The policy exempts Birch unit 9b8a82a3 from the prohibition against publishing the test summaries.",
+      "supported": false,
+      "answers": [],
+      "template_family": "v3/negation/test/04",
+      "scores": {
+        "v1": 0.4531911266404273,
+        "v2": 0.12863556864807973,
+        "frozen_v3": 0.34101372694578097,
+        "raw": 8.346067428588867,
+        "selected": 7.75247049331665,
+        "v2_original_gate": 0.12863556864807973
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": false
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "v3/negation/test/04/015/c1q0",
+      "phenomenon": "negation",
+      "error": true,
+      "question": "Which unit is excepted from the prohibition against archiving the benchmark reports?",
+      "context": "This record is a complete description of this assignment. The policy does not exempt Slate unit 9663b4cb from the prohibition against archiving the benchmark reports.",
+      "supported": false,
+      "answers": [],
+      "template_family": "v3/negation/test/04",
+      "scores": {
+        "v1": 0.5239671296010313,
+        "v2": 0.15581709959044798,
+        "frozen_v3": 0.48103274274754704,
+        "raw": 8.473369598388672,
+        "selected": 8.109794616699219,
+        "v2_original_gate": 0.15581709959044798
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": false
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "v3/negation/test/01/022/c1q0",
+      "phenomenon": "negation",
+      "error": false,
+      "question": "Which unit appears on the approved list for archiving the diagnostic logs?",
+      "context": "This record is a complete description of this assignment. Pine unit 9c5461b7 is not on the list of units allowed to archive the diagnostic logs.",
+      "supported": false,
+      "answers": [],
+      "template_family": "v3/negation/test/01",
+      "scores": {
+        "v1": 0.23489596268329702,
+        "v2": 0.05099891410143695,
+        "frozen_v3": 0.1338850168251548,
+        "raw": 4.969580173492432,
+        "selected": -8.500733375549316,
+        "v2_original_gate": 0.05099891410143695
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": false
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": false
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": false,
+          "balanced": false
+        },
+        "v2_original_gate": {
+          "conservative": false,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "v3/negation/test/01/020/c0q1",
+      "phenomenon": "negation",
+      "error": false,
+      "question": "Which unit is absent from the approved list for archiving the audit records?",
+      "context": "Slate unit ab89ad31 is on the list of units allowed to archive the audit records. This record is a complete description of this assignment.",
+      "supported": false,
+      "answers": [],
+      "template_family": "v3/negation/test/01",
+      "scores": {
+        "v1": 0.290417020926012,
+        "v2": 0.06428583021300227,
+        "frozen_v3": 0.11580003820681269,
+        "raw": 4.958584308624268,
+        "selected": -8.41352653503418,
+        "v2_original_gate": 0.06428583021300227
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": false
+        },
+        "frozen_v3": {
+          "conservative": false,
+          "balanced": false
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": false,
+          "balanced": false
+        },
+        "v2_original_gate": {
+          "conservative": false,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "v3/relation/test/03/017/c1q1",
+      "phenomenon": "relation",
+      "error": false,
+      "question": "Which rental lets Cedar unit 41036ca0 rent sensor kits from their owner Flint unit dec21162?",
+      "context": "Rental MOVE-510eacad assigns sensor kits owned by Flint unit dec21162 to the renter Cedar unit 41036ca0. This record concerns a single transaction.",
+      "supported": true,
+      "answers": [
+        {
+          "text": "MOVE-510eacad",
+          "answer_start": 7
+        }
+      ],
+      "template_family": "v3/relation/test/03",
+      "scores": {
+        "v1": 0.4502598361856829,
+        "v2": 0.3342748040565399,
+        "frozen_v3": 0.449441003530744,
+        "raw": 8.63640022277832,
+        "selected": 8.045419692993164,
+        "v2_original_gate": 0.3342748040565399
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": true
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "v3/relation/test/01/017/c0q0",
+      "phenomenon": "relation",
+      "error": false,
+      "question": "Which ledger reference concerns storage drives acquired by Flint unit d48672f7 out of Coral unit 83e98fbf's stock?",
+      "context": "Storage drives passed from Coral unit 83e98fbf's stock into Flint unit d48672f7's stock, ledger reference MOVE-71c5f87f. This record concerns a single transaction.",
+      "supported": true,
+      "answers": [
+        {
+          "text": "MOVE-71c5f87f",
+          "answer_start": 106
+        }
+      ],
+      "template_family": "v3/relation/test/01",
+      "scores": {
+        "v1": 0.469191671372269,
+        "v2": 0.4108400452102348,
+        "frozen_v3": 0.5145521004009646,
+        "raw": 8.880298614501953,
+        "selected": 7.707790374755859,
+        "v2_original_gate": 0.4108400452102348
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": true
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "v3/relation/test/01/024/c1q0",
+      "phenomenon": "relation",
+      "error": true,
+      "question": "Which ledger reference concerns sealed samples acquired by Coral unit cbd771ec out of Slate unit f9677888's stock?",
+      "context": "Sealed samples passed from Coral unit cbd771ec's stock into Slate unit f9677888's stock, ledger reference MOVE-4b2cebb4. This record concerns a single transaction.",
+      "supported": false,
+      "answers": [],
+      "template_family": "v3/relation/test/01",
+      "scores": {
+        "v1": 0.38911077162739116,
+        "v2": 0.3743031925784886,
+        "frozen_v3": 0.4379320945158737,
+        "raw": 8.815950393676758,
+        "selected": -6.781634330749512,
+        "v2_original_gate": 0.3743031925784886
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": true
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "v3/relation/test/01/004/c1q0",
+      "phenomenon": "relation",
+      "error": true,
+      "question": "Which ledger reference concerns test fixtures acquired by Maple unit 451fe919 out of Cedar unit 91e71d9d's stock?",
+      "context": "Test fixtures passed from Maple unit 451fe919's stock into Cedar unit 91e71d9d's stock, ledger reference MOVE-cf4a8b14. This record concerns a single transaction.",
+      "supported": false,
+      "answers": [],
+      "template_family": "v3/relation/test/01",
+      "scores": {
+        "v1": 0.44279854342760216,
+        "v2": 0.4133094790813052,
+        "frozen_v3": 0.484075038491349,
+        "raw": 8.647275924682617,
+        "selected": 2.9174115657806396,
+        "v2_original_gate": 0.4133094790813052
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": true
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "v3/relation/test/03/011/c1q0",
+      "phenomenon": "relation",
+      "error": false,
+      "question": "Which rental lets Coral unit db205f6b rent test fixtures from their owner Slate unit 2feaa2f0?",
+      "context": "This record concerns a single transaction. Rental MOVE-bac6a419 assigns test fixtures owned by Coral unit db205f6b to the renter Slate unit 2feaa2f0.",
+      "supported": false,
+      "answers": [],
+      "template_family": "v3/relation/test/03",
+      "scores": {
+        "v1": 0.2851038609684332,
+        "v2": 0.33005728603877194,
+        "frozen_v3": 0.45471456614375894,
+        "raw": 8.153450012207031,
+        "selected": -7.814949989318848,
+        "v2_original_gate": 0.33005728603877194
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": true
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": false,
+          "balanced": false
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "v3/relation/test/02/004/c1q0",
+      "phenomenon": "relation",
+      "error": false,
+      "question": "Which mailing receipt lists Silver unit c682f3dd mailing sealed samples to Jade unit b3e1b9ae?",
+      "context": "Silver unit c682f3dd was the addressee for sealed samples mailed by Jade unit b3e1b9ae, mailing receipt MOVE-19cb1f02. This record concerns a single transaction.",
+      "supported": false,
+      "answers": [],
+      "template_family": "v3/relation/test/02",
+      "scores": {
+        "v1": 0.5883903844085077,
+        "v2": 0.7383705147970012,
+        "frozen_v3": 0.6337869752073065,
+        "raw": 9.109228134155273,
+        "selected": -8.034038543701172,
+        "v2_original_gate": 0.7383705147970012
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": true
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": false,
+          "balanced": false
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": true
+        }
+      }
+    },
+    {
+      "id": "v3/temporal/test/00/011/c0q0",
+      "phenomenon": "temporal",
+      "error": false,
+      "question": "Which lead unit is credited for the evaluation of test fixtures dated 2010?",
+      "context": "The evaluation of test fixtures is dated 2010 and credits Willow unit 5d9ec1b1 as the lead unit. The cited operating guide bears the date 2016. This record is a complete description of this assignment.",
+      "supported": true,
+      "answers": [
+        {
+          "text": "Willow unit 5d9ec1b1",
+          "answer_start": 58
+        }
+      ],
+      "template_family": "v3/temporal/test/00",
+      "scores": {
+        "v1": 0.7364313406914839,
+        "v2": 0.8377148326800024,
+        "frozen_v3": 0.9510861119628612,
+        "raw": 10.22628402709961,
+        "selected": 8.582235336303711,
+        "v2_original_gate": 0.8377148326800024
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": true
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": true
+        },
+        "selected": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": true
+        }
+      }
+    },
+    {
+      "id": "v3/temporal/test/04/022/c1q1",
+      "phenomenon": "temporal",
+      "error": false,
+      "question": "Who handled the examination of calibration modules in 2013?",
+      "context": "The file confirms that Willow unit 49d237ee handled the examination of calibration modules in 2013. Its appendix reproduces a procedure from 2009. This record is a complete description of this assignment.",
+      "supported": true,
+      "answers": [
+        {
+          "text": "Willow unit 49d237ee",
+          "answer_start": 23
+        }
+      ],
+      "template_family": "v3/temporal/test/04",
+      "scores": {
+        "v1": 0.7328360314513286,
+        "v2": 0.9426431288982728,
+        "frozen_v3": 0.9796696055852884,
+        "raw": 9.949060440063477,
+        "selected": 8.491186141967773,
+        "v2_original_gate": 0.9426431288982728
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": true
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": true
+        },
+        "selected": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": true
+        }
+      }
+    },
+    {
+      "id": "v3/temporal/test/00/015/c0q1",
+      "phenomenon": "temporal",
+      "error": true,
+      "question": "Which lead unit is credited for the evaluation of storage drives dated 1999?",
+      "context": "This record is a complete description of this assignment. The evaluation of storage drives is dated 1998 and credits Pine unit 1531e80d as the lead unit. The cited operating guide bears the date 1999.",
+      "supported": false,
+      "answers": [],
+      "template_family": "v3/temporal/test/00",
+      "scores": {
+        "v1": 0.7394345258759463,
+        "v2": 0.7422175184445191,
+        "frozen_v3": 0.9084415114069562,
+        "raw": 10.291769981384277,
+        "selected": -0.25661975145339966,
+        "v2_original_gate": 0.7422175184445191
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": true
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": true
+        },
+        "selected": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": true
+        }
+      }
+    },
+    {
+      "id": "v3/temporal/test/00/015/c1q0",
+      "phenomenon": "temporal",
+      "error": true,
+      "question": "Which lead unit is credited for the evaluation of storage drives dated 1998?",
+      "context": "This record is a complete description of this assignment. The evaluation of storage drives is dated 1999 and credits Pine unit 1531e80d as the lead unit. The cited operating guide bears the date 1998.",
+      "supported": false,
+      "answers": [],
+      "template_family": "v3/temporal/test/00",
+      "scores": {
+        "v1": 0.7105479594188742,
+        "v2": 0.4365787176919041,
+        "frozen_v3": 0.6726707794725153,
+        "raw": 10.152660369873047,
+        "selected": -5.3434906005859375,
+        "v2_original_gate": 0.4365787176919041
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": true
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": true
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": true
+        },
+        "selected": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "v3/temporal/test/01/024/c0q1",
+      "phenomenon": "temporal",
+      "error": false,
+      "question": "Who took charge of the storage drives appraisal in 2005?",
+      "context": "Pine unit af03273b took charge of the storage drives appraisal in 2003. The file also lists the 2005 edition of the instructions. This record is a complete description of this assignment.",
+      "supported": false,
+      "answers": [],
+      "template_family": "v3/temporal/test/01",
+      "scores": {
+        "v1": 0.5117334992054151,
+        "v2": 0.38750927353938713,
+        "frozen_v3": 0.4272064194524727,
+        "raw": 9.221030235290527,
+        "selected": -8.389097213745117,
+        "v2_original_gate": 0.38750927353938713
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": true,
+          "balanced": true
+        },
+        "frozen_v3": {
+          "conservative": true,
+          "balanced": true
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": false
+        },
+        "selected": {
+          "conservative": false,
+          "balanced": false
+        },
+        "v2_original_gate": {
+          "conservative": true,
+          "balanced": false
+        }
+      }
+    },
+    {
+      "id": "v3/temporal/test/02/031/c0q1",
+      "phenomenon": "temporal",
+      "error": false,
+      "question": "Which unit was designated for the storage drives check that occurred in 2001?",
+      "context": "For the storage drives check that occurred in 1998, the designated unit was Copper unit 9ae439c2. The worksheet's copyright year is 2001. This record is a complete description of this assignment.",
+      "supported": false,
+      "answers": [],
+      "template_family": "v3/temporal/test/02",
+      "scores": {
+        "v1": 0.3120072588021137,
+        "v2": 0.017353341430389208,
+        "frozen_v3": 0.01361796143980173,
+        "raw": 9.793790817260742,
+        "selected": -8.33602523803711,
+        "v2_original_gate": 0.017353341430389208
+      },
+      "accepted": {
+        "v1": {
+          "conservative": true,
+          "balanced": false
+        },
+        "v2": {
+          "conservative": false,
+          "balanced": false
+        },
+        "frozen_v3": {
+          "conservative": false,
+          "balanced": false
+        },
+        "raw": {
+          "conservative": true,
+          "balanced": true
+        },
+        "selected": {
+          "conservative": false,
+          "balanced": false
+        },
+        "v2_original_gate": {
+          "conservative": false,
+          "balanced": false
+        }
+      }
+    }
+  ]
+}

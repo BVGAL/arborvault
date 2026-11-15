@@ -1,0 +1,17 @@
+{
+  "status": "completed",
+  "completed_at_utc": "2026-11-15T11:50:00.874319+00:00",
+  "execution": "Local CPU; MiniLM LoRA plus pooler/classifier; no Qwen training",
+  "new_cloud_resource_allocations": 0,
+  "incremental_cloud_cost_usd": 0.0,
+  "previous_cumulative_estimated_usd": 7.94877,
+  "cumulative_estimated_usd": 7.94877,
+  "cumulative_cap_usd": 10.0,
+  "remaining_estimated_usd": 2.0512300000000003,
+  "previous_ledger": "docs/benchmarks/support-v2/run-cost.json",
+  "previous_ledger_sha256": "489efce4675fc9bfabec6b5ea8f11f4979b01ba2f6f6ed974b0dd5ed3b583439",
+  "training_preparation_selection_seconds": 1291.0476576369983,
+  "primary_evaluation_seconds": 107.12898741899699,
+  "local_electricity_and_hardware_cost": "Not measured; excluded from cloud ledger",
+  "repeated_inference": "Primary and supplementary results reproduced byte-for-byte in fresh CPU processes"
+}
